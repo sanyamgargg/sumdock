@@ -46,6 +46,13 @@ Two columns per state: what only Sanyam can do (blocked sites, accounts, pushing
 | | Utah: registration uses an age-based uniform fee that needs a finer vehicle age input than the calculator has (tax.utah.gov Pub 23, dmv.utah.gov/?p=3212) |
 | | Oklahoma and Iowa: only third-party pages found so far; need official OTC and Iowa DOT pages |
 
+## Louisiana, Wyoming, Delaware, Hawaii (looked at, not added)
+| Sanyam | Claude |
+|---|---|
+| Nothing yet | Louisiana: LDR Pub R-20164 (6/20) says 4.45% state tax plus local tax by the buyer's home (1.85 to 7 percent) and a rate-to-rate credit for tax paid elsewhere, but does not explain trade-ins and is from 2020; need a current LDR or OMV page (dam.ldr.la.gov/taxforms/20164-6-20.pdf) |
+| | Wyoming: Teton County page lists 7% on net purchase price including documentary fees and a $30 state registration fee; the county fee uses factory cost times a depreciation factor times 3%, which needs a list price and age input (tetoncountywy.gov/444/Vehicle-Registration-Fees) |
+| | Delaware and Hawaii: search returned only third-party pages; need the official DMV and tax pages |
+
 ## Washington (added)
 | Sanyam | Claude |
 |---|---|
