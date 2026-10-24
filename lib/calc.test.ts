@@ -929,3 +929,21 @@ describe("South Dakota", () => {
   });
   it("charges the title fee", () => expect(line(calculate(sd, base), "title")).toBe(10));
 });
+
+describe("Idaho", () => {
+  const id = load("id");
+  it("is publishable", () => expect(publishability(id).publishable).toBe(true));
+  it("taxes the price less a trade-in at 6%", () => {
+    expect(line(calculate(id, { ...base, price: 30000, tradeIn: 10000 }), "state-tax")).toBe(1200);
+  });
+  it("picks registration by vehicle age", () => {
+    expect(line(calculate(id, { ...base, ageYears: 1 }), "registration-0-2")).toBe(69);
+    expect(line(calculate(id, { ...base, ageYears: 4 }), "registration-3-6")).toBe(57);
+    expect(line(calculate(id, { ...base, ageYears: 7 }), "registration-7-plus")).toBe(45);
+  });
+  it("adds the EV fee and county administration fees", () => {
+    expect(line(calculate(id, { ...base, fuel: "ev" }), "ev-fee")).toBe(140);
+    expect(line(calculate(id, { ...base, county: "Ada" }), "county-fee")).toBe(16.5);
+    expect(line(calculate(id, { ...base, county: "Blaine" }), "county-fee")).toBe(26);
+  });
+});

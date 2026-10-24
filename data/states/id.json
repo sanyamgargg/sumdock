@@ -1,0 +1,311 @@
+{
+  "code": "ID",
+  "name": "Idaho",
+  "slug": "idaho",
+  "lastReviewed": "2026-10-24",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 6,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Idaho State Tax Commission - Sales and use tax online guide",
+          "url": "https://tax.idaho.gov/taxes/sales-use/online-guide/",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The department's guide says Idaho's sales tax rate is 6%, and the use tax rate is also 6%."
+    },
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Idaho State Tax Commission - Sales and use tax online guide",
+          "url": "https://tax.idaho.gov/taxes/sales-use/online-guide/",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "IDAPA 35.01.02.044 - Trade-ins, trade-downs and barter",
+          "url": "https://regulations.justia.com/states/idaho/35/35-01-02/section-35-01-02-044",
+          "accessed": "2026-10-24",
+          "publisherType": "secondary"
+        }
+      ],
+      "note": "A trade-in allowance reduces the taxable price when the traded property is delivered by the buyer and the trade and purchase form one transaction. The guide also says motor vehicle rebates paid to the seller reduce the taxable price."
+    },
+    "local": {
+      "value": {
+        "mode": "none",
+        "capBase": null,
+        "rangeNote": null
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Idaho State Tax Commission - Sales and use tax online guide",
+          "url": "https://tax.idaho.gov/taxes/sales-use/online-guide/",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The state guide describes a single 6% rate and refers local option taxes to a separate page that does not cover vehicles."
+    },
+    "outOfStateCredit": {
+      "value": true,
+      "status": "partial",
+      "sources": [
+        {
+          "title": "IDAPA 35.01.02.106 - Vehicle sales, rentals and leases",
+          "url": "https://regulations.justia.com/states/idaho/35/35-01-02/section-35-01-02-106",
+          "accessed": "2026-10-24",
+          "publisherType": "secondary"
+        }
+      ],
+      "note": "If sales tax was correctly paid to a dealer in another state, a credit is allowed against the Idaho sales or use tax. The rule text is from a legal-text site, not the agency."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Title",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 14,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Idaho Transportation Department - Vehicle registrations (fees and county admin fees)",
+            "url": "https://itd.idaho.gov/dmv/registrations-plates-titles/vehicle-registrations/",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "State title fee. The county's own title administration fee is in the county line."
+      }
+    },
+    {
+      "id": "registration-0-2",
+      "label": "Registration (passenger vehicle, newer)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "ageYearsMax": 2
+      },
+      "amount": {
+        "value": 69,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Idaho Transportation Department - Vehicle registrations (fees and county admin fees)",
+            "url": "https://itd.idaho.gov/dmv/registrations-plates-titles/vehicle-registrations/",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The Transportation Department prints the middle age band as 3 or 6 years old, which looks like a typo for 3 to 6, and does not say whether a current model year counts as age 0 or 1. The bands used here are 0 to 2, 3 to 6 and 7 or more years."
+      }
+    },
+    {
+      "id": "registration-3-6",
+      "label": "Registration (passenger vehicle, middle age)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "ageYearsMin": 3,
+        "ageYearsMax": 6
+      },
+      "amount": {
+        "value": 57,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Idaho Transportation Department - Vehicle registrations (fees and county admin fees)",
+            "url": "https://itd.idaho.gov/dmv/registrations-plates-titles/vehicle-registrations/",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The Transportation Department prints the middle age band as 3 or 6 years old, which looks like a typo for 3 to 6, and does not say whether a current model year counts as age 0 or 1. The bands used here are 0 to 2, 3 to 6 and 7 or more years."
+      }
+    },
+    {
+      "id": "registration-7-plus",
+      "label": "Registration (passenger vehicle, 7 years or older)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "ageYearsMin": 7
+      },
+      "amount": {
+        "value": 45,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Idaho Transportation Department - Vehicle registrations (fees and county admin fees)",
+            "url": "https://itd.idaho.gov/dmv/registrations-plates-titles/vehicle-registrations/",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The Transportation Department prints the middle age band as 3 or 6 years old, which looks like a typo for 3 to 6, and does not say whether a current model year counts as age 0 or 1. The bands used here are 0 to 2, 3 to 6 and 7 or more years."
+      }
+    },
+    {
+      "id": "ems-fee",
+      "label": "Emergency medical services fee",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 1.25,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Idaho Transportation Department - Vehicle registrations (fees and county admin fees)",
+            "url": "https://itd.idaho.gov/dmv/registrations-plates-titles/vehicle-registrations/",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-fee",
+      "label": "Electric vehicle fee (all-electric)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "ev"
+      },
+      "amount": {
+        "value": 140,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Idaho Transportation Department - Vehicle registrations (fees and county admin fees)",
+            "url": "https://itd.idaho.gov/dmv/registrations-plates-titles/vehicle-registrations/",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Added to the registration fee. Plug-in hybrids pay $75 a year, which is not included."
+      }
+    }
+  ],
+  "notes": [
+    "County administration fees for registration and title are added once you pick your county.",
+    "A plug-in hybrid pays an extra $75 a year, which is not included.",
+    "Personalized and specialty plate fees are not included."
+  ],
+  "content": {
+    "intro": "{state} charges {stateRate} sales tax on a vehicle, with no local sales tax. Registration is paid every year and falls as the vehicle ages, and each county adds its own small administration fees.",
+    "howItWorks": [
+      {
+        "text": "The state rate is {stateRate}. A trade-in lowers the price the tax is figured on.",
+        "sources": [
+          "https://tax.idaho.gov/taxes/sales-use/online-guide/"
+        ]
+      },
+      {
+        "text": "If you correctly paid sales tax to a dealer in another state, you get a credit against the Idaho tax.",
+        "sources": [
+          "https://regulations.justia.com/states/idaho/35/35-01-02/section-35-01-02-106"
+        ]
+      },
+      {
+        "text": "The yearly registration fee drops as the vehicle gets older, and electric vehicles pay an added yearly fee.",
+        "sources": [
+          "https://itd.idaho.gov/dmv/registrations-plates-titles/vehicle-registrations/"
+        ]
+      },
+      {
+        "text": "Each county sets its own administration fee for registration and for titles on top of the state fees.",
+        "sources": [
+          "https://itd.idaho.gov/dmv/registrations-plates-titles/vehicle-registrations/"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does a trade-in lower the sales tax in Idaho?",
+        "text": "Yes, a trade-in allowance reduces the taxable price when it is part of the same transaction.",
+        "sources": [
+          "https://tax.idaho.gov/taxes/sales-use/online-guide/",
+          "https://regulations.justia.com/states/idaho/35/35-01-02/section-35-01-02-044"
+        ]
+      },
+      {
+        "q": "Does Idaho give credit for tax paid in another state?",
+        "text": "Yes, a credit is allowed when sales tax was correctly paid to a dealer in another state.",
+        "sources": [
+          "https://regulations.justia.com/states/idaho/35/35-01-02/section-35-01-02-106"
+        ]
+      }
+    ]
+  },
+  "counties": {
+    "label": "County administration fees",
+    "fees": {
+      "value": {
+        "Ada": 16.5,
+        "Adams": 13.5,
+        "Bannock": 7.0,
+        "Bear Lake": 10.0,
+        "Benewah": 14.0,
+        "Bingham": 13.15,
+        "Blaine": 26.0,
+        "Boise": 9.5,
+        "Bonner": 19.5,
+        "Bonneville": 14.0,
+        "Boundary": 12.5,
+        "Butte": 6.75,
+        "Camas": 3.5,
+        "Canyon": 16.5,
+        "Caribou": 3.5,
+        "Cassia": 14.0,
+        "Clark": 6.0,
+        "Clearwater": 12.5,
+        "Custer": 11.0,
+        "Elmore": 15.5,
+        "Franklin": 12.0,
+        "Fremont": 14.0,
+        "Gem": 21.0,
+        "Gooding": 16.5,
+        "Idaho": 10.0,
+        "Jefferson": 13.0,
+        "Jerome": 10.0,
+        "Kootenai": 24.0,
+        "Latah": 15.0,
+        "Lemhi": 11.0,
+        "Lewis": 8.0,
+        "Lincoln": 18.3,
+        "Madison": 12.0,
+        "Minidoka": 18.0,
+        "Nez Perce": 18.0,
+        "Oneida": 11.0,
+        "Owyhee": 14.5,
+        "Payette": 11.0,
+        "Power": 5.0,
+        "Shoshone": 16.0,
+        "Teton": 13.5,
+        "Twin Falls": 9.25,
+        "Valley": 23.25,
+        "Washington": 11.0
+      },
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Idaho Transportation Department - Vehicle registrations (fees and county admin fees)",
+          "url": "https://itd.idaho.gov/dmv/registrations-plates-titles/vehicle-registrations/",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Each county's registration administration fee plus its title administration fee."
+    }
+  }
+}
