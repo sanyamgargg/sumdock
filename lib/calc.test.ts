@@ -713,3 +713,25 @@ describe("Nebraska", () => {
   });
 });
 
+describe("Kansas", () => {
+  const ks = load("ks");
+  it("is publishable", () => expect(publishability(ks).publishable).toBe(true));
+  it("taxes the price less a trade-in at 6.5% plus the entered local rate", () => {
+    const r = calculate(ks, { ...base, price: 30000, tradeIn: 10000, localRatePct: 2 });
+    expect(line(r, "state-tax")).toBe(1300);
+    expect(line(r, "local-tax")).toBe(400);
+  });
+  it("charges $30 up to 4,500 lbs and $40 above", () => {
+    expect(line(calculate(ks, { ...base, weightLbs: 3500 }), "registration")).toBe(30);
+    expect(line(calculate(ks, { ...base, weightLbs: 4500 }), "registration")).toBe(30);
+    expect(line(calculate(ks, { ...base, weightLbs: 4501 }), "registration")).toBe(40);
+  });
+  it("charges title and the county service fee, and the EV fee only for EVs", () => {
+    const r = calculate(ks, base);
+    expect(line(r, "title")).toBe(10);
+    expect(line(r, "county-service-fee")).toBe(5);
+    expect(line(r, "ev-fee")).toBeUndefined();
+    expect(line(calculate(ks, { ...base, fuel: "ev" }), "ev-fee")).toBe(165);
+  });
+});
+

@@ -1,0 +1,213 @@
+{
+  "code": "KS",
+  "name": "Kansas",
+  "slug": "kansas",
+  "lastReviewed": "2026-10-24",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 6.5,
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Kansas DOR - Pub. KS-1526, Business Taxes for Motor Vehicle Dealers (Rev. 7-29-25)",
+          "url": "https://ksrevenue.gov/pdf/pub1526.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The department's dealer publication shows a sale taxed at 6.5% state tax plus local tax. It does not set out the state rate as a separate rule."
+    },
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Kansas DOR - Pub. KS-1526, Business Taxes for Motor Vehicle Dealers (Rev. 7-29-25)",
+          "url": "https://ksrevenue.gov/pdf/pub1526.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Dealers charge sales tax on the net price after the trade-in allowance. A trade-in reduces the base when the traded vehicle goes into the dealer's inventory in a single transaction. A rebate is taxable when it is not shown on the original bill of sale."
+    },
+    "local": {
+      "value": {
+        "mode": "user-entered",
+        "capBase": null,
+        "rangeNote": "For a dealer sale, the local rate is the combined city, county and special district rate where the dealer is located. For a private or out-of-state purchase it is the rate for your registration address. Use the state's rate lookup or ask your dealer, then type it here."
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Kansas DOR - Pub. KS-1526, Business Taxes for Motor Vehicle Dealers (Rev. 7-29-25)",
+          "url": "https://ksrevenue.gov/pdf/pub1526.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The publication explains which place sets the local rate but lists no local rates."
+    },
+    "outOfStateCredit": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Kansas DOR - Pub. KS-1526, Business Taxes for Motor Vehicle Dealers (Rev. 7-29-25)",
+          "url": "https://ksrevenue.gov/pdf/pub1526.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Credit against the compensating use tax is given for state and local sales tax paid in the other state. It cannot exceed the Kansas amount, and you must show proof of the tax paid."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Title",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 10,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Johnson County, Kansas - Motor vehicle fees and payment options",
+            "url": "https://www.jocogov.org/department/treasury-taxation-and-vehicles/vehicle-registrations-and-titling/motor-vehicle-fees-and-payment-options",
+            "accessed": "2026-10-24",
+            "publisherType": "county-agency"
+          }
+        ],
+        "note": "Listed on Johnson County's fee table. Title and registration amounts are set by the state, but this is the county's own page."
+      }
+    },
+    {
+      "id": "registration",
+      "label": "Registration (passenger, by weight)",
+      "kind": "weightTable",
+      "frequency": "annual",
+      "weightTable": [
+        {
+          "upTo": 4500,
+          "fee": 30
+        },
+        {
+          "upTo": null,
+          "fee": 40
+        }
+      ],
+      "amount": {
+        "value": 1,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Johnson County, Kansas - Motor vehicle fees and payment options",
+            "url": "https://www.jocogov.org/department/treasury-taxation-and-vehicles/vehicle-registrations-and-titling/motor-vehicle-fees-and-payment-options",
+            "accessed": "2026-10-24",
+            "publisherType": "county-agency"
+          },
+          {
+            "title": "Kansas Legislative Research Department - Taxes and fees paid at vehicle registration (Oct 22, 2020)",
+            "url": "https://www.kslegresearch.org/KLRD-web/Publications/Transportation/taxes_fees_paid_at_vehicle_registration_2021.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "$30 up to 4,500 lbs and $40 above, per both the county page and the legislature's research department. The research paper is from 2020, so the amounts are marked partly verified."
+      }
+    },
+    {
+      "id": "county-service-fee",
+      "label": "County service fee",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 5,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Johnson County, Kansas - Motor vehicle fees and payment options",
+            "url": "https://www.jocogov.org/department/treasury-taxation-and-vehicles/vehicle-registrations-and-titling/motor-vehicle-fees-and-payment-options",
+            "accessed": "2026-10-24",
+            "publisherType": "county-agency"
+          }
+        ],
+        "note": "Listed under additional fees paid at registration on Johnson County's page. Other counties may charge a different amount."
+      }
+    },
+    {
+      "id": "ev-fee",
+      "label": "Electric vehicle fee (all-electric)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "ev"
+      },
+      "amount": {
+        "value": 165,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Johnson County, Kansas - Motor vehicle fees and payment options",
+            "url": "https://www.jocogov.org/department/treasury-taxation-and-vehicles/vehicle-registrations-and-titling/motor-vehicle-fees-and-payment-options",
+            "accessed": "2026-10-24",
+            "publisherType": "county-agency"
+          }
+        ],
+        "note": "Hybrids and plug-in hybrids pay smaller fees that are not included."
+      }
+    }
+  ],
+  "notes": [
+    "Kansas counties charge a yearly property tax (value times the county mill levy times the assessment rate), which is not included.",
+    "Registration, title and county fees are taken from Johnson County's page; other counties can differ.",
+    "A hybrid or plug-in hybrid pays a separate fee that is not included."
+  ],
+  "content": {
+    "intro": "{state} charges {stateRate} state sales tax plus a local city, county or district tax. Registration is paid every year by weight, and counties bill a yearly property tax on the vehicle.",
+    "howItWorks": [
+      {
+        "text": "The state rate is {stateRate}. Sales tax is figured on the net price after your trade-in allowance when you buy from a dealer.",
+        "sources": [
+          "https://ksrevenue.gov/pdf/pub1526.pdf"
+        ]
+      },
+      {
+        "text": "The local rate depends on where the dealer is located for a dealer sale, and on your registration address for a private or out-of-state purchase.",
+        "sources": [
+          "https://ksrevenue.gov/pdf/pub1526.pdf"
+        ]
+      },
+      {
+        "text": "If you paid sales tax in another state, you get credit for it against the Kansas tax, up to the Kansas amount, with proof of the tax paid.",
+        "sources": [
+          "https://ksrevenue.gov/pdf/pub1526.pdf"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does a trade-in lower the sales tax in Kansas?",
+        "text": "Yes, for a dealer sale the tax is figured on the net price after the trade-in allowance. A rebate that is not on the original bill of sale is taxable.",
+        "sources": [
+          "https://ksrevenue.gov/pdf/pub1526.pdf"
+        ]
+      },
+      {
+        "q": "Which local tax rate applies?",
+        "text": "For a dealer sale it is the combined rate where the dealer is located. For a private or out-of-state purchase it is the rate for your registration address.",
+        "sources": [
+          "https://ksrevenue.gov/pdf/pub1526.pdf"
+        ]
+      },
+      {
+        "q": "Is the yearly property tax included?",
+        "text": "No. Each county applies its own mill levy to the vehicle's value, so the amount depends on your county and the vehicle.",
+        "sources": [
+          "https://www.kslegresearch.org/KLRD-web/Publications/Transportation/taxes_fees_paid_at_vehicle_registration_2021.pdf"
+        ]
+      }
+    ]
+  }
+}

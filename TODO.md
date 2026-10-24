@@ -39,6 +39,13 @@ Two columns per state: what only Sanyam can do (blocked sites, accounts, pushing
 | Find the registration fee table by weight and model year at https://www.mvd.newmexico.gov/what-is-the-fee-for-registering-my-vehicle/ or a linked PDF | New Mexico: 4% excise tax on price minus trade-in, credit for tax paid elsewhere (tax.newmexico.gov, page modified Apr 2026). Registration is $27 to $62 a year by weight and model year, but no table found; title fee not found |
 | Nothing yet | Maine: 5.5% sales tax and $33 title fee are on maine.gov/sos; the page does not say if a trade-in lowers the tax, registration amounts are on a separate page, and the yearly excise tax is billed by your town |
 
+## Mississippi, Iowa, Utah, Oklahoma (looked at, not added)
+| Sanyam | Claude |
+|---|---|
+| Nothing yet | Mississippi: title $9 (dor.ms.gov/motor-vehicle-titles); sales tax rate, trade-in rule and tag fees not found on the DOR pages I could read |
+| | Utah: registration uses an age-based uniform fee that needs a finer vehicle age input than the calculator has (tax.utah.gov Pub 23, dmv.utah.gov/?p=3212) |
+| | Oklahoma and Iowa: only third-party pages found so far; need official OTC and Iowa DOT pages |
+
 ## Washington (added)
 | Sanyam | Claude |
 |---|---|
@@ -86,7 +93,7 @@ Two columns per state: what only Sanyam can do (blocked sites, accounts, pushing
 Registration tax is based on the vehicle's value, so it would be left out; not started.
 
 ## Added since the last list
-Nebraska, Vermont, West Virginia, Connecticut, Alabama, Wisconsin, Indiana, Massachusetts, New Jersey, Virginia, Washington, Arizona. Indiana and Massachusetts: yearly excise taxes are not included (Indiana depends on value and county, Massachusetts is billed by your city or town).
+Kansas, Nebraska, Vermont, West Virginia, Connecticut, Alabama, Wisconsin, Indiana, Massachusetts, New Jersey, Virginia, Washington, Arizona. Indiana and Massachusetts: yearly excise taxes are not included (Indiana depends on value and county, Massachusetts is billed by your city or town).
 
 ## Other states waiting
 | Sanyam | Claude |

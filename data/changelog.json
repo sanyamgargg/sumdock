@@ -3,6 +3,12 @@
   "entries": [
     {
       "date": "2026-10-24",
+      "state": "KS",
+      "stateName": "Kansas",
+      "summary": "Added state with the 6.5% state sales tax after trade-in, an entered local rate, title, registration by weight, the county service fee and the electric vehicle fee. The yearly county property tax and hybrid fees are not included."
+    },
+    {
+      "date": "2026-10-24",
       "state": "NE",
       "stateName": "Nebraska",
       "summary": "Added state with the 5.5% sales tax, an entered local rate, title, registration, plate and other registration fees and the electric vehicle fee. The yearly motor vehicle tax and fee, city wheel taxes and the plug-in hybrid fee are not included."
