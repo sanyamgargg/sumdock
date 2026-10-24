@@ -1,0 +1,528 @@
+{
+  "code": "PA",
+  "name": "Pennsylvania",
+  "slug": "pennsylvania",
+  "lastReviewed": "2026-10-24",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 6,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "PennDOT - Buying or Selling Your Vehicle in Pennsylvania (fact sheet, Feb 2025)",
+          "url": "https://www.pa.gov/content/dam/copapwp-pagov/en/penndot/documents/public/dvspubsforms/bmv/bmv-fact-sheets/fs-buysell.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "PA Department of Revenue - Use Tax for Individuals",
+          "url": "https://www.pa.gov/agencies/revenue/resources/tax-types-and-information/sales-use-and-hotel-occupancy-tax/use-tax/use-tax-for-individuals",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "PennDOT: sales tax is 6% of the purchase price or the current market value of the vehicle."
+    },
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "PennDOT - Buying or Selling Your Vehicle in Pennsylvania (fact sheet, Feb 2025)",
+          "url": "https://www.pa.gov/content/dam/copapwp-pagov/en/penndot/documents/public/dvspubsforms/bmv/bmv-fact-sheets/fs-buysell.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "When a seller takes a vehicle as a trade-in, tax is charged on the difference between the price and the trade-in value."
+    },
+    "local": {
+      "value": {
+        "mode": "user-entered",
+        "capBase": null,
+        "rangeNote": "Only Allegheny County (1%) and the City of Philadelphia (2%) add a local sales tax. Pick your county to fill it in."
+      },
+      "status": "verified",
+      "sources": [
+        {
+          "title": "PennDOT - Buying or Selling Your Vehicle in Pennsylvania (fact sheet, Feb 2025)",
+          "url": "https://www.pa.gov/content/dam/copapwp-pagov/en/penndot/documents/public/dvspubsforms/bmv/bmv-fact-sheets/fs-buysell.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "PA Department of Revenue - Use Tax for Individuals",
+          "url": "https://www.pa.gov/agencies/revenue/resources/tax-types-and-information/sales-use-and-hotel-occupancy-tax/use-tax/use-tax-for-individuals",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "PennDOT: 7% for Allegheny County residents and 8% for City of Philadelphia residents."
+    },
+    "outOfStateCredit": {
+      "value": true,
+      "status": "partial",
+      "sources": [
+        {
+          "title": "PA Department of Revenue - Sales and Use Tax Credit Chart (REV-227)",
+          "url": "https://www.pa.gov/content/dam/copapwp-pagov/en/revenue/documents/formsandpublications/formsforbusinesses/sut/documents/rev-227.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Credit for tax legally owed and paid to another state, only if that state gives a substantially similar credit for Pennsylvania tax. The credit cannot exceed the Pennsylvania rate (6%, 7% in Allegheny, 8% in Philadelphia). Several states do not grant reciprocity."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Certificate of title",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 72,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "PennDOT - Bureau of Motor Vehicles Schedule of Fees (MV-70S, 4-26)",
+            "url": "https://www.pa.gov/content/dam/copapwp-pagov/en/penndot/documents/public/dvspubsforms/bmv/bmv-forms/mv-70s.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "A lien recorded on the title costs $36 more per lien."
+      }
+    },
+    {
+      "id": "registration",
+      "label": "Registration, passenger car (1 year)",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 48,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "PennDOT - Bureau of Motor Vehicles Schedule of Fees (MV-70S, 4-26)",
+            "url": "https://www.pa.gov/content/dam/copapwp-pagov/en/penndot/documents/public/dvspubsforms/bmv/bmv-forms/mv-70s.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "$96 for a two-year registration. The schedule says some owners may qualify for reduced fees. Includes the standard plate for first-time issuance."
+      }
+    },
+    {
+      "id": "ev-ruc",
+      "label": "Road user charge (electric vehicles, 1 year)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "ev"
+      },
+      "amount": {
+        "value": 250,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "PennDOT - Bureau of Motor Vehicles Schedule of Fees (MV-70S, 4-26)",
+            "url": "https://www.pa.gov/content/dam/copapwp-pagov/en/penndot/documents/public/dvspubsforms/bmv/bmv-forms/mv-70s.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "PennDOT - Road User Charge",
+            "url": "https://www.pa.gov/agencies/dmv/vehicle-services/road-user-charge",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "$500 for a two-year registration. Paid separately before renewing registration. Adjusted each January with the consumer price index. Plug-in hybrids pay a smaller charge ($63 for one year in 2026); the calculator counts hybrids as gas vehicles and does not include it."
+      }
+    },
+    {
+      "id": "local-use",
+      "label": "Fee for Local Use (participating counties)",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": null,
+        "status": "unverified",
+        "sources": [
+          {
+            "title": "PennDOT - Fee for Local Use fact sheet (Aug 2026)",
+            "url": "https://www.pa.gov/content/dam/copapwp-pagov/en/penndot/documents/public/dvspubsforms/bmv/bmv-fact-sheets/fs-feelocal.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "$5 a year in 27 participating counties, per the August 2026 fact sheet. Not in the total because it depends on your county."
+      },
+      "excludedReason": "$5 a year in participating counties (including Allegheny, Philadelphia, Bucks, Montgomery, Delaware, Chester, Berks, York and Erie). Check the PennDOT fact sheet for your county."
+    }
+  ],
+  "localRates": {
+    "label": "Local sales tax by county",
+    "mode": "localOnly",
+    "rates": {
+      "value": {
+        "Adams": {
+          "county": 0,
+          "places": {}
+        },
+        "Allegheny": {
+          "county": 1,
+          "places": {}
+        },
+        "Armstrong": {
+          "county": 0,
+          "places": {}
+        },
+        "Beaver": {
+          "county": 0,
+          "places": {}
+        },
+        "Bedford": {
+          "county": 0,
+          "places": {}
+        },
+        "Berks": {
+          "county": 0,
+          "places": {}
+        },
+        "Blair": {
+          "county": 0,
+          "places": {}
+        },
+        "Bradford": {
+          "county": 0,
+          "places": {}
+        },
+        "Bucks": {
+          "county": 0,
+          "places": {}
+        },
+        "Butler": {
+          "county": 0,
+          "places": {}
+        },
+        "Cambria": {
+          "county": 0,
+          "places": {}
+        },
+        "Cameron": {
+          "county": 0,
+          "places": {}
+        },
+        "Carbon": {
+          "county": 0,
+          "places": {}
+        },
+        "Centre": {
+          "county": 0,
+          "places": {}
+        },
+        "Chester": {
+          "county": 0,
+          "places": {}
+        },
+        "Clarion": {
+          "county": 0,
+          "places": {}
+        },
+        "Clearfield": {
+          "county": 0,
+          "places": {}
+        },
+        "Clinton": {
+          "county": 0,
+          "places": {}
+        },
+        "Columbia": {
+          "county": 0,
+          "places": {}
+        },
+        "Crawford": {
+          "county": 0,
+          "places": {}
+        },
+        "Cumberland": {
+          "county": 0,
+          "places": {}
+        },
+        "Dauphin": {
+          "county": 0,
+          "places": {}
+        },
+        "Delaware": {
+          "county": 0,
+          "places": {}
+        },
+        "Elk": {
+          "county": 0,
+          "places": {}
+        },
+        "Erie": {
+          "county": 0,
+          "places": {}
+        },
+        "Fayette": {
+          "county": 0,
+          "places": {}
+        },
+        "Forest": {
+          "county": 0,
+          "places": {}
+        },
+        "Franklin": {
+          "county": 0,
+          "places": {}
+        },
+        "Fulton": {
+          "county": 0,
+          "places": {}
+        },
+        "Greene": {
+          "county": 0,
+          "places": {}
+        },
+        "Huntingdon": {
+          "county": 0,
+          "places": {}
+        },
+        "Indiana": {
+          "county": 0,
+          "places": {}
+        },
+        "Jefferson": {
+          "county": 0,
+          "places": {}
+        },
+        "Juniata": {
+          "county": 0,
+          "places": {}
+        },
+        "Lackawanna": {
+          "county": 0,
+          "places": {}
+        },
+        "Lancaster": {
+          "county": 0,
+          "places": {}
+        },
+        "Lawrence": {
+          "county": 0,
+          "places": {}
+        },
+        "Lebanon": {
+          "county": 0,
+          "places": {}
+        },
+        "Lehigh": {
+          "county": 0,
+          "places": {}
+        },
+        "Luzerne": {
+          "county": 0,
+          "places": {}
+        },
+        "Lycoming": {
+          "county": 0,
+          "places": {}
+        },
+        "McKean": {
+          "county": 0,
+          "places": {}
+        },
+        "Mercer": {
+          "county": 0,
+          "places": {}
+        },
+        "Mifflin": {
+          "county": 0,
+          "places": {}
+        },
+        "Monroe": {
+          "county": 0,
+          "places": {}
+        },
+        "Montgomery": {
+          "county": 0,
+          "places": {}
+        },
+        "Montour": {
+          "county": 0,
+          "places": {}
+        },
+        "Northampton": {
+          "county": 0,
+          "places": {}
+        },
+        "Northumberland": {
+          "county": 0,
+          "places": {}
+        },
+        "Perry": {
+          "county": 0,
+          "places": {}
+        },
+        "Philadelphia": {
+          "county": 2,
+          "places": {}
+        },
+        "Pike": {
+          "county": 0,
+          "places": {}
+        },
+        "Potter": {
+          "county": 0,
+          "places": {}
+        },
+        "Schuylkill": {
+          "county": 0,
+          "places": {}
+        },
+        "Snyder": {
+          "county": 0,
+          "places": {}
+        },
+        "Somerset": {
+          "county": 0,
+          "places": {}
+        },
+        "Sullivan": {
+          "county": 0,
+          "places": {}
+        },
+        "Susquehanna": {
+          "county": 0,
+          "places": {}
+        },
+        "Tioga": {
+          "county": 0,
+          "places": {}
+        },
+        "Union": {
+          "county": 0,
+          "places": {}
+        },
+        "Venango": {
+          "county": 0,
+          "places": {}
+        },
+        "Warren": {
+          "county": 0,
+          "places": {}
+        },
+        "Washington": {
+          "county": 0,
+          "places": {}
+        },
+        "Wayne": {
+          "county": 0,
+          "places": {}
+        },
+        "Westmoreland": {
+          "county": 0,
+          "places": {}
+        },
+        "Wyoming": {
+          "county": 0,
+          "places": {}
+        },
+        "York": {
+          "county": 0,
+          "places": {}
+        }
+      },
+      "status": "verified",
+      "sources": [
+        {
+          "title": "PennDOT - Buying or Selling Your Vehicle in Pennsylvania (fact sheet, Feb 2025)",
+          "url": "https://www.pa.gov/content/dam/copapwp-pagov/en/penndot/documents/public/dvspubsforms/bmv/bmv-fact-sheets/fs-buysell.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "PA Department of Revenue - Use Tax for Individuals",
+          "url": "https://www.pa.gov/agencies/revenue/resources/tax-types-and-information/sales-use-and-hotel-occupancy-tax/use-tax/use-tax-for-individuals",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Only Allegheny County (1%) and Philadelphia (2%) add a local sales and use tax."
+    }
+  },
+  "notes": [
+    "Sales tax is charged on the purchase price or the vehicle's current market value, per PennDOT. The calculator uses the price you enter.",
+    "A plate transfer costs $11 and a lien costs $36. Not modeled.",
+    "Plug-in hybrids pay a road user charge; not modeled.",
+    "Private-party sales and gifts follow different rules; not modeled."
+  ],
+  "content": {
+    "intro": "{state} charges {stateRate} sales tax on a vehicle purchase, with an extra local tax in only two places. You also pay a title fee and a registration fee, and electric vehicles pay a separate yearly road user charge.",
+    "howItWorks": [
+      {
+        "text": "The state rate is {stateRate}. Only Allegheny County and the City of Philadelphia add a local sales tax on top, so pick your county and the calculator fills in the extra amount. When a seller takes a vehicle as a trade-in, the tax is charged on the difference between the price and the trade-in value.",
+        "sources": [
+          "https://www.pa.gov/content/dam/copapwp-pagov/en/penndot/documents/public/dvspubsforms/bmv/bmv-fact-sheets/fs-buysell.pdf",
+          "https://www.pa.gov/agencies/revenue/resources/tax-types-and-information/sales-use-and-hotel-occupancy-tax/use-tax/use-tax-for-individuals"
+        ]
+      },
+      {
+        "text": "If you paid tax to another state on the same vehicle, {state} can give credit for it. The credit applies only when the other state gives a similar credit for Pennsylvania tax, and it cannot be more than the Pennsylvania tax due.",
+        "sources": [
+          "https://www.pa.gov/content/dam/copapwp-pagov/en/revenue/documents/formsandpublications/formsforbusinesses/sut/documents/rev-227.pdf"
+        ]
+      },
+      {
+        "text": "Passenger car registration is a flat yearly fee, and the title fee is charged once. Owners of battery electric vehicles also pay a yearly road user charge before they renew. Some counties add a small local fee to registration, which is not in the total because it depends on your county.",
+        "sources": [
+          "https://www.pa.gov/content/dam/copapwp-pagov/en/penndot/documents/public/dvspubsforms/bmv/bmv-forms/mv-70s.pdf",
+          "https://www.pa.gov/agencies/dmv/vehicle-services/road-user-charge",
+          "https://www.pa.gov/content/dam/copapwp-pagov/en/penndot/documents/public/dvspubsforms/bmv/bmv-fact-sheets/fs-feelocal.pdf"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does a trade-in lower the sales tax in Pennsylvania?",
+        "text": "Yes. When a seller takes your vehicle as a trade-in, the tax is charged on the difference between the price of the new vehicle and the trade-in value.",
+        "sources": [
+          "https://www.pa.gov/content/dam/copapwp-pagov/en/penndot/documents/public/dvspubsforms/bmv/bmv-fact-sheets/fs-buysell.pdf"
+        ]
+      },
+      {
+        "q": "Do I pay extra tax in Philadelphia or Allegheny County?",
+        "text": "Yes. Both add a local sales and use tax on top of the state rate. Other counties do not.",
+        "sources": [
+          "https://www.pa.gov/content/dam/copapwp-pagov/en/penndot/documents/public/dvspubsforms/bmv/bmv-fact-sheets/fs-buysell.pdf",
+          "https://www.pa.gov/agencies/revenue/resources/tax-types-and-information/sales-use-and-hotel-occupancy-tax/use-tax/use-tax-for-individuals"
+        ]
+      },
+      {
+        "q": "What if I bought the vehicle in another state?",
+        "text": "Pennsylvania can credit tax you legally paid to another state, but only if that state gives a substantially similar credit. Several states do not, so check the credit chart for the state where you bought.",
+        "sources": [
+          "https://www.pa.gov/content/dam/copapwp-pagov/en/revenue/documents/formsandpublications/formsforbusinesses/sut/documents/rev-227.pdf"
+        ]
+      },
+      {
+        "q": "Do electric vehicles pay an extra fee?",
+        "text": "Yes. Battery electric vehicles pay a yearly road user charge, separate from registration. Plug-in hybrids pay a smaller charge, which this calculator does not include.",
+        "sources": [
+          "https://www.pa.gov/content/dam/copapwp-pagov/en/penndot/documents/public/dvspubsforms/bmv/bmv-forms/mv-70s.pdf",
+          "https://www.pa.gov/agencies/dmv/vehicle-services/road-user-charge"
+        ]
+      },
+      {
+        "q": "What is the Fee for Local Use?",
+        "text": "It is a small yearly fee that participating counties add to vehicle registration. It is left out of the total because it depends on your county.",
+        "sources": [
+          "https://www.pa.gov/content/dam/copapwp-pagov/en/penndot/documents/public/dvspubsforms/bmv/bmv-fact-sheets/fs-feelocal.pdf"
+        ]
+      }
+    ]
+  }
+}

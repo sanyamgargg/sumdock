@@ -215,3 +215,36 @@ describe("New York and Florida county rates", () => {
     expect(line(r, "local-tax")).toBeCloseTo(75, 2);
   });
 });
+
+describe("Pennsylvania", () => {
+  const pa = load("pa");
+  it("is publishable with the sourced fees", () => {
+    expect(publishability(pa).publishable).toBe(true);
+  });
+  it("taxes the price at 6% with no local tax outside Allegheny and Philadelphia", () => {
+    const r = calculate(pa, { ...base, price: 30000, tradeIn: 0 });
+    expect(line(r, "state-tax")).toBe(1800);
+    expect(line(r, "title")).toBe(72);
+    expect(line(r, "registration")).toBe(48);
+    expect(r.total).toBe(1920);
+  });
+  it("adds 1% in Allegheny and 2% in Philadelphia", () => {
+    const rates = pa.localRates!.rates.value!;
+    expect(rates["Allegheny"].county).toBe(1);
+    expect(rates["Philadelphia"].county).toBe(2);
+    expect(rates["Centre"].county).toBe(0);
+    expect(Object.keys(rates)).toHaveLength(67);
+    const r = calculate(pa, { ...base, price: 30000, localRatePct: rates["Philadelphia"].county });
+    expect(line(r, "local-tax")).toBe(600);
+  });
+  it("reduces the base by a trade-in and adds the electric road user charge", () => {
+    const r = calculate(pa, { ...base, price: 30000, tradeIn: 10000, fuel: "ev" });
+    expect(line(r, "state-tax")).toBe(1200);
+    expect(line(r, "ev-ruc")).toBe(250);
+  });
+  it("lists the county local-use fee as not included", () => {
+    const r = calculate(pa, base);
+    expect(r.excluded.some((e) => e.label.includes("Fee for Local Use"))).toBe(true);
+  });
+});
+
