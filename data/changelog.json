@@ -3,6 +3,12 @@
   "entries": [
     {
       "date": "2026-10-24",
+      "state": "AK",
+      "stateName": "Alaska",
+      "summary": "Added state with no state sales tax, an entered local rate, title and the two-year registration fee. The motor vehicle registration tax, which depends on location and model year, is not included."
+    },
+    {
+      "date": "2026-10-24",
       "state": "DE",
       "stateName": "Delaware",
       "summary": "Added state with the 5.25% document fee (Delaware has no sales tax) after trade-in, title, registration and the electric vehicle fee. The fee's rounding rules are not modeled."

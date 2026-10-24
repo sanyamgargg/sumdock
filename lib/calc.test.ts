@@ -861,3 +861,19 @@ describe("Delaware", () => {
     expect(line(calculate(de, { ...base, fuel: "ev" }), "ev-fee")).toBe(110);
   });
 });
+
+describe("Alaska", () => {
+  const ak = load("ak");
+  it("is publishable", () => expect(publishability(ak).publishable).toBe(true));
+  it("has no state tax but applies an entered local rate", () => {
+    const r = calculate(ak, { ...base, price: 30000, localRatePct: 3 });
+    expect(line(r, "state-tax")).toBeUndefined();
+    expect(line(r, "local-tax")).toBe(900);
+  });
+  it("charges title and the two-year registration fee", () => {
+    const r = calculate(ak, base);
+    expect(line(r, "title")).toBe(15);
+    expect(line(r, "registration")).toBe(100);
+    expect(r.excluded.map((e) => e.label)).toContain("Motor vehicle registration tax");
+  });
+});

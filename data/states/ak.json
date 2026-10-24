@@ -1,0 +1,173 @@
+{
+  "code": "AK",
+  "name": "Alaska",
+  "slug": "alaska",
+  "lastReviewed": "2026-10-24",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 0,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Alaska Dept. of Commerce - Alaska sales tax information (revised 06/11/2025)",
+          "url": "https://www.commerce.alaska.gov/web/dcra/OfficeoftheStateAssessor/AlaskaSalesTaxInformation",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The department says the state of Alaska does not levy a sales tax."
+    },
+    "tradeInReducesBase": {
+      "value": false,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Alaska Dept. of Commerce - Alaska sales tax information (revised 06/11/2025)",
+          "url": "https://www.commerce.alaska.gov/web/dcra/OfficeoftheStateAssessor/AlaskaSalesTaxInformation",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Not applicable: there is no state sales tax. A local tax, where one applies to vehicles, follows local rules."
+    },
+    "local": {
+      "value": {
+        "mode": "user-entered",
+        "capBase": null,
+        "rangeNote": "Some cities and boroughs charge a local sales tax and each decides what is taxable. Ask your dealer or your city or borough whether it applies to vehicles, and type the rate here if it does. Leave it at zero otherwise."
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Alaska Dept. of Commerce - Alaska sales tax information (revised 06/11/2025)",
+          "url": "https://www.commerce.alaska.gov/web/dcra/OfficeoftheStateAssessor/AlaskaSalesTaxInformation",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The state page says local governments have broad authority over what is taxable and does not mention motor vehicles."
+    },
+    "outOfStateCredit": {
+      "value": false,
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Alaska Dept. of Commerce - Alaska sales tax information (revised 06/11/2025)",
+          "url": "https://www.commerce.alaska.gov/web/dcra/OfficeoftheStateAssessor/AlaskaSalesTaxInformation",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "No state tax to credit against."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Title",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 15,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Alaska DMV - Registration fee and Motor Vehicle Registration Tax chart (revised 01/05/2024)",
+            "url": "https://dmv.alaska.gov/media/jauf4ars/2024.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Alaska DMV - New vehicle",
+            "url": "https://dmv.alaska.gov/vehicle-services/new-vehicle/",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Title issuance fee. A $15 lien recording fee is added when there is a lien."
+      }
+    },
+    {
+      "id": "registration",
+      "label": "Registration (passenger vehicle, 2 years)",
+      "kind": "flat",
+      "frequency": "biennial",
+      "amount": {
+        "value": 100,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Alaska DMV - Registration fee and Motor Vehicle Registration Tax chart (revised 01/05/2024)",
+            "url": "https://dmv.alaska.gov/media/jauf4ars/2024.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Biennial fee for a passenger vehicle on the 2024 chart. The chart is from 2024, so it is marked partly verified."
+      }
+    },
+    {
+      "id": "motor-vehicle-registration-tax",
+      "label": "Motor vehicle registration tax",
+      "kind": "flat",
+      "frequency": "biennial",
+      "excludedReason": "Alaska charges this local tax by where the vehicle is registered and by model year, so it is left out. It is the largest registration cost.",
+      "amount": {
+        "value": null,
+        "status": "unverified",
+        "sources": [
+          {
+            "title": "Alaska DMV - Registration fee and Motor Vehicle Registration Tax chart (revised 01/05/2024)",
+            "url": "https://dmv.alaska.gov/media/jauf4ars/2024.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    }
+  ],
+  "notes": [
+    "The motor vehicle registration tax depends on your location and the vehicle's model year and is not included.",
+    "A lien recording fee is added to the title fee when there is a lienholder."
+  ],
+  "content": {
+    "intro": "{state} has no state sales tax. A city or borough may charge its own, and each decides whether it applies to vehicles. You pay a title fee and a two-year registration fee, plus a motor vehicle registration tax that depends on where you live.",
+    "howItWorks": [
+      {
+        "text": "The state does not levy a sales tax. Local governments have broad authority over what they tax.",
+        "sources": [
+          "https://www.commerce.alaska.gov/web/dcra/OfficeoftheStateAssessor/AlaskaSalesTaxInformation"
+        ]
+      },
+      {
+        "text": "Registration lasts two years, and the fee is charged for the full period.",
+        "sources": [
+          "https://dmv.alaska.gov/media/jauf4ars/2024.pdf"
+        ]
+      },
+      {
+        "text": "A motor vehicle registration tax is charged on top of the fee, based on location and the model year.",
+        "sources": [
+          "https://dmv.alaska.gov/media/jauf4ars/2024.pdf"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is there a state sales tax on cars in Alaska?",
+        "text": "No. The state does not levy a sales tax, though some local governments do.",
+        "sources": [
+          "https://www.commerce.alaska.gov/web/dcra/OfficeoftheStateAssessor/AlaskaSalesTaxInformation"
+        ]
+      },
+      {
+        "q": "How long does registration last?",
+        "text": "Two years.",
+        "sources": [
+          "https://dmv.alaska.gov/vehicle-services/new-vehicle/"
+        ]
+      }
+    ]
+  }
+}
