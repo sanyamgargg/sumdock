@@ -356,3 +356,28 @@ describe("New York county use tax and commuter fee", () => {
   });
 });
 
+
+describe("Virginia", () => {
+  const va = load("va");
+  it("is publishable", () => expect(publishability(va).publishable).toBe(true));
+  it("taxes the full price at 4.15% and ignores a trade-in", () => {
+    const r = calculate(va, { ...base, price: 30000, tradeIn: 10000 });
+    expect(line(r, "state-tax")).toBe(1245);
+  });
+  it("charges the title fee and registration by weight class", () => {
+    expect(line(calculate(va, { ...base, weightLbs: 3500 }), "title")).toBe(15);
+    expect(line(calculate(va, { ...base, weightLbs: 4000 }), "registration")).toBe(30.75);
+    expect(line(calculate(va, { ...base, weightLbs: 4001 }), "registration")).toBe(35.75);
+    expect(line(calculate(va, { ...base, weightLbs: 6500 }), "registration")).toBe(35.75);
+  });
+  it("leaves out registration above 6,500 lbs and always lists the highway use fee as not included", () => {
+    const r = calculate(va, { ...base, weightLbs: 7000 });
+    expect(line(r, "registration")).toBeUndefined();
+    expect(r.excluded.map((e) => e.label)).toContain("Registration (by weight)");
+    expect(calculate(va, base).excluded.map((e) => e.label)).toContain("Highway use fee");
+  });
+  it("adds the electric vehicle fee only for EVs", () => {
+    expect(line(calculate(va, { ...base, fuel: "ev" }), "ev-fee")).toBe(135.63);
+    expect(line(calculate(va, base), "ev-fee")).toBeUndefined();
+  });
+});

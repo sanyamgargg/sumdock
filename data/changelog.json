@@ -3,6 +3,12 @@
   "entries": [
     {
       "date": "2026-10-24",
+      "state": "VA",
+      "stateName": "Virginia",
+      "summary": "Added state with the 4.15% sales and use tax, title fee and registration by weight class. The highway use fee is not included."
+    },
+    {
+      "date": "2026-10-24",
       "state": "NY",
       "stateName": "New York",
       "summary": "Added the county vehicle use tax and the $50 commuter district fee for New York City and seven counties. They follow the county you choose and the vehicle weight."

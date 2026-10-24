@@ -1,0 +1,234 @@
+{
+  "code": "VA",
+  "name": "Virginia",
+  "slug": "virginia",
+  "lastReviewed": "2026-10-24",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 4.15,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Virginia DMV - Sales and use tax",
+          "url": "https://www.dmv.virginia.gov/vehicles/taxes-fees/sut",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Virginia DMV - Motor vehicle sales and use tax (titling)",
+          "url": "https://transactions-d.dmv.virginia.gov/vehicles/sut.asp",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ]
+    },
+    "tradeInReducesBase": {
+      "value": false,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Virginia DMV - Sales and use tax",
+          "url": "https://www.dmv.virginia.gov/vehicles/taxes-fees/sut",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Virginia DMV - Motor vehicle sales and use tax (titling)",
+          "url": "https://transactions-d.dmv.virginia.gov/vehicles/sut.asp",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The gross sales price is taken after rebates and incentives, but not reduced by a trade-in, an unpaid lien or other credits."
+    },
+    "local": {
+      "value": {
+        "mode": "none",
+        "capBase": null,
+        "rangeNote": null
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Virginia DMV - Sales and use tax",
+          "url": "https://www.dmv.virginia.gov/vehicles/taxes-fees/sut",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Virginia DMV - Motor vehicle sales and use tax (titling)",
+          "url": "https://transactions-d.dmv.virginia.gov/vehicles/sut.asp",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The DMV pages list one statewide rate and no local sales tax on vehicles. Some localities charge a local registration fee, which is not included."
+    },
+    "outOfStateCredit": {
+      "value": null,
+      "status": "unverified",
+      "sources": [
+        {
+          "title": "Virginia DMV - Sales and use tax",
+          "url": "https://www.dmv.virginia.gov/vehicles/taxes-fees/sut",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The page offers an exemption for first-time Virginia titling when tax was paid elsewhere on a purchase within the last twelve months, not a credit for a partial amount. The calculator applies no credit."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Title",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 15,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Virginia DMV - Fees for vehicle titling and registration (DMV 201, rev. 08/10/2026)",
+            "url": "https://dmv.fr.virginia.gov/sites/default/files/dmv201.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "registration",
+      "label": "Registration (by weight)",
+      "kind": "weightTable",
+      "frequency": "annual",
+      "excludedReason": "Virginia lists passenger registration only up to 6,500 lbs. Heavier vehicles use other categories that are not modeled.",
+      "weightTable": [
+        {
+          "upTo": 4000,
+          "fee": 30.75
+        },
+        {
+          "upTo": 6500,
+          "fee": 35.75
+        }
+      ],
+      "amount": {
+        "value": 1,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Virginia DMV - Fees for vehicle titling and registration (DMV 201, rev. 08/10/2026)",
+            "url": "https://dmv.fr.virginia.gov/sites/default/files/dmv201.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Add $2 in Northern Virginia emissions-inspection localities. Local registration fees may also apply."
+      }
+    },
+    {
+      "id": "ev-fee",
+      "label": "Electric vehicle fee",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "ev"
+      },
+      "amount": {
+        "value": 135.63,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Virginia DMV - Fees for vehicle titling and registration (DMV 201, rev. 08/10/2026)",
+            "url": "https://dmv.fr.virginia.gov/sites/default/files/dmv201.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Listed in the DMV 201 passenger registration table. An older edition of the form described it as an annual fee on top of registration."
+      }
+    },
+    {
+      "id": "highway-use",
+      "label": "Highway use fee",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "gas"
+      },
+      "excludedReason": "Virginia may add a highway use fee to vehicles rated 25 mpg or better. It is set by a formula and a yearly chart that is not modeled here.",
+      "amount": {
+        "value": null,
+        "status": "unverified",
+        "sources": [
+          {
+            "title": "Virginia DMV - Highway use fee",
+            "url": "https://www.dmv.virginia.gov/vehicles/taxes-fees/highway-use",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Virginia DMV - Fees for vehicle titling and registration (DMV 201, rev. 08/10/2026)",
+            "url": "https://dmv.fr.virginia.gov/sites/default/files/dmv201.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    }
+  ],
+  "notes": [
+    "Sales and use tax has a $75 minimum. The calculator does not apply it, so prices below about two thousand dollars come out low.",
+    "The highway use fee depends on fuel economy and is not included."
+  ],
+  "content": {
+    "intro": "{state} charges {stateRate} sales and use tax on the price of a vehicle when it is titled, plus a title fee and a registration fee that depends on the vehicle's weight.",
+    "howItWorks": [
+      {
+        "text": "The tax rate is {stateRate} of the gross sales price. A trade-in does not lower the price the tax is figured on, and the state sets a minimum tax.",
+        "sources": [
+          "https://www.dmv.virginia.gov/vehicles/taxes-fees/sut",
+          "https://transactions-d.dmv.virginia.gov/vehicles/sut.asp"
+        ]
+      },
+      {
+        "text": "Registration is charged by weight class for passenger vehicles. Some Northern Virginia localities add an emissions inspection charge, and some localities add a local registration fee.",
+        "sources": [
+          "https://dmv.fr.virginia.gov/sites/default/files/dmv201.pdf"
+        ]
+      },
+      {
+        "text": "Vehicles with good fuel economy, and electric vehicles, can also owe a highway use fee set by a state formula. It is not included in the total.",
+        "sources": [
+          "https://www.dmv.virginia.gov/vehicles/taxes-fees/highway-use"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does a trade-in lower the sales tax in Virginia?",
+        "text": "No. The state taxes the gross sales price after rebates and incentives. A trade-in, an unpaid lien or other credits do not reduce it.",
+        "sources": [
+          "https://www.dmv.virginia.gov/vehicles/taxes-fees/sut",
+          "https://transactions-d.dmv.virginia.gov/vehicles/sut.asp"
+        ]
+      },
+      {
+        "q": "Is there a minimum sales and use tax?",
+        "text": "Yes. The state charges the greater of the percentage tax or a flat minimum amount.",
+        "sources": [
+          "https://www.dmv.virginia.gov/vehicles/taxes-fees/sut"
+        ]
+      },
+      {
+        "q": "What is the highway use fee?",
+        "text": "It is a yearly fee on vehicles with good fuel economy, worked out from a state formula. It is not part of the total shown here.",
+        "sources": [
+          "https://www.dmv.virginia.gov/vehicles/taxes-fees/highway-use"
+        ]
+      }
+    ]
+  }
+}
