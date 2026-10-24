@@ -3,6 +3,12 @@
   "entries": [
     {
       "date": "2026-10-24",
+      "state": "MS",
+      "stateName": "Mississippi",
+      "summary": "Added state with the 5% sales tax after trade-in, no credit for tax paid elsewhere, title and first-time registration. Yearly county ad valorem and privilege taxes are not included."
+    },
+    {
+      "date": "2026-10-24",
       "state": "NV",
       "stateName": "Nevada",
       "summary": "Added state with the 6.85% state sales tax after trade-in, county rates from the Department of Taxation, title and registration. The yearly governmental services tax (based on original price) is not included."

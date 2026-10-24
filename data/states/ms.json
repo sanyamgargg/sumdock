@@ -1,0 +1,148 @@
+{
+  "code": "MS",
+  "name": "Mississippi",
+  "slug": "mississippi",
+  "lastReviewed": "2026-10-24",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 5,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Mississippi DOR - Motor Vehicle Frequently Asked Questions",
+          "url": "https://www.dor.ms.gov/motor-vehicle/motor-vehicle-frequently-asked-questions",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "5% on cars, vans, buses and trucks under 10,000 pounds gross weight. Trucks over 10,000 pounds used to carry property are taxed at 3%."
+    },
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Mississippi DOR - Motor Vehicle Frequently Asked Questions",
+          "url": "https://www.dor.ms.gov/motor-vehicle/motor-vehicle-frequently-asked-questions",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The tax is figured on the net purchase price after dealer discounts and trade-ins. Manufacturer rebates are not subtracted."
+    },
+    "local": {
+      "value": {
+        "mode": "user-entered",
+        "capBase": null,
+        "rangeNote": "The state page does not list a local sales tax rate on vehicles. Leave this at zero unless your county tax collector tells you otherwise. The yearly ad valorem tax is separate and not included."
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Mississippi DOR - Motor Vehicle Frequently Asked Questions",
+          "url": "https://www.dor.ms.gov/motor-vehicle/motor-vehicle-frequently-asked-questions",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The department's page says privilege, ad valorem and any sales or use tax vary by vehicle type, value and location, and sends buyers to the county tax collector."
+    },
+    "outOfStateCredit": {
+      "value": false,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Mississippi DOR - Motor Vehicle Frequently Asked Questions",
+          "url": "https://www.dor.ms.gov/motor-vehicle/motor-vehicle-frequently-asked-questions",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The page says tax paid to another state is not credited toward Mississippi tax at registration."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Title",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 9,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Mississippi DOR - Motor Vehicle Frequently Asked Questions",
+            "url": "https://www.dor.ms.gov/motor-vehicle/motor-vehicle-frequently-asked-questions",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Standard motor vehicle title. A fast-track title costs more."
+      }
+    },
+    {
+      "id": "registration",
+      "label": "Registration (first-time)",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 14,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Mississippi DOR - Motor Vehicle Frequently Asked Questions",
+            "url": "https://www.dor.ms.gov/motor-vehicle/motor-vehicle-frequently-asked-questions",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "First-time registration. Renewals are $12.75. County and other fees are separate."
+      }
+    }
+  ],
+  "notes": [
+    "Mississippi counties bill a yearly ad valorem tax and a privilege tax based on the vehicle's value, which are not included.",
+    "Trucks over 10,000 pounds used to carry property are taxed at 3%, not the 5% used here."
+  ],
+  "content": {
+    "intro": "{state} charges {stateRate} state sales tax on a car, with no credit for tax paid in another state. Registration and title fees are small; yearly county taxes depend on the vehicle's value.",
+    "howItWorks": [
+      {
+        "text": "The state rate is {stateRate} of the net price after dealer discounts and your trade-in. Manufacturer rebates do not lower it.",
+        "sources": [
+          "https://www.dor.ms.gov/motor-vehicle/motor-vehicle-frequently-asked-questions"
+        ]
+      },
+      {
+        "text": "Tax paid to another state is not credited against the Mississippi tax when you register the vehicle.",
+        "sources": [
+          "https://www.dor.ms.gov/motor-vehicle/motor-vehicle-frequently-asked-questions"
+        ]
+      },
+      {
+        "text": "Privilege and ad valorem taxes are charged on top and vary by the vehicle's value and where you live. Your county tax collector gives the total.",
+        "sources": [
+          "https://www.dor.ms.gov/motor-vehicle/motor-vehicle-frequently-asked-questions"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does a trade-in lower the sales tax in Mississippi?",
+        "text": "Yes, the tax is figured on the net price after dealer discounts and trade-ins.",
+        "sources": [
+          "https://www.dor.ms.gov/motor-vehicle/motor-vehicle-frequently-asked-questions"
+        ]
+      },
+      {
+        "q": "Is tax paid in another state credited?",
+        "text": "No, the department says it is not credited toward the Mississippi tax.",
+        "sources": [
+          "https://www.dor.ms.gov/motor-vehicle/motor-vehicle-frequently-asked-questions"
+        ]
+      }
+    ]
+  }
+}

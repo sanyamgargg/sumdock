@@ -828,3 +828,21 @@ describe("Nevada", () => {
     expect(r.excluded.map((e) => e.label)).toContain("Governmental services tax");
   });
 });
+
+describe("Mississippi", () => {
+  const ms = load("ms");
+  it("is publishable", () => expect(publishability(ms).publishable).toBe(true));
+  it("taxes the price less a trade-in at 5%", () => {
+    expect(line(calculate(ms, { ...base, price: 30000, tradeIn: 10000 }), "state-tax")).toBe(1000);
+  });
+  it("gives no credit for tax paid elsewhere", () => {
+    const r = calculate(ms, { ...base, price: 30000, outOfStateTaxPaid: 1500 });
+    expect(line(r, "state-tax")).toBe(1500);
+    expect(r.lines.some((l) => /credit/i.test(l.label))).toBe(false);
+  });
+  it("charges title and registration", () => {
+    const r = calculate(ms, base);
+    expect(line(r, "title")).toBe(9);
+    expect(line(r, "registration")).toBe(14);
+  });
+});
