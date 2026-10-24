@@ -3,6 +3,12 @@
   "entries": [
     {
       "date": "2026-10-24",
+      "state": "SD",
+      "stateName": "South Dakota",
+      "summary": "Added state with the 4% excise tax after trade-in (instead of a sales tax), title, and yearly license fees by weight and vehicle age. Plate and mailing fees are not included."
+    },
+    {
+      "date": "2026-10-24",
       "state": "MT",
       "stateName": "Montana",
       "summary": "Added state with no sales tax, title and the yearly registration fee by vehicle age (a new vehicle age input). The county option tax and luxury fee are not included."

@@ -914,3 +914,18 @@ describe("Montana", () => {
     expect(line(calculate(mt, base), "registration-0-4")).toBe(217);
   });
 });
+
+describe("South Dakota", () => {
+  const sd = load("sd");
+  it("is publishable", () => expect(publishability(sd).publishable).toBe(true));
+  it("taxes the price less a trade-in at 4%", () => {
+    expect(line(calculate(sd, { ...base, price: 30000, tradeIn: 10000 }), "state-tax")).toBe(800);
+  });
+  it("prices the license fee by weight and age", () => {
+    expect(line(calculate(sd, { ...base, weightLbs: 3500, ageYears: 2 }), "registration-0-9")).toBe(72);
+    expect(line(calculate(sd, { ...base, weightLbs: 5000, ageYears: 9 }), "registration-0-9")).toBe(108);
+    expect(line(calculate(sd, { ...base, weightLbs: 3500, ageYears: 10 }), "registration-10-plus")).toBe(50.4);
+    expect(line(calculate(sd, { ...base, weightLbs: 3500, ageYears: 10 }), "registration-0-9")).toBeUndefined();
+  });
+  it("charges the title fee", () => expect(line(calculate(sd, base), "title")).toBe(10));
+});

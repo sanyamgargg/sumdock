@@ -1,0 +1,230 @@
+{
+  "code": "SD",
+  "name": "South Dakota",
+  "slug": "south-dakota",
+  "lastReviewed": "2026-10-24",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 4,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "South Dakota DOR - Cars, trucks and vans",
+          "url": "https://dor.sd.gov/individuals/motor-vehicle/cars-trucks-vans/",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "South Dakota DOR - Motor vehicle sales and purchases (July 2023)",
+          "url": "https://dor.sd.gov/media/lynnmg3l/motor-vehicle-sales-purchases.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Excise tax of 4% of the purchase price on most motor vehicles (3% for snowmobiles and boats)."
+    },
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "partial",
+      "sources": [
+        {
+          "title": "South Dakota Legislature - 2000 Session Laws ch. 145, SDCL 32-5B-4 (trade-in deducted from consideration)",
+          "url": "https://mylrc.sdlegislature.gov/api/Documents/SessionLaw/87461.html",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "South Dakota Administrative Rules 64:29:02:04.01 - Tangible personal property allowed as trade-in on motor vehicles",
+          "url": "https://sdlegislature.gov/api/Rules/Rule/64:29:02:04.html?all=true",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The statute says the credit or trade-in value allowed by the seller is deducted from the total consideration. The statute text found is from 2000 and 2013 session laws, so check the current wording."
+    },
+    "local": {
+      "value": {
+        "mode": "none",
+        "capBase": null,
+        "rangeNote": null
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "South Dakota DOR - Cars, trucks and vans",
+          "url": "https://dor.sd.gov/individuals/motor-vehicle/cars-trucks-vans/",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The department describes a single 4% excise tax on the purchase price, with no local rate."
+    },
+    "outOfStateCredit": {
+      "value": true,
+      "status": "partial",
+      "sources": [
+        {
+          "title": "South Dakota DOR - Motor vehicle sales and purchases (July 2023)",
+          "url": "https://dor.sd.gov/media/lynnmg3l/motor-vehicle-sales-purchases.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "South Dakota Administrative Rules 64:29:02:04.01 - Tangible personal property allowed as trade-in on motor vehicles",
+          "url": "https://sdlegislature.gov/api/Rules/Rule/64:29:02:04.html?all=true",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "For a vehicle bought outside South Dakota, proof of tax paid is required when you apply for a title, and tax paid in another state can be refunded under the department's rules. The exact credit limit was not found."
+    },
+    "useTax": null,
+    "taxName": "excise tax"
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Title",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 10,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "South Dakota DOR - Cars, trucks and vans",
+            "url": "https://dor.sd.gov/individuals/motor-vehicle/cars-trucks-vans/",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Title fee. A lien notation costs another $10."
+      }
+    },
+    {
+      "id": "registration-0-9",
+      "label": "Registration (vehicle 0 to 9 model years old)",
+      "kind": "weightTable",
+      "frequency": "annual",
+      "weightTable": [
+        {
+          "upTo": 2000,
+          "fee": 36
+        },
+        {
+          "upTo": 4000,
+          "fee": 72
+        },
+        {
+          "upTo": 6000,
+          "fee": 108
+        },
+        {
+          "upTo": null,
+          "fee": 144
+        }
+      ],
+      "when": {
+        "ageYearsMax": 9
+      },
+      "amount": {
+        "value": 1,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "South Dakota DOR - Staggered non-commercial vehicle license fee chart (post 4/01/2015)",
+            "url": "https://dor.sd.gov/individuals/motor-vehicle/cars-trucks-vans/",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Twelve months of the monthly license fee by weight (the chart prices each month: $3, $6, $9 or $12). The chart is dated 2015, so it is marked partly verified."
+      }
+    },
+    {
+      "id": "registration-10-plus",
+      "label": "Registration (vehicle 10 or more years old)",
+      "kind": "weightTable",
+      "frequency": "annual",
+      "weightTable": [
+        {
+          "upTo": 2000,
+          "fee": 25.2
+        },
+        {
+          "upTo": 4000,
+          "fee": 50.4
+        },
+        {
+          "upTo": 6000,
+          "fee": 75.6
+        },
+        {
+          "upTo": null,
+          "fee": 100.8
+        }
+      ],
+      "when": {
+        "ageYearsMin": 10
+      },
+      "amount": {
+        "value": 1,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "South Dakota DOR - Staggered non-commercial vehicle license fee chart (post 4/01/2015)",
+            "url": "https://dor.sd.gov/individuals/motor-vehicle/cars-trucks-vans/",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Twelve months of the lower monthly license fee for older vehicles ($2.10, $4.20, $6.30 or $8.40 a month). The chart is dated 2015."
+      }
+    }
+  ],
+  "notes": [
+    "License fee amounts come from the department's staggered fee chart, dated 2015; the department says fees follow the weight and year of the vehicle.",
+    "Plate mailing ($12) and registration mailing ($2.50) fees are not included.",
+    "Registration is renewed in the month set by the first letter of the owner's last name; the first payment can cover more or fewer months than 12."
+  ],
+  "content": {
+    "intro": "{state} charges a {stateRate} excise tax on the purchase price of a vehicle, instead of a sales tax. Registration is paid every year and depends on the vehicle's weight and age.",
+    "howItWorks": [
+      {
+        "text": "The excise tax is {stateRate} of the purchase price on most motor vehicles. The credit or trade-in value allowed by the seller is deducted from the price.",
+        "sources": [
+          "https://dor.sd.gov/individuals/motor-vehicle/cars-trucks-vans/",
+          "https://mylrc.sdlegislature.gov/api/Documents/SessionLaw/87461.html"
+        ]
+      },
+      {
+        "text": "For a vehicle bought outside the state, proof of tax paid is required when you apply for a title, and you may owe more tax.",
+        "sources": [
+          "https://dor.sd.gov/media/lynnmg3l/motor-vehicle-sales-purchases.pdf"
+        ]
+      },
+      {
+        "text": "License fees depend on the weight and year of the vehicle, and vehicles ten or more years old pay less.",
+        "sources": [
+          "https://dor.sd.gov/individuals/motor-vehicle/cars-trucks-vans/"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does South Dakota charge sales tax on a car?",
+        "text": "It charges an excise tax on the purchase price instead of a sales tax.",
+        "sources": [
+          "https://dor.sd.gov/individuals/motor-vehicle/cars-trucks-vans/"
+        ]
+      },
+      {
+        "q": "Does a trade-in lower the excise tax?",
+        "text": "Yes, the credit or trade-in value allowed by the seller is deducted from the price.",
+        "sources": [
+          "https://mylrc.sdlegislature.gov/api/Documents/SessionLaw/87461.html"
+        ]
+      }
+    ]
+  }
+}
