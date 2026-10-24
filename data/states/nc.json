@@ -1,0 +1,223 @@
+{
+  "code": "NC",
+  "name": "North Carolina",
+  "slug": "north-carolina",
+  "lastReviewed": "2026-10-24",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 3,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "NCDMV - MVR-106 title and registration fees (Rev. 04/26)",
+          "url": "https://www.ncdot.gov/dmv/downloads/Documents/MVR-106.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Highway use tax of 3% instead of sales tax. On a dealer sale it is figured on the sale price plus any administrative or document fee, less the trade-in."
+    },
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "NCDMV - MVR-106 title and registration fees (Rev. 04/26)",
+          "url": "https://www.ncdot.gov/dmv/downloads/Documents/MVR-106.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ]
+    },
+    "local": {
+      "value": {
+        "mode": "none",
+        "capBase": null,
+        "rangeNote": null
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "NCDMV - MVR-106 title and registration fees (Rev. 04/26)",
+          "url": "https://www.ncdot.gov/dmv/downloads/Documents/MVR-106.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "No local sales-tax component on the title tax. Wake, Durham and Orange counties add a transit tax and county vehicle tax to the plate fee, and Randolph adds $1; these are not included."
+    },
+    "outOfStateCredit": {
+      "value": true,
+      "status": "partial",
+      "sources": [
+        {
+          "title": "NCDMV - MVR-106 title and registration fees (Rev. 04/26)",
+          "url": "https://www.ncdot.gov/dmv/downloads/Documents/MVR-106.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "A credit may apply for tax paid to another jurisdiction within 90 days, with proof of payment. Vehicles brought in from another state are capped at $250 of highway use tax."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Certificate of title",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 66.75,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "NCDMV - MVR-106 title and registration fees (Rev. 04/26)",
+            "url": "https://www.ncdot.gov/dmv/downloads/Documents/MVR-106.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "NCDMV - MVR-94 fee schedule (effective July 1, 2024)",
+            "url": "https://www.ncdot.gov/dmv/downloads/Documents/MVR-94.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "registration",
+      "label": "Plate registration (private passenger, 1 year)",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 46.25,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "NCDMV - MVR-106 title and registration fees (Rev. 04/26)",
+            "url": "https://www.ncdot.gov/dmv/downloads/Documents/MVR-106.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "NCDMV - MVR-94 fee schedule (effective July 1, 2024)",
+            "url": "https://www.ncdot.gov/dmv/downloads/Documents/MVR-94.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "NCDOT - NCDMV fees to increase July 1, per state law (April 2, 2024)",
+            "url": "https://www.ncdot.gov/news/press-releases/Pages/2024/2024-04-02-ncdmv-fee-increase-state-law.aspx",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Raised from $38.75 on July 1, 2024. Property tax on the vehicle is billed with the plate and is not included."
+      }
+    },
+    {
+      "id": "ev-fee",
+      "label": "Electric vehicle fee (1 year)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "ev"
+      },
+      "amount": {
+        "value": 214.5,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "NCDMV - MVR-94 fee schedule (effective July 1, 2024)",
+            "url": "https://www.ncdot.gov/dmv/downloads/Documents/MVR-94.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "NCDOT - NCDMV fees to increase July 1, per state law (April 2, 2024)",
+            "url": "https://www.ncdot.gov/news/press-releases/Pages/2024/2024-04-02-ncdmv-fee-increase-state-law.aspx",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "From the fee schedule effective July 1, 2024. Hybrids pay $107.25 a year; the calculator counts hybrids as gas vehicles and does not include that. Whether the fee is in addition to the plate fee is assumed."
+      }
+    }
+  ],
+  "notes": [
+    "The vehicle property tax collected with the plate is set by your county and is not included.",
+    "Wake, Durham and Orange counties add a transit tax and county vehicle tax at registration; Randolph adds $1.",
+    "The state adjusts DMV fees every four years."
+  ],
+  "content": {
+    "intro": "{state} charges a {stateRate} highway use tax instead of sales tax when you title a vehicle, plus a title fee and a yearly plate fee. Electric vehicles pay an extra yearly fee.",
+    "howItWorks": [
+      {
+        "text": "The highway use tax is {stateRate} of the price. At a dealer the price includes any administrative or document fee, and a trade-in comes off before the tax is figured.",
+        "sources": [
+          "https://www.ncdot.gov/dmv/downloads/Documents/MVR-106.pdf"
+        ]
+      },
+      {
+        "text": "If you bring a vehicle in from another state, the tax is capped, and you may get credit for tax you already paid elsewhere in the last few months if you can show proof.",
+        "sources": [
+          "https://www.ncdot.gov/dmv/downloads/Documents/MVR-106.pdf"
+        ]
+      },
+      {
+        "text": "The title fee is charged once. The plate fee is yearly, and the state raises DMV fees every four years based on inflation.",
+        "sources": [
+          "https://www.ncdot.gov/dmv/downloads/Documents/MVR-106.pdf",
+          "https://www.ncdot.gov/dmv/downloads/Documents/MVR-94.pdf",
+          "https://www.ncdot.gov/news/press-releases/Pages/2024/2024-04-02-ncdmv-fee-increase-state-law.aspx"
+        ]
+      },
+      {
+        "text": "Electric vehicles pay an extra yearly fee and hybrids pay a smaller one. The county also bills property tax on the vehicle with the plate, and a few counties add transit taxes.",
+        "sources": [
+          "https://www.ncdot.gov/dmv/downloads/Documents/MVR-94.pdf",
+          "https://www.ncdot.gov/dmv/downloads/Documents/MVR-106.pdf"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is there sales tax on a car in North Carolina?",
+        "text": "There is no sales tax. A highway use tax is charged when the vehicle is titled.",
+        "sources": [
+          "https://www.ncdot.gov/dmv/downloads/Documents/MVR-106.pdf"
+        ]
+      },
+      {
+        "q": "Does a trade-in lower the tax?",
+        "text": "Yes. On a dealer sale the trade-in comes off the price before the tax is figured.",
+        "sources": [
+          "https://www.ncdot.gov/dmv/downloads/Documents/MVR-106.pdf"
+        ]
+      },
+      {
+        "q": "Is the tax capped?",
+        "text": "Only for vehicles brought in from another state. The tax on those is capped at a set amount.",
+        "sources": [
+          "https://www.ncdot.gov/dmv/downloads/Documents/MVR-106.pdf"
+        ]
+      },
+      {
+        "q": "What else is billed with the plate?",
+        "text": "Your county bills property tax on the vehicle, and some counties add a transit tax and county vehicle tax. This calculator leaves those out.",
+        "sources": [
+          "https://www.ncdot.gov/dmv/downloads/Documents/MVR-106.pdf"
+        ]
+      },
+      {
+        "q": "Do electric vehicles pay more?",
+        "text": "Yes. They pay an extra yearly fee, and hybrids pay a smaller one.",
+        "sources": [
+          "https://www.ncdot.gov/dmv/downloads/Documents/MVR-94.pdf"
+        ]
+      }
+    ]
+  }
+}

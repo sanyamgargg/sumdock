@@ -288,3 +288,18 @@ describe("Georgia", () => {
   });
 });
 
+describe("North Carolina", () => {
+  const nc = load("nc");
+  it("charges 3% highway use tax after trade-in plus title and plate", () => {
+    expect(publishability(nc).publishable).toBe(true);
+    const r = calculate(nc, { ...base, price: 30000, tradeIn: 10000 });
+    expect(line(r, "state-tax")).toBe(600);
+    expect(line(r, "title")).toBe(66.75);
+    expect(line(r, "registration")).toBe(46.25);
+  });
+  it("adds the electric vehicle fee", () => {
+    const r = calculate(nc, { ...base, price: 30000, fuel: "ev" });
+    expect(line(r, "ev-fee")).toBe(214.5);
+  });
+});
+
