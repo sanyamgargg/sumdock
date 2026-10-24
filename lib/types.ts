@@ -79,6 +79,9 @@ export interface StateData {
   counties?: {
     label: string;
     fees: Sourced<Record<string, number>>;
+    /** Optional amounts used instead when the vehicle weighs more than heavyOverLbs (New York use tax). Same keys as fees. */
+    heavyFees?: Record<string, number>;
+    heavyOverLbs?: number;
   };
   /** Optional combined sales/use tax rates by county and city, used to fill the local rate. */
   localRates?: {

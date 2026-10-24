@@ -124,6 +124,14 @@ for (const f of files) {
       else for (const c of fee.altCounties.counties) if (!names.includes(c)) err(f, `fees.${fee.id}.altCounties: ${c} is not in the county table`);
     }
   }
+  if (d.counties?.heavyFees) {
+    const names = Object.keys(d.counties.fees?.value ?? {});
+    if (typeof d.counties.heavyOverLbs !== "number") err(f, "counties.heavyFees needs heavyOverLbs");
+    for (const [k, v] of Object.entries(d.counties.heavyFees)) {
+      if (!names.includes(k)) err(f, `counties.heavyFees: ${k} is not in counties.fees`);
+      if (typeof v !== "number" || v < 0) err(f, `counties.heavyFees.${k} must be a non-negative number`);
+    }
+  }
   if (!(d.fees ?? []).length) err(f, "no fees listed");
 }
 

@@ -142,9 +142,9 @@ describe("New York", () => {
   it("applies the $32.50 minimum to electric vehicles", () => {
     expect(line(calculate(load("ny"), { ...base, fuel: "ev", weightLbs: 1000 }), "registration")).toBe(32.5);
   });
-  it("lists county fees as excluded with the reason", () => {
+  it("asks for a county before adding the county fee", () => {
     const r = calculate(load("ny"), base);
-    expect(r.excluded.find((e) => e.label.startsWith("County use tax"))?.reason).toMatch(/Varies by county/);
+    expect(r.excluded.find((e) => e.label.startsWith("County use tax"))?.reason).toBe("Choose your county to include this fee.");
   });
   it("is publishable", () => {
     expect(publishability(load("ny")).publishable).toBe(true);
@@ -330,6 +330,29 @@ describe("Michigan", () => {
   });
   it("adds the electric vehicle fee", () => {
     expect(line(calculate(mi, { ...base, price: 30000, fuel: "ev" }), "ev-fee")).toBe(267);
+  });
+});
+
+describe("New York county use tax and commuter fee", () => {
+  const ny = load("ny");
+  const NYC = "New York City (Bronx, Brooklyn, Manhattan, Queens, Staten Island)";
+  it("adds 80 in New York City for any weight", () => {
+    expect(line(calculate(ny, { ...base, county: NYC, weightLbs: 3000 }), "county-fee")).toBe(80);
+    expect(line(calculate(ny, { ...base, county: NYC, weightLbs: 4500 }), "county-fee")).toBe(80);
+  });
+  it("uses 10 or 20 in an ordinary county by weight", () => {
+    expect(line(calculate(ny, { ...base, county: "Erie", weightLbs: 3500 }), "county-fee")).toBe(10);
+    expect(line(calculate(ny, { ...base, county: "Erie", weightLbs: 3501 }), "county-fee")).toBe(20);
+  });
+  it("adds the commuter fee in Westchester and Rockland, nothing in Essex", () => {
+    expect(line(calculate(ny, { ...base, county: "Westchester", weightLbs: 3000 }), "county-fee")).toBe(80);
+    expect(line(calculate(ny, { ...base, county: "Westchester", weightLbs: 4000 }), "county-fee")).toBe(110);
+    expect(line(calculate(ny, { ...base, county: "Rockland", weightLbs: 4000 }), "county-fee")).toBe(50);
+    expect(line(calculate(ny, { ...base, county: "Essex" }), "county-fee")).toBe(0);
+  });
+  it("has an entry for every county in the rate table", () => {
+    const names = Object.keys(ny.localRates!.rates.value!);
+    expect(Object.keys(ny.counties!.fees.value!).sort()).toEqual(names.sort());
   });
 });
 

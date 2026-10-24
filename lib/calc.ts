@@ -115,7 +115,9 @@ export function calculate(state: StateData, i: Inputs): Result {
     } else if (table[i.county] === undefined) {
       excluded.push({ label: c.label, reason: `No amount listed for ${i.county}.` });
     } else {
-      lines.push({ id: "county-fee", label: `${c.label} (${i.county} County)`, amount: table[i.county], status: c.fees.status, note: c.fees.note });
+      const heavy = c.heavyFees && c.heavyOverLbs !== undefined && i.weightLbs > c.heavyOverLbs ? c.heavyFees[i.county] : undefined;
+      const place = i.county.includes(" (") ? i.county.split(" (")[0] : `${i.county} County`;
+      lines.push({ id: "county-fee", label: `${c.label} (${place})`, amount: heavy ?? table[i.county], status: c.fees.status, note: c.fees.note });
     }
   }
 

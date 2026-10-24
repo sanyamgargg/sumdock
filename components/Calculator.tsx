@@ -87,6 +87,8 @@ export default function Calculator({ state }: { state: StateData }) {
   const applyRate = (county: string, place: string) => {
     setRateCounty(county);
     setRatePlace(place);
+    // When one picker drives both the tax rate and a county fee table (New York), keep them in step.
+    if (state.counties) set("county", county);
     const entry = rateTable?.[county];
     if (!entry) return;
     const combined = place && entry.places[place] !== undefined ? entry.places[place] : entry.county;
@@ -131,7 +133,7 @@ export default function Calculator({ state }: { state: StateData }) {
             {rateTable && (
               <>
                 <SelectField
-                  label={`County${state.localRates?.mode === "localOnly" ? " (for surtax rate)" : " (for local tax rate)"}`}
+                  label={`County${state.counties ? "" : state.localRates?.mode === "localOnly" ? " (for surtax rate)" : " (for local tax rate)"}`}
                   value={rateCounty}
                   onChange={(v) => applyRate(v, "")}
                 >
@@ -153,7 +155,7 @@ export default function Calculator({ state }: { state: StateData }) {
                 )}
               </>
             )}
-            {counties.length > 0 && (
+            {counties.length > 0 && !rateTable && (
               <SelectField label="County" value={i.county} onChange={(v) => set("county", v)} hint={countyHint}>
                 <option value="">Choose your county</option>
                 {counties.map((c) => <option key={c} value={c}>{c}</option>)}
