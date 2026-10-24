@@ -667,3 +667,25 @@ describe("West Virginia", () => {
   });
 });
 
+describe("Vermont", () => {
+  const vt = load("vt");
+  it("is publishable", () => expect(publishability(vt).publishable).toBe(true));
+  it("taxes the price less a trade-in at 6%", () => {
+    expect(line(calculate(vt, { ...base, price: 30000, tradeIn: 10000 }), "state-tax")).toBe(1200);
+  });
+  it("charges the gas registration fee and title, plus the warranty fee on a new vehicle", () => {
+    const r = calculate(vt, base);
+    expect(line(r, "title")).toBe(42);
+    expect(line(r, "registration")).toBe(91);
+    expect(line(r, "registration-ev")).toBeUndefined();
+    expect(line(r, "warranty-fee")).toBe(8);
+    expect(line(calculate(vt, { ...base, vehicleAge: "older" }), "warranty-fee")).toBeUndefined();
+  });
+  it("charges the higher EV registration and lists the unknown infrastructure fee", () => {
+    const r = calculate(vt, { ...base, fuel: "ev" });
+    expect(line(r, "registration-ev")).toBe(178);
+    expect(line(r, "registration")).toBeUndefined();
+    expect(r.excluded.map((e) => e.label)).toContain("Electric vehicle infrastructure fee");
+  });
+});
+

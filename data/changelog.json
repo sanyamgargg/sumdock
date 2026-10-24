@@ -3,6 +3,12 @@
   "entries": [
     {
       "date": "2026-10-24",
+      "state": "VT",
+      "stateName": "Vermont",
+      "summary": "Added state with the 6% purchase and use tax after trade-in, title, registration by fuel type and the new-vehicle warranty fee. The electric vehicle infrastructure fee amount, the lien fee and credit for tax paid elsewhere are not included."
+    },
+    {
+      "date": "2026-10-24",
       "state": "WV",
       "stateName": "West Virginia",
       "summary": "Added state with the 6% titling tax on the price after trade-in, title fee, registration and the electric vehicle fee. Credit for tax paid to another state is not confirmed, and the lien and hybrid fees are not included."

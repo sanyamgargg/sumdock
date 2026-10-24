@@ -32,6 +32,13 @@ Two columns per state: what only Sanyam can do (blocked sites, accounts, pushing
 |---|---|
 | Links: https://dor.sd.gov/individuals/motor-vehicle/cars-trucks-vans/ (open the non-commercial license fees PDF linked there and save it in tmp/) | 4% excise tax on purchase price and a $10 title fee are on dor.sd.gov, but the page does not say whether a trade-in lowers the price, and registration amounts are in a separate PDF |
 
+## Rhode Island, New Mexico, Maine (researched, not added)
+| Sanyam | Claude |
+|---|---|
+| Open https://dmv.ri.gov/registrations-plates-titles/registration/registration-fees in your browser (it shows a bot check to me) and send me the passenger "New" and "Renewal" rows | Rhode Island: 7% sales tax on purchase price minus trade-in for dealer sales (passenger vehicles only); title $52.50 (dmv.ri.gov, no date on pages). Blocked on registration amounts and the credit for tax paid elsewhere |
+| Find the registration fee table by weight and model year at https://www.mvd.newmexico.gov/what-is-the-fee-for-registering-my-vehicle/ or a linked PDF | New Mexico: 4% excise tax on price minus trade-in, credit for tax paid elsewhere (tax.newmexico.gov, page modified Apr 2026). Registration is $27 to $62 a year by weight and model year, but no table found; title fee not found |
+| Nothing yet | Maine: 5.5% sales tax and $33 title fee are on maine.gov/sos; the page does not say if a trade-in lowers the tax, registration amounts are on a separate page, and the yearly excise tax is billed by your town |
+
 ## Washington (added)
 | Sanyam | Claude |
 |---|---|
@@ -79,7 +86,7 @@ Two columns per state: what only Sanyam can do (blocked sites, accounts, pushing
 Registration tax is based on the vehicle's value, so it would be left out; not started.
 
 ## Added since the last list
-West Virginia, Connecticut, Alabama, Wisconsin, Indiana, Massachusetts, New Jersey, Virginia, Washington, Arizona. Indiana and Massachusetts: yearly excise taxes are not included (Indiana depends on value and county, Massachusetts is billed by your city or town).
+Vermont, West Virginia, Connecticut, Alabama, Wisconsin, Indiana, Massachusetts, New Jersey, Virginia, Washington, Arizona. Indiana and Massachusetts: yearly excise taxes are not included (Indiana depends on value and county, Massachusetts is billed by your city or town).
 
 ## Other states waiting
 | Sanyam | Claude |

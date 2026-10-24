@@ -1,0 +1,238 @@
+{
+  "code": "VT",
+  "name": "Vermont",
+  "slug": "vermont",
+  "lastReviewed": "2026-10-24",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 6,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Vermont DMV - Purchase and use tax (updated March 19, 2026)",
+          "url": "https://dmv.vermont.gov/node/219",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Vermont DMV - Registration, Tax & Title instructions (VD-119i, 09/2025)",
+          "url": "https://dmv.vermont.gov/sites/dmv/files/documents/VD-119i-Registration_Tax_Title_Instructions.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Purchase and use tax is 6% of the purchase price or the J.D. Power clean trade-in value, whichever is greater. The calculator uses the price you enter, so the tax can be higher if the price is below the book value."
+    },
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Vermont DMV - Registration, Tax & Title instructions (VD-119i, 09/2025)",
+          "url": "https://dmv.vermont.gov/sites/dmv/files/documents/VD-119i-Registration_Tax_Title_Instructions.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Vermont DMV - Tax page (updated March 10, 2026)",
+          "url": "https://dmv.vermont.gov/node/213",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The instructions subtract the value of any trade-in vehicle or other allowable credit."
+    },
+    "local": {
+      "value": {
+        "mode": "none",
+        "capBase": null,
+        "rangeNote": null
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Vermont DMV - Purchase and use tax (updated March 19, 2026)",
+          "url": "https://dmv.vermont.gov/node/219",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The DMV pages describe one statewide purchase and use tax and no local tax."
+    },
+    "outOfStateCredit": {
+      "value": null,
+      "status": "unverified",
+      "sources": [
+        {
+          "title": "Vermont DMV - Purchase and use tax (updated March 19, 2026)",
+          "url": "https://dmv.vermont.gov/node/219",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The DMV pages do not say whether tax paid to another state is credited."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Title",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 42,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Vermont DMV - Registration, Tax & Title instructions (VD-119i, 09/2025)",
+            "url": "https://dmv.vermont.gov/sites/dmv/files/documents/VD-119i-Registration_Tax_Title_Instructions.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "A lien adds $14, which is not included."
+      }
+    },
+    {
+      "id": "registration",
+      "label": "Registration (passenger car, gas, diesel or hybrid)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "gas"
+      },
+      "amount": {
+        "value": 91,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Vermont DMV - Registration, Tax & Title instructions (VD-119i, 09/2025)",
+            "url": "https://dmv.vermont.gov/sites/dmv/files/documents/VD-119i-Registration_Tax_Title_Instructions.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The one-year fee. A two-year registration is listed separately and costs less per year."
+      }
+    },
+    {
+      "id": "registration-ev",
+      "label": "Registration (passenger car, battery electric)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "ev"
+      },
+      "amount": {
+        "value": 178,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Vermont DMV - Registration, Tax & Title instructions (VD-119i, 09/2025)",
+            "url": "https://dmv.vermont.gov/sites/dmv/files/documents/VD-119i-Registration_Tax_Title_Instructions.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The one-year fee for a battery electric vehicle."
+      }
+    },
+    {
+      "id": "ev-infrastructure",
+      "label": "Electric vehicle infrastructure fee",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "ev"
+      },
+      "excludedReason": "Vermont adds an infrastructure fee to the registration of battery electric and plug-in hybrid vehicles, but the instructions do not state the amount.",
+      "amount": {
+        "value": null,
+        "status": "unverified",
+        "sources": [
+          {
+            "title": "Vermont DMV - Registration, Tax & Title instructions (VD-119i, 09/2025)",
+            "url": "https://dmv.vermont.gov/sites/dmv/files/documents/VD-119i-Registration_Tax_Title_Instructions.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "warranty-fee",
+      "label": "Motor vehicle warranty fee",
+      "kind": "flat",
+      "frequency": "once",
+      "when": {
+        "vehicleAge": "new"
+      },
+      "amount": {
+        "value": 8,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Vermont DMV - Registration, Tax & Title instructions (VD-119i, 09/2025)",
+            "url": "https://dmv.vermont.gov/sites/dmv/files/documents/VD-119i-Registration_Tax_Title_Instructions.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Charged on the registration of each new motor vehicle."
+      }
+    }
+  ],
+  "notes": [
+    "The tax is figured on the price or the J.D. Power clean trade-in value, whichever is greater. If you think your vehicle is worth less, the DMV has an appraisal form that can lower the tax.",
+    "A plug-in hybrid pays a different registration fee that is not modeled.",
+    "Sales tax paid to another state may not be credited; check with the DMV before you buy out of state."
+  ],
+  "content": {
+    "intro": "{state} charges a {stateRate} purchase and use tax when you title a vehicle, figured on the price after your trade-in. The tax uses the higher of the price or the vehicle's book value.",
+    "howItWorks": [
+      {
+        "text": "The tax is {stateRate} of the purchase price or the J.D. Power clean trade-in value, whichever is greater. The value of a trade-in comes off before the tax is figured.",
+        "sources": [
+          "https://dmv.vermont.gov/node/219",
+          "https://dmv.vermont.gov/sites/dmv/files/documents/VD-119i-Registration_Tax_Title_Instructions.pdf"
+        ]
+      },
+      {
+        "text": "If you think the book value is higher than what the vehicle is worth, you can ask the DMV for a lower tax with an appraisal form at registration.",
+        "sources": [
+          "https://dmv.vermont.gov/node/219"
+        ]
+      },
+      {
+        "text": "Registration is paid yearly or for two years, and the fee depends on the fuel type. Battery electric and plug-in hybrid vehicles also pay an infrastructure fee.",
+        "sources": [
+          "https://dmv.vermont.gov/sites/dmv/files/documents/VD-119i-Registration_Tax_Title_Instructions.pdf"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does a trade-in lower the tax in Vermont?",
+        "text": "Yes. The instructions subtract the value of any trade-in vehicle or other allowable credit from the price before the tax is figured.",
+        "sources": [
+          "https://dmv.vermont.gov/sites/dmv/files/documents/VD-119i-Registration_Tax_Title_Instructions.pdf"
+        ]
+      },
+      {
+        "q": "Why can the tax be higher than the price I paid?",
+        "text": "Vermont taxes the higher of the purchase price or the J.D. Power clean trade-in value. A very low price does not lower the tax below the book value.",
+        "sources": [
+          "https://dmv.vermont.gov/node/219"
+        ]
+      },
+      {
+        "q": "Do electric vehicles pay more to register?",
+        "text": "Yes. A battery electric vehicle has a higher registration fee than a gas vehicle and also pays an infrastructure fee.",
+        "sources": [
+          "https://dmv.vermont.gov/sites/dmv/files/documents/VD-119i-Registration_Tax_Title_Instructions.pdf"
+        ]
+      }
+    ]
+  }
+}
