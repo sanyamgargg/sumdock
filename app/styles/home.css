@@ -1,1 +1,99 @@
-/* home styles: added in a later step. */
+/* Home page: hero with sample statement, calculators list, "how we keep the numbers honest". */
+
+.stack--home { gap: 56px; }
+@media (min-width: 760px) {
+  .stack--home { gap: 88px; padding-top: 32px; }
+}
+
+.hero { display: flex; flex-direction: column; gap: 32px; }
+.hero__copy { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.hero__eyebrow { margin: 0; color: var(--accent); }
+.hero h1 { font-size: 36px; line-height: 1.05; letter-spacing: -0.035em; }
+.hero__lede { margin: 0; max-width: 620px; color: var(--ink-body); font-size: 17px; }
+.hero__sample { min-width: 0; }
+.hero__caption { margin: 10px 0 0; color: var(--ink-muted); font-size: 13px; }
+@media (min-width: 760px) {
+  .hero h1 { font-size: 56px; }
+  .hero__lede { font-size: 20px; }
+  .hero__copy { gap: 22px; }
+}
+@media (min-width: 960px) {
+  .hero { flex-direction: row; align-items: flex-end; justify-content: space-between; gap: 48px; }
+  .hero__copy { flex: 1 1 560px; }
+  .hero__sample { flex: 1 1 360px; max-width: 460px; }
+}
+
+.btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 24px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+.btn:hover { background: #2b2b2b; color: #fff; }
+.btn--ghost { background: transparent; color: var(--ink); }
+.btn--ghost:hover { background: var(--surface); color: var(--ink); }
+
+.tools { display: flex; flex-direction: column; gap: 18px; }
+.tool {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px 32px;
+  padding: 20px;
+  border: 1px solid var(--ink);
+  background: var(--surface);
+}
+.tool__copy { flex: 1 1 340px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.tool__copy p { margin: 0; color: var(--ink-body); }
+.tool__tag {
+  align-self: flex-start;
+  padding: 3px 10px;
+  background: var(--ink);
+  color: #fff;
+  font: 400 12px/1.4 var(--font-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.tool__title { font-size: 24px; letter-spacing: -0.02em; }
+.tool__title a { color: var(--ink); text-decoration: none; }
+.tool__title a:hover { color: var(--accent); text-decoration: underline; }
+.chips { flex: 1 1 280px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.chips a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--touch);
+  padding: 0 12px;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  font-size: 14px;
+  text-decoration: none;
+}
+.chips a:hover { background: var(--ground); color: var(--accent); }
+.chips__more { padding: 0 4px; color: var(--ink-muted); font-size: 14px; }
+@media (min-width: 760px) {
+  .tool { padding: 28px; }
+  .tool__title { font-size: 28px; }
+}
+
+.honest { display: flex; flex-direction: column; gap: 22px; }
+.honest h2 { max-width: 640px; font-size: 26px; line-height: 1.1; letter-spacing: -0.025em; }
+.honest__list { display: flex; flex-direction: column; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--ink); }
+.honest__item { display: flex; flex-direction: column; gap: 8px; padding: 20px 0; border-top: 1px solid var(--hair-col); }
+.honest__item:first-child { border-top: 0; }
+.honest__num { color: var(--accent); font: 400 13px/1.4 var(--font-mono); }
+.honest__item h3 { font-size: 18px; }
+.honest__item p { margin: 0; color: var(--ink-body); }
+@media (min-width: 760px) {
+  .honest h2 { font-size: 34px; }
+  .honest__list { flex-direction: row; }
+  .honest__item { flex: 1 1 280px; padding: 24px 28px; border-top: 0; border-left: 1px solid var(--hair-col); }
+  .honest__item:first-child { padding-left: 0; border-left: 0; }
+  .honest__item:last-child { padding-right: 0; }
+}
