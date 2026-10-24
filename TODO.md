@@ -15,14 +15,12 @@ Two columns per state: what only Sanyam can do (blocked sites, accounts, pushing
 | | Electric vehicle fees ($100 or $50, plus $75) held out until the DOL page says which applies |
 | | Regional transit excise tax and weight-based gross weight fee are not included |
 
-## New Jersey
-Confirmed so far: 6.625% rate and trade-in reduces the price (MVC form GU-30, rev. 7/25), title $60 ($85 with a lien), registration by weight and age (table on nj.gov/mvc), zero-emission vehicle fee $250 from July 2024 plus $10 a year.
+## New Jersey (added)
 | Sanyam | Claude |
 |---|---|
-| Nothing blocking yet. If nj.gov returns an "Access Denied" page in your browser, tell Claude | Model registration: under or over 3,500 lbs, and "within 2 years" (needs a new-or-used input, see backlog) |
-| | Compute the zero-emission vehicle fee for the current year and confirm it on nj.gov |
-| | Check the luxury tax on vehicles over a price threshold on the NJ Division of Taxation site; add if confirmed |
-| | Lien: title is $60 or $85 with a lien. Calculator has no lien input: decide whether to add one |
+| Glance at the live page: the "New or used" dropdown is new | Zero emission vehicle fee for a new EV (four years up front, rising each July) is held out until the schedule is printed |
+| | Zero emission fee for used EVs ($270) is calculated from "$250 + $10 a year", marked "check source"; re-check each July |
+| | Title assumes no lien ($85 with one, $110 with two); add a lien input if wanted |
 
 ## Other states waiting
 | Sanyam | Claude |
@@ -43,7 +41,7 @@ Confirmed so far: 6.625% rate and trade-in reduces the price (MVC form GU-30, re
 - [ ] AdSense application when the site has been live for a few weeks and has more than five states
 
 ## Claude backlog (frontend / product)
-- New or used toggle (needed for Ohio, New Jersey, Arizona)
+- Use the New or used input for Ohio and other states where it matters (input now exists)
 - Plug-in hybrid and hybrid fuel options
 - Minimum-tax support (Virginia $75 minimum)
 - Playwright interactive tests
