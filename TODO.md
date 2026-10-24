@@ -22,6 +22,21 @@ Two columns per state: what only Sanyam can do (blocked sites, accounts, pushing
 | | Zero emission fee for used EVs ($270) is calculated from "$250 + $10 a year", marked "check source"; re-check each July |
 | | Title assumes no lien ($85 with one, $110 with two); add a lien input if wanted |
 
+## Tennessee (on hold)
+| Sanyam | Claude |
+|---|---|
+| Save https://www.tn.gov/content/dam/tn/revenue/documents/countyclerks/Codefeesched.pdf as `tmp/tn-fees.pdf` (fetch failed from Claude's side) | Title fee and registration fee: need the county clerk fee schedule |
+| Download the current local sales tax rates by county and city (Revenue site, "Local Sales Tax" page, rate tables) and save as `tmp/tn-local-rates.*` | Model: 7% state, local rate on the first $1,600, plus the 2.75% single article tax on $1,600 to $3,200 (the last can use the new priceAtLeast condition) |
+| | Electric fee $200 now ($274 from 2027) and hybrid $100 at renewal are on the DOR notice |
+
+## Maryland (on hold)
+| Sanyam | Claude |
+|---|---|
+| The MVA site shows Claude a Cloudflare block page. In your browser, open https://mva.maryland.gov/title-registration/fees-payment-options/excise-tax and https://mva.maryland.gov/title-registration/fees-payment-options, expand every section, then print each to PDF as `tmp/md-excise.pdf` and `tmp/md-fees.pdf` | Read the excise tax rate, trade-in rule, title fee and registration by weight, then add the state |
+
+## Added since the last list
+Indiana, Massachusetts, New Jersey, Virginia, Washington, Arizona. Indiana and Massachusetts: yearly excise taxes are not included (Indiana depends on value and county, Massachusetts is billed by your city or town).
+
 ## Other states waiting
 | Sanyam | Claude |
 |---|---|
