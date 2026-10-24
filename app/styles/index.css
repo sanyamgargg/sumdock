@@ -1,1 +1,59 @@
-/* index styles: added in a later step. */
+/* State index rows and status marks. */
+
+.mark { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; }
+.mark__glyph { flex: none; width: 12px; height: 12px; }
+.mark__glyph--verified { background: var(--ink); }
+.mark__glyph--partial { border: 2px solid var(--accent); background: #fff; }
+.mark__glyph--in-review { border: 2px dashed #6b7078; background: transparent; }
+
+.states { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+.states__head { display: none; }
+.state-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas: "name status" "tax tax" "date go";
+  gap: 4px 12px;
+  align-items: center;
+  padding: 14px 4px;
+  border-top: 1px solid var(--hair-list);
+}
+.state-row:first-child { border-top: 0; }
+.state-row:hover:not(.is-review) { background: #fff; }
+.state-row__name { grid-area: name; font-size: 18px; font-weight: 600; }
+.state-row__name a { color: var(--ink); text-decoration: none; }
+.state-row__name a::after { content: ""; position: absolute; inset: 0; }
+.state-row__name a:hover { color: var(--accent); }
+.state-row__tax { grid-area: tax; color: var(--ink-body); }
+.state-row__status { grid-area: status; justify-self: end; }
+.state-row__date { grid-area: date; color: var(--ink-muted); font: 400 13px/1.4 var(--font-mono); }
+.state-row__go { grid-area: go; justify-self: end; display: inline-flex; }
+.state-row.is-review .state-row__name, .state-row.is-review .state-row__tax { color: var(--ink-muted); }
+
+@media (min-width: 760px) {
+  .states__head, .state-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.9fr) 190px 140px 32px;
+    grid-template-areas: none;
+    gap: 0 16px;
+    padding: 0 16px;
+  }
+  .states__head {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-bottom: -1px;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    color: var(--ink-muted);
+    font: 400 12px/1.4 var(--font-mono);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .states { border-top: 0; }
+  .state-row { min-height: 60px; padding-top: 14px; padding-bottom: 14px; }
+  .state-row > * { grid-area: auto; justify-self: start; }
+  .state-row__go { justify-self: end; }
+}
+
+.legend { display: flex; flex-wrap: wrap; gap: 12px 32px; margin: 24px 0 0; padding: 0; list-style: none; color: var(--ink-body); font-size: 14px; }
+.legend li { display: flex; align-items: center; gap: 10px; }
