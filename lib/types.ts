@@ -96,7 +96,15 @@ export interface StateData {
     label: string;
     /** combined: rate includes the state rate (subtract it). localOnly: the rate is the local part already. */
     mode: "combined" | "localOnly";
-    rates: Sourced<Record<string, { county: number; places: Record<string, number> }>>;
+    rates: Sourced<Record<string, {
+      county: number;
+      places: Record<string, number>;
+      /**
+       * Optional rate change by price. For a place listed here, the rate in `places` applies up to `over` dollars of the
+       * taxable price and `rate` (same units as `places`) applies to the part above it. Arizona cities do this.
+       */
+      tiers?: Record<string, { over: number; rate: number }>;
+    }>>;
   };
   notes: string[];
   /**
@@ -124,6 +132,9 @@ export interface Inputs {
   tradeIn: number;
   /** Combined local rate in percent, entered by the user. */
   localRatePct: number;
+  /** Optional price tier: the part of the taxable price above this amount is taxed at localOverRatePct. 0 or missing means no tier. */
+  localOverAmount?: number;
+  localOverRatePct?: number;
   /** Tax already paid to another state. */
   outOfStateTaxPaid: number;
   fuel: Fuel;

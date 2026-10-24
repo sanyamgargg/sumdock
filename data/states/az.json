@@ -45,7 +45,7 @@
       "value": {
         "mode": "user-entered",
         "capBase": null,
-        "rangeNote": "County rate fills in when you pick a county. City tax is not included."
+        "rangeNote": "Pick your county, then your city, and the local rate fills in. Leave the city blank if you live outside city limits. Some cities charge less on the part of the price above a set amount; that is applied for you."
       },
       "status": "partial",
       "sources": [
@@ -86,63 +86,332 @@
       "value": {
         "Apache": {
           "county": 0.5,
-          "places": {}
+          "places": {
+            "Eagar": 3.5,
+            "Springerville": 3.5,
+            "St. Johns": 3.5
+          },
+          "tiers": {
+            "Eagar": {
+              "over": 1000,
+              "rate": 2.5
+            },
+            "Springerville": {
+              "over": 1000,
+              "rate": 2.5
+            }
+          }
         },
         "Cochise": {
           "county": 1.0,
-          "places": {}
+          "places": {
+            "Benson": 4.5,
+            "Bisbee": 4.5,
+            "Douglas": 4.8,
+            "Huachuca City": 3.9,
+            "Sierra Vista": 2.95,
+            "Tombstone": 4.5,
+            "Willcox": 4.0
+          },
+          "tiers": {
+            "Benson": {
+              "over": 5000,
+              "rate": 2.0
+            },
+            "Douglas": {
+              "over": 10000,
+              "rate": 3.8
+            },
+            "Willcox": {
+              "over": 1250,
+              "rate": 3.0
+            }
+          }
         },
         "Coconino": {
           "county": 1.3,
-          "places": {}
+          "places": {
+            "Flagstaff": 3.786,
+            "Fredonia": 5.3,
+            "Page": 4.3,
+            "Sedona (Coconino County part)": 4.8,
+            "Tusayan": 5.3,
+            "Williams": 4.8
+          },
+          "tiers": {
+            "Page": {
+              "over": 3000,
+              "rate": 3.3
+            }
+          }
         },
         "Gila": {
           "county": 1.0,
-          "places": {}
+          "places": {
+            "Globe": 4.3,
+            "Hayden": 4.0,
+            "Miami": 3.5,
+            "Payson": 4.88,
+            "Star Valley": 3.0,
+            "Winkelman (Gila County part)": 4.5
+          }
         },
         "Graham": {
           "county": 1.0,
-          "places": {}
+          "places": {
+            "Pima": 3.0,
+            "Safford": 3.5,
+            "Thatcher": 3.5
+          },
+          "tiers": {
+            "Safford": {
+              "over": 5000,
+              "rate": 2.0
+            },
+            "Thatcher": {
+              "over": 5000,
+              "rate": 2.0
+            }
+          }
         },
         "Greenlee": {
           "county": 0.5,
-          "places": {}
+          "places": {
+            "Clifton": 3.5,
+            "Duncan": 2.5
+          },
+          "tiers": {
+            "Clifton": {
+              "over": 10000,
+              "rate": 2.5
+            }
+          }
         },
         "La Paz": {
           "county": 1.0,
-          "places": {}
+          "places": {
+            "Parker": 3.0,
+            "Quartzsite": 3.5
+          },
+          "tiers": {
+            "Parker": {
+              "over": 2500,
+              "rate": 2.0
+            },
+            "Quartzsite": {
+              "over": 10000,
+              "rate": 2.0
+            }
+          }
         },
         "Maricopa": {
           "county": 0.7,
-          "places": {}
+          "places": {
+            "Apache Junction (Maricopa County part)": 3.1,
+            "Avondale": 3.2,
+            "Buckeye": 3.7,
+            "Carefree": 3.7,
+            "Cave Creek": 3.7,
+            "Chandler": 2.2,
+            "El Mirage": 3.7,
+            "Fountain Hills": 3.6,
+            "Gila Bend": 4.2,
+            "Gilbert": 2.7,
+            "Glendale": 3.6,
+            "Goodyear": 3.2,
+            "Guadalupe": 4.7,
+            "Litchfield Park": 3.5,
+            "Mesa": 2.7,
+            "Paradise Valley": 3.2,
+            "Phoenix": 3.5,
+            "Queen Creek (Maricopa County part)": 2.95,
+            "Scottsdale": 2.4,
+            "Surprise": 3.5,
+            "Tempe": 2.5,
+            "Tolleson": 3.2,
+            "Wickenburg (Maricopa County part)": 2.9,
+            "Youngtown": 3.7
+          },
+          "tiers": {
+            "Apache Junction (Maricopa County part)": {
+              "over": 2000,
+              "rate": 2.1
+            },
+            "Avondale": {
+              "over": 5000,
+              "rate": 2.2
+            },
+            "Buckeye": {
+              "over": 5000,
+              "rate": 1.8
+            },
+            "Glendale": {
+              "over": 5000,
+              "rate": 2.9
+            },
+            "Goodyear": {
+              "over": 5000,
+              "rate": 1.9
+            },
+            "Phoenix": {
+              "over": 5000,
+              "rate": 2.2
+            },
+            "Tolleson": {
+              "over": 5000,
+              "rate": 2.7
+            },
+            "Wickenburg (Maricopa County part)": {
+              "over": 5000,
+              "rate": 2.39
+            }
+          }
         },
         "Mohave": {
           "county": 0.0,
-          "places": {}
+          "places": {
+            "Bullhead City": 2.0,
+            "Colorado City": 3.0,
+            "Kingman": 3.0,
+            "Lake Havasu City": 2.0
+          },
+          "tiers": {
+            "Kingman": {
+              "over": 10000,
+              "rate": 2.5
+            }
+          }
         },
         "Navajo": {
           "county": 0.83,
-          "places": {}
+          "places": {
+            "Holbrook": 3.83,
+            "Show Low": 2.83,
+            "Snowflake": 3.83,
+            "Taylor": 3.83,
+            "Winslow": 3.83
+          },
+          "tiers": {
+            "Snowflake": {
+              "over": 10000,
+              "rate": 2.83
+            },
+            "Winslow": {
+              "over": 14338,
+              "rate": 2.83
+            }
+          }
         },
         "Pima": {
           "county": 0.5,
-          "places": {}
+          "places": {
+            "Marana (Pima County part)": 3.0,
+            "Oro Valley": 3.0,
+            "Sahuarita": 2.5,
+            "South Tucson": 5.5,
+            "Tucson": 3.1
+          },
+          "tiers": {
+            "Marana (Pima County part)": {
+              "over": 5000,
+              "rate": 2.5
+            }
+          }
         },
         "Pinal": {
           "county": 1.1,
-          "places": {}
+          "places": {
+            "Apache Junction (Pinal County part)": 3.5,
+            "Casa Grande": 3.1,
+            "Coolidge": 4.1,
+            "Eloy": 4.1,
+            "Florence": 4.6,
+            "Kearny": 5.1,
+            "Mammoth": 5.1,
+            "Marana (Pinal County part)": 3.6,
+            "Maricopa": 3.6,
+            "Queen Creek (Pinal County part)": 3.35,
+            "San Tan Valley": 3.35,
+            "Superior": 5.1,
+            "Winkelman (Pinal County part)": 4.6
+          },
+          "tiers": {
+            "Apache Junction (Pinal County part)": {
+              "over": 2000,
+              "rate": 2.5
+            },
+            "Casa Grande": {
+              "over": 5000,
+              "rate": 2.6
+            },
+            "Coolidge": {
+              "over": 10000,
+              "rate": 2.6
+            },
+            "Eloy": {
+              "over": 6000,
+              "rate": 2.6
+            },
+            "Marana (Pinal County part)": {
+              "over": 5000,
+              "rate": 3.1
+            },
+            "Superior": {
+              "over": 500,
+              "rate": 2.1
+            }
+          }
         },
         "Santa Cruz": {
           "county": 1.0,
-          "places": {}
+          "places": {
+            "Nogales": 3.0,
+            "Patagonia": 4.0
+          }
         },
         "Yavapai": {
           "county": 0.75,
-          "places": {}
+          "places": {
+            "Camp Verde": 4.4,
+            "Chino Valley": 4.75,
+            "Clarkdale": 4.25,
+            "Cottonwood": 4.25,
+            "Dewey-Humboldt": 2.75,
+            "Jerome": 4.25,
+            "Prescott": 3.7,
+            "Prescott Valley": 3.58,
+            "Sedona (Yavapai County part)": 4.25,
+            "Wickenburg (Yavapai County part)": 2.95
+          },
+          "tiers": {
+            "Camp Verde": {
+              "over": 5000,
+              "rate": 1.75
+            },
+            "Wickenburg (Yavapai County part)": {
+              "over": 5000,
+              "rate": 2.44
+            }
+          }
         },
         "Yuma": {
           "county": 1.112,
-          "places": {}
+          "places": {
+            "San Luis": 5.112,
+            "Somerton": 4.412,
+            "Wellton": 4.612,
+            "Yuma": 2.812
+          },
+          "tiers": {
+            "San Luis": {
+              "over": 2500,
+              "rate": 2.612
+            },
+            "Yuma": {
+              "over": 35000,
+              "rate": 1.112
+            }
+          }
         }
       },
       "status": "partial",
@@ -154,7 +423,7 @@
           "publisherType": "state-agency"
         }
       ],
-      "note": "Retail rate in the October 2026 table minus the 5.6% state rate. Apache and Greenlee share one column. City tax is not included."
+      "note": "County figures are the October 2026 retail rate minus the 5.6% state rate (Apache and Greenlee share one column). City figures add the city's retail rate (business code 017) from Table 2 to the county rate. Where the table gives a lower city rate on the part of a single item above a set price, it is stored as a tier."
     }
   },
   "fees": [
@@ -234,36 +503,11 @@
           }
         ]
       }
-    },
-    {
-      "id": "city-tax",
-      "label": "City privilege tax",
-      "kind": "flat",
-      "frequency": "once",
-      "excludedReason": "City rates differ by city and are lower on the part of a single item above a set amount. This calculator does not model them yet. Use the state's rate look-up tool.",
-      "amount": {
-        "value": null,
-        "status": "unverified",
-        "sources": [
-          {
-            "title": "Arizona DOR - Transaction Privilege and Other Tax Rate Tables, effective Oct 1, 2026 (ADOR 11249)",
-            "url": "https://azdor.gov/sites/default/files/document/TPT_RATETABLE_10012026.pdf",
-            "accessed": "2026-10-24",
-            "publisherType": "state-agency"
-          },
-          {
-            "title": "Arizona DOR - Motor vehicle sales (transaction privilege tax)",
-            "url": "https://azdor.gov/transaction-privilege-tax/motor-vehicle-sales",
-            "accessed": "2026-10-24",
-            "publisherType": "state-agency"
-          }
-        ]
-      }
     }
   ],
   "notes": [
     "The vehicle license tax is the largest ongoing cost in Arizona and depends on list price and age, so it is not included.",
-    "City privilege tax is not included."
+    "City tax is included only when you pick your city. Rates for part of a single item above a set price follow the state's table wording; where it says only \"Single Item Over\", the calculator treats it as the part above the price. Queen Creek Special District is not modeled."
   ],
   "content": {
     "intro": "{state} charges {stateRate} state sales tax on a vehicle, plus a county rate, a small title fee and a small registration fee. A yearly vehicle license tax based on the vehicle's list price is the largest ongoing cost.",

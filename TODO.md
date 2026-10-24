@@ -5,7 +5,7 @@ Two columns per state: what only Sanyam can do (blocked sites, accounts, pushing
 ## Arizona (added, partly modeled)
 | Sanyam | Claude |
 |---|---|
-| Nothing | City privilege tax is not included: cities charge a lower rate on the part of a single item above a set amount, which needs tiered local rates in the calculator (types and picker) |
+| Spot-check one city with a price tier (for example Avondale, 5,000 dollar tier) on the ADOR rate look-up tool or with a dealer, and tell Claude if the tax on a 30,000 dollar car differs from the calculator | City tax is now modeled (96 cities, 33 with a lower rate above a set price). Table wording says only "Single Item Over" for some cities; treated as the part above the price. Confirm from an ADOR source, then mark the local rate verified |
 | | Vehicle license tax is not included (needs list price and age inputs) |
 
 ## Washington (added)

@@ -440,7 +440,6 @@ describe("Arizona", () => {
   it("lists the vehicle license tax and city tax as not included", () => {
     const labels = calculate(az, base).excluded.map((e) => e.label);
     expect(labels).toContain("Vehicle license tax");
-    expect(labels).toContain("City privilege tax");
   });
   it("credits tax paid to another state, never above what is owed", () => {
     const r = calculate(az, { ...base, price: 10000, outOfStateTaxPaid: 9999 });
@@ -555,5 +554,42 @@ describe("Wisconsin", () => {
     expect(line(r, "ev-surcharge")).toBeUndefined();
     expect(line(calculate(wi, { ...base, fuel: "ev" }), "ev-surcharge")).toBe(175);
     expect(r.excluded.map((e) => e.label)).toContain("Wheel tax (municipal or county registration fee)");
+  });
+});
+
+describe("Arizona city tax tiers", () => {
+  const az = load("az");
+  const rates = az.localRates!.rates.value!;
+  const inp = (o: Partial<Inputs>): Inputs => ({ ...base, price: 30000, ...o });
+  it("adds the city rate to the county rate", () => {
+    expect(rates["Maricopa"].places["Tempe"]).toBeCloseTo(0.7 + 1.8, 6);
+    expect(rates["Pima"].places["Tucson"]).toBeCloseTo(0.5 + 2.6, 6);
+  });
+  it("stores a tier for Avondale: lower rate above $5,000", () => {
+    expect(rates["Maricopa"].tiers!["Avondale"]).toEqual({ over: 5000, rate: 0.7 + 1.5 });
+  });
+  it("every tier has a matching place and a rate no higher than the place rate", () => {
+    for (const e of Object.values(rates)) for (const [p, t] of Object.entries(e.tiers ?? {})) {
+      expect(e.places[p]).toBeDefined();
+      expect(t.rate).toBeLessThanOrEqual(e.places[p]);
+    }
+  });
+  it("taxes the first $5,000 at the full local rate and the rest at the lower rate", () => {
+    const r = calculate(az, inp({ localRatePct: 3.2, localOverAmount: 5000, localOverRatePct: 2.2 }));
+    const local = r.lines.find((l) => l.id === "local-tax")!;
+    expect(local.amount).toBeCloseTo(5000 * 0.032 + 25000 * 0.022, 2);
+    expect(local.label).toContain("first $5,000");
+  });
+  it("a price under the threshold uses only the full rate", () => {
+    const r = calculate(az, inp({ price: 4000, localRatePct: 3.2, localOverAmount: 5000, localOverRatePct: 2.2 }));
+    expect(r.lines.find((l) => l.id === "local-tax")!.amount).toBeCloseTo(4000 * 0.032, 2);
+  });
+  it("no tier when the threshold is zero", () => {
+    const r = calculate(az, inp({ localRatePct: 3.2, localOverAmount: 0, localOverRatePct: 2.2 }));
+    expect(r.lines.find((l) => l.id === "local-tax")!.amount).toBeCloseTo(30000 * 0.032, 2);
+  });
+  it("a zero rate above the threshold still shows the local tax line", () => {
+    const r = calculate(az, inp({ localRatePct: 2.8, localOverAmount: 35000, localOverRatePct: 0 }));
+    expect(r.lines.find((l) => l.id === "local-tax")).toBeDefined();
   });
 });

@@ -101,6 +101,10 @@ export default function Calculator({ state, children }: { state: StateData; chil
     if (state.counties) set("county", county);
     const entry = rateTable?.[county];
     if (!entry) return;
+    const offset0 = state.localRates?.mode === "localOnly" ? 0 : stateRate;
+    const tier = place ? entry.tiers?.[place] : undefined;
+    set("localOverAmount", tier ? tier.over : 0);
+    set("localOverRatePct", tier ? Math.max(0, Math.round((tier.rate - offset0) * 1000) / 1000) : 0);
     const combined = place && entry.places[place] !== undefined ? entry.places[place] : entry.county;
     const offset = state.localRates?.mode === "localOnly" ? 0 : stateRate;
     set("localRatePct", Math.max(0, Math.round((combined - offset) * 1000) / 1000));
@@ -122,6 +126,7 @@ export default function Calculator({ state, children }: { state: StateData; chil
   const tradeWarning = i.tradeIn > i.price ? "This trade-in is more than the vehicle price, so the amount left to tax is zero." : undefined;
   const rateHint = [
     rateTable && rateCounty && !rateEdited ? "Filled in from your county or city. Type a different rate to override it." : null,
+    rateTable && !rateEdited && (i.localOverAmount ?? 0) > 0 ? `The rate drops to ${i.localOverRatePct}% on the part of the price above $${(i.localOverAmount ?? 0).toLocaleString("en-US")}.` : null,
     rateTable && rateEdited ? "You changed this rate. Choose your county again to reset it." : null,
     local?.rangeNote ?? null,
   ].filter(Boolean).join(" ") || undefined;
@@ -175,7 +180,7 @@ export default function Calculator({ state, children }: { state: StateData; chil
                       >
                         <option value="">Not listed / county rate ({rateTable[rateCounty].county}% combined)</option>
                         {Object.keys(rateTable[rateCounty].places).sort().map((p) => (
-                          <option key={p} value={p}>{p} ({rateTable[rateCounty].places[p]}% combined)</option>
+                          <option key={p} value={p}>{p} ({rateTable[rateCounty].places[p]}%{rateTable[rateCounty].tiers?.[p] ? `, ${rateTable[rateCounty].tiers![p].rate}% above $${rateTable[rateCounty].tiers![p].over.toLocaleString("en-US")}` : ""})</option>
                         ))}
                       </SelectField>
                     )}
@@ -193,7 +198,7 @@ export default function Calculator({ state, children }: { state: StateData; chil
                     suffix="%"
                     decimals={3}
                     value={i.localRatePct}
-                    onValue={(n) => { setRateEdited(true); set("localRatePct", n); }}
+                    onValue={(n) => { setRateEdited(true); set("localRatePct", n); set("localOverAmount", 0); }}
                     hint={rateHint}
                   />
                 )}

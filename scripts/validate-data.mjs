@@ -107,6 +107,12 @@ for (const f of files) {
       if (typeof e.county !== "number" || e.county < floor) err(f, `localRates ${county}: county rate must be a number >= state rate`);
       for (const [place, r] of Object.entries(e.places ?? {}))
         if (typeof r !== "number" || r < floor || r > 15) err(f, `localRates ${county}/${place}: implausible rate ${r}`);
+      for (const [place, t] of Object.entries(e.tiers ?? {})) {
+        const full = e.places?.[place];
+        if (full === undefined) err(f, `localRates ${county}/${place}: tier has no matching place`);
+        else if (!(typeof t.over === "number" && t.over > 0)) err(f, `localRates ${county}/${place}: tier "over" must be a positive number`);
+        else if (typeof t.rate !== "number" || t.rate < floor || t.rate > full) err(f, `localRates ${county}/${place}: tier rate must be between ${floor} and the place rate ${full}`);
+      }
     }
   }
 

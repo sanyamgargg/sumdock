@@ -45,9 +45,20 @@ export function calculate(state: StateData, i: Inputs): Result {
     let localTax = 0;
     if (local.value && local.value.mode === "user-entered" && isUsable(local.status)) {
       const localBase = local.value.capBase !== null ? Math.min(base, local.value.capBase) : base;
-      localTax = round2((localBase * i.localRatePct) / 100);
-      if (i.localRatePct > 0) {
-        lines.push({ id: "local-tax", label: `Local tax (${i.localRatePct}%${local.value.capBase !== null ? ` on first $${local.value.capBase.toLocaleString("en-US")}` : ""})`, amount: localTax, status: local.status });
+      const over = i.localOverAmount ?? 0;
+      const tiered = over > 0 && i.localOverRatePct !== undefined;
+      if (tiered) {
+        const low = Math.min(localBase, over);
+        localTax = round2((low * i.localRatePct) / 100 + ((localBase - low) * (i.localOverRatePct as number)) / 100);
+      } else {
+        localTax = round2((localBase * i.localRatePct) / 100);
+      }
+      if (i.localRatePct > 0 || (tiered && (i.localOverRatePct as number) > 0)) {
+        const usdN = (n: number) => `$${n.toLocaleString("en-US")}`;
+        const what = tiered
+          ? `${i.localRatePct}% on the first ${usdN(over)}, ${i.localOverRatePct}% above`
+          : `${i.localRatePct}%${local.value.capBase !== null ? ` on first ${usdN(local.value.capBase)}` : ""}`;
+        lines.push({ id: "local-tax", label: `Local tax (${what})`, amount: localTax, status: local.status });
       }
     } else if (!local.value || !isUsable(local.status)) {
       excluded.push({ label: "Local tax", reason: "Local tax rule not yet verified." });
