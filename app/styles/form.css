@@ -30,7 +30,7 @@
 }
 
 .form fieldset { min-width: 0; margin: 0; padding: 0; border: 0; display: flex; flex-direction: column; gap: 16px; }
-.form fieldset + fieldset { padding-top: 18px; border-top: 1px solid var(--hair); }
+.form fieldset + fieldset { padding-top: 6px; }
 @media (min-width: 760px) {
   .form fieldset { gap: 18px; }
 }
@@ -46,11 +46,9 @@
 .field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
 .field label, .field__label { font-size: 14px; font-weight: 500; }
 .field-row { display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); }
-@media (min-width: 560px) {
+/* Two columns only when the form spans the page (tablet). In the narrow desktop column the fields stack. */
+@media (min-width: 560px) and (max-width: 899px) {
   .field-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-@media (min-width: 900px) and (max-width: 1099px) {
-  .field-row { grid-template-columns: minmax(0, 1fr); }
 }
 
 .input-wrap {
@@ -108,5 +106,6 @@
 
 .check { display: flex; align-items: center; gap: 10px; min-height: var(--touch); font-size: 15px; }
 .check input { flex: none; width: 22px; height: 22px; margin: 0; accent-color: #111111; }
+.check label { flex: 1; display: flex; align-items: center; min-height: var(--touch); }
 
 .form__note { margin: 0; padding-top: 14px; border-top: 1px solid var(--hair); font-size: 13px; color: var(--ink-muted); }

@@ -18,11 +18,21 @@
 
 /* FAQ and detail rows: native <details> between ink rules, no card chrome. */
 .faq { display: flex; flex-direction: column; }
-.faq__item, .details-row { padding: 12px 0; border-top: 1px solid var(--ink); }
+.faq__item, .details-row { padding: 4px 0; border-top: 1px solid var(--ink); }
 .faq__item:last-child { border-bottom: 1px solid var(--ink); }
 .details-row { margin-top: 14px; border-bottom: 1px solid var(--ink); }
-.faq__item summary, .details-row summary { display: flex; align-items: center; min-height: 28px; font-weight: 600; cursor: pointer; }
-.faq__item p { margin: 8px 0 0; color: var(--ink-body); font-size: 15px; }
+.faq__item summary, .details-row summary { display: flex; align-items: center; min-height: var(--touch); font-weight: 600; cursor: pointer; list-style: none; }
+.faq__item summary::-webkit-details-marker, .details-row summary::-webkit-details-marker { display: none; }
+.faq__item summary::before, .details-row summary::before {
+  content: "";
+  flex: none;
+  margin-right: 10px;
+  border-style: solid;
+  border-width: 5px 0 5px 8px;
+  border-color: transparent transparent transparent var(--ink);
+}
+.faq__item[open] > summary::before, .details-row[open] > summary::before { transform: rotate(90deg); }
+.faq__item p { margin: 4px 0 8px; color: var(--ink-body); font-size: 15px; }
 .faq__item .prose-block__src { margin-top: 4px; }
 
 .facts { margin: 10px 0 0; padding: 0; list-style: none; }

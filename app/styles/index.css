@@ -56,4 +56,4 @@
 }
 
 .legend { display: flex; flex-wrap: wrap; gap: 12px 32px; margin: 24px 0 0; padding: 0; list-style: none; color: var(--ink-body); font-size: 14px; }
-.legend li { display: flex; align-items: center; gap: 10px; }
+.legend li { margin: 0; }

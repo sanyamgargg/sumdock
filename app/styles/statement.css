@@ -44,14 +44,11 @@
 }
 
 /* Footnote number: superscript, accent, links to its row in the sources table. */
-.fn { margin-left: 4px; font: 400 11px/1 var(--font-mono); vertical-align: super; white-space: nowrap; }
-.fn a, .fn span { color: var(--accent); text-decoration: none; position: relative; }
-.fn a + a, .fn span + span { margin-left: 2px; }
+.fn { margin-left: 4px; font: 400 12px/1 var(--font-mono); vertical-align: super; white-space: nowrap; }
+.fn > a, .fn > span { color: var(--accent); text-decoration: none; position: relative; }
+.fn > a + a, .fn > span + span { margin-left: 2px; }
 .fn a::after { content: ""; position: absolute; left: -6px; right: -6px; top: 50%; height: var(--touch); transform: translateY(-50%); }
 .fn a:hover { text-decoration: underline; }
-@media (min-width: 600px) {
-  .fn { font-size: 12px; }
-}
 
 .stmt__total {
   display: flex;
@@ -98,3 +95,4 @@
 .stmt--compact .stmt__total-amt { font-size: 30px; }
 
 .ad-slot { min-width: 0; }
+.ad-slot:empty:not(.ad-slot--reserved) { display: none; }
