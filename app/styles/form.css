@@ -1,1 +1,112 @@
-/* form styles: added in a later step. */
+/* Purchase form: black header strip, square 1px ink fields, two-segment fuel control. */
+
+.workbench { display: flex; flex-direction: column; gap: 24px; align-items: stretch; }
+@media (min-width: 900px) {
+  .workbench { flex-direction: row; align-items: flex-start; gap: 32px; }
+  .workbench > .form { flex: 1 1 360px; max-width: 460px; }
+  .workbench > .result-col { flex: 2 1 520px; }
+}
+.result-col { min-width: 0; display: flex; flex-direction: column; gap: 14px; }
+
+.form { min-width: 0; border: 1px solid var(--ink); background: var(--surface); }
+.form__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--ink);
+  color: #fff;
+  font: 400 12px/1.4 var(--font-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.form__head h2 { margin: 0; font: inherit; letter-spacing: inherit; }
+.form__head span { color: #d4d4cf; letter-spacing: 0; text-transform: none; }
+.form__body { display: flex; flex-direction: column; gap: 16px; padding: 16px; }
+@media (min-width: 760px) {
+  .form__head { padding: 14px 20px; font-size: 13px; }
+  .form__body { gap: 18px; padding: 20px; }
+}
+
+.form fieldset { min-width: 0; margin: 0; padding: 0; border: 0; display: flex; flex-direction: column; gap: 16px; }
+.form fieldset + fieldset { padding-top: 18px; border-top: 1px solid var(--hair); }
+@media (min-width: 760px) {
+  .form fieldset { gap: 18px; }
+}
+.form legend {
+  padding: 0;
+  margin: 0 0 12px;
+  color: var(--ink-muted);
+  font: 400 12px/1.4 var(--font-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.field label, .field__label { font-size: 14px; font-weight: 500; }
+.field-row { display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 560px) {
+  .field-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 900px) and (max-width: 1099px) {
+  .field-row { grid-template-columns: minmax(0, 1fr); }
+}
+
+.input-wrap {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  padding: 0 12px;
+  border: 1px solid var(--ink);
+  background: #fff;
+  font-family: var(--font-mono);
+}
+.input-wrap:focus-within { outline: 2px solid var(--accent); outline-offset: 2px; }
+.input-wrap input {
+  flex-grow: 1;
+  min-width: 0;
+  height: 100%;
+  padding: 0 8px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 17px;
+}
+.input-wrap__affix { color: var(--ink-muted); }
+.field select {
+  width: 100%;
+  height: 48px;
+  padding: 0 10px;
+  border: 1px solid var(--ink);
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-size: 16px;
+}
+@media (min-width: 760px) {
+  .input-wrap, .field select, .seg { height: 46px; }
+}
+.hint { font-size: 13px; font-weight: 400; color: var(--ink-muted); }
+.hint--warn { color: var(--warn-ink); }
+
+.seg { display: flex; height: 48px; border: 1px solid var(--ink); }
+.seg button {
+  flex: 1;
+  min-height: var(--touch);
+  border: 0;
+  background: #fff;
+  color: var(--ink);
+  font-size: 15px;
+  cursor: pointer;
+}
+.seg button + button { border-left: 1px solid var(--ink); }
+.seg button[aria-pressed="true"] { background: var(--ink); color: #fff; font-weight: 500; }
+.seg button:focus-visible { position: relative; z-index: 1; }
+
+.check { display: flex; align-items: center; gap: 10px; min-height: var(--touch); font-size: 15px; }
+.check input { flex: none; width: 22px; height: 22px; margin: 0; accent-color: #111111; }
+
+.form__note { margin: 0; padding-top: 14px; border-top: 1px solid var(--hair); font-size: 13px; color: var(--ink-muted); }

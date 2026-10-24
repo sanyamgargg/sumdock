@@ -1,1 +1,37 @@
-/* sources styles: added in a later step. */
+/* Sources table: [n], what the page supports, publisher, "Open page". Stacked on phones. */
+
+.section-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 4px 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--ink);
+}
+.section-head h2 { margin: 0; }
+.section-head__meta { margin: 0; color: var(--ink-muted); font: 400 13px/1.4 var(--font-mono); }
+
+.sources { display: flex; flex-direction: column; gap: 16px; scroll-margin-top: 16px; }
+.sources__scroll { overflow-x: auto; }
+.sources__scroll:focus-visible { outline-offset: -2px; }
+.sources__list { margin: 0; padding: 0; list-style: none; }
+.src { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 10px; padding: 12px 0; border-bottom: 1px solid var(--hair-list); font-size: 15px; scroll-margin-top: 16px; }
+.src:target { background: var(--warn-bg); }
+.src__num { color: var(--accent); font-family: var(--font-mono); }
+.src__what { min-width: 0; }
+.src__supports { display: block; margin-top: 2px; color: var(--ink-muted); font-size: 13px; }
+.src__meta { grid-column: 2; display: flex; flex-wrap: wrap; gap: 0 8px; margin-top: 2px; color: var(--ink-muted); font-size: 14px; }
+.src__pub small { display: block; font-size: 12px; }
+.src__open { position: relative; font-weight: 500; }
+.src__open::after { content: ""; position: absolute; left: -4px; right: -4px; top: 50%; height: var(--touch); transform: translateY(-50%); }
+.src__pub::after { content: "\00b7"; margin-left: 8px; }
+
+@media (min-width: 640px) {
+  .sources__list { min-width: 640px; }
+  .src { grid-template-columns: 32px minmax(0, 2fr) minmax(0, 1fr) 90px; column-gap: 20px; align-items: baseline; }
+  .src__meta { display: contents; }
+  .src__pub { grid-column: 3; }
+  .src__open { grid-column: 4; justify-self: end; }
+  .src__pub::after { content: none; }
+}
