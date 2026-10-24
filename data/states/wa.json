@@ -54,9 +54,15 @@
       "note": "The table lists motor vehicle local rates by location. Which location applies to your sale (delivery or registration address) was not confirmed on a state page, so check the DOR rate lookup."
     },
     "outOfStateCredit": {
-      "value": null,
-      "status": "unverified",
+      "value": true,
+      "status": "verified",
       "sources": [
+        {
+          "title": "Washington Legislature - RCW 82.12.035 (credit for retail sales or use tax paid to another jurisdiction)",
+          "url": "https://app.leg.wa.gov/RCW/default.aspx?cite=82.12.035",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
         {
           "title": "Washington DOR - Motor vehicle sales/use tax",
           "url": "https://dor.wa.gov/taxes-rates/other-taxes/motor-vehicle-salesuse-tax",
@@ -64,7 +70,7 @@
           "publisherType": "state-agency"
         }
       ],
-      "note": "The state pages reviewed do not state a credit rule for tax paid to another state on a purchase."
+      "note": "State law allows a credit against Washington use tax for the sales or use tax already paid on the item to another state or its local governments."
     },
     "useTax": null
   },

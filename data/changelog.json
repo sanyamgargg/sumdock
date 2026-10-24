@@ -3,6 +3,18 @@
   "entries": [
     {
       "date": "2026-10-24",
+      "state": "KS",
+      "stateName": "Kansas",
+      "summary": "The 6.5% state rate is now verified against the Department of Revenue's sales tax page."
+    },
+    {
+      "date": "2026-10-24",
+      "state": "WA",
+      "stateName": "Washington",
+      "summary": "Now applies credit for sales or use tax paid to another state, which state law allows against the use tax."
+    },
+    {
+      "date": "2026-10-24",
       "state": "ND",
       "stateName": "North Dakota",
       "summary": "Added state with the 5% motor vehicle excise tax after trade-in (instead of a sales tax), title, disposal fee, yearly registration by weight and year first registered, and the electric vehicle road use fee."

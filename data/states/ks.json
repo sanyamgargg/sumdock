@@ -6,8 +6,14 @@
   "salesTax": {
     "stateRatePct": {
       "value": 6.5,
-      "status": "partial",
+      "status": "verified",
       "sources": [
+        {
+          "title": "Kansas DOR - Sales tax (retailers)",
+          "url": "https://ksrevenue.gov/bustaxtypessales.html",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
         {
           "title": "Kansas DOR - Pub. KS-1526, Business Taxes for Motor Vehicle Dealers (Rev. 7-29-25)",
           "url": "https://ksrevenue.gov/pdf/pub1526.pdf",
@@ -15,7 +21,7 @@
           "publisherType": "state-agency"
         }
       ],
-      "note": "The department's dealer publication shows a sale taxed at 6.5% state tax plus local tax. It does not set out the state rate as a separate rule."
+      "note": "The department says Kansas imposes a 6.5 percent state retailers' sales tax (effective July 1, 2015), plus applicable local taxes. The dealer publication shows a vehicle sale taxed at the same rate."
     },
     "tradeInReducesBase": {
       "value": true,

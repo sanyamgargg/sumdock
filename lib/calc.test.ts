@@ -969,3 +969,11 @@ describe("North Dakota", () => {
     expect(line(calculate(nd, { ...base, fuel: "ev" }), "ev-fee")).toBe(120);
   });
 });
+
+describe("Washington credit for tax paid elsewhere", () => {
+  it("credits tax paid to another state, up to the tax owed", () => {
+    const wa = load("wa");
+    const r = calculate(wa, { ...base, price: 30000, outOfStateTaxPaid: 500, localRatePct: 2 });
+    expect(line(r, "oos-credit")).toBe(-500);
+  });
+});
