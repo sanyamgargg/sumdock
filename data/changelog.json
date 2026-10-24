@@ -3,6 +3,12 @@
   "entries": [
     {
       "date": "2026-10-24",
+      "state": "MA",
+      "stateName": "Massachusetts",
+      "summary": "Added state with the 6.25% sales tax, title fee and two-year registration. The yearly excise tax billed by your city or town is not included."
+    },
+    {
+      "date": "2026-10-24",
       "state": "NJ",
       "stateName": "New Jersey",
       "summary": "Added state with the 6.625% sales tax, title fee, registration by weight and model-year age, the 0.4% luxury surcharge and the zero emission vehicle fee. Added a New or used choice to the calculator."

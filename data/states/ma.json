@@ -1,0 +1,191 @@
+{
+  "code": "MA",
+  "name": "Massachusetts",
+  "slug": "massachusetts",
+  "lastReviewed": "2026-10-24",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 6.25,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Massachusetts DOR - Motor vehicle and trailer sales and use tax (page dated Sept 2022)",
+          "url": "https://www.mass.gov/dor/businesses/current-tax-info/guide-to-trustee-taxes/motor-vehicle-sales-and-use-tax.html",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Massachusetts RMV - Registration and title for a vehicle purchased from an individual",
+          "url": "https://www.mass.gov/how-to/apply-for-a-registration-and-title-for-a-vehicle-purchased-from-an-individual",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ]
+    },
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Massachusetts DOR - Motor vehicle and trailer sales and use tax (page dated Sept 2022)",
+          "url": "https://www.mass.gov/dor/businesses/current-tax-info/guide-to-trustee-taxes/motor-vehicle-sales-and-use-tax.html",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Massachusetts DOR - Directive 02-4: trade-in allowance on purchase of a motor vehicle",
+          "url": "https://www.mass.gov/directive/directive-02-4-calculation-of-trade-in-allowance-on-purchase-of-a-motor-vehicle",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Applies to a purchase from a registered dealer. A private sale gets no reduction for a trade-in."
+    },
+    "local": {
+      "value": {
+        "mode": "none",
+        "capBase": null,
+        "rangeNote": null
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Massachusetts DOR - Motor vehicle and trailer sales and use tax (page dated Sept 2022)",
+          "url": "https://www.mass.gov/dor/businesses/current-tax-info/guide-to-trustee-taxes/motor-vehicle-sales-and-use-tax.html",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The state page describes one 6.25% sales and use tax and no local sales tax. A separate yearly excise tax is billed by your city or town and is not included."
+    },
+    "outOfStateCredit": {
+      "value": true,
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Massachusetts DOR - Motor vehicle and trailer sales and use tax (page dated Sept 2022)",
+          "url": "https://www.mass.gov/dor/businesses/current-tax-info/guide-to-trustee-taxes/motor-vehicle-sales-and-use-tax.html",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "For a vehicle bought elsewhere and brought in within 6 months, use tax is the difference between 6.25% and the tax paid in the other state, if that state allows a corresponding credit."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Certificate of title",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 75,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Massachusetts RMV - Schedule of fees (rev. May 2025)",
+            "url": "https://www.mass.gov/doc/rmv-schedule-of-fees/download",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Massachusetts RMV - Registration and title for a vehicle purchased from an individual",
+            "url": "https://www.mass.gov/how-to/apply-for-a-registration-and-title-for-a-vehicle-purchased-from-an-individual",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "registration",
+      "label": "Registration, 2 years (passenger)",
+      "kind": "flat",
+      "frequency": "biennial",
+      "amount": {
+        "value": 60,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Massachusetts RMV - Schedule of fees (rev. May 2025)",
+            "url": "https://www.mass.gov/doc/rmv-schedule-of-fees/download",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Standard passenger plate. Electric vehicles pay the same $60 every two years. Vanity plates cost more."
+      }
+    },
+    {
+      "id": "excise",
+      "label": "Motor vehicle excise tax",
+      "kind": "flat",
+      "frequency": "annual",
+      "excludedReason": "Billed every year by your city or town, so it is not included.",
+      "amount": {
+        "value": null,
+        "status": "unverified",
+        "sources": [
+          {
+            "title": "Massachusetts RMV - Registration and title for a vehicle purchased from an individual",
+            "url": "https://www.mass.gov/how-to/apply-for-a-registration-and-title-for-a-vehicle-purchased-from-an-individual",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    }
+  ],
+  "notes": [
+    "The yearly motor vehicle excise tax is billed by your city or town and is not included.",
+    "The trade-in reduction applies to purchases from a registered dealer."
+  ],
+  "content": {
+    "intro": "{state} charges {stateRate} sales tax on a vehicle, a title fee and a two-year registration fee. Your city or town then bills a separate excise tax each year.",
+    "howItWorks": [
+      {
+        "text": "The sales tax rate is {stateRate}. When you buy from a registered dealer, the trade-in amount comes off the price before the tax is figured. A private sale gets no trade-in reduction.",
+        "sources": [
+          "https://www.mass.gov/dor/businesses/current-tax-info/guide-to-trustee-taxes/motor-vehicle-sales-and-use-tax.html",
+          "https://www.mass.gov/directive/directive-02-4-calculation-of-trade-in-allowance-on-purchase-of-a-motor-vehicle"
+        ]
+      },
+      {
+        "text": "The standard passenger registration lasts two years. Electric vehicles pay the same fee as other passenger vehicles.",
+        "sources": [
+          "https://www.mass.gov/doc/rmv-schedule-of-fees/download"
+        ]
+      },
+      {
+        "text": "The yearly excise tax is separate from the sales tax. Your city or town sends the bill, and it is not part of this total.",
+        "sources": [
+          "https://www.mass.gov/how-to/apply-for-a-registration-and-title-for-a-vehicle-purchased-from-an-individual"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does a trade-in lower the sales tax in Massachusetts?",
+        "text": "Yes, when you buy from a registered dealer. A private sale gets no reduction for a trade-in.",
+        "sources": [
+          "https://www.mass.gov/dor/businesses/current-tax-info/guide-to-trustee-taxes/motor-vehicle-sales-and-use-tax.html"
+        ]
+      },
+      {
+        "q": "What if I bought the car in another state?",
+        "text": "If you bring it in within a short period of buying it, you owe use tax on the difference between the Massachusetts rate and the tax you paid, when the other state gives a matching credit.",
+        "sources": [
+          "https://www.mass.gov/dor/businesses/current-tax-info/guide-to-trustee-taxes/motor-vehicle-sales-and-use-tax.html"
+        ]
+      },
+      {
+        "q": "Why is the excise tax not in the total?",
+        "text": "Your city or town bills it separately each year, so it is shown as not included.",
+        "sources": [
+          "https://www.mass.gov/how-to/apply-for-a-registration-and-title-for-a-vehicle-purchased-from-an-individual"
+        ]
+      }
+    ]
+  }
+}

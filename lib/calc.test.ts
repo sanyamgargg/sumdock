@@ -486,3 +486,23 @@ describe("New Jersey", () => {
     expect(calculate(tx, { ...base, vehicleAge: "new" }).total).toBe(calculate(tx, { ...base, vehicleAge: "older" }).total);
   });
 });
+
+describe("Massachusetts", () => {
+  const ma = load("ma");
+  it("is publishable", () => expect(publishability(ma).publishable).toBe(true));
+  it("taxes the price less a trade-in at 6.25%", () => {
+    expect(line(calculate(ma, { ...base, price: 30000, tradeIn: 10000 }), "state-tax")).toBe(1250);
+  });
+  it("charges the title fee and a two-year registration, the same for EVs", () => {
+    const r = calculate(ma, base);
+    expect(line(r, "title")).toBe(75);
+    expect(line(r, "registration")).toBe(60);
+    expect(line(calculate(ma, { ...base, fuel: "ev" }), "registration")).toBe(60);
+  });
+  it("lists the yearly excise tax as not included", () => {
+    expect(calculate(ma, base).excluded.map((e) => e.label)).toContain("Motor vehicle excise tax");
+  });
+  it("credits tax paid elsewhere up to what is owed", () => {
+    expect(line(calculate(ma, { ...base, price: 10000, outOfStateTaxPaid: 9999 }), "oos-credit")).toBe(-625);
+  });
+});
