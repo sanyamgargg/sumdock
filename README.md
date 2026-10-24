@@ -34,12 +34,12 @@ npm run build             # validate, then export static site to ./out
 
 Per-state changelog, AdSense, contact email, county data for CA/NY/FL, private-party rules, remaining states.
 
-## Hosting (Cloudflare Pages)
+## Hosting (Cloudflare Workers static assets)
 
-- Framework preset: Next.js (Static HTML Export) or none.
-- Build command: `npm run build`. Output directory: `out`.
+- The site is a static export, so Cloudflare only serves the `out/` folder. `wrangler.jsonc` says so; do not let Cloudflare auto-configure OpenNext.
+- Build command: `npm run build`. Deploy command: `npx wrangler deploy`.
 - Environment variable: `NODE_VERSION=22`.
-- Domain: sumdock.com. Add it under the Pages project's custom domains.
+- Domain: sumdock.com. Add it under the project's Domains and Routes.
 - Vercel's free plan is for non-commercial use, so it is not used for this ad-supported site.
 
 ## Site layout
