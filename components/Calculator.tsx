@@ -1,11 +1,73 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useId, useMemo, useState } from "react";
 import { calculate } from "@/lib/calc";
+import { formatDate, groupNumber, parseNumber, usd } from "@/lib/format";
+import { sourcesForLine } from "@/lib/sources";
 import type { Inputs, StateData } from "@/lib/types";
 
-const usd = (n: number) =>
-  n.toLocaleString("en-US", { style: "currency", currency: "USD", minimumFractionDigits: 2 });
+/** Text field for dollars or percents. Shows "30,000" but keeps a number in state. */
+function NumberField({
+  label, value, onValue, prefix, suffix, hint, decimals = 2, mode = "decimal",
+}: {
+  label: string; value: number; onValue: (n: number) => void;
+  prefix?: string; suffix?: string; hint?: string; decimals?: number; mode?: "decimal" | "numeric";
+}) {
+  const id = useId();
+  const [text, setText] = useState(groupNumber(value, decimals));
+  // Follow outside changes (the county picker fills the local rate) without fighting the user's typing.
+  useEffect(() => {
+    setText((t) => (parseNumber(t) === value ? t : groupNumber(value, decimals)));
+  }, [value, decimals]);
+  return (
+    <div className="field">
+      <label htmlFor={id}>{label}</label>
+      <span className="input-wrap">
+        {prefix && <span className="input-wrap__affix" aria-hidden="true">{prefix}</span>}
+        <input
+          id={id}
+          type="text"
+          inputMode={mode}
+          autoComplete="off"
+          value={text}
+          aria-describedby={hint ? `${id}-hint` : undefined}
+          onChange={(e) => {
+            setText(e.target.value);
+            onValue(parseNumber(e.target.value));
+          }}
+          onBlur={() => setText(groupNumber(parseNumber(text), decimals))}
+        />
+        {suffix && <span className="input-wrap__affix" aria-hidden="true">{suffix}</span>}
+      </span>
+      {hint && <small id={`${id}-hint`}>{hint}</small>}
+    </div>
+  );
+}
+
+function SelectField({
+  label, value, onChange, hint, children,
+}: { label: string; value: string; onChange: (v: string) => void; hint?: string; children: React.ReactNode }) {
+  const id = useId();
+  return (
+    <div className="field">
+      <label htmlFor={id}>{label}</label>
+      <select id={id} value={value} onChange={(e) => onChange(e.target.value)} aria-describedby={hint ? `${id}-hint` : undefined}>
+        {children}
+      </select>
+      {hint && <small id={`${id}-hint`}>{hint}</small>}
+    </div>
+  );
+}
+
+function CheckField({ label, checked, onChange }: { label: string; checked: boolean; onChange: (v: boolean) => void }) {
+  const id = useId();
+  return (
+    <div className="check">
+      <input id={id} type="checkbox" checked={checked} onChange={(e) => onChange(e.target.checked)} />
+      <label htmlFor={id}>{label}</label>
+    </div>
+  );
+}
 
 export default function Calculator({ state }: { state: StateData }) {
   const [i, setI] = useState<Inputs>({
@@ -22,7 +84,6 @@ export default function Calculator({ state }: { state: StateData }) {
     outOfStateNewDealer: false,
   });
   const set = <K extends keyof Inputs>(k: K, v: Inputs[K]) => setI((p) => ({ ...p, [k]: v }));
-  const num = (v: string) => (v === "" ? 0 : Math.max(0, Number(v)));
   const result = useMemo(() => calculate(state, i), [state, i]);
   const local = state.salesTax.local.value;
   const hasMpg = state.fees.some((f) => f.when?.mpgBand);
@@ -44,125 +105,164 @@ export default function Calculator({ state }: { state: StateData }) {
   };
   const hasWeightTable = state.fees.some((f) => f.kind === "weightTable");
   const hasPlate = state.fees.some((f) => f.when?.noPlateToTransfer !== undefined);
+  const showLocalRate = !!local && local.mode === "user-entered";
+  const hasLocation = !!rateTable || counties.length > 0 || showLocalRate;
+
+  const placeLabel = rateTable ? [ratePlace, rateCounty].filter(Boolean).join(", ") : i.county ? `${i.county} County` : "";
+  const where = placeLabel ? `${placeLabel}. ` : "";
 
   return (
-    <div className="calc">
-      <form onSubmit={(e) => e.preventDefault()} className="grid">
-        <label>Vehicle price ($)
-          <input type="number" inputMode="decimal" min="0" value={i.price} onChange={(e) => set("price", num(e.target.value))} />
-        </label>
-        <label>Trade-in value ($)
-          <input type="number" inputMode="decimal" min="0" value={i.tradeIn} onChange={(e) => set("tradeIn", num(e.target.value))} />
-        </label>
-        {rateTable && (
-          <>
-            <label>County{state.localRates?.mode === "localOnly" ? " (for surtax rate)" : " (for local tax rate)"}
-              <select value={rateCounty} onChange={(e) => applyRate(e.target.value, "")}>
-                <option value="">Choose your county</option>
-                {rateCounties.map((n) => <option key={n} value={n}>{n}</option>)}
-              </select>
-            </label>
-            {rateCounty && Object.keys(rateTable[rateCounty].places).length > 0 && (
-              <label>City or area
-                <select value={ratePlace} onChange={(e) => applyRate(rateCounty, e.target.value)}>
-                  <option value="">Not listed / county rate ({rateTable[rateCounty].county}% combined)</option>
-                  {Object.keys(rateTable[rateCounty].places).sort().map((p) => (
-                    <option key={p} value={p}>{p} ({rateTable[rateCounty].places[p]}% combined)</option>
-                  ))}
-                </select>
-                <small>Pick the city or area where you live. You can still edit the local rate below.</small>
-              </label>
+    <div className="calc-layout">
+      <form className="card calc-form" onSubmit={(e) => e.preventDefault()} aria-label={`${state.name} vehicle cost inputs`}>
+        <fieldset>
+          <legend>Price</legend>
+          <NumberField label="Vehicle price" prefix="$" value={i.price} onValue={(n) => set("price", n)} />
+          <NumberField label="Trade-in value" prefix="$" value={i.tradeIn} onValue={(n) => set("tradeIn", n)} />
+          <NumberField label="Tax already paid to another state" prefix="$" value={i.outOfStateTaxPaid} onValue={(n) => set("outOfStateTaxPaid", n)} />
+          {state.salesTax.useTax && (
+            <CheckField
+              label={`New vehicle bought from a dealer outside ${state.name}`}
+              checked={i.outOfStateNewDealer}
+              onChange={(v) => set("outOfStateNewDealer", v)}
+            />
+          )}
+        </fieldset>
+
+        {hasLocation && (
+          <fieldset>
+            <legend>Where you live</legend>
+            {rateTable && (
+              <>
+                <SelectField
+                  label={`County${state.localRates?.mode === "localOnly" ? " (for surtax rate)" : " (for local tax rate)"}`}
+                  value={rateCounty}
+                  onChange={(v) => applyRate(v, "")}
+                >
+                  <option value="">Choose your county</option>
+                  {rateCounties.map((n) => <option key={n} value={n}>{n}</option>)}
+                </SelectField>
+                {rateCounty && Object.keys(rateTable[rateCounty].places).length > 0 && (
+                  <SelectField
+                    label="City or area"
+                    value={ratePlace}
+                    onChange={(v) => applyRate(rateCounty, v)}
+                    hint="Pick the city or area where you live. You can still edit the local rate below."
+                  >
+                    <option value="">Not listed / county rate ({rateTable[rateCounty].county}% combined)</option>
+                    {Object.keys(rateTable[rateCounty].places).sort().map((p) => (
+                      <option key={p} value={p}>{p} ({rateTable[rateCounty].places[p]}% combined)</option>
+                    ))}
+                  </SelectField>
+                )}
+              </>
             )}
-          </>
+            {counties.length > 0 && (
+              <SelectField label="County" value={i.county} onChange={(v) => set("county", v)}>
+                <option value="">Choose your county</option>
+                {counties.map((c) => <option key={c} value={c}>{c}</option>)}
+              </SelectField>
+            )}
+            {showLocalRate && local && (
+              <NumberField
+                label="Local tax rate"
+                suffix="%"
+                decimals={3}
+                value={i.localRatePct}
+                onValue={(n) => set("localRatePct", n)}
+                hint={local.rangeNote ?? undefined}
+              />
+            )}
+          </fieldset>
         )}
-        {local && local.mode === "user-entered" && (
-          <label>Local tax rate (%)
-            <input type="number" inputMode="decimal" min="0" step="0.01" value={i.localRatePct} onChange={(e) => set("localRatePct", num(e.target.value))} />
-            {local.rangeNote && <small>{local.rangeNote}</small>}
-          </label>
-        )}
-        <label>Tax already paid to another state ($)
-          <input type="number" inputMode="decimal" min="0" value={i.outOfStateTaxPaid} onChange={(e) => set("outOfStateTaxPaid", num(e.target.value))} />
-        </label>
-        <label>Fuel type
-          <select value={i.fuel} onChange={(e) => set("fuel", e.target.value as Inputs["fuel"])}>
-            <option value="gas">Gas / hybrid</option>
-            <option value="ev">Electric</option>
-          </select>
-        </label>
-        {hasMpg && i.fuel === "gas" && (
-          <label>Fuel economy
-            <select value={i.mpgBand} onChange={(e) => set("mpgBand", e.target.value as Inputs["mpgBand"])}>
+
+        <fieldset>
+          <legend>Vehicle</legend>
+          <div className="field">
+            <span className="field__label" id="fuel-label">Fuel type</span>
+            <div className="segmented" role="group" aria-labelledby="fuel-label">
+              <button type="button" aria-pressed={i.fuel === "gas"} onClick={() => set("fuel", "gas")}>Gas / hybrid</button>
+              <button type="button" aria-pressed={i.fuel === "ev"} onClick={() => set("fuel", "ev")}>Electric</button>
+            </div>
+          </div>
+          {hasMpg && i.fuel === "gas" && (
+            <SelectField label="Fuel economy" value={i.mpgBand} onChange={(v) => set("mpgBand", v as Inputs["mpgBand"])}>
               <option value="0-19">0-19 MPG</option>
               <option value="20-39">20-39 MPG</option>
               <option value="40+">40+ MPG</option>
-            </select>
-          </label>
-        )}
-        {hasWeight && (
-          <label>Vehicle weight
-            <select value={i.weightBand} onChange={(e) => set("weightBand", e.target.value as Inputs["weightBand"])}>
+            </SelectField>
+          )}
+          {hasWeight && (
+            <SelectField label="Vehicle weight" value={i.weightBand} onChange={(v) => set("weightBand", v as Inputs["weightBand"])}>
               <option value="light">Under 2,500 lbs</option>
               <option value="mid">2,500-3,499 lbs</option>
               <option value="heavy">3,500 lbs and up</option>
-            </select>
-          </label>
-        )}
-        {counties.length > 0 && (
-          <label>County
-            <select value={i.county} onChange={(e) => set("county", e.target.value)}>
-              <option value="">Choose your county</option>
-              {counties.map((c) => <option key={c} value={c}>{c}</option>)}
-            </select>
-          </label>
-        )}
-        {hasWeightTable && (
-          <label>Vehicle weight (lbs)
-            <input type="number" inputMode="numeric" min="0" value={i.weightLbs} onChange={(e) => set("weightLbs", num(e.target.value))} />
-            <small>Curb weight from the registration or manufacturer sticker.</small>
-          </label>
-        )}
-        {hasPlate && (
-          <label className="check">
-            <input type="checkbox" checked={i.noPlateToTransfer} onChange={(e) => set("noPlateToTransfer", e.target.checked)} />
-            No existing plate to transfer
-          </label>
-        )}
-        {state.salesTax.useTax && (
-          <label className="check">
-            <input type="checkbox" checked={i.outOfStateNewDealer} onChange={(e) => set("outOfStateNewDealer", e.target.checked)} />
-            New vehicle bought from a dealer outside {state.name}
-          </label>
-        )}
+            </SelectField>
+          )}
+          {hasWeightTable && (
+            <NumberField
+              label="Vehicle weight (lbs)"
+              suffix="lbs"
+              decimals={0}
+              mode="numeric"
+              value={i.weightLbs}
+              onValue={(n) => set("weightLbs", n)}
+              hint="Curb weight from the registration or manufacturer sticker."
+            />
+          )}
+          {hasPlate && (
+            <CheckField label="No existing plate to transfer" checked={i.noPlateToTransfer} onChange={(v) => set("noPlateToTransfer", v)} />
+          )}
+        </fieldset>
       </form>
 
-      <section className="result" aria-live="polite">
-        <h3>Estimated taxes and fees</h3>
-        <table>
-          <tbody>
-            {result.lines.map((l) => (
-              <tr key={l.id}>
-                <td>{l.label}{l.status === "partial" && <span className="tag" title={l.note}>check source</span>}</td>
-                <td className="num">{usd(l.amount)}</td>
-              </tr>
-            ))}
-            <tr className="total">
-              <td>Estimated total (excluding price)</td>
-              <td className="num">{usd(result.total)}</td>
-            </tr>
-          </tbody>
-        </table>
-        {result.excluded.length > 0 && (
-          <div className="excluded">
-            <strong>Not included, still being verified:</strong>
-            <ul>
-              {result.excluded.map((e) => (
-                <li key={e.label}>{e.label}: {e.reason}</li>
-              ))}
-            </ul>
+      <div className="result-col">
+        <section className="card result-card" aria-labelledby="result-title" aria-live="polite">
+          <div className="result-card__head">
+            <h2 id="result-title" className="result-card__title">Estimated taxes and fees</h2>
+            <div className="result-card__total">{usd(result.total)}</div>
+            <div className="result-card__sub">
+              {where}Price plus these items: {usd(i.price + result.total)}
+            </div>
           </div>
-        )}
-      </section>
+
+          <ul className="lines">
+            {result.lines.map((l) => {
+              const src = sourcesForLine(state, l.id)[0];
+              return (
+                <li key={l.id} className="line">
+                  <span className="line__main">
+                    <span>
+                      {l.label}
+                      {l.status === "partial" && <span className="tag">check source</span>}
+                    </span>
+                    {src && (
+                      <a href={src.url} target="_blank" rel="noopener noreferrer" className="line__src">{src.title}</a>
+                    )}
+                    {l.status === "partial" && l.note && <small className="line__note">{l.note}</small>}
+                  </span>
+                  <b className="line__amt">{usd(l.amount)}</b>
+                </li>
+              );
+            })}
+            {result.lines.length === 0 && <li className="line">Nothing could be priced from confirmed sources yet.</li>}
+          </ul>
+
+          {result.excluded.length > 0 && (
+            <div className="excluded">
+              <b>Not included yet</b>
+              <ul>
+                {result.excluded.map((e) => (
+                  <li key={e.label}>{e.label}: {e.reason}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <p className="result-card__checked">
+            Last checked: {formatDate(state.lastReviewed)}. This is an estimate. Confirm with {state.name} before you pay.
+          </p>
+        </section>
+      </div>
     </div>
   );
 }
