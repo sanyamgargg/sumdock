@@ -44,7 +44,7 @@
           "publisherType": "state-agency"
         }
       ],
-      "note": "TxDMV fee list shows vehicle sales tax at 6.25% with no local component; county amounts are registration fees. Add an explicit Comptroller statement."
+      "note": "The Comptroller and TxDMV pages describe only the 6.25% state motor vehicle tax and never mention a local component. None of the pages opened states outright that local taxes do not apply, so this stays marked partial."
     },
     "outOfStateCredit": {
       "value": true,
@@ -483,7 +483,7 @@
         "Zapata": 11.5,
         "Zavala": 11.5
       },
-      "status": "partial",
+      "status": "verified",
       "sources": [
         {
           "title": "TxDMV - Texas Registration Fees, local fees by county (Fee Chart 1C, effective Jan 1 2026)",
@@ -492,7 +492,7 @@
           "publisherType": "state-agency"
         }
       ],
-      "note": "All 254 counties transcribed from the official chart; spot-checked against separate reads of the same chart. Do a full line-by-line check before launch. The chart spells one county 'Dimmitt'; the county's name is Dimmit."
+      "note": "All 254 counties checked line by line against TxDMV Fee Chart 1C (effective Jan 1, 2026, expires Dec 31, 2026). The chart spells one county 'Dimmitt'; the county's name is Dimmit."
     }
   },
   "content": {

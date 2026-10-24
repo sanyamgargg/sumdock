@@ -22,12 +22,19 @@
       "status": "verified",
       "sources": [
         {
+          "title": "North Carolina General Statutes, Chapter 105, Article 5A (highway use tax)",
+          "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/ByArticle/Chapter_105/Article_5A.html",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
           "title": "NCDMV - MVR-106 title and registration fees (Rev. 04/26)",
           "url": "https://www.ncdot.gov/dmv/downloads/Documents/MVR-106.pdf",
           "accessed": "2026-10-24",
           "publisherType": "state-agency"
         }
-      ]
+      ],
+      "note": "G.S. 105-187.3: the value is the sales price less any allowance given by the retailer for a trade-in."
     },
     "local": {
       "value": {
@@ -44,20 +51,20 @@
           "publisherType": "state-agency"
         }
       ],
-      "note": "No local sales-tax component on the title tax. Wake, Durham and Orange counties add a transit tax and county vehicle tax to the plate fee, and Randolph adds $1; these are not included."
+      "note": "The statute says the tax rate is 3% and that the tax is in addition to all other taxes and fees; neither it nor the DMV forms state whether local sales taxes apply to vehicles. Marked partial. Wake, Durham and Orange counties add a transit tax and county vehicle tax to the plate fee, and Randolph adds $1; these are not included."
     },
     "outOfStateCredit": {
       "value": true,
-      "status": "partial",
+      "status": "verified",
       "sources": [
         {
-          "title": "NCDMV - MVR-106 title and registration fees (Rev. 04/26)",
-          "url": "https://www.ncdot.gov/dmv/downloads/Documents/MVR-106.pdf",
+          "title": "North Carolina General Statutes, Chapter 105, Article 5A (highway use tax)",
+          "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/ByArticle/Chapter_105/Article_5A.html",
           "accessed": "2026-10-24",
           "publisherType": "state-agency"
         }
       ],
-      "note": "A credit may apply for tax paid to another jurisdiction within 90 days, with proof of payment. Vehicles brought in from another state are capped at $250 of highway use tax."
+      "note": "G.S. 105-187.7 allows a credit for tax paid to another jurisdiction, for tax paid within 90 days before applying for the title. Vehicles titled after 90 days in the state are capped at $250 of tax (G.S. 105-187.6)."
     },
     "useTax": null
   },
@@ -96,6 +103,12 @@
         "status": "verified",
         "sources": [
           {
+            "title": "North Carolina G.S. 20-87 - Passenger vehicle registration fees",
+            "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_20/GS_20-87.html",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
             "title": "NCDMV - MVR-106 title and registration fees (Rev. 04/26)",
             "url": "https://www.ncdot.gov/dmv/downloads/Documents/MVR-106.pdf",
             "accessed": "2026-10-24",
@@ -127,8 +140,14 @@
       },
       "amount": {
         "value": 214.5,
-        "status": "partial",
+        "status": "verified",
         "sources": [
+          {
+            "title": "North Carolina G.S. 20-87 - Passenger vehicle registration fees",
+            "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_20/GS_20-87.html",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
           {
             "title": "NCDMV - MVR-94 fee schedule (effective July 1, 2024)",
             "url": "https://www.ncdot.gov/dmv/downloads/Documents/MVR-94.pdf",
@@ -142,7 +161,7 @@
             "publisherType": "state-agency"
           }
         ],
-        "note": "From the fee schedule effective July 1, 2024. Hybrids pay $107.25 a year; the calculator counts hybrids as gas vehicles and does not include that. Whether the fee is in addition to the plate fee is assumed."
+        "note": "G.S. 20-87(13): $214.50 for a plug-in electric vehicle, payable in addition to other registration fees, at initial registration or renewal. Plug-in hybrids pay $107.25; the calculator has no plug-in hybrid option and does not include it."
       }
     }
   ],

@@ -36,8 +36,14 @@
         "capBase": null,
         "rangeNote": null
       },
-      "status": "partial",
+      "status": "verified",
       "sources": [
+        {
+          "title": "Georgia DOR - Title Ad Valorem Tax (TAVT) FAQ",
+          "url": "https://dor.georgia.gov/title-ad-valorem-tax-tavt-faq",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
         {
           "title": "Georgia DOR - Title Ad Valorem Tax (TAVT) and Annual Ad Valorem Tax",
           "url": "https://dor.georgia.gov/motor-vehicles/vehicle-taxes-title-ad-valorem-tax-tavt-and-annual-ad-valorem-tax",
@@ -45,20 +51,20 @@
           "publisherType": "state-agency"
         }
       ],
-      "note": "TAVT is one state-set rate. Vehicles titled under TAVT do not pay the yearly local ad valorem tax."
+      "note": "Vehicles that pay the title ad valorem tax \"are exempt from sales and use tax and the annual ad valorem tax\" (DOR FAQ), so no sales tax of any kind is added."
     },
     "outOfStateCredit": {
       "value": false,
-      "status": "unverified",
+      "status": "partial",
       "sources": [
         {
-          "title": "Georgia DOR - Title Ad Valorem Tax (TAVT) and Annual Ad Valorem Tax",
-          "url": "https://dor.georgia.gov/motor-vehicles/vehicle-taxes-title-ad-valorem-tax-tavt-and-annual-ad-valorem-tax",
+          "title": "Georgia Consumer Protection - TAVT on vehicles purchased out of state",
+          "url": "https://consumered.georgia.gov/ask-ed/2018-02-27/title-ad-valorem-tax-tavt-vehicles-purchased-out-state",
           "accessed": "2026-10-24",
           "publisherType": "state-agency"
         }
       ],
-      "note": "The pages reviewed do not describe a credit for tax paid to another state."
+      "note": "The state says you pay Georgia's tax even if you paid a tax on the vehicle in another state. No credit is described."
     },
     "useTax": null
   },
@@ -119,7 +125,7 @@
             "publisherType": "state-agency"
           }
         ],
-        "note": "Non-commercial motor vehicle fee for registrations beginning or renewing July 1, 2026 to June 30, 2027. The page does not name electric vehicles separately, and it is not stated whether it replaces or adds to the $20 fee; it is added here. Plug-in hybrids pay only if they choose an alternative fuel plate; non-plug-in hybrids are exempt."
+        "note": "The state names vehicles that run only on electricity as paying the non-commercial fee ($238.59) for registrations beginning or renewing July 1, 2026 to June 30, 2027. The state does not say whether it is added to or replaces the $20 plate fee; it is added here. Plug-in hybrids pay only if they choose an alternative fuel plate; standard hybrids are exempt."
       }
     }
   ],
