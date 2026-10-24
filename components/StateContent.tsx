@@ -124,12 +124,12 @@ export default function StateContent({ state }: { state: StateData }) {
             <tbody>
               {sources.map(({ source, usedFor }) => (
                 <tr key={source.url}>
-                  <td>{usedFor.join(", ")}</td>
-                  <td>
+                  <td data-label="Figure">{usedFor.join(", ")}</td>
+                  <td data-label="Official page">
                     <a href={source.url} target="_blank" rel="noopener noreferrer">{source.title}</a>
                     <small className="sources__type">{TYPE_LABEL[source.publisherType]}</small>
                   </td>
-                  <td className="sources__date">{formatDate(source.accessed)}</td>
+                  <td data-label="Opened" className="sources__date">{formatDate(source.accessed)}</td>
                 </tr>
               ))}
             </tbody>

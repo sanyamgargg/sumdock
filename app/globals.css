@@ -32,6 +32,10 @@
 html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
   background: var(--bg);
   color: var(--fg);
   font: 16px/1.5 var(--font);
@@ -40,6 +44,9 @@ body {
 a { color: var(--accent); text-underline-offset: 2px; }
 a:hover { text-decoration-thickness: 2px; }
 :focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
 h1 { font-size: 28px; line-height: 1.15; letter-spacing: -0.02em; font-weight: 700; margin: 0; }
 h2 { font-size: 20px; line-height: 1.3; margin: 0; }
 h3 { font-size: 17px; margin: 0; }
@@ -59,7 +66,7 @@ td, th { padding: 8px 4px; border-bottom: 1px solid var(--line); vertical-align:
 
 /* Shell */
 .container { width: 100%; max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); }
-main.page { padding-top: 20px; padding-bottom: 36px; display: flex; flex-direction: column; gap: 20px; }
+main.page { flex: 1 0 auto; padding-top: 20px; padding-bottom: 36px; display: flex; flex-direction: column; gap: 20px; }
 .lede { color: var(--body); font-size: 17px; margin: 0; max-width: 62ch; }
 
 /* Cards */
@@ -69,7 +76,7 @@ main.page { padding-top: 20px; padding-bottom: 36px; display: flex; flex-directi
 .banner, .excluded { background: var(--warn-bg); color: var(--warn-fg); border-radius: var(--radius-field); padding: 12px 14px; font-size: 14px; }
 .banner { margin: 0; }
 .excluded ul { margin: 6px 0 0; padding-left: 18px; }
-.tag { display: inline-block; margin-left: 8px; font-size: 11px; font-weight: 600; background: var(--warn-bg); color: var(--warn-fg); padding: 1px 6px; border-radius: var(--radius-sm); }
+.tag { display: inline-block; margin-left: 8px; font-size: 12px; font-weight: 600; background: var(--warn-bg); color: var(--warn-fg); padding: 1px 6px; border-radius: var(--radius-sm); }
 
 /* Header */
 .site-header { background: var(--card); border-bottom: 1px solid var(--line); position: relative; }
@@ -200,8 +207,8 @@ select { width: 100%; height: var(--field); padding: 0 12px; font: inherit; font
 }
 
 /* Standalone links keep their look but get a 44px tap area. */
-.line__src, .crumbs a { position: relative; }
-.line__src::after, .crumbs a::after { content: ""; position: absolute; left: -4px; right: -4px; top: 50%; height: var(--touch); transform: translateY(-50%); }
+.line__src, .crumbs a, .result-meta a { position: relative; }
+.line__src::after, .crumbs a::after, .result-meta a::after { content: ""; position: absolute; left: -4px; right: -4px; top: 50%; height: var(--touch); transform: translateY(-50%); }
 
 /* ---- Full mockup pass ---- */
 .crumbs [aria-current="page"] { color: var(--fg); }
@@ -240,7 +247,7 @@ select { width: 100%; height: var(--field); padding: 0 12px; font: inherit; font
 .calc-form__note { margin: 0; background: var(--bg); border-radius: var(--radius-field); padding: 12px 14px; font-size: 13px; color: var(--muted); }
 
 .lines-head, .line { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "label amt" "src src" "note note"; gap: 2px 12px; }
-.lines-head { display: none; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding-bottom: 8px; }
+.lines-head { display: none; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding-bottom: 8px; }
 .line { padding: 11px 0; border-top: 1px solid var(--line); }
 .line__label { grid-area: label; }
 .line__src { grid-area: src; font-size: 13px; display: inline-flex; align-items: center; min-height: 24px; justify-self: start; overflow-wrap: anywhere; }
@@ -274,12 +281,24 @@ select { width: 100%; height: var(--field); padding: 0 12px; font: inherit; font
 .example__excl { font-size: 12px; color: var(--muted) !important; margin-top: 4px !important; }
 .card--flush { padding: 0; overflow: hidden; }
 .table-scroll { overflow-x: auto; }
-.sources { font-size: 14px; min-width: 520px; }
-.sources th { background: var(--bg); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding: 10px 16px; }
+.sources { font-size: 14px; }
+.sources th { background: var(--bg); font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding: 10px 16px; }
 .sources td { padding: 14px 16px; }
 .sources tr:last-child td { border-bottom: 0; }
 .sources__type { display: block; color: var(--muted); }
 .sources__date { white-space: nowrap; }
+.sources a { display: inline-block; padding: 8px 0; }
+
+/* Phones: each source becomes a small card instead of a table that scrolls sideways. */
+@media (max-width: 599px) {
+  .sources, .sources tbody, .sources tr, .sources td { display: block; }
+  .sources thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .sources tr { padding: 14px 16px; border-bottom: 1px solid var(--line); }
+  .sources tr:last-child { border-bottom: 0; }
+  .sources td { padding: 2px 0; border: 0; }
+  .sources td::before { content: attr(data-label); display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-top: 8px; }
+  .sources td:first-child::before { margin-top: 0; }
+}
 
 @media (min-width: 560px) {
   .field-row { grid-template-columns: 1fr 1fr; }
