@@ -1,0 +1,196 @@
+{
+  "code": "WV",
+  "name": "West Virginia",
+  "slug": "west-virginia",
+  "lastReviewed": "2026-10-24",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 6,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "West Virginia DMV - Titles",
+          "url": "https://dmv.wv.gov/titles",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The DMV describes a 6% titling sales tax on vehicles with a net purchase price of $500 or more. Under $500 the page lists a flat $30."
+    },
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "West Virginia DMV - Titles",
+          "url": "https://dmv.wv.gov/titles",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "West Virginia DMV - New residents",
+          "url": "https://dmv.wv.gov/node/397",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The tax is figured on the net purchase price, which is the purchase price minus the trade-in value. The state's new-resident page says the trade-in must first have been titled in West Virginia. Manufacturer rebates are fully taxable and cannot be subtracted."
+    },
+    "local": {
+      "value": {
+        "mode": "none",
+        "capBase": null,
+        "rangeNote": null
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "West Virginia DMV - Titles",
+          "url": "https://dmv.wv.gov/titles",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The DMV pages describe one statewide titling tax and no local tax."
+    },
+    "outOfStateCredit": {
+      "value": null,
+      "status": "unverified",
+      "sources": [
+        {
+          "title": "West Virginia DMV - Titles",
+          "url": "https://dmv.wv.gov/titles",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The DMV pages do not say whether tax paid to another state is credited."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Title",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 15,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "West Virginia DMV - Titles",
+            "url": "https://dmv.wv.gov/titles",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "West Virginia DMV - New residents",
+            "url": "https://dmv.wv.gov/node/397",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "registration",
+      "label": "Registration (Class A, standard plate)",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 51.5,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "West Virginia DMV - Registration fees brochure (fee schedule revised 07/2023)",
+            "url": "https://transportation.wv.gov/dmv/dmvformsearch/registration-fees-brochure.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "West Virginia DMV - New residents",
+            "url": "https://dmv.wv.gov/node/397",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "A two-year registration costs twice the one-year fee. Renewing with a new plate costs the same listed price."
+      }
+    },
+    {
+      "id": "ev-fee",
+      "label": "Electric and alternative fuel vehicle fee",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "ev"
+      },
+      "amount": {
+        "value": 200,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "West Virginia DMV - Registration fees brochure (fee schedule revised 07/2023)",
+            "url": "https://transportation.wv.gov/dmv/dmvformsearch/registration-fees-brochure.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Added to the registration fee each year. Hybrids add a separate $100 per year, which is not included."
+      }
+    }
+  ],
+  "notes": [
+    "A lien adds a $10 recording fee, which is not included.",
+    "A hybrid vehicle adds $100 a year to registration, which is not included.",
+    "Sales tax paid to another state may not be credited; check with the DMV before you buy out of state."
+  ],
+  "content": {
+    "intro": "{state} charges {stateRate} tax when you title a vehicle, figured on the price after your trade-in. There is no local sales tax at titling, and the title and registration fees are modest.",
+    "howItWorks": [
+      {
+        "text": "The titling tax is {stateRate} of the net purchase price, which is the price minus your trade-in. A manufacturer rebate is fully taxable and cannot be subtracted.",
+        "sources": [
+          "https://dmv.wv.gov/titles"
+        ]
+      },
+      {
+        "text": "Registration is paid every year, or for two years at twice the yearly fee. Electric and alternative fuel vehicles add a yearly fee on top.",
+        "sources": [
+          "https://transportation.wv.gov/dmv/dmvformsearch/registration-fees-brochure.pdf"
+        ]
+      },
+      {
+        "text": "People moving into the state do not pay the titling tax on a vehicle already titled in their name in another state.",
+        "sources": [
+          "https://dmv.wv.gov/node/397"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does a trade-in lower the titling tax in West Virginia?",
+        "text": "Yes. The tax is figured on the purchase price minus the trade-in value. The state's new-resident page notes the trade-in must first have been titled in West Virginia.",
+        "sources": [
+          "https://dmv.wv.gov/titles",
+          "https://dmv.wv.gov/node/397"
+        ]
+      },
+      {
+        "q": "Are manufacturer rebates taxed?",
+        "text": "Yes. The DMV says manufacturer rebates are fully taxable and cannot be subtracted from the purchase price.",
+        "sources": [
+          "https://dmv.wv.gov/titles"
+        ]
+      },
+      {
+        "q": "Do electric vehicles pay more to register?",
+        "text": "Yes. Electric and alternative fuel vehicles add a yearly fee to the registration fee. Hybrids add a separate smaller fee.",
+        "sources": [
+          "https://transportation.wv.gov/dmv/dmvformsearch/registration-fees-brochure.pdf"
+        ]
+      }
+    ]
+  }
+}

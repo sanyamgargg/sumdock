@@ -20,6 +20,18 @@ Two columns per state: what only Sanyam can do (blocked sites, accounts, pushing
 | Nothing yet | Official ITD page: registration by vehicle age ($69 for 1 or 2 years, $57 for the 3 to 6 band, $45 for 7 or more, EV +$140, plug-in hybrid +$75) plus county registration and title admin fees for 44 counties; title $14 |
 | | Blocked: the page prints the middle band as "3 or 6 years" and has no row for 0, 4 or 5 years, so the fee cannot be modeled safely. Needs a finer age input and a county fee table |
 
+## North Dakota (researched, not added)
+| Sanyam | Claude |
+|---|---|
+| If you can open it, download https://www.dot.nd.gov/sites/default/files/documents/Motor%20Vehicle%20Services/registration-manual.pdf and save it in tmp/ (my tools cannot read the fee table in it) | Verified so far (tax.nd.gov): 5% excise tax on purchase price less trade-in; credit for excise tax paid elsewhere if the other state allows a reciprocal credit |
+| | From the DOT manual: title $5; electric vehicle road use fee $120, plug-in hybrid $50 on top of registration |
+| | Blocked: the passenger registration fee depends on weight and the year first registered, and the table is in the part of the PDF I cannot read |
+
+## South Dakota (researched, not added)
+| Sanyam | Claude |
+|---|---|
+| Nothing yet | 4% excise tax on purchase price and a $10 title fee are on dor.sd.gov, but the page does not say whether a trade-in lowers the price, and registration amounts are in a separate PDF |
+
 ## Washington (added)
 | Sanyam | Claude |
 |---|---|
@@ -67,7 +79,7 @@ Two columns per state: what only Sanyam can do (blocked sites, accounts, pushing
 Registration tax is based on the vehicle's value, so it would be left out; not started.
 
 ## Added since the last list
-Connecticut, Alabama, Wisconsin, Indiana, Massachusetts, New Jersey, Virginia, Washington, Arizona. Indiana and Massachusetts: yearly excise taxes are not included (Indiana depends on value and county, Massachusetts is billed by your city or town).
+West Virginia, Connecticut, Alabama, Wisconsin, Indiana, Massachusetts, New Jersey, Virginia, Washington, Arizona. Indiana and Massachusetts: yearly excise taxes are not included (Indiana depends on value and county, Massachusetts is billed by your city or town).
 
 ## Other states waiting
 | Sanyam | Claude |

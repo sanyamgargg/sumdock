@@ -3,6 +3,12 @@
   "entries": [
     {
       "date": "2026-10-24",
+      "state": "WV",
+      "stateName": "West Virginia",
+      "summary": "Added state with the 6% titling tax on the price after trade-in, title fee, registration and the electric vehicle fee. Credit for tax paid to another state is not confirmed, and the lien and hybrid fees are not included."
+    },
+    {
+      "date": "2026-10-24",
       "state": "CT",
       "stateName": "Connecticut",
       "summary": "Added state with the 6.35% sales tax, the higher rate on vehicles priced above $50,000, trade-in credit for dealer purchases, title, registration and DMV fees. The yearly town property tax is not included."

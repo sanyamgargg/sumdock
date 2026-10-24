@@ -647,3 +647,23 @@ describe("Connecticut", () => {
   });
 });
 
+describe("West Virginia", () => {
+  const wv = load("wv");
+  it("is publishable", () => expect(publishability(wv).publishable).toBe(true));
+  it("taxes the price less a trade-in at 6%", () => {
+    expect(line(calculate(wv, { ...base, price: 30000, tradeIn: 10000 }), "state-tax")).toBe(1200);
+  });
+  it("charges title and registration, with the EV fee only for EVs", () => {
+    const r = calculate(wv, base);
+    expect(line(r, "title")).toBe(15);
+    expect(line(r, "registration")).toBe(51.5);
+    expect(line(r, "ev-fee")).toBeUndefined();
+    expect(line(calculate(wv, { ...base, fuel: "ev" }), "ev-fee")).toBe(200);
+  });
+  it("does not credit tax paid elsewhere, and says so", () => {
+    const r = calculate(wv, { ...base, outOfStateTaxPaid: 500 });
+    expect(line(r, "oos-credit")).toBeUndefined();
+    expect(r.excluded.map((e) => e.label)).toContain("Out-of-state tax credit");
+  });
+});
+
