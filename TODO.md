@@ -2,21 +2,18 @@
 
 Two columns per state: what only Sanyam can do (blocked sites, accounts, pushing) and what Claude does once that is in.
 
-## Arizona (on hold)
+## Arizona (added, partly modeled)
 | Sanyam | Claude |
 |---|---|
-| Save https://azdor.gov/sites/default/files/document/TPT_RATETABLE_10012026.pdf as `tmp/az-tpt-rates.pdf` (azdor.gov blocks Claude's browser with a bot check) | Parse county and city retail rates into the local-rate picker |
-| | Write `data/states/az.json`: state 5.6%, trade-in reduces the price, title $4, registration $8, air quality $1.50, use tax with credit for tax paid elsewhere (all confirmed), vehicle license tax listed as not included (needs original list price) |
-| | Tests, changelog entry, content block |
+| Nothing | City privilege tax is not included: cities charge a lower rate on the part of a single item above a set amount, which needs tiered local rates in the calculator (types and picker) |
+| | Vehicle license tax is not included (needs list price and age inputs) |
 
-## Washington
-Confirmed so far: state rate 6.5% (DOR flyer), DOL fee page (basic fee $43.25, tab $30, filing and service fees, title $15, weight fee $10, EV fees, plates $50).
+## Washington (added)
 | Sanyam | Claude |
 |---|---|
-| Download the current quarter local-rate flyer for car dealers (Oct to Dec 2026, `MVETLSUFlyer`) from dor.wa.gov and save as `tmp/wa-local-rates.pdf`. About 400 rows; the fetch tool cannot align them reliably | Parse local rate by location, build the city and county picker |
-| Open https://dor.wa.gov/TaxRateLookup once and tell Claude whether it works without a login (used to spot-check a few addresses) | Confirm from DOR that a trade-in lowers the taxable price |
-| | Sound Transit motor vehicle excise tax depends on list price: list as not included, with a reason |
-| | Resolve which EV fee applies ($100 vs $50, $75 electrification fee) before using them; hold them out until the DOL page is clear |
+| Check one address on dor.wa.gov/TaxRateLookup against the calculator and tell Claude if it differs | Confirm which location (delivery or registration address) sets the local rate; today the local rate is marked "check source" |
+| | Electric vehicle fees ($100 or $50, plus $75) held out until the DOL page says which applies |
+| | Regional transit excise tax and weight-based gross weight fee are not included |
 
 ## New Jersey
 Confirmed so far: 6.625% rate and trade-in reduces the price (MVC form GU-30, rev. 7/25), title $60 ($85 with a lien), registration by weight and age (table on nj.gov/mvc), zero-emission vehicle fee $250 from July 2024 plus $10 a year.

@@ -409,3 +409,40 @@ describe("Washington", () => {
     expect(calculate(wa, { ...base, fuel: "ev" }).excluded.map((e) => e.label)).toContain("Electric vehicle fees");
   });
 });
+
+describe("Arizona", () => {
+  const az = load("az");
+  const rates = az.localRates!.rates.value!;
+  it("is publishable with 15 counties", () => {
+    expect(publishability(az).publishable).toBe(true);
+    expect(Object.keys(rates).length).toBe(15);
+  });
+  it("county rates are the retail rate minus the 5.6% state rate", () => {
+    expect(rates["Maricopa"].county).toBeCloseTo(0.7, 6);
+    expect(rates["Pima"].county).toBeCloseTo(0.5, 6);
+    expect(rates["Mohave"].county).toBeCloseTo(0, 6);
+    expect(rates["Yuma"].county).toBeCloseTo(1.112, 6);
+    expect(rates["Apache"].county).toBe(rates["Greenlee"].county);
+  });
+  it("taxes the price less a trade-in at 5.6% and adds the county rate", () => {
+    const r = calculate(az, { ...base, price: 30000, tradeIn: 10000, localRatePct: 0.7 });
+    expect(line(r, "state-tax")).toBe(1120);
+    expect(line(r, "local-tax")).toBe(140);
+  });
+  it("charges title, registration and air quality fees; air quality skipped for EVs", () => {
+    const r = calculate(az, base);
+    expect(line(r, "title")).toBe(4);
+    expect(line(r, "registration")).toBe(8);
+    expect(line(r, "air-quality")).toBe(1.5);
+    expect(line(calculate(az, { ...base, fuel: "ev" }), "air-quality")).toBeUndefined();
+  });
+  it("lists the vehicle license tax and city tax as not included", () => {
+    const labels = calculate(az, base).excluded.map((e) => e.label);
+    expect(labels).toContain("Vehicle license tax");
+    expect(labels).toContain("City privilege tax");
+  });
+  it("credits tax paid to another state, never above what is owed", () => {
+    const r = calculate(az, { ...base, price: 10000, outOfStateTaxPaid: 9999 });
+    expect(line(r, "oos-credit")).toBe(-560);
+  });
+});

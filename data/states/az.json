@@ -1,0 +1,323 @@
+{
+  "code": "AZ",
+  "name": "Arizona",
+  "slug": "arizona",
+  "lastReviewed": "2026-10-24",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 5.6,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Arizona DOR - Motor vehicle sales (transaction privilege tax)",
+          "url": "https://azdor.gov/transaction-privilege-tax/motor-vehicle-sales",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Arizona DOR - Transaction Privilege and Other Tax Rate Tables, effective Oct 1, 2026 (ADOR 11249)",
+          "url": "https://azdor.gov/sites/default/files/document/TPT_RATETABLE_10012026.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ]
+    },
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Arizona DOR - Transaction privilege tax ruling TPR 96-1",
+          "url": "https://azdor.gov/sites/default/files/2023-03/RULINGS_TPT_1996_tpr96-1.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Arizona DOR - Vehicle Use Tax Calculator brochure",
+          "url": "https://www.azdor.gov:443/sites/default/files/2023-03/BROCHURE_VUTCalculator_fs.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The state ruling taxes the sales price less the value traded in. The use tax calculator also asks only for the trade-in value."
+    },
+    "local": {
+      "value": {
+        "mode": "user-entered",
+        "capBase": null,
+        "rangeNote": "County rate fills in when you pick a county. City tax is not included."
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Arizona DOR - Motor vehicle sales (transaction privilege tax)",
+          "url": "https://azdor.gov/transaction-privilege-tax/motor-vehicle-sales",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Arizona DOR - Transaction Privilege and Other Tax Rate Tables, effective Oct 1, 2026 (ADOR 11249)",
+          "url": "https://azdor.gov/sites/default/files/document/TPT_RATETABLE_10012026.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "County excise tax is the retail rate for the county minus the state rate. City privilege tax also applies to vehicle sales and varies by city, with lower rates on the part of a single item above a set amount. It is not modeled, so use the state's rate look-up tool."
+    },
+    "outOfStateCredit": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Arizona DOR - Vehicle Use Tax Calculator brochure",
+          "url": "https://www.azdor.gov:443/sites/default/files/2023-03/BROCHURE_VUTCalculator_fs.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "For use tax, the state reduces the Arizona state and city use tax by the sales or excise tax paid in the other state."
+    },
+    "useTax": null
+  },
+  "localRates": {
+    "label": "County excise tax rate",
+    "mode": "localOnly",
+    "rates": {
+      "value": {
+        "Apache": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Cochise": {
+          "county": 1.0,
+          "places": {}
+        },
+        "Coconino": {
+          "county": 1.3,
+          "places": {}
+        },
+        "Gila": {
+          "county": 1.0,
+          "places": {}
+        },
+        "Graham": {
+          "county": 1.0,
+          "places": {}
+        },
+        "Greenlee": {
+          "county": 0.5,
+          "places": {}
+        },
+        "La Paz": {
+          "county": 1.0,
+          "places": {}
+        },
+        "Maricopa": {
+          "county": 0.7,
+          "places": {}
+        },
+        "Mohave": {
+          "county": 0.0,
+          "places": {}
+        },
+        "Navajo": {
+          "county": 0.83,
+          "places": {}
+        },
+        "Pima": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Pinal": {
+          "county": 1.1,
+          "places": {}
+        },
+        "Santa Cruz": {
+          "county": 1.0,
+          "places": {}
+        },
+        "Yavapai": {
+          "county": 0.75,
+          "places": {}
+        },
+        "Yuma": {
+          "county": 1.112,
+          "places": {}
+        }
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Arizona DOR - Transaction Privilege and Other Tax Rate Tables, effective Oct 1, 2026 (ADOR 11249)",
+          "url": "https://azdor.gov/sites/default/files/document/TPT_RATETABLE_10012026.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Retail rate in the October 2026 table minus the 5.6% state rate. Apache and Greenlee share one column. City tax is not included."
+    }
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Title",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 4,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Arizona MVD - Fees (T&R) Overview, updated Oct 21, 2026",
+            "url": "https://apps.azdot.gov/files/mvd/mvm/dealer-licensing/Content/CONTENT/Dealer_Licensing/Dealer_Community/5-Dealer%20Title%20Clerks/Fees_(%20T%20and%20R)_Overview.htm",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "registration",
+      "label": "Registration fee",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 8,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Arizona MVD - Fees (T&R) Overview, updated Oct 21, 2026",
+            "url": "https://apps.azdot.gov/files/mvd/mvm/dealer-licensing/Content/CONTENT/Dealer_Licensing/Dealer_Community/5-Dealer%20Title%20Clerks/Fees_(%20T%20and%20R)_Overview.htm",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "air-quality",
+      "label": "Air quality fee (1 year)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "gas"
+      },
+      "amount": {
+        "value": 1.5,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Arizona MVD - Fees (T&R) Overview, updated Oct 21, 2026",
+            "url": "https://apps.azdot.gov/files/mvd/mvm/dealer-licensing/Content/CONTENT/Dealer_Licensing/Dealer_Community/5-Dealer%20Title%20Clerks/Fees_(%20T%20and%20R)_Overview.htm",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Does not apply to electrically powered vehicles. A separate $0.25 compliance fee applies in non-attainment areas."
+      }
+    },
+    {
+      "id": "vehicle-license-tax",
+      "label": "Vehicle license tax",
+      "kind": "flat",
+      "frequency": "annual",
+      "excludedReason": "Arizona figures it from the vehicle's original list price (60% of it, then reduced each year since first registration, times $2.80 or $2.89 per $100). The calculator does not ask for list price or age, so it is left out.",
+      "amount": {
+        "value": null,
+        "status": "unverified",
+        "sources": [
+          {
+            "title": "Arizona MVD - Fees (T&R) Overview, updated Oct 21, 2026",
+            "url": "https://apps.azdot.gov/files/mvd/mvm/dealer-licensing/Content/CONTENT/Dealer_Licensing/Dealer_Community/5-Dealer%20Title%20Clerks/Fees_(%20T%20and%20R)_Overview.htm",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "city-tax",
+      "label": "City privilege tax",
+      "kind": "flat",
+      "frequency": "once",
+      "excludedReason": "City rates differ by city and are lower on the part of a single item above a set amount. This calculator does not model them yet. Use the state's rate look-up tool.",
+      "amount": {
+        "value": null,
+        "status": "unverified",
+        "sources": [
+          {
+            "title": "Arizona DOR - Transaction Privilege and Other Tax Rate Tables, effective Oct 1, 2026 (ADOR 11249)",
+            "url": "https://azdor.gov/sites/default/files/document/TPT_RATETABLE_10012026.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Arizona DOR - Motor vehicle sales (transaction privilege tax)",
+            "url": "https://azdor.gov/transaction-privilege-tax/motor-vehicle-sales",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    }
+  ],
+  "notes": [
+    "The vehicle license tax is the largest ongoing cost in Arizona and depends on list price and age, so it is not included.",
+    "City privilege tax is not included."
+  ],
+  "content": {
+    "intro": "{state} charges {stateRate} state sales tax on a vehicle, plus a county rate, a small title fee and a small registration fee. A yearly vehicle license tax based on the vehicle's list price is the largest ongoing cost.",
+    "howItWorks": [
+      {
+        "text": "The state rate is {stateRate}. A trade-in lowers the price the tax is figured on. Counties add their own rate, and cities charge a separate tax that varies by city.",
+        "sources": [
+          "https://azdor.gov/transaction-privilege-tax/motor-vehicle-sales",
+          "https://azdor.gov/sites/default/files/2023-03/RULINGS_TPT_1996_tpr96-1.pdf",
+          "https://azdor.gov/sites/default/files/document/TPT_RATETABLE_10012026.pdf"
+        ]
+      },
+      {
+        "text": "If you buy from a dealer in another state and register the vehicle here, you owe use tax at the same state rate. The state reduces it by the tax you already paid in the other state.",
+        "sources": [
+          "https://www.azdor.gov:443/sites/default/files/2023-03/BROCHURE_VUTCalculator_fs.pdf"
+        ]
+      },
+      {
+        "text": "The vehicle license tax is charged when you register and again each year. It is figured from the vehicle's original list price and gets smaller as the vehicle ages.",
+        "sources": [
+          "https://apps.azdot.gov/files/mvd/mvm/dealer-licensing/Content/CONTENT/Dealer_Licensing/Dealer_Community/5-Dealer%20Title%20Clerks/Fees_(%20T%20and%20R)_Overview.htm"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does a trade-in lower the sales tax in Arizona?",
+        "text": "Yes. The state taxes the sales price less the value of the vehicle traded in.",
+        "sources": [
+          "https://azdor.gov/sites/default/files/2023-03/RULINGS_TPT_1996_tpr96-1.pdf"
+        ]
+      },
+      {
+        "q": "What if I buy a car in another state?",
+        "text": "Arizona charges use tax when you register it here, and reduces it by the sales tax you paid elsewhere. Enter that amount in the calculator.",
+        "sources": [
+          "https://www.azdor.gov:443/sites/default/files/2023-03/BROCHURE_VUTCalculator_fs.pdf"
+        ]
+      },
+      {
+        "q": "Why is the vehicle license tax not in the total?",
+        "text": "It depends on the vehicle's original list price and age, which the calculator does not ask for, so it is shown as not included.",
+        "sources": [
+          "https://apps.azdot.gov/files/mvd/mvm/dealer-licensing/Content/CONTENT/Dealer_Licensing/Dealer_Community/5-Dealer%20Title%20Clerks/Fees_(%20T%20and%20R)_Overview.htm"
+        ]
+      },
+      {
+        "q": "Is city tax included?",
+        "text": "No. Cities charge their own tax on vehicle sales and rates differ by city, so it is shown as not included.",
+        "sources": [
+          "https://azdor.gov/transaction-privilege-tax/motor-vehicle-sales"
+        ]
+      }
+    ]
+  }
+}

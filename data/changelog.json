@@ -3,6 +3,12 @@
   "entries": [
     {
       "date": "2026-10-24",
+      "state": "AZ",
+      "stateName": "Arizona",
+      "summary": "Added state with the 5.6% state rate, county rates from the October 2026 table, title and registration fees. The vehicle license tax and city tax are not included."
+    },
+    {
+      "date": "2026-10-24",
       "state": "WA",
       "stateName": "Washington",
       "summary": "Added state with the 7% combined state rate, local rates for 403 locations from the October 2026 table, and title and registration fees. Electric vehicle fees and the regional transit excise tax are not included."
