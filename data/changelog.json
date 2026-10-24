@@ -3,6 +3,12 @@
   "entries": [
     {
       "date": "2026-10-24",
+      "state": "AL",
+      "stateName": "Alabama",
+      "summary": "Added state with the 2% state sales tax, title, registration and the electric vehicle fee. Local city and county tax is entered by you because the state guide lists no rates."
+    },
+    {
+      "date": "2026-10-24",
       "state": "AZ",
       "stateName": "Arizona",
       "summary": "Added city privilege tax for 96 cities and towns, including the lower rate many charge on the part of a single item above a set price. Rates come from the October 2026 state table; the wording for some price tiers is not fully explicit, so the local rate stays marked partly verified."

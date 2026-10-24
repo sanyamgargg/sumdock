@@ -55,7 +55,7 @@ Two columns per state: what only Sanyam can do (blocked sites, accounts, pushing
 Registration tax is based on the vehicle's value, so it would be left out; not started.
 
 ## Added since the last list
-Wisconsin, Indiana, Massachusetts, New Jersey, Virginia, Washington, Arizona. Indiana and Massachusetts: yearly excise taxes are not included (Indiana depends on value and county, Massachusetts is billed by your city or town).
+Alabama, Wisconsin, Indiana, Massachusetts, New Jersey, Virginia, Washington, Arizona. Indiana and Massachusetts: yearly excise taxes are not included (Indiana depends on value and county, Massachusetts is billed by your city or town).
 
 ## Other states waiting
 | Sanyam | Claude |

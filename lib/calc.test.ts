@@ -593,3 +593,25 @@ describe("Arizona city tax tiers", () => {
     expect(r.lines.find((l) => l.id === "local-tax")).toBeDefined();
   });
 });
+
+describe("Alabama", () => {
+  const al = load("al");
+  it("is publishable", () => expect(publishability(al).publishable).toBe(true));
+  it("taxes the price less a trade-in at 2%", () => {
+    expect(line(calculate(al, { ...base, price: 30000, tradeIn: 10000 }), "state-tax")).toBe(400);
+  });
+  it("adds the entered local rate on the same base", () => {
+    expect(line(calculate(al, { ...base, price: 30000, localRatePct: 3 }), "local-tax")).toBe(900);
+  });
+  it("charges title, licensing official, registration and issuance fees", () => {
+    const r = calculate(al, base);
+    expect(line(r, "title")).toBe(15);
+    expect(line(r, "title-licensing-fee")).toBe(3);
+    expect(line(r, "registration")).toBe(23);
+    expect(line(r, "plate-issuance")).toBe(1.25);
+    expect(line(r, "ev-fee")).toBeUndefined();
+  });
+  it("adds the electric vehicle fee only for EVs", () => {
+    expect(line(calculate(al, { ...base, fuel: "ev" }), "ev-fee")).toBe(203);
+  });
+});

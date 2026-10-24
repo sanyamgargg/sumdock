@@ -1,0 +1,233 @@
+{
+  "code": "AL",
+  "name": "Alabama",
+  "slug": "alabama",
+  "lastReviewed": "2026-10-24",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 2,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Alabama DOR - Automotive Sales, Use and Lease Tax Guide (Feb 2025)",
+          "url": "https://www.revenue.alabama.gov/wp-content/uploads/2022/06/Automotive_Sales_Use_Lease_Tax_Guide.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The guide says the state sales tax on automotive vehicles is 2 percent of the gross proceeds of the sale."
+    },
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Alabama DOR - Automotive Sales, Use and Lease Tax Guide (Feb 2025)",
+          "url": "https://www.revenue.alabama.gov/wp-content/uploads/2022/06/Automotive_Sales_Use_Lease_Tax_Guide.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Tax is figured on the net difference after the trade-in credit. A trade-in worth more than the price does not create a refund or carry over."
+    },
+    "local": {
+      "value": {
+        "mode": "user-entered",
+        "capBase": null,
+        "rangeNote": "Most cities and counties add their own tax, and only one city or county tax applies. Dealers collect it for the place where the dealership is located. Ask the dealer or your county for the rate and type it here."
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Alabama DOR - Automotive Sales, Use and Lease Tax Guide (Feb 2025)",
+          "url": "https://www.revenue.alabama.gov/wp-content/uploads/2022/06/Automotive_Sales_Use_Lease_Tax_Guide.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The guide describes how local tax works but does not list local rates."
+    },
+    "outOfStateCredit": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Alabama DOR - Automotive Sales, Use and Lease Tax Guide (Feb 2025)",
+          "url": "https://www.revenue.alabama.gov/wp-content/uploads/2022/06/Automotive_Sales_Use_Lease_Tax_Guide.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "An Alabama taxpayer gets credit for tax legally owed to another state on a vehicle brought in for use in Alabama (Code of Alabama 40-23-106)."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Title",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 15,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Alabama DOR - General registration FAQ",
+            "url": "https://www.revenue.alabama.gov/faq-categories/general-registration/",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "title-licensing-fee",
+      "label": "Licensing official fee on a title",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 3,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Alabama DOR - General registration FAQ",
+            "url": "https://www.revenue.alabama.gov/faq-categories/general-registration/",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Stated in an FAQ about titling imported vehicles as an extra charge due to the licensing official."
+      }
+    },
+    {
+      "id": "registration",
+      "label": "Registration (passenger plate)",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 23,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Alabama DOR - General registration FAQ",
+            "url": "https://www.revenue.alabama.gov/faq-categories/general-registration/",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Alabama DOR - Motor vehicle registration fees",
+            "url": "https://www.revenue.alabama.gov/tax-types/motor-vehicle-registration-fees/",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The registration page lists $23 to $105 for passenger cars and pickup trucks without saying what sets the amount. $23 is the standard passenger plate cost."
+      }
+    },
+    {
+      "id": "plate-issuance",
+      "label": "Plate issuance fee",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 1.25,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Alabama DOR - General registration FAQ",
+            "url": "https://www.revenue.alabama.gov/faq-categories/general-registration/",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Alabama DOR - Fee to transfer a license plate (FAQ)",
+            "url": "https://www.revenue.alabama.gov/faqs/what-is-the-fee-to-transfer-a-license-plate",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Stated as an issuance fee on the standard passenger plate; the transfer FAQ gives the same $1.25 state amount."
+      }
+    },
+    {
+      "id": "ev-fee",
+      "label": "Electric vehicle registration fee",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "ev"
+      },
+      "amount": {
+        "value": 203,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Alabama DOR - Motor vehicle registration fees",
+            "url": "https://www.revenue.alabama.gov/tax-types/motor-vehicle-registration-fees/",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Listed for battery electric vehicles, effective July 1, 2023. The page does not say whether it replaces or is added to the standard plate fee, so it is added here. Plug-in hybrids pay a smaller fee that is not included."
+      }
+    }
+  ],
+  "notes": [
+    "Local sales tax depends on where the dealership is. Type your rate in the local tax box.",
+    "Some counties add local fees to registration that are not included.",
+    "Manufacturer rebates applied to the price are taxable. Enter the price before the rebate comes off."
+  ],
+  "content": {
+    "intro": "{state} charges {stateRate} state sales tax on a vehicle, and most cities and counties add their own tax on top. Title and registration fees are small by comparison.",
+    "howItWorks": [
+      {
+        "text": "The state rate is {stateRate}. A trade-in comes off the price before tax, so only the net difference is taxed.",
+        "sources": [
+          "https://www.revenue.alabama.gov/wp-content/uploads/2022/06/Automotive_Sales_Use_Lease_Tax_Guide.pdf"
+        ]
+      },
+      {
+        "text": "Cities and counties add their own tax. Only one city or county tax applies, and the dealer collects it for the place where the dealership is located.",
+        "sources": [
+          "https://www.revenue.alabama.gov/wp-content/uploads/2022/06/Automotive_Sales_Use_Lease_Tax_Guide.pdf"
+        ]
+      },
+      {
+        "text": "A manufacturer rebate that you apply to the purchase price is still taxable. A rebate you take as cash is not.",
+        "sources": [
+          "https://www.revenue.alabama.gov/wp-content/uploads/2022/06/Automotive_Sales_Use_Lease_Tax_Guide.pdf"
+        ]
+      },
+      {
+        "text": "If you bought in another state and bring the vehicle to Alabama, you get credit for tax you legally owed to that state.",
+        "sources": [
+          "https://www.revenue.alabama.gov/wp-content/uploads/2022/06/Automotive_Sales_Use_Lease_Tax_Guide.pdf"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does a trade-in lower the sales tax in Alabama?",
+        "text": "Yes. Tax is figured on the difference between the price and the trade-in credit. If the trade-in is worth more than the price, the extra cannot be deducted elsewhere.",
+        "sources": [
+          "https://www.revenue.alabama.gov/wp-content/uploads/2022/06/Automotive_Sales_Use_Lease_Tax_Guide.pdf"
+        ]
+      },
+      {
+        "q": "Are rebates taxed in Alabama?",
+        "text": "Manufacturer and dealer rebates are taxable when applied to the purchase price. Federal electric vehicle credits are also subject to sales and use tax.",
+        "sources": [
+          "https://www.revenue.alabama.gov/wp-content/uploads/2022/06/Automotive_Sales_Use_Lease_Tax_Guide.pdf"
+        ]
+      },
+      {
+        "q": "Why do I have to enter my own local tax rate?",
+        "text": "Local rates vary by city and county and are not listed in the state's vehicle tax guide, so the calculator asks for the rate your dealer charges.",
+        "sources": [
+          "https://www.revenue.alabama.gov/wp-content/uploads/2022/06/Automotive_Sales_Use_Lease_Tax_Guide.pdf"
+        ]
+      }
+    ]
+  }
+}
