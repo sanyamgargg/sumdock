@@ -1,0 +1,260 @@
+{
+  "code": "NV",
+  "name": "Nevada",
+  "slug": "nevada",
+  "lastReviewed": "2026-10-24",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 6.85,
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Nevada Department of Taxation - Components of sales and use tax rates",
+          "url": "https://tax.nv.gov/wp-content/uploads/2024/12/Components-of-Sales-Tax.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The department's table of rate components gives 6.85% as the statewide minimum. The county rates below add to it."
+    },
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Nevada Department of Taxation - Automotive (motor vehicle sales tax guidance)",
+          "url": "https://tax.nv.gov/wp-content/uploads/2024/03/Automotive.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The department's guidance says sales tax is figured on the net selling price, after the value of the trade-in. The guidance document is not dated."
+    },
+    "local": {
+      "value": {
+        "mode": "user-entered",
+        "capBase": null,
+        "rangeNote": "Pick the county where the sale happens (the dealer's county). Nevada sets the rate by where the sale takes place, not where you live."
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Nevada Department of Taxation - Automotive (motor vehicle sales tax guidance)",
+          "url": "https://tax.nv.gov/wp-content/uploads/2024/03/Automotive.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Nevada Department of Taxation - Components of sales and use tax rates",
+          "url": "https://tax.nv.gov/wp-content/uploads/2024/12/Components-of-Sales-Tax.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "County rates come from the department's rate components table, which names counties with a higher rate and lists every other county at the statewide rate. The table's local rates are dated July 2020 in its text, so check the current rate."
+    },
+    "outOfStateCredit": {
+      "value": true,
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Nevada Department of Taxation - Automotive (motor vehicle sales tax guidance)",
+          "url": "https://tax.nv.gov/wp-content/uploads/2024/03/Automotive.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "For a vehicle bought in another state, Nevada assesses the difference when the Nevada tax is higher, and nothing more is due when the other state's tax is higher."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Title",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 28.25,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Nevada DMV - Registration fees and taxes",
+            "url": "https://dmv.nv.gov/regfees.htm",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Fee for a first-time Nevada title."
+      }
+    },
+    {
+      "id": "registration",
+      "label": "Registration (passenger car)",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 33,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Nevada DMV - Registration fees and taxes",
+            "url": "https://dmv.nv.gov/regfees.htm",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Passenger car registration fee on the DMV's fee table."
+      }
+    },
+    {
+      "id": "governmental-services-tax",
+      "label": "Governmental services tax",
+      "kind": "flat",
+      "frequency": "annual",
+      "excludedReason": "Nevada figures it from the vehicle's original suggested retail price (35% of it, reduced for age, taxed at a set rate, with a $16 minimum), plus a supplemental amount. The calculator does not ask for the original price, so it is left out.",
+      "amount": {
+        "value": null,
+        "status": "unverified",
+        "sources": [
+          {
+            "title": "Nevada DMV - Registration fees and taxes",
+            "url": "https://dmv.nv.gov/regfees.htm",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    }
+  ],
+  "notes": [
+    "Nevada charges a yearly governmental services tax based on the original retail price, which is not included.",
+    "The county rate follows the dealer's location, not where you live."
+  ],
+  "content": {
+    "intro": "{state} charges {stateRate} state sales tax plus a county rate, set by where the sale takes place. A yearly governmental services tax, based on the vehicle's original price, is the largest ongoing cost.",
+    "howItWorks": [
+      {
+        "text": "The state rate is {stateRate}. A trade-in lowers the price the tax is figured on.",
+        "sources": [
+          "https://tax.nv.gov/wp-content/uploads/2024/12/Components-of-Sales-Tax.pdf",
+          "https://tax.nv.gov/wp-content/uploads/2024/03/Automotive.pdf"
+        ]
+      },
+      {
+        "text": "The county rate depends on the county where the sale takes place, not on where you live.",
+        "sources": [
+          "https://tax.nv.gov/wp-content/uploads/2024/03/Automotive.pdf"
+        ]
+      },
+      {
+        "text": "If you bought in another state and its tax was lower than Nevada's, you owe the difference. If it was higher, nothing more is due.",
+        "sources": [
+          "https://tax.nv.gov/wp-content/uploads/2024/03/Automotive.pdf"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does a trade-in lower the sales tax in Nevada?",
+        "text": "Yes, the tax is figured on the net selling price after the trade-in.",
+        "sources": [
+          "https://tax.nv.gov/wp-content/uploads/2024/03/Automotive.pdf"
+        ]
+      },
+      {
+        "q": "Which county rate applies?",
+        "text": "The county where the sale takes place, not the buyer's home county.",
+        "sources": [
+          "https://tax.nv.gov/wp-content/uploads/2024/03/Automotive.pdf"
+        ]
+      }
+    ]
+  },
+  "localRates": {
+    "label": "County sales tax rate (added to the 6.85% state rate)",
+    "mode": "localOnly",
+    "rates": {
+      "value": {
+        "Carson City": {
+          "county": 0.75,
+          "places": {}
+        },
+        "Churchill": {
+          "county": 0.75,
+          "places": {}
+        },
+        "Clark": {
+          "county": 1.525,
+          "places": {}
+        },
+        "Douglas": {
+          "county": 0.25,
+          "places": {}
+        },
+        "Elko": {
+          "county": 0.25,
+          "places": {}
+        },
+        "Esmeralda": {
+          "county": 0.0,
+          "places": {}
+        },
+        "Eureka": {
+          "county": 0.0,
+          "places": {}
+        },
+        "Humboldt": {
+          "county": 0.0,
+          "places": {}
+        },
+        "Lander": {
+          "county": 0.25,
+          "places": {}
+        },
+        "Lincoln": {
+          "county": 0.25,
+          "places": {}
+        },
+        "Lyon": {
+          "county": 0.25,
+          "places": {}
+        },
+        "Mineral": {
+          "county": 0.0,
+          "places": {}
+        },
+        "Nye": {
+          "county": 0.75,
+          "places": {}
+        },
+        "Pershing": {
+          "county": 0.25,
+          "places": {}
+        },
+        "Storey": {
+          "county": 0.75,
+          "places": {}
+        },
+        "Washoe": {
+          "county": 1.415,
+          "places": {}
+        },
+        "White Pine": {
+          "county": 0.875,
+          "places": {}
+        }
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Nevada Department of Taxation - Components of sales and use tax rates",
+          "url": "https://tax.nv.gov/wp-content/uploads/2024/12/Components-of-Sales-Tax.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "County totals minus the 6.85% statewide minimum."
+    }
+  }
+}

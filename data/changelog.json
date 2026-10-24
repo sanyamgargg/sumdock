@@ -3,6 +3,12 @@
   "entries": [
     {
       "date": "2026-10-24",
+      "state": "NV",
+      "stateName": "Nevada",
+      "summary": "Added state with the 6.85% state sales tax after trade-in, county rates from the Department of Taxation, title and registration. The yearly governmental services tax (based on original price) is not included."
+    },
+    {
+      "date": "2026-10-24",
       "state": "AR",
       "stateName": "Arkansas",
       "summary": "Added state with the 6.5% state sales tax (new vehicles and used ones priced $10,000 or more), trade-in rule, an entered local rate, title, registration by weight and the electric vehicle fee. Lower state rates for used vehicles under $10,000 and the yearly county personal property tax are not included."

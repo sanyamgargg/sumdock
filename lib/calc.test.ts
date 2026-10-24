@@ -809,3 +809,22 @@ describe("Arkansas", () => {
     expect(line(calculate(ar, { ...base, fuel: "ev" }), "ev-fee")).toBe(200);
   });
 });
+
+describe("Nevada", () => {
+  const nv = load("nv");
+  it("is publishable", () => expect(publishability(nv).publishable).toBe(true));
+  it("taxes the price less a trade-in at 6.85% plus the entered county rate", () => {
+    const r = calculate(nv, { ...base, price: 30000, tradeIn: 10000, localRatePct: 1.525 });
+    expect(line(r, "state-tax")).toBe(1370);
+    expect(line(r, "local-tax")).toBe(305);
+  });
+  it("lists Clark County at 8.375% total", () => {
+    expect(nv.localRates!.rates.value!["Clark"].county).toBe(1.525);
+  });
+  it("charges title and registration and lists the governmental services tax as not included", () => {
+    const r = calculate(nv, base);
+    expect(line(r, "title")).toBe(28.25);
+    expect(line(r, "registration")).toBe(33);
+    expect(r.excluded.map((e) => e.label)).toContain("Governmental services tax");
+  });
+});
