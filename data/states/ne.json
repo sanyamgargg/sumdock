@@ -1,0 +1,268 @@
+{
+  "code": "NE",
+  "name": "Nebraska",
+  "slug": "nebraska",
+  "lastReviewed": "2026-10-24",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 5.5,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Nebraska DMV - 2025 Motor Vehicle Taxes and Fees report",
+          "url": "https://dmv.nebraska.gov/sites/default/files/doc/data/MV-Revenue/2025_MV_Taxes&Fees.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The DMV's 2025 report lists the state sales tax on motor vehicles at 5 1/2 percent."
+    },
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Nebraska Administrative Code 316 NAC 1-020, Motor Vehicles (Cornell LII copy)",
+          "url": "https://law.cornell.edu/regulations/nebraska/316-Neb-Admin-Code-ch-1-SS-020",
+          "accessed": "2026-10-24",
+          "publisherType": "secondary"
+        }
+      ],
+      "note": "The state's rule says the tax is figured on the sales price minus any trade-in allowance and rebates used to reduce the selling price. The rule text comes from a copy of the administrative code, not the agency's own site."
+    },
+    "local": {
+      "value": {
+        "mode": "user-entered",
+        "capBase": null,
+        "rangeNote": "Cities and some counties add a local sales tax. Ask your dealer or the county treasurer for your rate and type it here."
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Nebraska DMV - 2025 Motor Vehicle Taxes and Fees report",
+          "url": "https://dmv.nebraska.gov/sites/default/files/doc/data/MV-Revenue/2025_MV_Taxes&Fees.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Nebraska DMV - Registration fees and taxes",
+          "url": "https://dmv.nebraska.gov/dvr/reg/registration-fees-and-taxes",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The DMV's report says local sales tax can be added to the state rate and points to the county treasurer for local amounts. It lists no local rates."
+    },
+    "outOfStateCredit": {
+      "value": true,
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Nebraska Administrative Code 316 NAC 1-020, Motor Vehicles (Cornell LII copy)",
+          "url": "https://law.cornell.edu/regulations/nebraska/316-Neb-Admin-Code-ch-1-SS-020",
+          "accessed": "2026-10-24",
+          "publisherType": "secondary"
+        }
+      ],
+      "note": "If tax was lawfully paid in the state of purchase at a lower rate, use tax is collected on the difference when you register."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Title",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 10,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Nebraska DMV - Titles",
+            "url": "https://dmv.nebraska.gov/node/432",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Paid to the county treasurer."
+      }
+    },
+    {
+      "id": "registration",
+      "label": "Registration (passenger)",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 15,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Nebraska DMV - Registration fees and taxes",
+            "url": "https://dmv.nebraska.gov/dvr/reg/registration-fees-and-taxes",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Nebraska DMV - 2025 Motor Vehicle Taxes and Fees report",
+            "url": "https://dmv.nebraska.gov/sites/default/files/doc/data/MV-Revenue/2025_MV_Taxes&Fees.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "plates",
+      "label": "License plates",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 8.2,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Nebraska DMV - Registration fees and taxes",
+            "url": "https://dmv.nebraska.gov/dvr/reg/registration-fees-and-taxes",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The fee is $4.10 per plate when new plates are issued. The calculator assumes two plates."
+      }
+    },
+    {
+      "id": "registration-other",
+      "label": "Other registration fees",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 5.5,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Nebraska DMV - Registration fees and taxes",
+            "url": "https://dmv.nebraska.gov/dvr/reg/registration-fees-and-taxes",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Nebraska DMV - 2025 Motor Vehicle Taxes and Fees report",
+            "url": "https://dmv.nebraska.gov/sites/default/files/doc/data/MV-Revenue/2025_MV_Taxes&Fees.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Four small fees: $0.50 for the emergency medical system, $2.00 for the DMV cash fund, $1.50 for the state recreation road fund and $1.50 for the county general fund."
+      }
+    },
+    {
+      "id": "ev-fee",
+      "label": "Alternative fuel fee (electric)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "ev"
+      },
+      "amount": {
+        "value": 150,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Nebraska DMV - Registration fees and taxes",
+            "url": "https://dmv.nebraska.gov/dvr/reg/registration-fees-and-taxes",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Charged on electric and hydrogen fuel cell passenger vehicles. Plug-in hybrids pay a separate $75 fee, which is not included."
+      }
+    },
+    {
+      "id": "motor-vehicle-tax",
+      "label": "Motor vehicle tax and motor vehicle fee",
+      "kind": "flat",
+      "frequency": "annual",
+      "excludedReason": "Nebraska charges a motor vehicle tax based on the vehicle's original MSRP and age, plus a motor vehicle fee based on value, weight and use. Both are billed at registration and each year, and the calculator does not ask for MSRP, so they are left out.",
+      "amount": {
+        "value": null,
+        "status": "unverified",
+        "sources": [
+          {
+            "title": "Nebraska DMV - Registration fees and taxes",
+            "url": "https://dmv.nebraska.gov/dvr/reg/registration-fees-and-taxes",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Nebraska DMV - 2025 Motor Vehicle Taxes and Fees report",
+            "url": "https://dmv.nebraska.gov/sites/default/files/doc/data/MV-Revenue/2025_MV_Taxes&Fees.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    }
+  ],
+  "notes": [
+    "Some cities charge a yearly wheel tax, which is not included.",
+    "The yearly motor vehicle tax and motor vehicle fee depend on the original MSRP and the vehicle's age and are not included.",
+    "A plug-in hybrid pays a separate alternative fuel fee that is not included."
+  ],
+  "content": {
+    "intro": "{state} charges {stateRate} state sales tax on a vehicle, and cities or counties may add their own tax. Registration fees are small, but a yearly motor vehicle tax based on the original price is billed at registration.",
+    "howItWorks": [
+      {
+        "text": "The state rate is {stateRate}. The tax is figured on the price minus any trade-in allowance and any rebates that lower the selling price.",
+        "sources": [
+          "https://dmv.nebraska.gov/sites/default/files/doc/data/MV-Revenue/2025_MV_Taxes&Fees.pdf",
+          "https://law.cornell.edu/regulations/nebraska/316-Neb-Admin-Code-ch-1-SS-020"
+        ]
+      },
+      {
+        "text": "Local sales tax can be added on top. Your county treasurer can tell you the rate for your location.",
+        "sources": [
+          "https://dmv.nebraska.gov/sites/default/files/doc/data/MV-Revenue/2025_MV_Taxes&Fees.pdf",
+          "https://dmv.nebraska.gov/dvr/reg/registration-fees-and-taxes"
+        ]
+      },
+      {
+        "text": "If you paid a lower sales tax in the state where you bought, Nebraska collects the difference when you register.",
+        "sources": [
+          "https://law.cornell.edu/regulations/nebraska/316-Neb-Admin-Code-ch-1-SS-020"
+        ]
+      },
+      {
+        "text": "The state also bills a motor vehicle tax each year. It is based on the vehicle's original price and drops as the vehicle ages, so it is not part of this total.",
+        "sources": [
+          "https://dmv.nebraska.gov/dvr/reg/registration-fees-and-taxes",
+          "https://dmv.nebraska.gov/sites/default/files/doc/data/MV-Revenue/2025_MV_Taxes&Fees.pdf"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does a trade-in lower the sales tax in Nebraska?",
+        "text": "Yes. The state's rule says the tax is figured on the sales price minus the trade-in allowance and any rebates used to reduce the selling price.",
+        "sources": [
+          "https://law.cornell.edu/regulations/nebraska/316-Neb-Admin-Code-ch-1-SS-020"
+        ]
+      },
+      {
+        "q": "Is the yearly motor vehicle tax included?",
+        "text": "No. It depends on the vehicle's original price and age, and it is billed at the first registration and every year after.",
+        "sources": [
+          "https://dmv.nebraska.gov/dvr/reg/registration-fees-and-taxes",
+          "https://dmv.nebraska.gov/sites/default/files/doc/data/MV-Revenue/2025_MV_Taxes&Fees.pdf"
+        ]
+      },
+      {
+        "q": "Do electric vehicles pay an extra fee?",
+        "text": "Yes. Electric and hydrogen fuel cell passenger vehicles pay an alternative fuel fee on top of registration.",
+        "sources": [
+          "https://dmv.nebraska.gov/dvr/reg/registration-fees-and-taxes"
+        ]
+      }
+    ]
+  }
+}

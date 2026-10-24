@@ -689,3 +689,27 @@ describe("Vermont", () => {
   });
 });
 
+describe("Nebraska", () => {
+  const ne = load("ne");
+  it("is publishable", () => expect(publishability(ne).publishable).toBe(true));
+  it("taxes the price less a trade-in at 5.5% plus the entered local rate", () => {
+    const r = calculate(ne, { ...base, price: 30000, tradeIn: 10000, localRatePct: 1.5 });
+    expect(line(r, "state-tax")).toBe(1100);
+    expect(line(r, "local-tax")).toBe(300);
+  });
+  it("charges title, registration, plates and the small registration fees", () => {
+    const r = calculate(ne, base);
+    expect(line(r, "title")).toBe(10);
+    expect(line(r, "registration")).toBe(15);
+    expect(line(r, "plates")).toBe(8.2);
+    expect(line(r, "registration-other")).toBe(5.5);
+    expect(line(r, "ev-fee")).toBeUndefined();
+  });
+  it("adds the alternative fuel fee only for EVs", () => {
+    expect(line(calculate(ne, { ...base, fuel: "ev" }), "ev-fee")).toBe(150);
+  });
+  it("lists the yearly motor vehicle tax as not included", () => {
+    expect(calculate(ne, base).excluded.map((e) => e.label)).toContain("Motor vehicle tax and motor vehicle fee");
+  });
+});
+
