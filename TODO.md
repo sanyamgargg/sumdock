@@ -14,6 +14,12 @@ Two columns per state: what only Sanyam can do (blocked sites, accounts, pushing
 | Nothing yet | Official facts found: infrastructure maintenance fee (IMF) of 5% of gross proceeds, at most $500, in place of state and local sales tax (SCDOR dealers guide, Dec 2025); title $15; registration $40 every two years; hybrid +$60, EV +$120 (dmv.sc.gov/Fees) |
 | | Blocked: no official page says whether a trade-in lowers the IMF base, so the state cannot be published. Needs a "maximum tax" field in the calculator too |
 
+## Idaho (researched, not added)
+| Sanyam | Claude |
+|---|---|
+| Nothing yet | Official ITD page: registration by vehicle age ($69 for 1 or 2 years, $57 for the 3 to 6 band, $45 for 7 or more, EV +$140, plug-in hybrid +$75) plus county registration and title admin fees for 44 counties; title $14 |
+| | Blocked: the page prints the middle band as "3 or 6 years" and has no row for 0, 4 or 5 years, so the fee cannot be modeled safely. Needs a finer age input and a county fee table |
+
 ## Washington (added)
 | Sanyam | Claude |
 |---|---|
