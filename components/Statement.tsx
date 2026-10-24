@@ -73,11 +73,16 @@ export default function Statement({
         <span className="stmt__total-label">{totalLabel}</span>
         <span className="stmt__total-amt">{usd(total)}</span>
       </div>
+      {excluded.length > 0 && (
+        <p className="stmt__warn">
+          <b>Not the full cost.</b> This total leaves out {excluded.length === 1 ? "1 item" : `${excluded.length} items`}, listed below.
+        </p>
+      )}
       {plus && <p className="stmt__plus">{plus}</p>}
 
       {excluded.length > 0 && (
         <div className="stmt__excl">
-          <h3>Not included</h3>
+          <h3>Costs not in this total</h3>
           <ul>
             {excluded.map((e) => (
               <li key={e.label}>

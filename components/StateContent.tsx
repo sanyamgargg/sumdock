@@ -107,7 +107,7 @@ export default function StateContent({ state }: { state: StateData }) {
 
       {state.notes.length > 0 && (
         <section aria-labelledby="notcovered" className="leaves-out">
-          <div className="section-head"><h2 id="notcovered">What this calculator leaves out</h2></div>
+          <div className="section-head"><h2 id="notcovered">What this calculator does not cover</h2></div>
           <ul className="plain-list">{state.notes.map((n) => <li key={n}>{n}</li>)}</ul>
         </section>
       )}

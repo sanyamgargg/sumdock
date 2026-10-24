@@ -96,3 +96,9 @@
 
 .ad-slot { min-width: 0; }
 .ad-slot:empty:not(.ad-slot--reserved) { display: none; }
+
+.stmt__warn { margin: 0; padding: 0 16px 12px; color: var(--warn-ink); font-size: 14px; }
+.stmt__warn b { font-weight: 600; }
+@media (min-width: 600px) {
+  .stmt__warn { padding: 0 24px 14px; }
+}
