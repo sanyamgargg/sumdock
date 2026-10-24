@@ -212,6 +212,637 @@
   "notes": [
     "County/district registration fees vary by county and are not modeled.",
     "The vehicle license fee falls over the first 11 renewal years; the calculator shows the initial amount.",
-    "Late penalties, smog and other service fees are not modeled."
-  ]
+    "Late penalties, smog and other service fees are not modeled.",
+    "Combined county and city rates come from CDTFA-95; the calculator fills the local rate as the combined rate minus 7.25%."
+  ],
+  "localRates": {
+    "label": "Combined sales and use tax rate by county and city",
+    "rates": {
+      "value": {
+        "Kern": {
+          "county": 7.25,
+          "places": {
+            "Arvin": 8.25,
+            "Bakersfield": 8.25,
+            "California City": 8.25,
+            "Delano": 8.25,
+            "Maricopa": 8.25,
+            "McFarland": 9.25,
+            "Ridgecrest": 9.25,
+            "Taft": 8.25,
+            "Tehachapi": 8.25,
+            "Wasco": 8.25,
+            "Kern (unincorporated)": 8.25
+          }
+        },
+        "Kings": {
+          "county": 7.25,
+          "places": {
+            "Avenal": 8.25,
+            "Corcoran": 8.25,
+            "Hanford": 8.25,
+            "Lemoore": 8.25
+          }
+        },
+        "Lake": {
+          "county": 7.25,
+          "places": {
+            "Clearlake": 8.75,
+            "Lakeport": 8.75
+          }
+        },
+        "Lassen": {
+          "county": 7.25,
+          "places": {
+            "Susanville": 8.25
+          }
+        },
+        "Los Angeles": {
+          "county": 10.25,
+          "places": {
+            "Alhambra": 11,
+            "Arcadia": 11,
+            "Artesia": 11,
+            "Avalon": 10.75,
+            "Azusa": 11.25,
+            "Baldwin Park": 11,
+            "Bell Gardens": 11.25,
+            "Bellflower": 11,
+            "Burbank": 11,
+            "Calabasas": 11.25,
+            "Carson": 11,
+            "Commerce": 11.25,
+            "Compton": 11.25,
+            "Covina": 11.25,
+            "Cudahy": 11,
+            "Culver City": 11.25,
+            "Downey": 11,
+            "Duarte": 11,
+            "El Monte": 11,
+            "El Segundo": 10.75,
+            "Gardena": 11.25,
+            "Glendale": 11,
+            "Glendora": 11.25,
+            "Hawaiian Gardens": 11,
+            "Hawthorne": 11,
+            "Huntington Park": 11,
+            "Inglewood": 10.75,
+            "Irwindale": 11.25,
+            "La Cañada Flintridge": 11,
+            "La Puente": 10.75,
+            "La Verne": 11,
+            "Lakewood": 11,
+            "Lancaster": 11.75,
+            "Lawndale": 11,
+            "Lomita": 11,
+            "Long Beach": 11,
+            "Lynwood": 11.25,
+            "Malibu": 10.75,
+            "Manhattan Beach": 10.75,
+            "Monrovia": 11,
+            "Montebello": 11,
+            "Monterey Park": 11,
+            "Norwalk": 11,
+            "Palmdale": 11.75,
+            "Paramount": 11,
+            "Pasadena": 11,
+            "Pico Rivera": 11.25,
+            "Pomona": 11,
+            "San Fernando": 11,
+            "San Gabriel": 11,
+            "San Marino": 11.25,
+            "Santa Fe Springs": 11.5,
+            "Santa Monica": 11.25,
+            "Sierra Madre": 11,
+            "Signal Hill": 11,
+            "South El Monte": 11.25,
+            "South Gate": 11.25,
+            "South Pasadena": 11,
+            "Temple City": 11,
+            "Torrance": 10.75,
+            "Vernon": 11,
+            "West Hollywood": 11,
+            "Whittier": 11
+          }
+        },
+        "Alameda": {
+          "county": 10.25,
+          "places": {
+            "Alameda": 10.75,
+            "Albany": 10.75,
+            "Emeryville": 10.5,
+            "Hayward": 10.75,
+            "Newark": 10.75,
+            "Oakland": 10.75,
+            "San Leandro": 10.75,
+            "Union City": 10.75
+          }
+        },
+        "Alpine": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Amador": {
+          "county": 7.75,
+          "places": {
+            "Amador City": 8,
+            "Sutter Creek": 8.75
+          }
+        },
+        "Butte": {
+          "county": 8.25,
+          "places": {
+            "Chico": 9.25,
+            "Oroville": 9.25,
+            "Paradise": 8.75
+          }
+        },
+        "Calaveras": {
+          "county": 8.25,
+          "places": {
+            "Angels Camp": 8.75
+          }
+        },
+        "Colusa": {
+          "county": 7.75,
+          "places": {
+            "Colusa": 8.75,
+            "Williams": 8.25
+          }
+        },
+        "Contra Costa": {
+          "county": 8.75,
+          "places": {
+            "Antioch": 9.75,
+            "Concord": 9.75,
+            "El Cerrito": 10.25,
+            "Hercules": 9.25,
+            "Lafayette": 9.25,
+            "Martinez": 9.75,
+            "Moraga": 9.75,
+            "Orinda": 9.75,
+            "Pinole": 10.25,
+            "Pittsburg": 9.25,
+            "Pleasant Hill": 9.25,
+            "Richmond": 9.75,
+            "San Pablo": 9.5,
+            "San Ramon": 9.75,
+            "Walnut Creek": 9.25
+          }
+        },
+        "Del Norte": {
+          "county": 7.25,
+          "places": {
+            "Crescent City": 8.25,
+            "Del Norte (unincorporated)": 8.25
+          }
+        },
+        "El Dorado": {
+          "county": 7.25,
+          "places": {
+            "Placerville": 8.25,
+            "South Lake Tahoe": 8.75
+          }
+        },
+        "Fresno": {
+          "county": 7.975,
+          "places": {
+            "Clovis": 8.975,
+            "Coalinga": 8.975,
+            "Fowler": 8.975,
+            "Fresno": 8.35,
+            "Huron": 8.975,
+            "Kerman": 8.975,
+            "Kingsburg": 8.975,
+            "Mendota": 9.225,
+            "Parlier": 8.975,
+            "Reedley": 9.225,
+            "Sanger": 8.725,
+            "Selma": 8.475
+          }
+        },
+        "Glenn": {
+          "county": 7.25,
+          "places": {
+            "Orland": 8.25,
+            "Willows": 8.75
+          }
+        },
+        "Humboldt": {
+          "county": 8.75,
+          "places": {
+            "Arcata": 10.25,
+            "Blue Lake": 9.75,
+            "Eureka": 10.25,
+            "Ferndale": 9.5,
+            "Fortuna": 9.5,
+            "Rio Dell": 9.5,
+            "Trinidad": 9.5
+          }
+        },
+        "Imperial": {
+          "county": 7.75,
+          "places": {
+            "Brawley": 8.75,
+            "Calexico": 8.25,
+            "El Centro": 8.25
+          }
+        },
+        "Inyo": {
+          "county": 7.75,
+          "places": {
+            "Bishop": 8.75
+          }
+        },
+        "Madera": {
+          "county": 7.75,
+          "places": {
+            "Chowchilla": 8.75,
+            "Madera": 8.25
+          }
+        },
+        "Marin": {
+          "county": 8.25,
+          "places": {
+            "Corte Madera": 9,
+            "Fairfax": 9,
+            "Larkspur": 9.25,
+            "Mill Valley": 9.25,
+            "Novato": 9.25,
+            "San Anselmo": 9.25,
+            "San Rafael": 9.25,
+            "Sausalito": 9.25
+          }
+        },
+        "Mariposa": {
+          "county": 8.25,
+          "places": {}
+        },
+        "Mendocino": {
+          "county": 7.875,
+          "places": {
+            "Fort Bragg": 9.25,
+            "Point Arena": 9.25,
+            "Ukiah": 8.875,
+            "Willits": 9.125
+          }
+        },
+        "Merced": {
+          "county": 7.75,
+          "places": {
+            "Atwater": 8.75,
+            "Dos Palos": 8.25,
+            "Gustine": 8.25,
+            "Livingston": 8.75,
+            "Los Banos": 8.75,
+            "Merced": 8.25
+          }
+        },
+        "Modoc": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Mono": {
+          "county": 7.25,
+          "places": {
+            "Mammoth Lakes": 7.75
+          }
+        },
+        "Monterey": {
+          "county": 7.75,
+          "places": {
+            "Carmel-by-the-Sea": 9.25,
+            "Del Rey Oaks": 9.25,
+            "Gonzales": 8.75,
+            "Greenfield": 9.5,
+            "King City": 8.75,
+            "Marina": 9.25,
+            "Monterey": 9.25,
+            "Pacific Grove": 9.25,
+            "Salinas": 9.25,
+            "Sand City": 9.25,
+            "Seaside": 9.25,
+            "Soledad": 9.25,
+            "Monterey (unincorporated)": 8.75
+          }
+        },
+        "Napa": {
+          "county": 7.75,
+          "places": {
+            "Napa": 8.75,
+            "St. Helena": 8.25
+          }
+        },
+        "Nevada": {
+          "county": 7.5,
+          "places": {
+            "Grass Valley": 8.875,
+            "Nevada City": 8.875,
+            "Truckee": 9
+          }
+        },
+        "Orange": {
+          "county": 7.75,
+          "places": {
+            "Buena Park": 8.75,
+            "Fountain Valley": 8.75,
+            "Garden Grove": 8.75,
+            "La Habra": 8.75,
+            "La Palma": 8.75,
+            "Los Alamitos": 9.25,
+            "Placentia": 8.75,
+            "Santa Ana": 9.25,
+            "Seal Beach": 9.25,
+            "Stanton": 8.75,
+            "Westminster": 9.25
+          }
+        },
+        "Placer": {
+          "county": 7.25,
+          "places": {
+            "Loomis": 7.5,
+            "Roseville": 7.75
+          }
+        },
+        "Plumas": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Riverside": {
+          "county": 7.75,
+          "places": {
+            "Blythe": 8.75,
+            "Cathedral City": 9.25,
+            "Coachella": 8.75,
+            "Corona": 8.75,
+            "Desert Hot Springs": 8.75,
+            "Hemet": 8.75,
+            "Indio": 8.75,
+            "La Quinta": 8.75,
+            "Lake Elsinore": 8.75,
+            "Menifee": 8.75,
+            "Moreno Valley": 8.75,
+            "Murrieta": 8.75,
+            "Norco": 8.75,
+            "Palm Desert": 8.75,
+            "Palm Springs": 9.25,
+            "Perris": 8.75,
+            "Riverside": 8.75,
+            "San Jacinto": 8.75,
+            "Temecula": 8.75,
+            "Wildomar": 8.75
+          }
+        },
+        "Sacramento": {
+          "county": 7.75,
+          "places": {
+            "Elk Grove": 8.75,
+            "Galt": 9.25,
+            "Isleton": 8.75,
+            "Rancho Cordova": 8.75,
+            "Sacramento": 8.75
+          }
+        },
+        "San Benito": {
+          "county": 8.25,
+          "places": {
+            "Hollister": 9.25,
+            "San Juan Bautista": 9
+          }
+        },
+        "San Bernardino": {
+          "county": 7.75,
+          "places": {
+            "Apple Valley": 8.75,
+            "Barstow": 8.75,
+            "Chino": 8.75,
+            "Colton": 8.75,
+            "Fontana": 8.75,
+            "Montclair": 9,
+            "Ontario": 8.75,
+            "Redlands": 8.75,
+            "San Bernardino": 8.75,
+            "Victorville": 8.75,
+            "Yucaipa": 8.75,
+            "Yucca Valley": 8.75
+          }
+        },
+        "San Diego": {
+          "county": 7.75,
+          "places": {
+            "Chula Vista": 8.75,
+            "Del Mar": 8.75,
+            "El Cajon": 8.25,
+            "Escondido": 8.75,
+            "Imperial Beach": 8.75,
+            "La Mesa": 8.5,
+            "Lemon Grove": 8.75,
+            "National City": 8.75,
+            "Oceanside": 8.25,
+            "San Marcos": 8.75,
+            "Solana Beach": 8.75,
+            "Vista": 8.25
+          }
+        },
+        "San Francisco": {
+          "county": 8.625,
+          "places": {}
+        },
+        "San Joaquin": {
+          "county": 7.75,
+          "places": {
+            "Escalon": 8.75,
+            "Lathrop": 8.75,
+            "Lodi": 8.25,
+            "Manteca": 9,
+            "Stockton": 9,
+            "Tracy": 8.25
+          }
+        },
+        "San Luis Obispo": {
+          "county": 7.25,
+          "places": {
+            "Arroyo Grande": 8.75,
+            "Atascadero": 8.75,
+            "Grover Beach": 8.75,
+            "Morro Bay": 8.75,
+            "Paso Robles": 8.75,
+            "Pismo Beach": 8.25,
+            "San Luis Obispo": 8.75
+          }
+        },
+        "San Mateo": {
+          "county": 9.375,
+          "places": {
+            "Belmont": 9.875,
+            "Brisbane": 9.875,
+            "Burlingame": 9.625,
+            "Colma": 9.875,
+            "Daly City": 9.875,
+            "East Palo Alto": 9.875,
+            "Half Moon Bay": 9.875,
+            "Pacifica": 9.875,
+            "Redwood City": 9.875,
+            "San Bruno": 9.875,
+            "San Mateo": 9.625,
+            "South San Francisco": 9.875
+          }
+        },
+        "Santa Barbara": {
+          "county": 7.75,
+          "places": {
+            "Carpinteria": 9,
+            "Goleta": 8.75,
+            "Guadalupe": 8.75,
+            "Lompoc": 8.75,
+            "Santa Barbara": 9.25,
+            "Santa Maria": 8.75,
+            "Solvang": 8.75
+          }
+        },
+        "Santa Clara": {
+          "county": 9.75,
+          "places": {
+            "Campbell": 10.5,
+            "Los Gatos": 9.875,
+            "Milpitas": 10,
+            "San Jose": 10
+          }
+        },
+        "Santa Cruz": {
+          "county": 8.5,
+          "places": {
+            "Capitola": 9.25,
+            "Santa Cruz": 9.75,
+            "Scotts Valley": 9.75,
+            "Watsonville": 9.75,
+            "Santa Cruz (unincorporated)": 9.5
+          }
+        },
+        "Shasta": {
+          "county": 7.25,
+          "places": {
+            "Anderson": 7.75
+          }
+        },
+        "Sierra": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Siskiyou": {
+          "county": 7.25,
+          "places": {
+            "Dunsmuir": 8.25,
+            "Mount Shasta": 7.5,
+            "Weed": 7.5,
+            "Yreka": 8.75
+          }
+        },
+        "Solano": {
+          "county": 7.375,
+          "places": {
+            "Benicia": 9.625,
+            "Dixon": 8.375,
+            "Fairfield": 8.375,
+            "Rio Vista": 9.125,
+            "Suisun City": 9.125,
+            "Vacaville": 8.125,
+            "Vallejo": 9.25
+          }
+        },
+        "Sonoma": {
+          "county": 9.25,
+          "places": {
+            "Cloverdale": 10,
+            "Cotati": 10.25,
+            "Healdsburg": 9.75,
+            "Petaluma": 10.25,
+            "Rohnert Park": 9.75,
+            "Santa Rosa": 10,
+            "Sebastopol": 10.5,
+            "Sonoma": 10.25
+          }
+        },
+        "Stanislaus": {
+          "county": 7.875,
+          "places": {
+            "Ceres": 8.375,
+            "Modesto": 8.875,
+            "Oakdale": 8.375,
+            "Turlock": 8.625
+          }
+        },
+        "Sutter": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Tehama": {
+          "county": 7.25,
+          "places": {
+            "Corning": 7.75,
+            "Red Bluff": 8.5
+          }
+        },
+        "Trinity": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Tulare": {
+          "county": 7.75,
+          "places": {
+            "Dinuba": 8.5,
+            "Exeter": 8.75,
+            "Farmersville": 8.75,
+            "Lindsay": 8.75,
+            "Porterville": 9.25,
+            "Tulare": 8.25,
+            "Visalia": 8.5,
+            "Woodlake": 8.75
+          }
+        },
+        "Tuolumne": {
+          "county": 7.25,
+          "places": {
+            "Sonora": 8.75
+          }
+        },
+        "Ventura": {
+          "county": 7.25,
+          "places": {
+            "Oxnard": 9.25,
+            "Port Hueneme": 8.75,
+            "Santa Paula": 9.25,
+            "Ventura": 7.75
+          }
+        },
+        "Yolo": {
+          "county": 7.25,
+          "places": {
+            "Davis": 9.25,
+            "West Sacramento": 9.25,
+            "Winters": 8.25,
+            "Woodland": 8
+          }
+        },
+        "Yuba": {
+          "county": 7.25,
+          "places": {
+            "Marysville": 8.25,
+            "Wheatland": 7.75,
+            "Yuba (unincorporated)": 8.25
+          }
+        }
+      },
+      "status": "verified",
+      "sources": [
+        {
+          "title": "CDTFA-95 - California Sales and Use Tax Rates by County and City (operative October 1, 2026)",
+          "url": "https://cdtfa.ca.gov/taxes-and-fees/TaxRatesbyCountyandCity.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Combined rate including the 7.25% state rate. Not every community is listed; city districts can differ by address. Los Angeles city and some others are not on the sheet, so enter your rate from the CDTFA lookup."
+    }
+  }
 }

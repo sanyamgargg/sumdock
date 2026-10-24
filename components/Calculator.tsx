@@ -28,6 +28,19 @@ export default function Calculator({ state }: { state: StateData }) {
   const hasMpg = state.fees.some((f) => f.when?.mpgBand);
   const hasWeight = state.fees.some((f) => f.when?.weightBand);
   const counties = state.counties?.fees.value ? Object.keys(state.counties.fees.value).sort() : [];
+  const rateTable = state.localRates?.rates.value ?? null;
+  const rateCounties = rateTable ? Object.keys(rateTable).sort() : [];
+  const [rateCounty, setRateCounty] = useState("");
+  const [ratePlace, setRatePlace] = useState("");
+  const stateRate = state.salesTax.stateRatePct.value ?? 0;
+  const applyRate = (county: string, place: string) => {
+    setRateCounty(county);
+    setRatePlace(place);
+    const entry = rateTable?.[county];
+    if (!entry) return;
+    const combined = place && entry.places[place] !== undefined ? entry.places[place] : entry.county;
+    set("localRatePct", Math.max(0, Math.round((combined - stateRate) * 1000) / 1000));
+  };
   const hasWeightTable = state.fees.some((f) => f.kind === "weightTable");
   const hasPlate = state.fees.some((f) => f.when?.noPlateToTransfer !== undefined);
 
@@ -40,6 +53,27 @@ export default function Calculator({ state }: { state: StateData }) {
         <label>Trade-in value ($)
           <input type="number" inputMode="decimal" min="0" value={i.tradeIn} onChange={(e) => set("tradeIn", num(e.target.value))} />
         </label>
+        {rateTable && (
+          <>
+            <label>County (for local tax rate)
+              <select value={rateCounty} onChange={(e) => applyRate(e.target.value, "")}>
+                <option value="">Choose your county</option>
+                {rateCounties.map((n) => <option key={n} value={n}>{n}</option>)}
+              </select>
+            </label>
+            {rateCounty && (
+              <label>City or area
+                <select value={ratePlace} onChange={(e) => applyRate(rateCounty, e.target.value)}>
+                  <option value="">Not listed / county rate ({rateTable[rateCounty].county}% combined)</option>
+                  {Object.keys(rateTable[rateCounty].places).sort().map((p) => (
+                    <option key={p} value={p}>{p} ({rateTable[rateCounty].places[p]}% combined)</option>
+                  ))}
+                </select>
+                <small>Pick the city or area where the vehicle is registered. You can still edit the local rate below.</small>
+              </label>
+            )}
+          </>
+        )}
         {local && local.mode === "user-entered" && (
           <label>Local tax rate (%)
             <input type="number" inputMode="decimal" min="0" step="0.01" value={i.localRatePct} onChange={(e) => set("localRatePct", num(e.target.value))} />

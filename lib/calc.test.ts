@@ -168,3 +168,25 @@ describe("Texas county fee", () => {
     expect(Object.keys(t.counties!.fees.value!)).toHaveLength(254);
   });
 });
+
+describe("California combined rates by county and city", () => {
+  const ca = load("ca");
+  const table = ca.localRates!.rates.value!;
+  it("lists 58 counties and 331 places", () => {
+    expect(Object.keys(table)).toHaveLength(58);
+    expect(Object.values(table).reduce((n, c) => n + Object.keys(c.places).length, 0)).toBe(331);
+  });
+  it("matches spot checks from CDTFA-95", () => {
+    expect(table["Los Angeles"].county).toBe(10.25);
+    expect(table["Los Angeles"].places["Santa Monica"]).toBe(11.25);
+    expect(table["San Francisco"].county).toBe(8.625);
+    expect(table["Santa Clara"].places["San Jose"]).toBe(10);
+    expect(table["Santa Cruz"].places["Santa Cruz (unincorporated)"]).toBe(9.5);
+    expect(table["Del Norte"].places["Del Norte (unincorporated)"]).toBe(8.25);
+  });
+  it("local rate input is combined minus the 7.25% state rate", () => {
+    const r = calculate(ca, { ...base, price: 30000, tradeIn: 0, localRatePct: 11.25 - 7.25 });
+    const tax = line(r, "state-tax")! + line(r, "local-tax")!;
+    expect(tax).toBeCloseTo(30000 * 0.1125, 2);
+  });
+});

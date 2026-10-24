@@ -54,6 +54,16 @@ for (const f of files) {
   for (const k of ["stateRatePct", "tradeInReducesBase", "local", "outOfStateCredit"]) checkSourced(f, `salesTax.${k}`, st[k]);
   if (st.useTax) checkSourced(f, "salesTax.useTax", st.useTax);
 
+  if (d.localRates) {
+    checkSourced(f, "localRates.rates", d.localRates.rates);
+    const base = st.stateRatePct?.value ?? 0;
+    for (const [county, e] of Object.entries(d.localRates.rates?.value ?? {})) {
+      if (typeof e.county !== "number" || e.county < base) err(f, `localRates ${county}: county rate must be a number >= state rate`);
+      for (const [place, r] of Object.entries(e.places ?? {}))
+        if (typeof r !== "number" || r < base || r > 15) err(f, `localRates ${county}/${place}: implausible rate ${r}`);
+    }
+  }
+
   const ids = new Set();
   for (const fee of d.fees ?? []) {
     if (ids.has(fee.id)) err(f, `duplicate fee id ${fee.id}`);
