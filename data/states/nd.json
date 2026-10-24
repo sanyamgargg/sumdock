@@ -1,0 +1,403 @@
+{
+  "code": "ND",
+  "name": "North Dakota",
+  "slug": "north-dakota",
+  "lastReviewed": "2026-10-24",
+  "salesTax": {
+    "taxName": "excise tax",
+    "stateRatePct": {
+      "value": 5,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "North Dakota Office of State Tax Commissioner - Special taxes (motor vehicle excise tax)",
+          "url": "https://www.tax.nd.gov/node/256",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "North Dakota DOT - Motor vehicle registration manual",
+          "url": "https://www.dot.nd.gov/sites/default/files/documents/Motor%20Vehicle%20Services/registration-manual.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Motor vehicle excise tax of 5% of the purchase price (or fair market value if not purchased), paid when you apply for a title."
+    },
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "North Dakota Office of State Tax Commissioner - Special taxes (motor vehicle excise tax)",
+          "url": "https://www.tax.nd.gov/node/256",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The base is the sales price less any trade-in amount."
+    },
+    "local": {
+      "value": {
+        "mode": "none",
+        "capBase": null,
+        "rangeNote": null
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "North Dakota Office of State Tax Commissioner - Special taxes (motor vehicle excise tax)",
+          "url": "https://www.tax.nd.gov/node/256",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The state page describes only the 5% excise tax."
+    },
+    "outOfStateCredit": {
+      "value": true,
+      "status": "partial",
+      "sources": [
+        {
+          "title": "North Dakota Office of State Tax Commissioner - Special taxes (motor vehicle excise tax)",
+          "url": "https://www.tax.nd.gov/node/256",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "North Dakota gives credit for excise tax paid on the vehicle in another state, but only if that state gives North Dakota a reciprocal credit. The calculator applies the credit without checking reciprocity."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Title",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 5,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "North Dakota DOT - Motor vehicle registration manual",
+            "url": "https://www.dot.nd.gov/sites/default/files/documents/Motor%20Vehicle%20Services/registration-manual.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Certificate of title fee."
+      }
+    },
+    {
+      "id": "disposal-fee",
+      "label": "Abandoned vehicle disposal fee",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 1.5,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "North Dakota DOT - Motor vehicle registration manual",
+            "url": "https://www.dot.nd.gov/sites/default/files/documents/Motor%20Vehicle%20Services/registration-manual.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Applies on the first North Dakota title for a new or out-of-state vehicle."
+      }
+    },
+    {
+      "id": "registration-2021-plus",
+      "label": "Registration (first registered 2021 or later)",
+      "kind": "weightTable",
+      "frequency": "annual",
+      "weightTable": [
+        {
+          "upTo": 3199,
+          "fee": 73
+        },
+        {
+          "upTo": 4499,
+          "fee": 93
+        },
+        {
+          "upTo": 4999,
+          "fee": 111
+        },
+        {
+          "upTo": 5999,
+          "fee": 142
+        },
+        {
+          "upTo": 6999,
+          "fee": 175
+        },
+        {
+          "upTo": 7999,
+          "fee": 208
+        },
+        {
+          "upTo": 8999,
+          "fee": 241
+        },
+        {
+          "upTo": null,
+          "fee": 274
+        }
+      ],
+      "when": {
+        "ageYearsMax": 5
+      },
+      "amount": {
+        "value": 1,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "North Dakota DOT - Passenger vehicle registration fee schedule, 2026",
+            "url": "https://www.dot.nd.gov/sites/www/files/documents/Motor%20Vehicle%20Services/mvd-2-passenger-fee-2026.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The schedule is by the year the vehicle was first registered, not its model year. The age bands here match the 2026 schedule and must be shifted each January."
+      }
+    },
+    {
+      "id": "registration-2018-2020",
+      "label": "Registration (first registered 2018 to 2020)",
+      "kind": "weightTable",
+      "frequency": "annual",
+      "weightTable": [
+        {
+          "upTo": 3199,
+          "fee": 65
+        },
+        {
+          "upTo": 4499,
+          "fee": 81
+        },
+        {
+          "upTo": 4999,
+          "fee": 94
+        },
+        {
+          "upTo": 5999,
+          "fee": 120
+        },
+        {
+          "upTo": 6999,
+          "fee": 146
+        },
+        {
+          "upTo": 7999,
+          "fee": 172
+        },
+        {
+          "upTo": 8999,
+          "fee": 199
+        },
+        {
+          "upTo": null,
+          "fee": 225
+        }
+      ],
+      "when": {
+        "ageYearsMin": 6,
+        "ageYearsMax": 8
+      },
+      "amount": {
+        "value": 1,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "North Dakota DOT - Passenger vehicle registration fee schedule, 2026",
+            "url": "https://www.dot.nd.gov/sites/www/files/documents/Motor%20Vehicle%20Services/mvd-2-passenger-fee-2026.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The schedule is by the year the vehicle was first registered, not its model year. The age bands here match the 2026 schedule and must be shifted each January."
+      }
+    },
+    {
+      "id": "registration-2015-2017",
+      "label": "Registration (first registered 2015 to 2017)",
+      "kind": "weightTable",
+      "frequency": "annual",
+      "weightTable": [
+        {
+          "upTo": 3199,
+          "fee": 57
+        },
+        {
+          "upTo": 4499,
+          "fee": 69
+        },
+        {
+          "upTo": 4999,
+          "fee": 79
+        },
+        {
+          "upTo": 5999,
+          "fee": 98
+        },
+        {
+          "upTo": 6999,
+          "fee": 117
+        },
+        {
+          "upTo": 7999,
+          "fee": 137
+        },
+        {
+          "upTo": 8999,
+          "fee": 157
+        },
+        {
+          "upTo": null,
+          "fee": 177
+        }
+      ],
+      "when": {
+        "ageYearsMin": 9,
+        "ageYearsMax": 11
+      },
+      "amount": {
+        "value": 1,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "North Dakota DOT - Passenger vehicle registration fee schedule, 2026",
+            "url": "https://www.dot.nd.gov/sites/www/files/documents/Motor%20Vehicle%20Services/mvd-2-passenger-fee-2026.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The schedule is by the year the vehicle was first registered, not its model year. The age bands here match the 2026 schedule and must be shifted each January."
+      }
+    },
+    {
+      "id": "registration-2014-older",
+      "label": "Registration (first registered 2014 or earlier)",
+      "kind": "weightTable",
+      "frequency": "annual",
+      "weightTable": [
+        {
+          "upTo": 3199,
+          "fee": 49
+        },
+        {
+          "upTo": 4499,
+          "fee": 57
+        },
+        {
+          "upTo": 4999,
+          "fee": 63
+        },
+        {
+          "upTo": 5999,
+          "fee": 76
+        },
+        {
+          "upTo": 6999,
+          "fee": 89
+        },
+        {
+          "upTo": 7999,
+          "fee": 102
+        },
+        {
+          "upTo": 8999,
+          "fee": 115
+        },
+        {
+          "upTo": null,
+          "fee": 128
+        }
+      ],
+      "when": {
+        "ageYearsMin": 12
+      },
+      "amount": {
+        "value": 1,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "North Dakota DOT - Passenger vehicle registration fee schedule, 2026",
+            "url": "https://www.dot.nd.gov/sites/www/files/documents/Motor%20Vehicle%20Services/mvd-2-passenger-fee-2026.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The schedule is by the year the vehicle was first registered, not its model year. The age bands here match the 2026 schedule and must be shifted each January."
+      }
+    },
+    {
+      "id": "ev-fee",
+      "label": "Electric vehicle road use fee",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "ev"
+      },
+      "amount": {
+        "value": 120,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "North Dakota DOT - Passenger vehicle registration fee schedule, 2026",
+            "url": "https://www.dot.nd.gov/sites/www/files/documents/Motor%20Vehicle%20Services/mvd-2-passenger-fee-2026.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    }
+  ],
+  "notes": [
+    "The registration fee table is by the year the vehicle was first registered. It is entered here as the vehicle's age in 2026 and needs a yearly update.",
+    "Plug-in hybrids pay a $50 yearly road use fee, which is not included.",
+    "Enter the vehicle's weight in pounds for the registration fee."
+  ],
+  "content": {
+    "intro": "{state} charges a {stateRate} excise tax on the price of a vehicle instead of a sales tax. Registration is paid every year and depends on weight and on the year the vehicle was first registered.",
+    "howItWorks": [
+      {
+        "text": "The excise tax is {stateRate} of the price less any trade-in, paid when you apply for a title.",
+        "sources": [
+          "https://www.tax.nd.gov/node/256"
+        ]
+      },
+      {
+        "text": "North Dakota gives credit for excise tax paid in another state only if that state gives North Dakota a reciprocal credit.",
+        "sources": [
+          "https://www.tax.nd.gov/node/256"
+        ]
+      },
+      {
+        "text": "The registration fee depends on the vehicle's weight and the year it was first registered, and newer vehicles pay more.",
+        "sources": [
+          "https://www.dot.nd.gov/sites/www/files/documents/Motor%20Vehicle%20Services/mvd-2-passenger-fee-2026.pdf"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does a trade-in lower the excise tax in North Dakota?",
+        "text": "Yes, the tax is figured on the sales price less any trade-in amount.",
+        "sources": [
+          "https://www.tax.nd.gov/node/256"
+        ]
+      },
+      {
+        "q": "Is registration based on the model year?",
+        "text": "No. The schedule uses the year the vehicle was first registered.",
+        "sources": [
+          "https://www.dot.nd.gov/sites/www/files/documents/Motor%20Vehicle%20Services/mvd-2-passenger-fee-2026.pdf"
+        ]
+      }
+    ]
+  }
+}

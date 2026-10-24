@@ -3,6 +3,12 @@
   "entries": [
     {
       "date": "2026-10-24",
+      "state": "ND",
+      "stateName": "North Dakota",
+      "summary": "Added state with the 5% motor vehicle excise tax after trade-in (instead of a sales tax), title, disposal fee, yearly registration by weight and year first registered, and the electric vehicle road use fee."
+    },
+    {
+      "date": "2026-10-24",
       "state": "ID",
       "stateName": "Idaho",
       "summary": "Added state with the 6% sales tax after trade-in, credit for tax paid to another state, title, registration by vehicle age, the electric vehicle fee, the EMS fee and county administration fees for all 44 counties. The age band edges are marked partly verified."

@@ -947,3 +947,25 @@ describe("Idaho", () => {
     expect(line(calculate(id, { ...base, county: "Blaine" }), "county-fee")).toBe(26);
   });
 });
+
+describe("North Dakota", () => {
+  const nd = load("nd");
+  it("is publishable", () => expect(publishability(nd).publishable).toBe(true));
+  it("taxes the price less a trade-in at 5%", () => {
+    expect(line(calculate(nd, { ...base, price: 30000, tradeIn: 10000 }), "state-tax")).toBe(1000);
+  });
+  it("prices registration by weight and the year first registered", () => {
+    expect(line(calculate(nd, { ...base, weightLbs: 3500, ageYears: 0 }), "registration-2021-plus")).toBe(93);
+    expect(line(calculate(nd, { ...base, weightLbs: 3199, ageYears: 5 }), "registration-2021-plus")).toBe(73);
+    expect(line(calculate(nd, { ...base, weightLbs: 5000, ageYears: 7 }), "registration-2018-2020")).toBe(120);
+    expect(line(calculate(nd, { ...base, weightLbs: 9500, ageYears: 10 }), "registration-2015-2017")).toBe(177);
+    expect(line(calculate(nd, { ...base, weightLbs: 4000, ageYears: 15 }), "registration-2014-older")).toBe(57);
+  });
+  it("charges title, disposal fee and the EV fee only for EVs", () => {
+    const r = calculate(nd, base);
+    expect(line(r, "title")).toBe(5);
+    expect(line(r, "disposal-fee")).toBe(1.5);
+    expect(line(r, "ev-fee")).toBeUndefined();
+    expect(line(calculate(nd, { ...base, fuel: "ev" }), "ev-fee")).toBe(120);
+  });
+});
