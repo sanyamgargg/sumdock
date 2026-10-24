@@ -1,0 +1,834 @@
+{
+  "code": "WA",
+  "name": "Washington",
+  "slug": "washington",
+  "lastReviewed": "2026-10-24",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 7.0,
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Washington DOR - Car Dealers and Leasing Companies Local Sales & Use Tax Rates, Oct 1 to Dec 31 2026",
+          "url": "https://dor.wa.gov/sites/default/files/2026-08/Q426_MVET-flyer-by-county.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Washington DOR - Motor vehicle sales/use tax",
+          "url": "https://dor.wa.gov/taxes-rates/other-taxes/motor-vehicle-salesuse-tax",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "6.5% state sales tax plus the 0.5% motor vehicle sales tax in effect since Jan 1, 2026. The state page says the 0.5% is on the selling price; applying a trade-in to it follows the selling-price rule on the trade-in page."
+    },
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Washington DOR - Auto Dealer Guide: Trade-ins",
+          "url": "https://dor.wa.gov/education/industry-guides/auto-dealers/trade-ins",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The selling price used for retail sales tax excludes a trade-in of like kind."
+    },
+    "local": {
+      "value": {
+        "mode": "user-entered",
+        "capBase": null,
+        "rangeNote": "Pick your location to fill the local rate. The rate includes the regional transit authority share where it applies."
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Washington DOR - Car Dealers and Leasing Companies Local Sales & Use Tax Rates, Oct 1 to Dec 31 2026",
+          "url": "https://dor.wa.gov/sites/default/files/2026-08/Q426_MVET-flyer-by-county.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The table lists motor vehicle local rates by location. Which location applies to your sale (delivery or registration address) was not confirmed on a state page, so check the DOR rate lookup."
+    },
+    "outOfStateCredit": {
+      "value": null,
+      "status": "unverified",
+      "sources": [
+        {
+          "title": "Washington DOR - Motor vehicle sales/use tax",
+          "url": "https://dor.wa.gov/taxes-rates/other-taxes/motor-vehicle-salesuse-tax",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The state pages reviewed do not state a credit rule for tax paid to another state on a purchase."
+    },
+    "useTax": null
+  },
+  "localRates": {
+    "label": "Local sales and use tax rate for motor vehicles, by county and city",
+    "mode": "localOnly",
+    "rates": {
+      "value": {
+        "Adams": {
+          "county": 1.2,
+          "places": {
+            "Hatton": 1.2,
+            "Lind": 1.2,
+            "Othello": 1.4,
+            "Ritzville": 1.3,
+            "Washtucna": 1.2
+          }
+        },
+        "Asotin": {
+          "county": 1.5,
+          "places": {
+            "Asotin (City)": 1.5,
+            "Clarkston": 1.7
+          }
+        },
+        "Benton": {
+          "county": 1.3,
+          "places": {
+            "Benton County Unincorp. PTBA": 1.9,
+            "Benton City": 1.9,
+            "Kennewick": 2.0,
+            "Prosser": 1.9,
+            "Richland": 2.0,
+            "West Richland": 1.9
+          }
+        },
+        "Chelan": {
+          "county": 2.0,
+          "places": {
+            "Cashmere": 2.1,
+            "Chelan (City)": 2.3,
+            "Entiat": 2.0,
+            "Leavenworth": 2.1,
+            "Wenatchee": 2.5
+          }
+        },
+        "Clallam": {
+          "county": 2.1,
+          "places": {
+            "Jamestown Tribe - Clallam County Unincorp. Areas": 2.1,
+            "Forks": 2.1,
+            "Port Angeles": 2.4,
+            "Sequim": 2.3
+          }
+        },
+        "Clark": {
+          "county": 1.4,
+          "places": {
+            "Cowlitz Tribe - Clark County Unincorp. Areas": 1.4,
+            "Clark County Unincorp. PTBA": 2.1,
+            "Battle Ground": 2.3,
+            "Camas": 2.2,
+            "La Center": 2.2,
+            "Cowlitz Tribe - La Center": 2.2,
+            "Ridgefield": 2.4,
+            "Vancouver": 2.3,
+            "Washougal": 2.3,
+            "Yacolt": 2.1
+          }
+        },
+        "Columbia": {
+          "county": 1.7,
+          "places": {
+            "Dayton": 1.9,
+            "Starbuck": 1.7
+          }
+        },
+        "Cowlitz": {
+          "county": 1.2,
+          "places": {
+            "Castle Rock": 1.4,
+            "Kalama": 1.6,
+            "Kelso": 1.6,
+            "Longview": 1.6,
+            "Woodland": 1.3
+          }
+        },
+        "Douglas": {
+          "county": 1.4,
+          "places": {
+            "Douglas County Unincorp. PTBA": 2.0,
+            "Bridgeport": 1.3,
+            "East Wenatchee": 2.3,
+            "Mansfield": 1.4,
+            "Rock Island": 2.0,
+            "Waterville": 2.0
+          }
+        },
+        "Ferry": {
+          "county": 1.2,
+          "places": {
+            "Republic": 1.2
+          }
+        },
+        "Franklin": {
+          "county": 1.3,
+          "places": {
+            "Franklin County Unincorp. PTBA": 1.9,
+            "Connell": 1.5,
+            "Kahlotus": 1.3,
+            "Mesa": 1.3,
+            "Pasco": 2.1
+          }
+        },
+        "Garfield": {
+          "county": 1.6,
+          "places": {
+            "Pomeroy": 1.6
+          }
+        },
+        "Grant": {
+          "county": 1.4,
+          "places": {
+            "Coulee City": 1.4,
+            "Electric City": 1.4,
+            "Ephrata": 1.6,
+            "George": 1.6,
+            "Grand Coulee": 1.6,
+            "Hartline": 1.4,
+            "Krupp": 1.4,
+            "Mattawa": 1.5,
+            "Moses Lake": 1.7,
+            "Colville Tribes - Moses Lake": 1.7,
+            "Quincy": 1.4,
+            "Royal City": 1.4,
+            "Soap Lake": 1.6,
+            "Warden": 1.4,
+            "Wilson Creek": 1.4
+          }
+        },
+        "Grays Harbor": {
+          "county": 2.1,
+          "places": {
+            "Chehalis Tribes - Grays Harbor County Unincorp. Areas": 2.1,
+            "Aberdeen": 2.28,
+            "Cosmopolis": 2.1,
+            "Elma": 2.2,
+            "Hoquiam": 2.1,
+            "McCleary": 2.1,
+            "Montesano": 2.1,
+            "Oakville": 2.1,
+            "Chehalis Tribes - Oakville": 2.1,
+            "Ocean Shores": 2.3,
+            "Westport": 2.1
+          }
+        },
+        "Island": {
+          "county": 2.6,
+          "places": {
+            "Coupeville": 2.6,
+            "Langley": 2.7,
+            "Oak Harbor": 2.8
+          }
+        },
+        "Jefferson": {
+          "county": 2.7,
+          "places": {
+            "Jamestown Tribe - Jefferson County Unincorp. Areas": 2.7,
+            "Suquamish Tribe - Jefferson County Unincorp. Areas": 2.7,
+            "Port Townsend": 2.7
+          }
+        },
+        "King": {
+          "county": 3.8,
+          "places": {
+            "King County Unincorp. Non-RTA": 2.4,
+            "Algona": 3.9,
+            "Auburn in King County": 4.0,
+            "Auburn in King County Non-RTA": 2.6,
+            "Beaux Arts Village": 3.8,
+            "Bellevue": 3.8,
+            "Bellevue Non-RTA": 2.4,
+            "Black Diamond": 2.5,
+            "Bothell in King County": 3.8,
+            "Burien": 3.9,
+            "Carnation": 2.4,
+            "Clyde Hill": 3.8,
+            "Covington": 2.8,
+            "Des Moines": 3.9,
+            "Duvall": 2.7,
+            "Enumclaw": 2.5,
+            "Federal Way": 3.9,
+            "Puyallup Tribe - Federal Way": 3.9,
+            "Hunts Point": 3.8,
+            "Issaquah": 4.0,
+            "Issaquah Non-RTA": 2.6,
+            "Kenmore": 3.8,
+            "Kent": 3.9,
+            "Kent Non-RTA": 2.5,
+            "Kirkland": 3.8,
+            "Lake Forest Park": 3.9,
+            "Maple Valley": 2.6,
+            "Medina": 3.9,
+            "Mercer Island": 3.8,
+            "Milton in King County": 3.8,
+            "Newcastle": 3.8,
+            "Newcastle Non-RTA": 2.4,
+            "Normandy Park": 3.8,
+            "North Bend": 2.6,
+            "Pacific in King County": 3.9,
+            "Redmond": 3.9,
+            "Redmond Non-RTA": 2.5,
+            "Renton": 4.0,
+            "Renton Non-RTA": 2.6,
+            "Sammamish": 3.8,
+            "Sammamish Non-RTA": 2.4,
+            "SeaTac": 3.9,
+            "Seattle": 4.05,
+            "Shoreline": 4.0,
+            "Skykomish": 2.4,
+            "Snoqualmie": 2.7,
+            "Tukwila": 3.9,
+            "Woodinville": 3.9,
+            "Woodinville Non-RTA": 2.5,
+            "Yarrow Point": 3.9
+          }
+        },
+        "Kitsap": {
+          "county": 2.7,
+          "places": {
+            "Suquamish Tribe - Kitsap County Unincorp. Areas": 2.7,
+            "Bainbridge Island": 2.7,
+            "Bremerton": 2.7,
+            "Suquamish Tribe - Bremerton": 2.7,
+            "Port Orchard": 2.8,
+            "Poulsbo": 2.8
+          }
+        },
+        "Kittitas": {
+          "county": 1.5,
+          "places": {
+            "Cle Elum": 1.7,
+            "Ellensburg": 1.8,
+            "Kittitas (City)": 1.5,
+            "Roslyn": 1.5,
+            "South Cle Elum": 1.5
+          }
+        },
+        "Klickitat": {
+          "county": 1.1,
+          "places": {
+            "Bingen": 1.1,
+            "Goldendale": 1.1,
+            "White Salmon": 1.2
+          }
+        },
+        "Lewis": {
+          "county": 1.5,
+          "places": {
+            "Chehalis Tribes - Lewis County Unincorp. Areas": 1.5,
+            "Centralia": 1.9,
+            "Chehalis": 1.9,
+            "Morton": 1.5,
+            "Mossyrock": 1.5,
+            "Napavine": 1.6,
+            "Pe Ell": 1.5,
+            "Toledo": 1.5,
+            "Vader": 1.5,
+            "Winlock": 1.5
+          }
+        },
+        "Lincoln": {
+          "county": 1.2,
+          "places": {
+            "Almira": 1.2,
+            "Creston": 1.2,
+            "Davenport": 1.2,
+            "Harrington": 1.2,
+            "Odessa": 1.2,
+            "Reardan": 1.2,
+            "Sprague": 1.2,
+            "Wilbur": 1.2
+          }
+        },
+        "Mason": {
+          "county": 2.1,
+          "places": {
+            "Squaxin Island Tribe - Mason County Unincorp. Areas": 2.1,
+            "Shelton": 2.3
+          }
+        },
+        "Okanogan": {
+          "county": 1.5,
+          "places": {
+            "Colville Tribes - Okanogan County Unincorp. Areas": 1.5,
+            "Okanogan County Unincorp. PTBA": 1.9,
+            "Colville Tribes - Okanogan County Unincorp. PTBA": 1.9,
+            "Brewster": 1.9,
+            "Conconully": 1.9,
+            "Coulee Dam": 1.5,
+            "Elmer City": 1.5,
+            "Nespelem": 1.5,
+            "Okanogan (City)": 1.9,
+            "Omak": 1.9,
+            "Oroville": 1.9,
+            "Pateros": 2.1,
+            "Riverside": 1.9,
+            "Tonasket": 1.9,
+            "Twisp": 2.1,
+            "Winthrop": 2.0
+          }
+        },
+        "Pacific": {
+          "county": 1.7,
+          "places": {
+            "Ilwaco": 1.7,
+            "Long Beach": 1.9,
+            "Raymond": 1.7,
+            "South Bend": 1.7
+          }
+        },
+        "Pend Oreille": {
+          "county": 1.2,
+          "places": {
+            "Kalispel Tribe - Pend Oreille County Unincorp. Areas": 1.2,
+            "Cusick": 1.2,
+            "Ione": 1.2,
+            "Metaline": 1.2,
+            "Metaline Falls": 1.2,
+            "Newport": 1.2
+          }
+        },
+        "Pierce": {
+          "county": 3.1,
+          "places": {
+            "Nisqually Tribe - Pierce County Unincorp. Areas": 3.1,
+            "Pierce County Unincorp. Areas Non-RTA": 1.7,
+            "Nisqually Tribe - Pierce County Unincorp. Areas Non-RTA": 1.7,
+            "Puyallup Tribe - Pierce County Unincorp. Areas Non-RTA": 1.7,
+            "Pierce County Unincorp. Areas Non-RTA HBZ": 1.7,
+            "Pierce County Unincorp. PTBA": 3.7,
+            "Puyallup Tribe - Pierce County Unincorp. PTBA": 3.7,
+            "Pierce County Unincorp. PTBA HBZ": 2.3,
+            "Pierce County Unincorp. PTBA Non-RTA": 2.3,
+            "Auburn in Pierce County": 3.9,
+            "Bonney Lake": 3.1,
+            "Bonney Lake Non-RTA": 1.7,
+            "Buckley": 1.8,
+            "Carbonado": 1.7,
+            "DuPont": 3.2,
+            "Eatonville": 1.7,
+            "Edgewood": 3.7,
+            "Puyallup Tribe - Edgewood": 3.7,
+            "Fife": 3.7,
+            "Puyallup Tribe - Fife": 3.7,
+            "Fircrest": 3.7,
+            "Gig Harbor": 2.6,
+            "Gig Harbor HBZ": 2.6,
+            "Lakewood": 3.8,
+            "Nisqually Tribe - Lakewood": 3.8,
+            "Milton in Pierce County": 3.7,
+            "Puyallup Tribe - Milton in Pierce County": 3.7,
+            "Orting": 3.1,
+            "Pacific in Pierce County": 3.8,
+            "Puyallup": 3.8,
+            "Puyallup Tribe - Puyallup": 3.8,
+            "Roy": 1.7,
+            "Ruston": 3.7,
+            "South Prairie": 1.7,
+            "Steilacoom": 3.7,
+            "Sumner": 3.2,
+            "Tacoma": 4.0,
+            "Puyallup Tribe - Tacoma": 4.0,
+            "University Place": 3.7,
+            "Wilkeson": 1.7
+          }
+        },
+        "San Juan": {
+          "county": 1.55,
+          "places": {
+            "Lummi Nation - San Juan County Unincorp. Areas": 1.55,
+            "Friday Harbor": 1.85
+          }
+        },
+        "Skagit": {
+          "county": 1.5,
+          "places": {
+            "Swinomish Tribe - Skagit County Unincorp. Areas": 1.5,
+            "Skagit County Unincorp. PTBA": 1.9,
+            "Swinomish Tribe - Skagit County Unincorp. PTBA": 1.9,
+            "Anacortes": 2.1,
+            "Burlington": 2.1,
+            "Concrete": 1.9,
+            "Hamilton": 1.9,
+            "La Conner": 2.0,
+            "Swinomish Tribe - La Conner": 2.0,
+            "Lyman": 1.9,
+            "Mount Vernon": 2.2,
+            "Sedro-Woolley": 1.9
+          }
+        },
+        "Skamania": {
+          "county": 1.2,
+          "places": {
+            "North Bonneville": 1.2,
+            "Stevenson": 1.5
+          }
+        },
+        "Snohomish": {
+          "county": 2.8,
+          "places": {
+            "Snohomish County Unincorp. Areas Non-RTA": 1.4,
+            "Stillaguamish Tribe - Snohomish County Unincorp. Areas Non-RTA": 1.4,
+            "Snohomish County Unincorp. PTBA": 4.0,
+            "Snohomish County Unincorp. PTBA Non-RTA": 2.6,
+            "Stillaguamish Tribe - Snohomish County Unincorp. PTBA Non-RTA": 2.6,
+            "Tulalip Tribes - Snohomish County Unincorp. PTBA Non-RTA": 2.6,
+            "Arlington": 2.8,
+            "Stillaguamish Tribe - Arlington": 2.8,
+            "Bothell in Snohomish County": 4.0,
+            "Brier": 4.0,
+            "Darrington": 2.6,
+            "Edmonds": 4.2,
+            "Everett": 3.4,
+            "Everett Non-RTA": 2.0,
+            "Gold Bar": 2.6,
+            "Granite Falls": 2.6,
+            "Index": 2.6,
+            "Lake Stevens": 2.8,
+            "Lynnwood": 4.2,
+            "Marysville": 2.8,
+            "Stillaguamish Tribe - Marysville": 2.8,
+            "Tulalip Tribes - Marysville": 2.8,
+            "Mill Creek": 4.0,
+            "Monroe": 2.8,
+            "Mountlake Terrace": 4.0,
+            "Mukilteo": 4.1,
+            "Snohomish (City)": 2.8,
+            "Stanwood": 2.8,
+            "Sultan": 2.6,
+            "Woodway": 4.1
+          }
+        },
+        "Spokane": {
+          "county": 1.5,
+          "places": {
+            "Spokane County Unincorp. PTBA": 2.3,
+            "Airway Heights": 2.6,
+            "Kalispel Tribe - Airway Heights": 2.6,
+            "Cheney": 2.3,
+            "Deer Park": 1.5,
+            "Fairfield": 1.5,
+            "Latah": 1.5,
+            "Liberty Lake": 2.4,
+            "Medical Lake": 2.3,
+            "Millwood": 2.3,
+            "Rockford": 1.5,
+            "Spangle": 1.5,
+            "Spokane (City)": 2.4,
+            "Spokane Valley": 2.3,
+            "Waverly": 1.5
+          }
+        },
+        "Stevens": {
+          "county": 1.2,
+          "places": {
+            "Chewelah": 1.2,
+            "Colville": 1.2,
+            "Kettle Falls": 1.2,
+            "Marcus": 1.2,
+            "Northport": 1.2,
+            "Springdale": 1.2
+          }
+        },
+        "Thurston": {
+          "county": 1.7,
+          "places": {
+            "Chehalis Tribes - Thurston County Unincorp. Areas": 1.7,
+            "Nisqually Tribe - Thurston County Unincorp. Areas": 1.7,
+            "Squaxin Island Tribe - Thurston County Unincorp. Areas": 1.7,
+            "Thurston County Unincorp. PTBA": 2.9,
+            "Nisqually Tribe - Thurston County Unincorp. PTBA": 2.9,
+            "Bucoda": 1.7,
+            "Lacey": 3.1,
+            "Nisqually Tribe - Lacey": 3.1,
+            "Olympia": 3.2,
+            "Rainier": 1.7,
+            "Tenino": 1.7,
+            "Tumwater": 3.1,
+            "Chehalis Tribes - Tumwater": 3.1,
+            "Squaxin Island Tribe - Tumwater": 3.1,
+            "Yelm": 2.9
+          }
+        },
+        "Wahkiakum": {
+          "county": 1.3,
+          "places": {
+            "Cathlamet": 1.3
+          }
+        },
+        "Walla Walla": {
+          "county": 1.5,
+          "places": {
+            "Walla Walla County Unincorp. PTBA": 2.1,
+            "College Place": 2.2,
+            "Prescott": 1.5,
+            "Waitsburg": 1.7,
+            "Walla Walla (City)": 2.3
+          }
+        },
+        "Whatcom": {
+          "county": 1.5,
+          "places": {
+            "Lummi Nation - Whatcom County Unincorp. Areas": 1.5,
+            "Whatcom County Unincorp. PTBA": 2.1,
+            "Lummi Nation - Whatcom County Unincorp. PTBA": 2.1,
+            "Bellingham": 2.4,
+            "Lummi Nation - Bellingham": 2.4,
+            "Blaine": 2.3,
+            "Everson": 2.1,
+            "Ferndale": 2.3,
+            "Lummi Nation - Ferndale": 2.3,
+            "Lynden": 2.5,
+            "Nooksack": 2.1,
+            "Sumas": 2.1
+          }
+        },
+        "Whitman": {
+          "county": 1.5,
+          "places": {
+            "Albion": 1.5,
+            "Colfax": 1.5,
+            "Colton": 1.5,
+            "Endicott": 1.5,
+            "Farmington": 1.5,
+            "Garfield (City)": 1.5,
+            "LaCrosse": 1.5,
+            "Lamont": 1.5,
+            "Malden": 1.5,
+            "Oakesdale": 1.5,
+            "Palouse": 1.5,
+            "Pullman": 1.7,
+            "Rosalia": 1.5,
+            "St. John": 1.5,
+            "Tekoa": 1.5,
+            "Uniontown": 1.5
+          }
+        },
+        "Yakima": {
+          "county": 1.4,
+          "places": {
+            "Grandview": 1.4,
+            "Granger": 1.4,
+            "Harrah": 1.4,
+            "Mabton": 1.4,
+            "Moxee": 1.4,
+            "Naches": 1.4,
+            "Selah": 1.7,
+            "Sunnyside": 1.6,
+            "Tieton": 1.5,
+            "Toppenish": 1.5,
+            "Union Gap": 1.6,
+            "Wapato": 1.4,
+            "Yakima (City)": 1.8,
+            "Zillah": 1.4
+          }
+        }
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Washington DOR - Car Dealers and Leasing Companies Local Sales & Use Tax Rates, Oct 1 to Dec 31 2026",
+          "url": "https://dor.wa.gov/sites/default/files/2026-08/Q426_MVET-flyer-by-county.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Local rate only; the state rates are added separately. Tribal and transportation-benefit-area locations are listed by the names on the DOR table."
+    }
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Certificate of title application",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 15,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Washington DOL - Calculate vehicle tab fees",
+            "url": "https://dol.wa.gov/vehicles-and-boats/vehicles/vehicle-registration/calculate-vehicle-tab-fees",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "title-filing",
+      "label": "Filing fee (title with registration)",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 12.5,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Washington DOL - Calculate vehicle tab fees",
+            "url": "https://dol.wa.gov/vehicles-and-boats/vehicles/vehicle-registration/calculate-vehicle-tab-fees",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "title-service",
+      "label": "Service fee (title with registration)",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 29,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Washington DOL - Calculate vehicle tab fees",
+            "url": "https://dol.wa.gov/vehicles-and-boats/vehicles/vehicle-registration/calculate-vehicle-tab-fees",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "registration",
+      "label": "License tab fee",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 30,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Washington DOL - Calculate vehicle tab fees",
+            "url": "https://dol.wa.gov/vehicles-and-boats/vehicles/vehicle-registration/calculate-vehicle-tab-fees",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Standard passenger use class."
+      }
+    },
+    {
+      "id": "weight-fee",
+      "label": "Additional vehicle weight fee",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 10,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Washington DOL - Calculate vehicle tab fees",
+            "url": "https://dol.wa.gov/vehicles-and-boats/vehicles/vehicle-registration/calculate-vehicle-tab-fees",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Applies to vehicles subject to weight fees, including passenger vehicles. The separate weight-based fee is not included."
+      }
+    },
+    {
+      "id": "ev-fees",
+      "label": "Electric vehicle fees",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "ev"
+      },
+      "excludedReason": "The fee page lists an electric car fee of $100 and another of $50, plus a $75 transportation electrification fee, without saying which apply to which vehicle.",
+      "amount": {
+        "value": null,
+        "status": "unverified",
+        "sources": [
+          {
+            "title": "Washington DOL - Calculate vehicle tab fees",
+            "url": "https://dol.wa.gov/vehicles-and-boats/vehicles/vehicle-registration/calculate-vehicle-tab-fees",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "rta-excise",
+      "label": "Regional transit excise tax and local district fees",
+      "kind": "flat",
+      "frequency": "annual",
+      "excludedReason": "The amount varies by location. Use the state's RTA excise tax estimator.",
+      "amount": {
+        "value": null,
+        "status": "unverified",
+        "sources": [
+          {
+            "title": "Washington DOL - Calculate vehicle tab fees",
+            "url": "https://dol.wa.gov/vehicles-and-boats/vehicles/vehicle-registration/calculate-vehicle-tab-fees",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    }
+  ],
+  "notes": [
+    "The weight-based gross weight fee, regional transit excise tax and transportation benefit district fees vary and are not included.",
+    "The fee page also lists plates ($50 each) and an optional parks donation, which are not included."
+  ],
+  "content": {
+    "intro": "{state} charges a combined {stateRate} state rate on a vehicle price, plus a local rate that depends on where you are, a title fee and registration fees.",
+    "howItWorks": [
+      {
+        "text": "The state sales tax is added to a separate motor vehicle sales tax charged on the selling price. A trade-in comes off the selling price before tax.",
+        "sources": [
+          "https://dor.wa.gov/taxes-rates/other-taxes/motor-vehicle-salesuse-tax",
+          "https://dor.wa.gov/education/industry-guides/auto-dealers/trade-ins"
+        ]
+      },
+      {
+        "text": "The local rate comes from a table the state publishes every quarter for car dealers, with a rate for each county, city and some special areas.",
+        "sources": [
+          "https://dor.wa.gov/sites/default/files/2026-08/Q426_MVET-flyer-by-county.pdf"
+        ]
+      },
+      {
+        "text": "Title and registration involve several small fees from the licensing department. Regional transit excise tax and some district fees are extra and depend on where you live and the vehicle's value.",
+        "sources": [
+          "https://dol.wa.gov/vehicles-and-boats/vehicles/vehicle-registration/calculate-vehicle-tab-fees"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does a trade-in lower the sales tax in Washington?",
+        "text": "Yes. The selling price used for sales tax excludes a trade-in of like kind.",
+        "sources": [
+          "https://dor.wa.gov/education/industry-guides/auto-dealers/trade-ins"
+        ]
+      },
+      {
+        "q": "Where does the local rate come from?",
+        "text": "The state revenue department publishes a quarterly table of local rates for car sales by location. The calculator fills the rate when you pick your place.",
+        "sources": [
+          "https://dor.wa.gov/sites/default/files/2026-08/Q426_MVET-flyer-by-county.pdf"
+        ]
+      },
+      {
+        "q": "Why are electric vehicle fees not in the total?",
+        "text": "The fee page lists more than one electric vehicle fee without saying which applies to which vehicle, so they are shown as not included.",
+        "sources": [
+          "https://dol.wa.gov/vehicles-and-boats/vehicles/vehicle-registration/calculate-vehicle-tab-fees"
+        ]
+      }
+    ]
+  }
+}

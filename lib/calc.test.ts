@@ -381,3 +381,31 @@ describe("Virginia", () => {
     expect(line(calculate(va, base), "ev-fee")).toBeUndefined();
   });
 });
+
+describe("Washington", () => {
+  const wa = load("wa");
+  const rates = wa.localRates!.rates.value!;
+  it("is publishable and has 39 counties", () => {
+    expect(publishability(wa).publishable).toBe(true);
+    expect(Object.keys(rates).length).toBe(39);
+  });
+  it("local rates match the DOR table", () => {
+    expect(rates["King"].county).toBe(3.8);
+    expect(rates["King"].places["Seattle"]).toBe(4.05);
+    expect(rates["Yakima"].places["Yakima (City)"]).toBe(1.8);
+  });
+  it("applies 7% state and a trade-in, plus the local rate", () => {
+    const r = calculate(wa, { ...base, price: 30000, tradeIn: 10000, localRatePct: 4.05 });
+    expect(line(r, "state-tax")).toBe(1400);
+    expect(line(r, "local-tax")).toBe(810);
+  });
+  it("includes title and registration fees and holds out EV and transit fees", () => {
+    const r = calculate(wa, base);
+    expect(line(r, "title")).toBe(15);
+    expect(line(r, "title-filing")).toBe(12.5);
+    expect(line(r, "title-service")).toBe(29);
+    expect(line(r, "registration")).toBe(30);
+    expect(r.excluded.map((e) => e.label)).toContain("Regional transit excise tax and local district fees");
+    expect(calculate(wa, { ...base, fuel: "ev" }).excluded.map((e) => e.label)).toContain("Electric vehicle fees");
+  });
+});
