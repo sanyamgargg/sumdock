@@ -11,13 +11,13 @@ Two columns per state: what only Sanyam can do (blocked sites, accounts, pushing
 ## South Carolina (researched, not added)
 | Sanyam | Claude |
 |---|---|
-| Nothing yet | Official facts found: infrastructure maintenance fee (IMF) of 5% of gross proceeds, at most $500, in place of state and local sales tax (SCDOR dealers guide, Dec 2025); title $15; registration $40 every two years; hybrid +$60, EV +$120 (dmv.sc.gov/Fees) |
+| Links: https://dor.sc.gov/resources-site/lawandpolicy/Documents/sales-and-use-tax-auto-and-truck-dealers-guide.pdf and https://dmv.sc.gov/Fees . Ask SCDOR or SCDMV whether a trade-in lowers the IMF base | Official facts found: infrastructure maintenance fee (IMF) of 5% of gross proceeds, at most $500, in place of state and local sales tax (SCDOR dealers guide, Dec 2025); title $15; registration $40 every two years; hybrid +$60, EV +$120 (dmv.sc.gov/Fees) |
 | | Blocked: no official page says whether a trade-in lowers the IMF base, so the state cannot be published. Needs a "maximum tax" field in the calculator too |
 
 ## Idaho (researched, not added)
 | Sanyam | Claude |
 |---|---|
-| Nothing yet | Official ITD page: registration by vehicle age ($69 for 1 or 2 years, $57 for the 3 to 6 band, $45 for 7 or more, EV +$140, plug-in hybrid +$75) plus county registration and title admin fees for 44 counties; title $14 |
+| Links: https://itd.idaho.gov/dmv/vehicle-registration/ and https://itd.idaho.gov/dmv/vehicle-titles/ . Check the age bands in the fee table with an ITD office or the page itself | Official ITD page: registration by vehicle age ($69 for 1 or 2 years, $57 for the 3 to 6 band, $45 for 7 or more, EV +$140, plug-in hybrid +$75) plus county registration and title admin fees for 44 counties; title $14 |
 | | Blocked: the page prints the middle band as "3 or 6 years" and has no row for 0, 4 or 5 years, so the fee cannot be modeled safely. Needs a finer age input and a county fee table |
 
 ## North Dakota (researched, not added)
@@ -30,7 +30,7 @@ Two columns per state: what only Sanyam can do (blocked sites, accounts, pushing
 ## South Dakota (researched, not added)
 | Sanyam | Claude |
 |---|---|
-| Nothing yet | 4% excise tax on purchase price and a $10 title fee are on dor.sd.gov, but the page does not say whether a trade-in lowers the price, and registration amounts are in a separate PDF |
+| Links: https://dor.sd.gov/individuals/motor-vehicle/cars-trucks-vans/ (open the non-commercial license fees PDF linked there and save it in tmp/) | 4% excise tax on purchase price and a $10 title fee are on dor.sd.gov, but the page does not say whether a trade-in lowers the price, and registration amounts are in a separate PDF |
 
 ## Washington (added)
 | Sanyam | Claude |
