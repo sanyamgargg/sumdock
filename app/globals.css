@@ -70,7 +70,6 @@ main.page { padding-top: 20px; padding-bottom: 36px; display: flex; flex-directi
 .banner { margin: 0; }
 .excluded ul { margin: 6px 0 0; padding-left: 18px; }
 .tag { display: inline-block; margin-left: 8px; font-size: 11px; font-weight: 600; background: var(--warn-bg); color: var(--warn-fg); padding: 1px 6px; border-radius: var(--radius-sm); }
-.badge { font-size: 12px; padding: 1px 8px; border-radius: var(--radius-pill); border: 1px solid var(--line-strong); color: var(--muted); }
 
 /* Header */
 .site-header { background: var(--card); border-bottom: 1px solid var(--line); position: relative; }
@@ -185,3 +184,15 @@ select { width: 100%; height: var(--field); padding: 0 12px; font: inherit; font
   .calc-layout { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; }
   .card { padding: 24px; }
 }
+
+/* State page header */
+.page-head { display: flex; flex-direction: column; gap: 10px; }
+.badges { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.badge { display: inline-flex; align-items: center; border-radius: var(--radius-pill); padding: 5px 12px; font-size: 13px; font-weight: 600; }
+.badge--accent { background: var(--accent-tint); color: var(--accent-tint-fg); }
+.badge--warn { background: var(--warn-bg); color: var(--warn-fg); }
+
+/* Ad slots: empty, reserved height only */
+.ad-slot { width: 100%; }
+.crumbs li { display: inline-flex; align-items: center; }
+.crumbs li [aria-hidden="true"] { margin: 0 8px; }

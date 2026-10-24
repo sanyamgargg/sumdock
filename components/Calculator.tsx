@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useId, useMemo, useState } from "react";
+import AdSlot from "@/components/AdSlot";
 import { calculate } from "@/lib/calc";
 import { formatDate, groupNumber, parseNumber, usd } from "@/lib/format";
 import { sourcesForLine } from "@/lib/sources";
@@ -262,6 +263,7 @@ export default function Calculator({ state }: { state: StateData }) {
             Last checked: {formatDate(state.lastReviewed)}. This is an estimate. Confirm with {state.name} before you pay.
           </p>
         </section>
+        <AdSlot name="below-result" minHeight={280} />
       </div>
     </div>
   );

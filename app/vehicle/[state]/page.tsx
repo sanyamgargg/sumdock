@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import Calculator from "@/components/Calculator";
 import { publishability } from "@/lib/calc";
 import { loadState, loadStates } from "@/lib/data";
+import { formatDate } from "@/lib/format";
+import { collectSources } from "@/lib/sources";
 import type { Fee, Sourced } from "@/lib/types";
 
 export const dynamicParams = false;
@@ -65,10 +68,32 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
     })),
   ];
 
+  const allSources = collectSources(s);
+  const officialOnly = allSources.every((x) => x.source.publisherType !== "secondary");
+  const countyCount = s.counties?.fees.value
+    ? Object.keys(s.counties.fees.value).length
+    : s.localRates?.rates.value
+      ? Object.keys(s.localRates.rates.value).length
+      : 0;
+
   return (
     <>
-      <h1>{s.name} vehicle sales tax, title and registration fees</h1>
-      <p className="lede">Last reviewed {s.lastReviewed}. Estimates only.</p>
+      <Breadcrumbs items={[{ label: "Sumdock", href: "/" }, { label: "Vehicle", href: "/vehicle/" }, { label: s.name }]} />
+      <header className="page-head">
+        <h1>{s.name} vehicle sales tax, title and registration calculator</h1>
+        <p className="lede">
+          Estimate the sales tax, title and registration fees for a vehicle in {s.name}. Every figure links to the page it came from.
+        </p>
+        <ul className="badges">
+          <li className="badge badge--accent">Data reviewed {formatDate(s.lastReviewed)}</li>
+          {officialOnly ? (
+            <li className="badge badge--accent">Official sources only</li>
+          ) : (
+            <li className="badge badge--warn">Includes secondary sources</li>
+          )}
+          {countyCount > 0 && <li className="badge badge--accent">{countyCount} counties covered</li>}
+        </ul>
+      </header>
 
       {!pub.publishable && (
         <div className="banner">
