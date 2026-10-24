@@ -1,0 +1,25 @@
+{
+  "name": "us-vehicle-tax-tool",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "validate": "node scripts/validate-data.mjs",
+    "validate:strict": "node scripts/validate-data.mjs --strict",
+    "test": "vitest run",
+    "build": "node scripts/validate-data.mjs && next build",
+    "start": "npx serve out"
+  },
+  "dependencies": {
+    "next": "15.5.28",
+    "react": "19.1.1",
+    "react-dom": "19.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "22.10.2",
+    "@types/react": "19.1.12",
+    "@types/react-dom": "19.1.9",
+    "typescript": "5.7.2",
+    "vitest": "2.1.8"
+  }
+}

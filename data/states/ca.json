@@ -1,0 +1,217 @@
+{
+  "code": "CA",
+  "name": "California",
+  "slug": "california",
+  "lastReviewed": "2026-10-24",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 7.25,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "CDTFA - Sales and Use Tax Rates",
+          "url": "https://www.cdtfa.ca.gov/taxes-and-fees/sales-use-tax-rates.htm",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Statewide base rate. District taxes are added on top."
+    },
+    "tradeInReducesBase": {
+      "value": false,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "CDTFA - Publication 52, Vehicles and Vessels: Use Tax",
+          "url": "https://cdtfa.ca.gov/formspubs/pub52.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "CDTFA - Applying Tax to Your Sales and Purchases FAQ",
+          "url": "https://cdtfa.ca.gov/taxes-and-fees/applying-tax-sales-purchases-faq.htm",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "CDTFA: the taxable price includes the fair market value of property traded for the vehicle, so a trade-in does not reduce the tax."
+    },
+    "local": {
+      "value": {
+        "mode": "user-entered",
+        "capBase": null,
+        "rangeNote": "District taxes range from 0.10% to 2.00%; some areas stack more than one."
+      },
+      "status": "verified",
+      "sources": [
+        {
+          "title": "CDTFA - Sales and Use Tax Rates",
+          "url": "https://www.cdtfa.ca.gov/taxes-and-fees/sales-use-tax-rates.htm",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ]
+    },
+    "outOfStateCredit": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "CDTFA - Publication 52, Vehicles and Vessels: Use Tax",
+          "url": "https://cdtfa.ca.gov/formspubs/pub52.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Credit for sales or use tax paid to another state; if that tax was lower than California's, the difference is owed. DMV needs proof of the tax paid."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Title fee",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 28,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "California DMV - Registration Fees",
+            "url": "https://www.dmv.ca.gov/portal/vehicle-registration/registration-fees/",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Title only (VC 9254). A $15 transfer fee also applies when ownership is transferred (not modeled)."
+      }
+    },
+    {
+      "id": "registration",
+      "label": "Registration fee",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 76,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "California DMV - Registration Fees",
+            "url": "https://www.dmv.ca.gov/portal/vehicle-registration/registration-fees/",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Original registration/renewal, includes the $3 alternative fuel/technology fee. An older DMV fact sheet (FFVR 34) lists $65; the live fee page is used."
+      }
+    },
+    {
+      "id": "chp",
+      "label": "CHP fee",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 34,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "California DMV - Registration Fees",
+            "url": "https://www.dmv.ca.gov/portal/vehicle-registration/registration-fees/",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "An older DMV fact sheet lists $29; the live fee page is used."
+      }
+    },
+    {
+      "id": "vlf",
+      "label": "Vehicle license fee (initial, before reduction)",
+      "kind": "percentOfValue",
+      "frequency": "annual",
+      "amount": {
+        "value": 0.65,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "California DMV - Registration Fees",
+            "url": "https://www.dmv.ca.gov/portal/registration-fees/",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "0.65% of purchase price or value, reduced over the first 11 renewal years (schedule not on the page)."
+      }
+    },
+    {
+      "id": "road-improvement-fee",
+      "label": "Road improvement fee (zero-emission, model year 2020+)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "ev"
+      },
+      "amount": {
+        "value": null,
+        "status": "unverified",
+        "sources": [
+          {
+            "title": "California DMV - Registration Fees",
+            "url": "https://www.dmv.ca.gov/portal/vehicle-registration/registration-fees/",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "$121 for model year 2020+ zero-emission vehicles. DMV says it is not assessed on the initial registration of a newly purchased ZEV from a licensed dealer; it applies at renewals."
+      },
+      "excludedReason": "$121 a year at renewal for model year 2020+ zero-emission vehicles. Not charged at first registration of a new ZEV bought from a dealer; used-ZEV treatment not yet confirmed."
+    },
+    {
+      "id": "transportation-improvement",
+      "label": "Transportation improvement fee (by vehicle value)",
+      "kind": "valueTable",
+      "frequency": "annual",
+      "weightTable": [
+        {
+          "upTo": 4999,
+          "fee": 33
+        },
+        {
+          "upTo": 24999,
+          "fee": 66
+        },
+        {
+          "upTo": 34999,
+          "fee": 132
+        },
+        {
+          "upTo": 59999,
+          "fee": 198
+        },
+        {
+          "upTo": null,
+          "fee": 231
+        }
+      ],
+      "amount": {
+        "value": 1,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "California DMV - Registration Fees",
+            "url": "https://www.dmv.ca.gov/portal/vehicle-registration/registration-fees/",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Added to registration based on vehicle value: $33 under $5,000, $66 to $24,999, $132 to $34,999, $198 to $59,999, $231 at $60,000+. The older fact sheet shows lower tiers; the live page is used."
+      }
+    }
+  ],
+  "notes": [
+    "County/district registration fees vary by county and are not modeled.",
+    "The vehicle license fee falls over the first 11 renewal years; the calculator shows the initial amount.",
+    "Late penalties, smog and other service fees are not modeled."
+  ]
+}

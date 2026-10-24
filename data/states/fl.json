@@ -1,0 +1,243 @@
+{
+  "code": "FL",
+  "name": "Florida",
+  "slug": "florida",
+  "lastReviewed": "2026-10-24",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 6,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Florida Department of Revenue - Sales and Use Tax",
+          "url": "https://floridarevenue.com/taxes/taxesfees/pages/sales_tax.aspx",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ]
+    },
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Florida DOR - Sales and Use Tax on Motor Vehicles (GT-800030)",
+          "url": "https://floridarevenue.com/Forms_library/gt800030.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Dealer may subtract a trade-in allowance when tangible personal property is traded in one transaction. In a private sale the buyer must trade in an aircraft, boat, vehicle or mobile home in the same transaction to get the deduction."
+    },
+    "local": {
+      "value": {
+        "mode": "user-entered",
+        "capBase": 5000,
+        "rangeNote": "Discretionary surtax is set by county and applies to only the first $5,000 of the price."
+      },
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Florida DOR - Sales and Use Tax on Motor Vehicles (GT-800030)",
+          "url": "https://floridarevenue.com/Forms_library/gt800030.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "DOR: discretionary sales surtax applies to the first $5,000 of the purchase price, based on the county of the purchaser's address. County rates are in form DR-15DSS."
+    },
+    "outOfStateCredit": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Florida DOR - Sales and Use Tax on Motor Vehicles (GT-800030)",
+          "url": "https://floridarevenue.com/Forms_library/gt800030.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Credit against Florida tax when documentation shows a like tax was lawfully paid to another state, territory or DC."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Title fee (transfer, electronic)",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 75.25,
+        "alt": [
+          77.25,
+          85.25
+        ],
+        "status": "verified",
+        "sources": [
+          {
+            "title": "FLHSMV - Fees",
+            "url": "https://www.flhsmv.gov/fees/",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "FLHSMV electronic title fees: transfer/duplicate $75.25, original new vehicle $77.25, original used $85.25. Add $2.50 for a paper title and $2 if a lien is recorded."
+      }
+    },
+    {
+      "id": "registration-light",
+      "label": "Registration, car under 2,500 lbs (1 year)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "weightBand": "light"
+      },
+      "amount": {
+        "value": 28.1,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Pinellas County Tax Collector - Fees",
+            "url": "https://www.pinellastaxcollector.gov/fees",
+            "accessed": "2026-10-24",
+            "publisherType": "county-agency"
+          },
+          {
+            "title": "FLHSMV - Fees",
+            "url": "https://www.flhsmv.gov/fees/",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "County total for a 1-year registration. FLHSMV lists the base vehicle tax at $14.50 / $22.50 / $32.50 by weight; the county total includes other statutory fees. Confirm the breakdown against the FLHSMV rate chart."
+      }
+    },
+    {
+      "id": "registration-mid",
+      "label": "Registration, car 2,500-3,499 lbs (1 year)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "weightBand": "mid"
+      },
+      "amount": {
+        "value": 36.1,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Pinellas County Tax Collector - Fees",
+            "url": "https://www.pinellastaxcollector.gov/fees",
+            "accessed": "2026-10-24",
+            "publisherType": "county-agency"
+          },
+          {
+            "title": "FLHSMV - Fees",
+            "url": "https://www.flhsmv.gov/fees/",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "County total for a 1-year registration. FLHSMV lists the base vehicle tax at $14.50 / $22.50 / $32.50 by weight; the county total includes other statutory fees. Confirm the breakdown against the FLHSMV rate chart."
+      }
+    },
+    {
+      "id": "registration-heavy",
+      "label": "Registration, car 3,500 lbs and up (1 year)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "weightBand": "heavy"
+      },
+      "amount": {
+        "value": 46.1,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Pinellas County Tax Collector - Fees",
+            "url": "https://www.pinellastaxcollector.gov/fees",
+            "accessed": "2026-10-24",
+            "publisherType": "county-agency"
+          },
+          {
+            "title": "FLHSMV - Fees",
+            "url": "https://www.flhsmv.gov/fees/",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "County total for a 1-year registration. FLHSMV lists the base vehicle tax at $14.50 / $22.50 / $32.50 by weight; the county total includes other statutory fees. Confirm the breakdown against the FLHSMV rate chart."
+      }
+    },
+    {
+      "id": "initial-registration",
+      "label": "Initial registration fee (no plate to transfer)",
+      "kind": "flat",
+      "frequency": "once",
+      "when": {
+        "noPlateToTransfer": true
+      },
+      "amount": {
+        "value": 225,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "FLHSMV - Motor Vehicle Registrations",
+            "url": "https://www.flhsmv.gov/motor-vehicles-tags-titles/license-plates-registration/motor-vehicle-registrations/",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "FLHSMV Procedure RS-30 (Initial Registration Fee)",
+            "url": "https://www.flhsmv.gov/pdf/proc/rs/rs-30.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "FLHSMV registration page lists the $225 initial registration fee for owners with no plate or prior Florida plate record to transfer."
+      }
+    },
+    {
+      "id": "plate",
+      "label": "License plate fee",
+      "kind": "flat",
+      "frequency": "once",
+      "when": {
+        "noPlateToTransfer": true
+      },
+      "amount": {
+        "value": 28,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "FLHSMV - Fees",
+            "url": "https://www.flhsmv.gov/fees/",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Original or replacement plate fee."
+      }
+    },
+    {
+      "id": "ev-fee",
+      "label": "Electric vehicle annual fee",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "ev"
+      },
+      "amount": {
+        "value": null,
+        "status": "unverified",
+        "sources": [],
+        "note": "Only proposed bills (Senate bills 2020-2024) turned up; no enacted EV fee was found on FLHSMV pages. Leave blank until an official source confirms one."
+      }
+    }
+  ],
+  "notes": [
+    "Surtax is based on the county of the purchaser's address; look up the rate in DOR form DR-15DSS.",
+    "Card/online processing fees ($2.00 online, 2.5% at some counties) and delinquent fees are not modeled.",
+    "Hope Scholarship contribution ($105) is optional and not included."
+  ]
+}

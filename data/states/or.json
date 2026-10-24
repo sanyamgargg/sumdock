@@ -1,0 +1,124 @@
+{
+  "code": "OR",
+  "name": "Oregon",
+  "slug": "oregon",
+  "lastReviewed": "2026-10-24",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 0,
+      "status": "verified",
+      "sources": [
+        { "title": "Oregon Department of Revenue - Sales Tax", "url": "https://www.oregon.gov/dor/programs/businesses/Pages/Sales-Tax.aspx", "accessed": "2026-10-24", "publisherType": "state-agency" }
+      ],
+      "note": "Page states: Oregon doesn't have a general sales or use/transaction tax."
+    },
+    "tradeInReducesBase": {
+      "value": false,
+      "status": "verified",
+      "sources": [
+        { "title": "Oregon Department of Revenue - Sales Tax", "url": "https://www.oregon.gov/dor/programs/businesses/Pages/Sales-Tax.aspx", "accessed": "2026-10-24", "publisherType": "state-agency" }
+      ],
+      "note": "Not applicable: no general sales tax. Trade-ins do not matter except for the vehicle use tax, where the instructions only list rebates and fees as deductions."
+    },
+    "local": {
+      "value": { "mode": "none", "capBase": null, "rangeNote": null },
+      "status": "verified",
+      "sources": [
+        { "title": "Oregon Department of Revenue - Sales Tax", "url": "https://www.oregon.gov/dor/programs/businesses/Pages/Sales-Tax.aspx", "accessed": "2026-10-24", "publisherType": "state-agency" }
+      ]
+    },
+    "outOfStateCredit": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        { "title": "Oregon DOR - Form OR-591-C instructions (Vehicle Use Tax)", "url": "https://www.oregon.gov/dor/forms/FormsPubs/form-or-591-c-instructions_612-004-1.pdf", "accessed": "2026-10-24", "publisherType": "state-agency" }
+      ],
+      "note": "Privilege, excise, sales or use taxes paid to another jurisdiction on the vehicle's value can be subtracted from the use tax due."
+    },
+    "useTax": {
+      "value": { "ratePct": 0.5, "label": "Vehicle use tax (0.5%)", "requires": "outOfStateNewDealer" },
+      "status": "verified",
+      "sources": [
+        { "title": "Oregon DOR - Form OR-591-C instructions (Vehicle Use Tax)", "url": "https://www.oregon.gov/dor/forms/FormsPubs/form-or-591-c-instructions_612-004-1.pdf", "accessed": "2026-10-24", "publisherType": "state-agency" }
+      ],
+      "note": "0.5% of the retail price of taxable vehicles sold by a dealer outside Oregon: up to 7,500 miles, GVWR 26,000 lb or less. Dealer rebates and document/registration fees are excluded. Due within 30 days of purchase."
+    }
+  },
+  "fees": [
+    {
+      "id": "title-gas-low",
+      "label": "Title fee (0-19 MPG)",
+      "kind": "flat",
+      "frequency": "once",
+      "when": { "fuel": "gas", "mpgBand": "0-19" },
+      "amount": { "value": 101, "status": "verified", "sources": [ { "title": "ODOT DMV - Vehicle fees (effective 07/01/26)", "url": "https://www.oregon.gov/odot/DMV/docs/chapter_m.pdf", "accessed": "2026-10-24", "publisherType": "state-agency" } ] }
+    },
+    {
+      "id": "title-gas-mid",
+      "label": "Title fee (20-39 MPG)",
+      "kind": "flat",
+      "frequency": "once",
+      "when": { "fuel": "gas", "mpgBand": "20-39" },
+      "amount": { "value": 106, "status": "verified", "sources": [ { "title": "ODOT DMV - Vehicle fees (effective 07/01/26)", "url": "https://www.oregon.gov/odot/DMV/docs/chapter_m.pdf", "accessed": "2026-10-24", "publisherType": "state-agency" } ] }
+    },
+    {
+      "id": "title-gas-high",
+      "label": "Title fee (40+ MPG)",
+      "kind": "flat",
+      "frequency": "once",
+      "when": { "fuel": "gas", "mpgBand": "40+" },
+      "amount": { "value": 116, "status": "verified", "sources": [ { "title": "ODOT DMV - Vehicle fees (effective 07/01/26)", "url": "https://www.oregon.gov/odot/DMV/docs/chapter_m.pdf", "accessed": "2026-10-24", "publisherType": "state-agency" } ] }
+    },
+    {
+      "id": "title-ev",
+      "label": "Title fee (electric)",
+      "kind": "flat",
+      "frequency": "once",
+      "when": { "fuel": "ev" },
+      "amount": { "value": 192, "status": "verified", "sources": [ { "title": "ODOT DMV - Vehicle fees (effective 07/01/26)", "url": "https://www.oregon.gov/odot/DMV/docs/chapter_m.pdf", "accessed": "2026-10-24", "publisherType": "state-agency" } ] }
+    },
+    {
+      "id": "registration-gas-low",
+      "label": "Registration, 2 years (0-19 MPG)",
+      "kind": "flat",
+      "frequency": "biennial",
+      "when": { "fuel": "gas", "mpgBand": "0-19" },
+      "amount": { "value": 126, "status": "verified", "sources": [ { "title": "ODOT DMV - Vehicle fees (effective 07/01/26)", "url": "https://www.oregon.gov/odot/DMV/docs/chapter_m.pdf", "accessed": "2026-10-24", "publisherType": "state-agency" } ] }
+    },
+    {
+      "id": "registration-gas-mid",
+      "label": "Registration, 2 years (20-39 MPG)",
+      "kind": "flat",
+      "frequency": "biennial",
+      "when": { "fuel": "gas", "mpgBand": "20-39" },
+      "amount": { "value": 136, "status": "verified", "sources": [ { "title": "ODOT DMV - Vehicle fees (effective 07/01/26)", "url": "https://www.oregon.gov/odot/DMV/docs/chapter_m.pdf", "accessed": "2026-10-24", "publisherType": "state-agency" } ] }
+    },
+    {
+      "id": "registration-gas-high",
+      "label": "Registration, 2 years (40+ MPG, not in OReGO)",
+      "kind": "flat",
+      "frequency": "biennial",
+      "when": { "fuel": "gas", "mpgBand": "40+" },
+      "amount": { "value": 216, "status": "verified", "sources": [ { "title": "ODOT DMV - Vehicle fees (effective 07/01/26)", "url": "https://www.oregon.gov/odot/DMV/docs/chapter_m.pdf", "accessed": "2026-10-24", "publisherType": "state-agency" } ], "note": "$86 if enrolled in OReGO. Not modeled." }
+    },
+    {
+      "id": "registration-ev",
+      "label": "Registration, 2 years (electric, not in OReGO)",
+      "kind": "flat",
+      "frequency": "biennial",
+      "when": { "fuel": "ev" },
+      "amount": { "value": 376, "status": "verified", "sources": [ { "title": "ODOT DMV - Vehicle fees (effective 07/01/26)", "url": "https://www.oregon.gov/odot/DMV/docs/chapter_m.pdf", "accessed": "2026-10-24", "publisherType": "state-agency" } ], "note": "$86 if enrolled in OReGO. Not modeled." }
+    },
+    {
+      "id": "plates",
+      "label": "License plates (two)",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": { "value": 26, "status": "verified", "sources": [ { "title": "ODOT DMV - Vehicle fees (effective 07/01/26)", "url": "https://www.oregon.gov/odot/DMV/docs/chapter_m.pdf", "accessed": "2026-10-24", "publisherType": "state-agency" } ], "note": "$13 for a single plate." }
+    }
+  ],
+  "notes": [
+    "County vehicle registration fees (for example in Multnomah and Washington counties) are not modeled and need a separate source.",
+    "Prices for 4-year registration and rental vehicles are on the ODOT page but not modeled."
+  ]
+}

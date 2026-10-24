@@ -1,0 +1,396 @@
+{
+  "code": "NY",
+  "name": "New York",
+  "slug": "new-york",
+  "lastReviewed": "2026-10-24",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 4,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "NY Tax Dept - Sales Tax Rates, Additional Sales Taxes, and Fees (TB-ST-825)",
+          "url": "https://www.tax.ny.gov/pubs_and_bulls/tg_bulletins/st/sales_tax_rates_additional_sales_taxes_and_fees.htm",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "NY Tax Dept - Form DTF-804 Statement of Transaction",
+          "url": "https://www.tax.ny.gov/pdf/current_forms/st/dtf804.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "State rate is 4%. Local and MCTD (0.375%) rates apply on top, by where the owner lives."
+    },
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "NY Tax Dept - Form DTF-804 Statement of Transaction",
+          "url": "https://www.tax.ny.gov/pdf/current_forms/st/dtf804.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "DTF-804: purchase price excludes a trade-in allowance granted by a dealer, so dealer trade-in allowances reduce the taxable amount."
+    },
+    "local": {
+      "value": {
+        "mode": "user-entered",
+        "capBase": null,
+        "rangeNote": "Enter your combined county/city rate including the 0.375% MCTD rate if you live in the commuter district. Combined rates are in Tax Department Publication 718."
+      },
+      "status": "verified",
+      "sources": [
+        {
+          "title": "NY Tax Dept - Sales Tax Rates, Additional Sales Taxes, and Fees (TB-ST-825)",
+          "url": "https://www.tax.ny.gov/pubs_and_bulls/tg_bulletins/st/sales_tax_rates_additional_sales_taxes_and_fees.htm",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "NY Tax Dept - Form DTF-804 Statement of Transaction",
+          "url": "https://www.tax.ny.gov/pdf/current_forms/st/dtf804.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Motor vehicle tax uses the rate where the owner resides, normally the registration address."
+    },
+    "outOfStateCredit": {
+      "value": true,
+      "status": "partial",
+      "sources": [
+        {
+          "title": "NY Tax Dept - Form DTF-804 Statement of Transaction",
+          "url": "https://www.tax.ny.gov/pdf/current_forms/st/dtf804.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "NY DMV - Sales Tax Information",
+          "url": "https://dmv.ny.gov/registration/sales-tax-information",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Credit only if the other state tax was paid, that state gives New York a reciprocal credit, and you are not due a refund. Not all states qualify; some credits apply only against the 4% state portion."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Title certificate fee",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 50,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "NY DMV - Passenger Vehicle Registration Fees, Use Taxes and Supplemental Fees",
+            "url": "https://dmv.ny.gov/registration/passenger-vehicle-registration-fees-use-taxes-and-supplemental-fees",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Listed as an original registration additional fee."
+      }
+    },
+    {
+      "id": "plates",
+      "label": "License plates",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 25,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "NY DMV - Passenger Vehicle Registration Fees, Use Taxes and Supplemental Fees",
+            "url": "https://dmv.ny.gov/registration/passenger-vehicle-registration-fees-use-taxes-and-supplemental-fees",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Listed as an original registration additional fee."
+      }
+    },
+    {
+      "id": "registration",
+      "label": "Registration, 2 years (by weight)",
+      "kind": "weightTable",
+      "frequency": "biennial",
+      "minForEv": 32.5,
+      "weightTable": [
+        {
+          "upTo": 1650,
+          "fee": 26.0
+        },
+        {
+          "upTo": 1750,
+          "fee": 27.5
+        },
+        {
+          "upTo": 1850,
+          "fee": 29.0
+        },
+        {
+          "upTo": 1950,
+          "fee": 31.0
+        },
+        {
+          "upTo": 2050,
+          "fee": 32.5
+        },
+        {
+          "upTo": 2150,
+          "fee": 34.0
+        },
+        {
+          "upTo": 2250,
+          "fee": 35.5
+        },
+        {
+          "upTo": 2350,
+          "fee": 37.5
+        },
+        {
+          "upTo": 2450,
+          "fee": 39.0
+        },
+        {
+          "upTo": 2550,
+          "fee": 40.5
+        },
+        {
+          "upTo": 2650,
+          "fee": 42.0
+        },
+        {
+          "upTo": 2750,
+          "fee": 43.5
+        },
+        {
+          "upTo": 2850,
+          "fee": 45.5
+        },
+        {
+          "upTo": 2950,
+          "fee": 47.0
+        },
+        {
+          "upTo": 3050,
+          "fee": 48.5
+        },
+        {
+          "upTo": 3150,
+          "fee": 50.0
+        },
+        {
+          "upTo": 3250,
+          "fee": 52.0
+        },
+        {
+          "upTo": 3350,
+          "fee": 53.5
+        },
+        {
+          "upTo": 3450,
+          "fee": 55.0
+        },
+        {
+          "upTo": 3550,
+          "fee": 56.5
+        },
+        {
+          "upTo": 3650,
+          "fee": 59.0
+        },
+        {
+          "upTo": 3750,
+          "fee": 61.5
+        },
+        {
+          "upTo": 3850,
+          "fee": 64.0
+        },
+        {
+          "upTo": 3950,
+          "fee": 66.5
+        },
+        {
+          "upTo": 4050,
+          "fee": 69.0
+        },
+        {
+          "upTo": 4150,
+          "fee": 71.0
+        },
+        {
+          "upTo": 4250,
+          "fee": 73.5
+        },
+        {
+          "upTo": 4350,
+          "fee": 76.0
+        },
+        {
+          "upTo": 4450,
+          "fee": 78.5
+        },
+        {
+          "upTo": 4550,
+          "fee": 81.0
+        },
+        {
+          "upTo": 4650,
+          "fee": 83.5
+        },
+        {
+          "upTo": 4750,
+          "fee": 85.5
+        },
+        {
+          "upTo": 4850,
+          "fee": 88.0
+        },
+        {
+          "upTo": 4950,
+          "fee": 90.5
+        },
+        {
+          "upTo": 5050,
+          "fee": 93.0
+        },
+        {
+          "upTo": 5150,
+          "fee": 95.5
+        },
+        {
+          "upTo": 5250,
+          "fee": 98.0
+        },
+        {
+          "upTo": 5350,
+          "fee": 100.5
+        },
+        {
+          "upTo": 5450,
+          "fee": 102.5
+        },
+        {
+          "upTo": 5550,
+          "fee": 105.0
+        },
+        {
+          "upTo": 5650,
+          "fee": 107.5
+        },
+        {
+          "upTo": 5750,
+          "fee": 110.0
+        },
+        {
+          "upTo": 5850,
+          "fee": 112.5
+        },
+        {
+          "upTo": 5950,
+          "fee": 115.0
+        },
+        {
+          "upTo": 6050,
+          "fee": 117.0
+        },
+        {
+          "upTo": 6150,
+          "fee": 119.5
+        },
+        {
+          "upTo": 6250,
+          "fee": 122.0
+        },
+        {
+          "upTo": 6350,
+          "fee": 124.5
+        },
+        {
+          "upTo": 6450,
+          "fee": 127.0
+        },
+        {
+          "upTo": 6550,
+          "fee": 129.5
+        },
+        {
+          "upTo": 6650,
+          "fee": 131.5
+        },
+        {
+          "upTo": 6750,
+          "fee": 134.0
+        },
+        {
+          "upTo": 6850,
+          "fee": 136.5
+        },
+        {
+          "upTo": 6950,
+          "fee": 139.0
+        },
+        {
+          "upTo": null,
+          "fee": 140.0
+        }
+      ],
+      "amount": {
+        "value": 1,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "NY DMV - MV-202 Passenger Vehicle Registration Fee Schedule",
+            "url": "https://dmv.ny.gov/forms/mv202.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "NY DMV - Passenger Vehicle Registration Fees, Use Taxes and Supplemental Fees",
+            "url": "https://dmv.ny.gov/registration/passenger-vehicle-registration-fees-use-taxes-and-supplemental-fees",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Fee schedule MV-202 (labeled effective Sept 1, 2009, form revised 4/23). Vehicles with 6 or more cylinders and electric vehicles pay at least $32.50; the calculator applies that minimum to electric vehicles only."
+      }
+    },
+    {
+      "id": "regional-fees",
+      "label": "County use tax and commuter-district fee",
+      "kind": "flat",
+      "frequency": "biennial",
+      "excludedReason": "Varies by county ($10 to $60 use tax for 2 years, plus a $50 commuter-district fee in NYC and seven counties). Not modeled yet.",
+      "amount": {
+        "value": null,
+        "status": "unverified",
+        "sources": [
+          {
+            "title": "NY DMV - Passenger Vehicle Registration Fees, Use Taxes and Supplemental Fees",
+            "url": "https://dmv.ny.gov/registration/passenger-vehicle-registration-fees-use-taxes-and-supplemental-fees",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Source lists amounts by county (NYC use tax $30; most counties $10 for vehicles 3,500 lbs or less and $20 above; Nassau, Suffolk and Westchester higher; MCTD fee $50 in NYC, Dutchess, Nassau, Orange, Putnam, Rockland, Suffolk, Westchester)."
+      }
+    }
+  ],
+  "notes": [
+    "Minimum 2-year registration of $32.50 also applies to 6+ cylinder vehicles; not modeled.",
+    "County use tax and the $50 commuter-district fee depend on county and are not yet in the total.",
+    "Private sales are taxed by the DMV on the DTF-802 statement; not modeled."
+  ]
+}
