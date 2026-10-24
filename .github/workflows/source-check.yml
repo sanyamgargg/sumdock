@@ -1,0 +1,32 @@
+name: Monthly source check
+on:
+  schedule:
+    - cron: "17 3 1 * *"   # 1st of each month, 03:17 UTC
+  workflow_dispatch: {}
+permissions:
+  contents: write
+  issues: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/check-sources.mjs
+      - name: Save snapshot
+        run: |
+          git config user.name "sumdock-bot"
+          git config user.email "hello@sumdock.com"
+          git add data/source-snapshots.json
+          git diff --cached --quiet || git commit -m "Update source snapshots"
+          git push
+      - name: Open an issue when something changed
+        if: hashFiles('source-report.flag') != '' 
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "$(cat source-report.flag)" = "yes" ]; then
+            gh issue create --title "Source check $(date +%Y-%m-%d): pages changed or unreachable" --body-file source-report.md
+          fi

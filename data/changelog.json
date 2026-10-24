@@ -1,0 +1,59 @@
+{
+  "note": "Newest first. One entry per change to a state's numbers or rules. Do not edit past entries.",
+  "entries": [
+    {
+      "date": "2026-10-24",
+      "state": "TX",
+      "stateName": "Texas",
+      "summary": "Added state with county registration fees."
+    },
+    {
+      "date": "2026-10-24",
+      "state": "CA",
+      "stateName": "California",
+      "summary": "Added state; county and city sales tax rates added."
+    },
+    {
+      "date": "2026-10-24",
+      "state": "FL",
+      "stateName": "Florida",
+      "summary": "Added state; county discretionary surtax rates added."
+    },
+    {
+      "date": "2026-10-24",
+      "state": "NY",
+      "stateName": "New York",
+      "summary": "Added state; county and city sales tax rates added."
+    },
+    {
+      "date": "2026-10-24",
+      "state": "OR",
+      "stateName": "Oregon",
+      "summary": "Added state."
+    },
+    {
+      "date": "2026-10-24",
+      "state": "PA",
+      "stateName": "Pennsylvania",
+      "summary": "Added state; Allegheny and Philadelphia local tax available."
+    },
+    {
+      "date": "2026-10-24",
+      "state": "OH",
+      "stateName": "Ohio",
+      "summary": "Added state; county sales tax rates for the fourth quarter of 2026 added."
+    },
+    {
+      "date": "2026-10-24",
+      "state": "GA",
+      "stateName": "Georgia",
+      "summary": "Added state (title ad valorem tax)."
+    },
+    {
+      "date": "2026-10-24",
+      "state": "NC",
+      "stateName": "North Carolina",
+      "summary": "Added state (highway use tax)."
+    }
+  ]
+}
