@@ -22,11 +22,19 @@ export type Fuel = "gas" | "ev";
 export type MpgBand = "0-19" | "20-39" | "40+";
 export type WeightBand = "light" | "mid" | "heavy";
 
+export type VehicleAge = "new" | "recent" | "older";
+
 export interface FeeWhen {
   fuel?: Fuel;
   mpgBand?: MpgBand;
   weightBand?: WeightBand;
   noPlateToTransfer?: boolean;
+  /** New (bought new from a dealer), recent (used, model year within 2 years) or older. A list matches any of them. */
+  vehicleAge?: VehicleAge | VehicleAge[];
+  /** Matches when the vehicle price is at least this much (before any trade-in). */
+  priceAtLeast?: number;
+  /** Matches when at least one of these conditions matches, in addition to the conditions above. */
+  anyOf?: FeeWhen[];
 }
 
 export interface Fee {
@@ -126,6 +134,7 @@ export interface Inputs {
   /** Selected county name, empty if none chosen. */
   county: string;
   noPlateToTransfer: boolean;
+  vehicleAge: VehicleAge;
   outOfStateNewDealer: boolean;
 }
 

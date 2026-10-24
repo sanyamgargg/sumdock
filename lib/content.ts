@@ -14,6 +14,7 @@ export const DEFAULT_INPUTS: Inputs = {
   weightLbs: 3500,
   county: "",
   noPlateToTransfer: true,
+  vehicleAge: "new",
   outOfStateNewDealer: false,
 };
 

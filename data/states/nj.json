@@ -1,0 +1,351 @@
+{
+  "code": "NJ",
+  "name": "New Jersey",
+  "slug": "new-jersey",
+  "lastReviewed": "2026-10-24",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 6.625,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "NJ MVC - Form GU-30, Sales tax and fees guide (R7/25)",
+          "url": "https://www.nj.gov/mvc//pdf/about/GU30_Revised.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "NJ Division of Taxation - Sales tax",
+          "url": "https://www.nj.gov/treasury/taxation/salestax.shtml",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ]
+    },
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "NJ MVC - Form GU-30, Sales tax and fees guide (R7/25)",
+          "url": "https://www.nj.gov/mvc//pdf/about/GU30_Revised.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "If the dealer's invoice shows a trade-in, the trade-in price is subtracted from the vehicle price before tax."
+    },
+    "local": {
+      "value": {
+        "mode": "none",
+        "capBase": null,
+        "rangeNote": null
+      },
+      "status": "verified",
+      "sources": [
+        {
+          "title": "NJ Division of Taxation - Sales tax",
+          "url": "https://www.nj.gov/treasury/taxation/salestax.shtml",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The Division of Taxation says New Jersey has a single rate sales tax for the entire state."
+    },
+    "outOfStateCredit": {
+      "value": true,
+      "status": "partial",
+      "sources": [
+        {
+          "title": "NJ Division of Taxation - Use tax",
+          "url": "https://www.nj.gov/treasury/taxation/ratechange/su-usetax.shtml",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The use tax page says credit may be allowed for taxes paid to other states, without giving conditions."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Title",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 60,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "NJ MVC - Registration and title fees",
+            "url": "https://www.nj.gov/mvc/vehicles/regfees.htm",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "NJ MVC - Initial vehicle registration",
+            "url": "https://nj.gov/mvc/vehicles/reginitial.htm",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "$85 with one lien and $110 with two liens. The calculator assumes no lien."
+      }
+    },
+    {
+      "id": "registration-new",
+      "label": "Registration, 4 years (new vehicle, by weight)",
+      "kind": "weightTable",
+      "frequency": "once",
+      "when": {
+        "vehicleAge": "new"
+      },
+      "weightTable": [
+        {
+          "upTo": 3499,
+          "fee": 236
+        },
+        {
+          "upTo": null,
+          "fee": 336
+        }
+      ],
+      "amount": {
+        "value": 1,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "NJ MVC - Registration and title fees",
+            "url": "https://www.nj.gov/mvc/vehicles/regfees.htm",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "NJ MVC - Four-year registration and zero emission vehicle fee",
+            "url": "https://www.nj.gov/mvc/regfee/",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "New passenger vehicles pay four years up front. Figured as four times the annual fee for a model year within 2 years: $59.00 under 3,500 lbs, $84.00 over."
+      }
+    },
+    {
+      "id": "registration-recent",
+      "label": "Registration, 1 year (model year within 2 years, by weight)",
+      "kind": "weightTable",
+      "frequency": "annual",
+      "when": {
+        "vehicleAge": "recent"
+      },
+      "weightTable": [
+        {
+          "upTo": 3499,
+          "fee": 59
+        },
+        {
+          "upTo": null,
+          "fee": 84
+        }
+      ],
+      "amount": {
+        "value": 1,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "NJ MVC - Registration and title fees",
+            "url": "https://www.nj.gov/mvc/vehicles/regfees.htm",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The fee table says under 3,500 lbs and over 3,500 lbs; exactly 3,500 lbs is treated as the heavier class. Seniors and people with a disability pay $7 less."
+      }
+    },
+    {
+      "id": "registration-older",
+      "label": "Registration, 1 year (older model year, by weight)",
+      "kind": "weightTable",
+      "frequency": "annual",
+      "when": {
+        "vehicleAge": "older"
+      },
+      "weightTable": [
+        {
+          "upTo": 3499,
+          "fee": 46.5
+        },
+        {
+          "upTo": null,
+          "fee": 71.5
+        }
+      ],
+      "amount": {
+        "value": 1,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "NJ MVC - Registration and title fees",
+            "url": "https://www.nj.gov/mvc/vehicles/regfees.htm",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Model year more than 2 years old. Exactly 3,500 lbs is treated as the heavier class. Seniors and people with a disability pay $7 less."
+      }
+    },
+    {
+      "id": "zev-fee",
+      "label": "Zero emission vehicle fee (1 year)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "ev",
+        "vehicleAge": [
+          "recent",
+          "older"
+        ]
+      },
+      "amount": {
+        "value": 270,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "NJ MVC - Registration and title fees",
+            "url": "https://www.nj.gov/mvc/vehicles/regfees.htm",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "NJ MVC - Four-year registration and zero emission vehicle fee",
+            "url": "https://www.nj.gov/mvc/regfee/",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Started at $250 on July 1, 2024 and rises $10 each year. The $270 for the year starting July 1, 2026 is worked out from that rule, not printed on the page."
+      }
+    },
+    {
+      "id": "zev-fee-new",
+      "label": "Zero emission vehicle fee (4 years, new vehicle)",
+      "kind": "flat",
+      "frequency": "once",
+      "when": {
+        "fuel": "ev",
+        "vehicleAge": "new"
+      },
+      "excludedReason": "A new electric vehicle pays four years of this fee up front, and the fee rises each July. The page does not print the schedule, so it is left out.",
+      "amount": {
+        "value": null,
+        "status": "unverified",
+        "sources": [
+          {
+            "title": "NJ MVC - Registration and title fees",
+            "url": "https://www.nj.gov/mvc/vehicles/regfees.htm",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "NJ MVC - Four-year registration and zero emission vehicle fee",
+            "url": "https://www.nj.gov/mvc/regfee/",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "luxury-surcharge",
+      "label": "Luxury and fuel-inefficient surcharge (0.4%)",
+      "kind": "percentOfValue",
+      "frequency": "once",
+      "when": {
+        "vehicleAge": "new",
+        "anyOf": [
+          {
+            "priceAtLeast": 45000
+          },
+          {
+            "fuel": "gas",
+            "mpgBand": "0-19"
+          }
+        ]
+      },
+      "amount": {
+        "value": 0.4,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "NJ MVC - Luxury and Fuel Inefficient Surcharge",
+            "url": "https://www.nj.gov/mvc/business/lfis.htm",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "New dealer sales with a price of $45,000 or more before trade-in, or under 19 mpg. The 0-19 mpg choice here also includes exactly 19 mpg."
+      }
+    }
+  ],
+  "notes": [
+    "Title is $85 with one lien and $110 with two liens; the calculator assumes none.",
+    "Seniors and people with a disability pay $7 less on registration."
+  ],
+  "content": {
+    "intro": "{state} charges {stateRate} sales tax on a vehicle, one rate for the whole state, plus a title fee and a registration fee that depends on the vehicle's weight and model year.",
+    "howItWorks": [
+      {
+        "text": "The sales tax rate is {stateRate} everywhere in the state. A trade-in shown on the dealer's invoice is taken off the price before the tax is figured.",
+        "sources": [
+          "https://www.nj.gov/treasury/taxation/salestax.shtml",
+          "https://www.nj.gov/mvc//pdf/about/GU30_Revised.pdf"
+        ]
+      },
+      {
+        "text": "Registration is charged by weight class, and the fee is higher for a vehicle from a recent model year. A new passenger vehicle pays for four years at once.",
+        "sources": [
+          "https://www.nj.gov/mvc/vehicles/regfees.htm",
+          "https://www.nj.gov/mvc/regfee/"
+        ]
+      },
+      {
+        "text": "New vehicles that cost a lot or use a lot of fuel carry an extra surcharge that the dealer collects. Zero emission vehicles pay a yearly fee that rises over time.",
+        "sources": [
+          "https://www.nj.gov/mvc/business/lfis.htm",
+          "https://www.nj.gov/mvc/regfee/"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does a trade-in lower the sales tax in New Jersey?",
+        "text": "Yes. When the dealer's invoice shows a trade-in, its price is subtracted from the price of the vehicle before sales tax.",
+        "sources": [
+          "https://www.nj.gov/mvc//pdf/about/GU30_Revised.pdf"
+        ]
+      },
+      {
+        "q": "Is there a local sales tax in New Jersey?",
+        "text": "No. The state has a single sales tax rate for the entire state.",
+        "sources": [
+          "https://www.nj.gov/treasury/taxation/salestax.shtml"
+        ]
+      },
+      {
+        "q": "What is the luxury surcharge?",
+        "text": "Dealers collect an extra surcharge on a new vehicle that costs a set amount or more, or that gets poor fuel economy.",
+        "sources": [
+          "https://www.nj.gov/mvc/business/lfis.htm"
+        ]
+      },
+      {
+        "q": "Why does registration cost more up front on a new vehicle?",
+        "text": "New passenger vehicles pay for four years of registration at once.",
+        "sources": [
+          "https://www.nj.gov/mvc/regfee/"
+        ]
+      }
+    ]
+  }
+}

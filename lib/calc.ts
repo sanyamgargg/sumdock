@@ -13,6 +13,9 @@ function matches(when: FeeWhen | undefined, i: Inputs): boolean {
   if (when.mpgBand !== undefined && (i.fuel === "ev" || when.mpgBand !== i.mpgBand)) return false;
   if (when.weightBand !== undefined && when.weightBand !== i.weightBand) return false;
   if (when.noPlateToTransfer !== undefined && when.noPlateToTransfer !== i.noPlateToTransfer) return false;
+  if (when.vehicleAge !== undefined && !(Array.isArray(when.vehicleAge) ? when.vehicleAge : [when.vehicleAge]).includes(i.vehicleAge)) return false;
+  if (when.priceAtLeast !== undefined && i.price < when.priceAtLeast) return false;
+  if (when.anyOf !== undefined && !when.anyOf.some((w) => matches(w, i))) return false;
   return true;
 }
 

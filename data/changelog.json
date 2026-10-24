@@ -3,6 +3,12 @@
   "entries": [
     {
       "date": "2026-10-24",
+      "state": "NJ",
+      "stateName": "New Jersey",
+      "summary": "Added state with the 6.625% sales tax, title fee, registration by weight and model-year age, the 0.4% luxury surcharge and the zero emission vehicle fee. Added a New or used choice to the calculator."
+    },
+    {
+      "date": "2026-10-24",
       "state": "AZ",
       "stateName": "Arizona",
       "summary": "Added state with the 5.6% state rate, county rates from the October 2026 table, title and registration fees. The vehicle license tax and city tax are not included."

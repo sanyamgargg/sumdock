@@ -18,6 +18,7 @@ const base: Inputs = {
   weightLbs: 3500,
   county: "",
   noPlateToTransfer: false,
+  vehicleAge: "new",
   outOfStateNewDealer: false,
 };
 
@@ -444,5 +445,44 @@ describe("Arizona", () => {
   it("credits tax paid to another state, never above what is owed", () => {
     const r = calculate(az, { ...base, price: 10000, outOfStateTaxPaid: 9999 });
     expect(line(r, "oos-credit")).toBe(-560);
+  });
+});
+
+describe("New Jersey", () => {
+  const nj = load("nj");
+  it("is publishable", () => expect(publishability(nj).publishable).toBe(true));
+  it("taxes the price less a trade-in at 6.625%, with no local tax", () => {
+    const r = calculate(nj, { ...base, price: 30000, tradeIn: 10000 });
+    expect(line(r, "state-tax")).toBe(1325);
+    expect(line(r, "local-tax")).toBeUndefined();
+  });
+  it("charges four years of registration on a new vehicle, by weight", () => {
+    expect(line(calculate(nj, { ...base, vehicleAge: "new", weightLbs: 3000 }), "registration-new")).toBe(236);
+    expect(line(calculate(nj, { ...base, vehicleAge: "new", weightLbs: 4000 }), "registration-new")).toBe(336);
+    expect(line(calculate(nj, { ...base, vehicleAge: "new" }), "registration-recent")).toBeUndefined();
+  });
+  it("charges one year on a used vehicle, by weight and age", () => {
+    expect(line(calculate(nj, { ...base, vehicleAge: "recent", weightLbs: 3000 }), "registration-recent")).toBe(59);
+    expect(line(calculate(nj, { ...base, vehicleAge: "recent", weightLbs: 4000 }), "registration-recent")).toBe(84);
+    expect(line(calculate(nj, { ...base, vehicleAge: "older", weightLbs: 3000 }), "registration-older")).toBe(46.5);
+    expect(line(calculate(nj, { ...base, vehicleAge: "older", weightLbs: 4000 }), "registration-older")).toBe(71.5);
+  });
+  it("adds the 0.4% surcharge on a new vehicle at $45,000 or more, or under 19 mpg, never on a used one", () => {
+    expect(line(calculate(nj, { ...base, price: 44999 }), "luxury-surcharge")).toBeUndefined();
+    expect(line(calculate(nj, { ...base, price: 45000 }), "luxury-surcharge")).toBe(180);
+    expect(line(calculate(nj, { ...base, price: 30000, mpgBand: "0-19" }), "luxury-surcharge")).toBe(120);
+    expect(line(calculate(nj, { ...base, price: 60000, vehicleAge: "recent" }), "luxury-surcharge")).toBeUndefined();
+    expect(line(calculate(nj, { ...base, price: 60000, fuel: "ev" }), "luxury-surcharge")).toBe(240);
+  });
+  it("zero emission fee: one year when used, held out when new", () => {
+    expect(line(calculate(nj, { ...base, fuel: "ev", vehicleAge: "older" }), "zev-fee")).toBe(270);
+    const r = calculate(nj, { ...base, fuel: "ev", vehicleAge: "new" });
+    expect(line(r, "zev-fee")).toBeUndefined();
+    expect(r.excluded.map((e) => e.label)).toContain("Zero emission vehicle fee (4 years, new vehicle)");
+    expect(line(calculate(nj, base), "zev-fee")).toBeUndefined();
+  });
+  it("matches() keeps states without vehicleAge conditions unchanged", () => {
+    const tx = load("tx");
+    expect(calculate(tx, { ...base, vehicleAge: "new" }).total).toBe(calculate(tx, { ...base, vehicleAge: "older" }).total);
   });
 });

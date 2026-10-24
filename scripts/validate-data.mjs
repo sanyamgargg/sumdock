@@ -118,6 +118,14 @@ for (const f of files) {
     if (ids.has(fee.id)) err(f, `duplicate fee id ${fee.id}`);
     ids.add(fee.id);
     checkSourced(f, `fees.${fee.id}.amount`, fee.amount);
+    const AGES = ["new", "recent", "older"];
+    const checkWhen = (w, where) => {
+      if (!w) return;
+      for (const a of [].concat(w.vehicleAge ?? [])) if (!AGES.includes(a)) err(f, `${where}: bad vehicleAge "${a}"`);
+      if (w.priceAtLeast !== undefined && typeof w.priceAtLeast !== "number") err(f, `${where}: priceAtLeast must be a number`);
+      for (const x of w.anyOf ?? []) checkWhen(x, `${where}.anyOf`);
+    };
+    checkWhen(fee.when, `fees.${fee.id}.when`);
     if (fee.altCounties) {
       const names = Object.keys(d.counties?.fees?.value ?? {});
       if (typeof fee.altCounties.amount !== "number" || !Array.isArray(fee.altCounties.counties)) err(f, `fees.${fee.id}.altCounties is malformed`);

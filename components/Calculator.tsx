@@ -8,7 +8,7 @@ import { calculate } from "@/lib/calc";
 import { DEFAULT_INPUTS } from "@/lib/content";
 import { formatDate, groupNumber, parseNumber, usd, usdShort } from "@/lib/format";
 import { footnotes } from "@/lib/sources";
-import type { Inputs, StateData } from "@/lib/types";
+import type { FeeWhen, Inputs, StateData } from "@/lib/types";
 
 /** Text field for dollars or percents. Shows "30,000" but keeps a number in state. */
 function NumberField({
@@ -106,6 +106,8 @@ export default function Calculator({ state, children }: { state: StateData; chil
     set("localRatePct", Math.max(0, Math.round((combined - offset) * 1000) / 1000));
   };
   const hasWeightTable = state.fees.some((f) => f.kind === "weightTable");
+  const whenUsesAge = (w?: FeeWhen): boolean => !!w && (w.vehicleAge !== undefined || (w.anyOf ?? []).some(whenUsesAge));
+  const usesAge = state.fees.some((f) => whenUsesAge(f.when));
   const hasPlate = state.fees.some((f) => f.when?.noPlateToTransfer !== undefined);
   const showLocalRate = !!local && local.mode === "user-entered";
   const hasLocation = !!rateTable || counties.length > 0 || showLocalRate;
@@ -207,6 +209,13 @@ export default function Calculator({ state, children }: { state: StateData; chil
                   <button type="button" aria-pressed={i.fuel === "ev"} onClick={() => set("fuel", "ev")}>Electric</button>
                 </div>
               </div>
+              {usesAge && (
+                <SelectField label="New or used" value={i.vehicleAge} onChange={(v) => set("vehicleAge", v as Inputs["vehicleAge"])}>
+                  <option value="new">New, bought from a dealer</option>
+                  <option value="recent">Used, model year within the last 2 years</option>
+                  <option value="older">Used, older model year</option>
+                </SelectField>
+              )}
               {hasMpg && i.fuel === "gas" && (
                 <SelectField label="Fuel economy" value={i.mpgBand} onChange={(v) => set("mpgBand", v as Inputs["mpgBand"])}>
                   <option value="0-19">0-19 MPG</option>
