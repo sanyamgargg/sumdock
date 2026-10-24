@@ -102,3 +102,12 @@
 @media (min-width: 600px) {
   .stmt__warn { padding: 0 24px 14px; }
 }
+
+/* Copy-link control under the result. */
+.result-share { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; margin: 8px 0 0; font-size: 13px; color: var(--ink-muted); }
+.linkbtn {
+  font: inherit; font-size: 14px; color: var(--ink); background: transparent; cursor: pointer;
+  border: 1px solid var(--ink); padding: 0 14px; min-height: var(--touch);
+}
+.linkbtn:hover { background: var(--surface); }
+.linkbtn:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }

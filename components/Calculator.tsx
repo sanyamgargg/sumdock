@@ -7,6 +7,7 @@ import Statement from "@/components/Statement";
 import { calculate } from "@/lib/calc";
 import { DEFAULT_INPUTS } from "@/lib/content";
 import { formatDate, groupNumber, parseNumber, usd, usdShort } from "@/lib/format";
+import { decodeInputs, encodeInputs } from "@/lib/share";
 import { footnotes } from "@/lib/sources";
 import type { FeeWhen, Inputs, StateData } from "@/lib/types";
 
@@ -108,6 +109,36 @@ export default function Calculator({ state, children }: { state: StateData; chil
     const combined = place && entry.places[place] !== undefined ? entry.places[place] : entry.county;
     const offset = state.localRates?.mode === "localOnly" ? 0 : stateRate;
     set("localRatePct", Math.max(0, Math.round((combined - offset) * 1000) / 1000));
+  };
+  // Shareable link: read the inputs from the address once after load, then keep the address in step with them.
+  const [shareReady, setShareReady] = useState(false);
+  const [copied, setCopied] = useState<"" | "ok" | "fail">("");
+  useEffect(() => {
+    const d = decodeInputs(window.location.search, state);
+    if (Object.keys(d.inputs).length > 0) setI((p) => ({ ...p, ...d.inputs }));
+    if (d.rateCounty) applyRate(d.rateCounty, d.ratePlace);
+    if (d.localRatePct !== undefined) {
+      setI((p) => ({ ...p, localRatePct: d.localRatePct as number, localOverAmount: 0 }));
+      setRateEdited(true);
+    }
+    setShareReady(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  const shareQuery = encodeInputs(i, { rateCounty, ratePlace, rateEdited });
+  useEffect(() => {
+    if (!shareReady) return;
+    const url = `${window.location.pathname}${shareQuery ? `?${shareQuery}` : ""}${window.location.hash}`;
+    window.history.replaceState(window.history.state, "", url);
+  }, [shareReady, shareQuery]);
+  const copyLink = async () => {
+    const url = `${window.location.origin}${window.location.pathname}${shareQuery ? `?${shareQuery}` : ""}`;
+    try {
+      await navigator.clipboard.writeText(url);
+      setCopied("ok");
+    } catch {
+      setCopied("fail");
+    }
+    window.setTimeout(() => setCopied(""), 3000);
   };
   const hasWeightTable = state.fees.some((f) => f.kind === "weightTable");
   const whenUsesAge = (w?: FeeWhen): boolean => !!w && (w.vehicleAge !== undefined || (w.anyOf ?? []).some(whenUsesAge));
@@ -271,6 +302,12 @@ export default function Calculator({ state, children }: { state: StateData; chil
           <p className="result-meta">
             <span>Estimate for a {usdShort(i.price)} vehicle.</span>
             <a href="#sources">See all sources</a>
+          </p>
+          <p className="result-share">
+            <button type="button" className="linkbtn" onClick={copyLink}>Copy link to this estimate</button>
+            <span role="status" aria-live="polite">
+              {copied === "ok" ? "Link copied. It leaves out your trade-in and tax paid elsewhere." : copied === "fail" ? "Could not copy. Copy the address from your browser instead." : ""}
+            </span>
           </p>
           <AdSlot name="below-result" minHeight={250} />
         </div>
