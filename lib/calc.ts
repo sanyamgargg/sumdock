@@ -36,9 +36,16 @@ export function calculate(state: StateData, i: Inputs): Result {
       excluded.push({ label: "Trade-in credit", reason: "Trade-in rule not yet verified; no credit applied." });
     }
     const base = Math.max(0, i.price - (reduces ? Math.min(i.tradeIn, st.tradeInCap ?? Infinity) : 0));
-    const stateTax = round2((base * rate.value) / 100);
-    if (rate.value > 0) {
-      lines.push({ id: "state-tax", label: `${state.name} sales tax (${rate.value}%)`, amount: stateTax, status: rate.status, note: rate.note });
+    const hr = st.higherRate;
+    const overThreshold = !!hr && !!hr.value && i.price > hr.value.overPrice;
+    const useHigher = overThreshold && isUsable(hr!.status);
+    if (overThreshold && !useHigher) {
+      excluded.push({ label: "Higher sales tax rate", reason: `A higher rate applies above $${hr!.value!.overPrice.toLocaleString("en-US")}, but it is not yet verified, so the standard rate is used.` });
+    }
+    const rateNow = useHigher ? hr!.value!.ratePct : rate.value;
+    const stateTax = round2((base * rateNow) / 100);
+    if (rateNow > 0) {
+      lines.push({ id: "state-tax", label: `${state.name} sales tax (${rateNow}%)`, amount: stateTax, status: useHigher ? hr!.status : rate.status, note: useHigher ? hr!.note : rate.note });
     }
 
     const local = st.local;

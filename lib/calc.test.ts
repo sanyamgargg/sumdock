@@ -615,3 +615,35 @@ describe("Alabama", () => {
     expect(line(calculate(al, { ...base, fuel: "ev" }), "ev-fee")).toBe(203);
   });
 });
+
+describe("Connecticut", () => {
+  const ct = load("ct");
+  it("is publishable", () => expect(publishability(ct).publishable).toBe(true));
+  it("taxes a $30,000 vehicle at the standard rate", () => {
+    expect(line(calculate(ct, { ...base, price: 30000 }), "state-tax")).toBe(1905);
+  });
+  it("applies the higher rate to the whole taxable amount above $50,000", () => {
+    expect(line(calculate(ct, { ...base, price: 60000 }), "state-tax")).toBe(4650);
+  });
+  it("tests the $50,000 line before the trade-in, then taxes the net", () => {
+    expect(line(calculate(ct, { ...base, price: 55000, tradeIn: 10000 }), "state-tax")).toBe(3487.5);
+  });
+  it("uses the standard rate at exactly $50,000", () => {
+    expect(line(calculate(ct, { ...base, price: 50000 }), "state-tax")).toBe(3175);
+  });
+  it("charges new-vehicle fees only for new vehicles", () => {
+    const n = calculate(ct, { ...base, vehicleAge: "new" });
+    const o = calculate(ct, { ...base, vehicleAge: "older" });
+    expect(line(n, "greenhouse-gas")).toBe(15);
+    expect(line(n, "emissions-exemption")).toBe(40);
+    expect(line(o, "greenhouse-gas")).toBeUndefined();
+    expect(line(o, "emissions-exemption")).toBeUndefined();
+  });
+  it("skips the Clean Air Act and emissions fees for electric vehicles", () => {
+    const r = calculate(ct, { ...base, fuel: "ev" });
+    expect(line(r, "clean-air")).toBeUndefined();
+    expect(line(r, "emissions-exemption")).toBeUndefined();
+    expect(line(r, "title")).toBe(25);
+  });
+});
+

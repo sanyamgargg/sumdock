@@ -76,6 +76,11 @@ export interface StateData {
   salesTax: {
     stateRatePct: Sourced<number>;
     tradeInReducesBase: Sourced<boolean>;
+    /**
+     * Optional higher rate on the whole taxable amount when the price (before any trade-in) is above overPrice
+     * (Connecticut: a higher rate on vehicles priced over $50,000). Used only when its status is usable.
+     */
+    higherRate?: Sourced<{ overPrice: number; ratePct: number }> | null;
     /** Most the trade-in can reduce the taxable price (Michigan: 12000). Omit when there is no cap. */
     tradeInCap?: number | null;
     local: Sourced<LocalRule>;

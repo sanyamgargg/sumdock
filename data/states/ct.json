@@ -1,0 +1,330 @@
+{
+  "code": "CT",
+  "name": "Connecticut",
+  "slug": "connecticut",
+  "lastReviewed": "2026-10-24",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 6.35,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Connecticut DMV - Sales tax on registrations",
+          "url": "https://portal.ct.gov/dmv/vehicle-services/sales-tax-registrations",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Connecticut DMV - Tax questions: sales tax on registrations",
+          "url": "https://portal.ct.gov/DMV/Tax-Questions/Tax-Questions/Sales-Tax-on-Registrations",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Passenger vehicles and light-duty trucks are subject to 6.35%."
+    },
+    "higherRate": {
+      "value": {
+        "overPrice": 50000,
+        "ratePct": 7.75
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Connecticut DMV - Sales tax on registrations",
+          "url": "https://portal.ct.gov/dmv/vehicle-services/sales-tax-registrations",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Connecticut DMV - Tax questions: sales tax on registrations",
+          "url": "https://portal.ct.gov/DMV/Tax-Questions/Tax-Questions/Sales-Tax-on-Registrations",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Connecticut DRS - Special Notice 2011(10), motor vehicle sales tax rates",
+          "url": "https://portal.ct.gov/DRS/Publications/Special-Notices/2011/SN-2011-10",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The DMV pages give 7.75% for vehicles over $50,000 but do not say if it applies to the whole price or only the part above. The calculator applies it to the whole taxable amount, because the state's 2011 notice applies the higher rate to the sales price and tests the $50,000 before any trade-in."
+    },
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Connecticut DMV - Sales tax on registrations",
+          "url": "https://portal.ct.gov/dmv/vehicle-services/sales-tax-registrations",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Connecticut DMV - Tax questions: sales tax on registrations",
+          "url": "https://portal.ct.gov/DMV/Tax-Questions/Tax-Questions/Sales-Tax-on-Registrations",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "For dealership purchases the state allows full trade-in credit. Private sales are taxed on the higher of the bill of sale or the NADA average trade-in value, which is not modeled."
+    },
+    "local": {
+      "value": {
+        "mode": "none",
+        "capBase": null,
+        "rangeNote": null
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Connecticut DMV - Sales tax on registrations",
+          "url": "https://portal.ct.gov/dmv/vehicle-services/sales-tax-registrations",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The state pages list one statewide rate. Towns tax vehicles as yearly property instead, which is not included."
+    },
+    "outOfStateCredit": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Connecticut DMV - Sales tax on registrations",
+          "url": "https://portal.ct.gov/dmv/vehicle-services/sales-tax-registrations",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Connecticut DMV - Tax questions: sales tax on registrations",
+          "url": "https://portal.ct.gov/DMV/Tax-Questions/Tax-Questions/Sales-Tax-on-Registrations",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Credit for sales tax paid out of state needs the purchase invoice and tax receipt. If the other state's rate was lower, you pay the difference at registration."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Title",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 25,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Connecticut DMV - All fees",
+            "url": "https://portal.ct.gov/dmv/resources/dmv-fees",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "registration",
+      "label": "Registration (passenger car, SUV or van)",
+      "kind": "flat",
+      "frequency": "biennial",
+      "amount": {
+        "value": 120,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Connecticut DMV - All fees",
+            "url": "https://portal.ct.gov/dmv/resources/dmv-fees",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The fee page does not state the registration term, so this is marked partly verified."
+      }
+    },
+    {
+      "id": "plate",
+      "label": "License plate",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 5,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Connecticut DMV - All fees",
+            "url": "https://portal.ct.gov/dmv/resources/dmv-fees",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "admin-fee",
+      "label": "Administrative fee",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 10,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Connecticut DMV - All fees",
+            "url": "https://portal.ct.gov/dmv/resources/dmv-fees",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "clean-air",
+      "label": "Clean Air Act fee",
+      "kind": "flat",
+      "frequency": "once",
+      "when": {
+        "fuel": "gas"
+      },
+      "amount": {
+        "value": 15,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Connecticut DMV - All fees",
+            "url": "https://portal.ct.gov/dmv/resources/dmv-fees",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "greenhouse-gas",
+      "label": "Greenhouse gas fee",
+      "kind": "flat",
+      "frequency": "once",
+      "when": {
+        "vehicleAge": "new"
+      },
+      "amount": {
+        "value": 15,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Connecticut DMV - All fees",
+            "url": "https://portal.ct.gov/dmv/resources/dmv-fees",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Charged when the vehicle has a certificate of origin, which means a new vehicle from a dealer."
+      }
+    },
+    {
+      "id": "emissions-exemption",
+      "label": "Emissions exemption fee",
+      "kind": "flat",
+      "frequency": "once",
+      "when": {
+        "vehicleAge": [
+          "new",
+          "recent"
+        ],
+        "fuel": "gas"
+      },
+      "amount": {
+        "value": 40,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Connecticut DMV - All fees",
+            "url": "https://portal.ct.gov/dmv/resources/dmv-fees",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The fee page charges this for gas vehicles that are four years old or newer. The calculator applies it to new and recent used vehicles only, because it cannot tell a three or four year old vehicle apart."
+      }
+    },
+    {
+      "id": "passport-to-parks",
+      "label": "Passport to the Parks fee",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 24,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Connecticut DMV - All fees",
+            "url": "https://portal.ct.gov/dmv/resources/dmv-fees",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The page says the fee became $24 on July 1, 2025. It does not say how often it is charged or whether it can be declined, so it is shown as a one-time charge and marked partly verified."
+      }
+    }
+  ],
+  "notes": [
+    "Your town bills a yearly property tax on the vehicle, which is not included.",
+    "A hybrid pays a different registration fee that is not modeled.",
+    "A lien adds a fee that is not included."
+  ],
+  "content": {
+    "intro": "{state} charges {stateRate} sales tax on a vehicle, with a higher rate on vehicles priced above a set amount, and no local sales tax. DMV fees for title and registration are added at registration.",
+    "howItWorks": [
+      {
+        "text": "The standard rate is {stateRate}. Vehicles priced above a set amount are taxed at a higher rate, and the price is checked before any trade-in is subtracted.",
+        "sources": [
+          "https://portal.ct.gov/dmv/vehicle-services/sales-tax-registrations",
+          "https://portal.ct.gov/DRS/Publications/Special-Notices/2011/SN-2011-10"
+        ]
+      },
+      {
+        "text": "When you buy from a dealership, the full trade-in value comes off the price before tax. A private sale is taxed on the higher of the bill of sale or the NADA average trade-in value.",
+        "sources": [
+          "https://portal.ct.gov/dmv/vehicle-services/sales-tax-registrations"
+        ]
+      },
+      {
+        "text": "If you paid sales tax in another state, you can get credit with the purchase invoice and the tax receipt. If the other state's rate was lower, you pay the difference at registration.",
+        "sources": [
+          "https://portal.ct.gov/dmv/vehicle-services/sales-tax-registrations",
+          "https://portal.ct.gov/DMV/Tax-Questions/Tax-Questions/Sales-Tax-on-Registrations"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does a trade-in lower the sales tax in Connecticut?",
+        "text": "Yes, for a dealership purchase the state allows full trade-in credit. The check for the higher rate uses the price before the trade-in.",
+        "sources": [
+          "https://portal.ct.gov/dmv/vehicle-services/sales-tax-registrations",
+          "https://portal.ct.gov/DRS/Publications/Special-Notices/2011/SN-2011-10"
+        ]
+      },
+      {
+        "q": "Is there a higher sales tax on expensive vehicles?",
+        "text": "Yes. Vehicles priced above a set amount are taxed at a higher rate. The state pages do not say whether it applies to the whole price or only the part above, so the calculator applies it to the whole amount and marks that figure as partly verified.",
+        "sources": [
+          "https://portal.ct.gov/dmv/vehicle-services/sales-tax-registrations",
+          "https://portal.ct.gov/DMV/Tax-Questions/Tax-Questions/Sales-Tax-on-Registrations",
+          "https://portal.ct.gov/DRS/Publications/Special-Notices/2011/SN-2011-10"
+        ]
+      },
+      {
+        "q": "Does the total include the yearly town tax?",
+        "text": "No. Towns bill a property tax on vehicles each year, and the amount depends on your town and the vehicle's value.",
+        "sources": [
+          "https://portal.ct.gov/dmv/vehicle-services/sales-tax-registrations"
+        ]
+      }
+    ]
+  }
+}

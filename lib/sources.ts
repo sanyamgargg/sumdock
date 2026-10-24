@@ -8,7 +8,7 @@ export function sourcesForLine(state: StateData, lineId: string): Source[] {
   const st = state.salesTax;
   switch (lineId) {
     case "state-tax":
-      return st.stateRatePct.sources;
+      return [...st.stateRatePct.sources, ...(st.higherRate?.sources ?? [])];
     case "local-tax":
       return [...st.local.sources, ...(state.localRates?.rates.sources ?? [])];
     case "oos-credit":
@@ -37,6 +37,7 @@ export function collectSources(state: StateData): { source: Source; usedFor: str
   };
   const st = state.salesTax;
   add("State sales tax rate", st.stateRatePct.sources);
+  if (st.higherRate) add("Higher rate on expensive vehicles", st.higherRate.sources);
   add("Trade-in rule", st.tradeInReducesBase.sources);
   add("Local tax", st.local.sources);
   add("Tax paid to another state", st.outOfStateCredit.sources);

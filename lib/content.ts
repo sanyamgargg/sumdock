@@ -119,6 +119,9 @@ export function figures(state: StateData): Figure[] {
     { label: "Trade-in reduces taxable price", value: st.tradeInReducesBase.value === null ? "Unknown" : st.tradeInReducesBase.value ? "Yes" : "No", status: st.tradeInReducesBase.status, note: st.tradeInReducesBase.note, sources: st.tradeInReducesBase.sources },
     { label: "Local tax", value: st.local.value ? (st.local.value.mode === "none" ? "None" : "Varies by location") : "Unknown", status: st.local.status, note: st.local.note, sources: st.local.sources },
   ];
+  if (st.higherRate?.value) {
+    out.push({ label: `Rate on vehicles priced above $${st.higherRate.value.overPrice.toLocaleString("en-US")}`, value: `${st.higherRate.value.ratePct}%`, status: st.higherRate.status, note: st.higherRate.note, sources: st.higherRate.sources });
+  }
   if (st.useTax?.value) {
     out.push({ label: st.useTax.value.label, value: `${st.useTax.value.ratePct}%`, status: st.useTax.status, note: st.useTax.note, sources: st.useTax.sources });
   }

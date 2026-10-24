@@ -97,6 +97,12 @@ for (const f of files) {
   if (st.tradeInCap != null && !(typeof st.tradeInCap === "number" && st.tradeInCap > 0)) err(f, "salesTax.tradeInCap must be a positive number");
   for (const k of ["stateRatePct", "tradeInReducesBase", "local", "outOfStateCredit"]) checkSourced(f, `salesTax.${k}`, st[k]);
   if (st.useTax) checkSourced(f, "salesTax.useTax", st.useTax);
+  if (st.higherRate) {
+    checkSourced(f, "salesTax.higherRate", st.higherRate);
+    const h = st.higherRate.value;
+    if (h && !(typeof h.overPrice === "number" && h.overPrice > 0 && typeof h.ratePct === "number" && h.ratePct > (st.stateRatePct?.value ?? 0)))
+      err(f, "salesTax.higherRate needs a positive overPrice and a ratePct above the state rate");
+  }
 
   if (d.localRates) {
     checkSourced(f, "localRates.rates", d.localRates.rates);
