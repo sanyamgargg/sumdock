@@ -118,6 +118,11 @@ for (const f of files) {
     if (ids.has(fee.id)) err(f, `duplicate fee id ${fee.id}`);
     ids.add(fee.id);
     checkSourced(f, `fees.${fee.id}.amount`, fee.amount);
+    if (fee.altCounties) {
+      const names = Object.keys(d.counties?.fees?.value ?? {});
+      if (typeof fee.altCounties.amount !== "number" || !Array.isArray(fee.altCounties.counties)) err(f, `fees.${fee.id}.altCounties is malformed`);
+      else for (const c of fee.altCounties.counties) if (!names.includes(c)) err(f, `fees.${fee.id}.altCounties: ${c} is not in the county table`);
+    }
   }
   if (!(d.fees ?? []).length) err(f, "no fees listed");
 }

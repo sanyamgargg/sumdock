@@ -5,6 +5,12 @@
       "date": "2026-10-24",
       "state": "TX",
       "stateName": "Texas",
+      "summary": "Title fee now follows your county ($33 in 42 counties, $28 elsewhere). Added the $1 insurance verification and $4.75 processing fees to the total."
+    },
+    {
+      "date": "2026-10-24",
+      "state": "TX",
+      "stateName": "Texas",
       "summary": "Added state with county registration fees."
     },
     {

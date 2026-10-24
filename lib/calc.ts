@@ -100,7 +100,8 @@ export function calculate(state: StateData, i: Inputs): Result {
       });
       continue;
     }
-    const amount = fee.kind === "percentOfValue" ? round2((i.price * a.value) / 100) : a.value;
+    const alt = fee.altCounties && i.county && fee.altCounties.counties.includes(i.county) ? fee.altCounties.amount : null;
+    const amount = fee.kind === "percentOfValue" ? round2((i.price * a.value) / 100) : alt ?? a.value;
     lines.push({ id: fee.id, label: fee.label, amount, status: a.status, note: a.note });
   }
 

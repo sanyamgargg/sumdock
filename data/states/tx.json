@@ -69,11 +69,14 @@
       "frequency": "once",
       "amount": {
         "value": 28,
-        "alt": [
-          33
-        ],
-        "status": "partial",
+        "status": "verified",
         "sources": [
+          {
+            "title": "TxDMV - Motor Vehicle Title Manual, section 3.1 and Table 3-1 (August 2026)",
+            "url": "https://www.txdmv.gov/sites/default/files/body-files/Motor_Vehicle_Title_Manual_Book_451.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
           {
             "title": "TxDMV - Out of State and Imported Vehicles",
             "url": "https://www.txdmv.gov/motorists/buying-or-selling-a-vehicle/out-of-state-and-foreign-vehicles",
@@ -81,7 +84,54 @@
             "publisherType": "state-agency"
           }
         ],
-        "note": "TxDMV: title application fee is $28 or $33 depending on the county; the page does not say which counties. Calculator uses $28 and flags it."
+        "note": "$28, or $33 if you live in one of 42 counties in a federal nonattainment area or an affected county (Table 3-1). The fee is based on the buyer's county of residence. Choose your county to get the right amount."
+      },
+      "altCounties": {
+        "counties": [
+          "Bastrop",
+          "Bexar",
+          "Brazoria",
+          "Caldwell",
+          "Chambers",
+          "Collin",
+          "Comal",
+          "Dallas",
+          "Denton",
+          "Ellis",
+          "El Paso",
+          "Fort Bend",
+          "Galveston",
+          "Gregg",
+          "Guadalupe",
+          "Hardin",
+          "Harris",
+          "Harrison",
+          "Hays",
+          "Henderson",
+          "Hood",
+          "Hunt",
+          "Jefferson",
+          "Johnson",
+          "Kaufman",
+          "Liberty",
+          "Montgomery",
+          "Nueces",
+          "Orange",
+          "Parker",
+          "Rockwall",
+          "Rusk",
+          "San Patricio",
+          "Smith",
+          "Tarrant",
+          "Travis",
+          "Upshur",
+          "Victoria",
+          "Waller",
+          "Williamson",
+          "Wilson",
+          "Wise"
+        ],
+        "amount": 33
       }
     },
     {
@@ -106,7 +156,44 @@
             "publisherType": "state-agency"
           }
         ],
-        "note": "Passenger cars and light trucks up to 6,000 lbs. A $1 TexasSure charge is added on top; county fees are added separately when you choose a county."
+        "note": "Passenger cars and light trucks up to 6,000 lbs. The $1 insurance verification charge and the $4.75 processing and handling fee are listed as separate lines. County fees are added when you choose a county."
+      }
+    },
+    {
+      "id": "insurance-verification",
+      "label": "Insurance verification (TexasSure)",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 1,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "TxDMV - Register Your Vehicle",
+            "url": "https://www.txdmv.gov/motorists/register-your-vehicle",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "processing",
+      "label": "Processing and handling",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 4.75,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "TxDMV - Register Your Vehicle",
+            "url": "https://www.txdmv.gov/motorists/register-your-vehicle",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Charged with each registration."
       }
     },
     {
@@ -134,8 +221,8 @@
   ],
   "notes": [
     "Fee Chart 1C lists county fees from $0 to $21.50. TxDMV's own summary says local fees can reach $31.50 in total; the difference is not explained on the pages opened.",
-    "Other fees on the TxDMV list: insurance verification $1, processing and handling $4.75, state inspection portion up to $30.75.",
-    "Gift tax is $10 and new-resident tax is $90 per the Comptroller page. Private-party sales use the standard presumptive value. Not modeled."
+    "Gift tax is $10 and new-resident tax is $90 per the Comptroller page. Private-party sales use the standard presumptive value. Not modeled.",
+    "The state inspection portion (up to $30.75) is not included; it depends on the inspection type."
   ],
   "counties": {
     "label": "County registration fee",

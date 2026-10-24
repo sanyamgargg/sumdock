@@ -39,6 +39,8 @@ export interface Fee {
   weightTable?: { upTo: number | null; fee: number }[];
   /** For weightTable: minimum fee applied to electric vehicles. */
   minForEv?: number;
+  /** Different flat amount for residents of the listed counties (Texas title fee: 33 in 42 counties). Needs the county picker. */
+  altCounties?: { counties: string[]; amount: number };
   /** Shown instead of the generic reason when the fee is left out. */
   excludedReason?: string;
   /** For percentOfValue the amount is a percent (0.65 means 0.65%). */

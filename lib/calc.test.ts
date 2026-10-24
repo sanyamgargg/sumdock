@@ -164,6 +164,17 @@ describe("Texas county fee", () => {
     expect(line(calculate(t, { ...base, county: "Borden" }), "county-fee")).toBe(0);
     expect(line(calculate(t, { ...base, county: "Winkler" }), "county-fee")).toBe(7.5);
   });
+  it("charges the 33 title fee in the 42 listed counties and 28 elsewhere", () => {
+    expect(line(calculate(t, { ...base, county: "Travis" }), "title")).toBe(33);
+    expect(line(calculate(t, { ...base, county: "Harris" }), "title")).toBe(33);
+    expect(line(calculate(t, { ...base, county: "Borden" }), "title")).toBe(28);
+    expect(line(calculate(t, base), "title")).toBe(28);
+    expect(t.fees.find((f) => f.id === "title")!.altCounties!.counties).toHaveLength(42);
+  });
+  it("adds the 1 insurance verification and 4.75 processing fees", () => {
+    expect(line(calculate(t, base), "insurance-verification")).toBe(1);
+    expect(line(calculate(t, base), "processing")).toBe(4.75);
+  });
   it("lists all 254 Texas counties", () => {
     expect(Object.keys(t.counties!.fees.value!)).toHaveLength(254);
   });
