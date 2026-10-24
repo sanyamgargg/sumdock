@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sumdock state page phone</title>
+<!-- Static visual reference exported from the Sumdock design canvas. Not production code:
+     rebuild this in the Next.js components. See design/README.md. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#111111}
+</style>
+</head>
+<body>
+<div style="width: 390px; background: #F4F4F1; color: #111111; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.5">
+
+<header style="border-bottom: 1px solid #111111; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between">
+<a href="state-page-phone.html" style="display: flex; align-items: center; gap: 8px; text-decoration: none; font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 17px; letter-spacing: -0.02em">
+<svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><rect x="1" y="1" width="18" height="18" fill="none" stroke="#111111" stroke-width="2"></rect><path d="M5 14h10M5 10h10M5 6h6" stroke="#B8320F" stroke-width="2"></path></svg>
+sumdock
+</a>
+<button type="button" aria-label="Open menu" style="width: 44px; height: 44px; border: 1px solid #111111; background: #FFFFFF; display: flex; align-items: center; justify-content: center; border-radius: 0"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14" stroke="#111111" stroke-width="2"></path></svg></button>
+</header>
+
+<main style="padding: 24px 16px 40px; display: flex; flex-direction: column; gap: 28px">
+
+<section style="display: flex; flex-direction: column; gap: 10px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #4A4F57">Vehicle costs / Texas</div>
+<h1 style="margin: 0; font-size: 30px; line-height: 1.1; letter-spacing: -0.025em; font-weight: 700">What a vehicle costs in Texas, itemized and sourced.</h1>
+<p style="margin: 0; color: #3C4149; font-size: 16px">Every line cites the page it came from and the day we opened it.</p>
+</section>
+
+<form style="border: 1px solid #111111; background: #FFFFFF">
+<div style="display: flex; justify-content: space-between; padding: 12px 16px; background: #111111; color: #FFFFFF; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase"><span>Your purchase</span><span style="color: #D4D4CF">Texas</span></div>
+<div style="padding: 16px; display: flex; flex-direction: column; gap: 16px">
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 500">Vehicle price
+<span style="display: flex; align-items: center; border: 1px solid #111111; height: 48px; padding: 0 12px; font-family: 'IBM Plex Mono', monospace"><span style="color: #4A4F57">$</span><input type="text" inputmode="decimal" value="30,000" style="border: 0; outline: 0; background: transparent; flex-grow: 1; min-width: 0; font: inherit; font-size: 17px; padding: 0 8px"></span></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 500">Trade-in value
+<span style="display: flex; align-items: center; border: 1px solid #111111; height: 48px; padding: 0 12px; font-family: 'IBM Plex Mono', monospace"><span style="color: #4A4F57">$</span><input type="text" inputmode="decimal" value="0" style="border: 0; outline: 0; background: transparent; flex-grow: 1; min-width: 0; font: inherit; font-size: 17px; padding: 0 8px"></span></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 500">County of residence
+<select style="height: 48px; border: 1px solid #111111; background: #FFFFFF; font: inherit; font-size: 16px; padding: 0 10px; border-radius: 0"><option>Travis</option><option>Harris</option></select></label>
+<div style="display: flex; border: 1px solid #111111; height: 48px"><button type="button" style="flex: 1; border: 0; background: #111111; color: #FFFFFF; font: inherit; font-size: 15px; font-weight: 500; border-radius: 0">Gas / hybrid</button><button type="button" style="flex: 1; border: 0; border-left: 1px solid #111111; background: #FFFFFF; font: inherit; font-size: 15px; border-radius: 0">Electric</button></div>
+<label style="display: flex; align-items: center; gap: 10px; font-size: 15px; min-height: 44px"><input type="checkbox" checked style="width: 22px; height: 22px; accent-color: #111111; margin: 0"> No existing plate to transfer</label>
+</div>
+</form>
+
+<section aria-live="polite" style="border: 1px solid #111111; background: #FFFFFF">
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 16px; border-bottom: 1px solid #111111; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase"><span>Estimate / Travis County</span><span style="color: #4A4F57">Reviewed Oct 24, 2026</span></div>
+<div style="padding: 4px 16px; font-variant-numeric: tabular-nums">
+<div style="display: flex; gap: 12px; justify-content: space-between; padding: 12px 0"><span style="font-weight: 500">Sales tax, 6.25% <a href="#s1" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #B8320F; text-decoration: none; vertical-align: super">[1]</a></span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 16px; font-weight: 500">$1,875.00</span></div>
+<div style="display: flex; gap: 12px; justify-content: space-between; padding: 12px 0; border-top: 1px solid #E3E3DE"><span style="font-weight: 500">Title application <a href="#s2" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #B8320F; text-decoration: none; vertical-align: super">[2]</a></span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 16px; font-weight: 500">$33.00</span></div>
+<div style="display: flex; gap: 12px; justify-content: space-between; padding: 12px 0; border-top: 1px solid #E3E3DE"><span style="font-weight: 500">Registration, 1 year <a href="#s3" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #B8320F; text-decoration: none; vertical-align: super">[3]</a></span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 16px; font-weight: 500">$50.75</span></div>
+<div style="display: flex; gap: 12px; justify-content: space-between; padding: 12px 0; border-top: 1px solid #E3E3DE"><span style="font-weight: 500">County fee <a href="#s3" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #B8320F; text-decoration: none; vertical-align: super">[3]</a></span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 16px; font-weight: 500">$11.50</span></div>
+<div style="display: flex; gap: 12px; justify-content: space-between; padding: 12px 0; border-top: 1px solid #E3E3DE"><span style="font-weight: 500">Insurance check and processing <a href="#s4" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #B8320F; text-decoration: none; vertical-align: super">[4]</a></span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 16px; font-weight: 500">$5.75</span></div>
+</div>
+<div style="margin: 4px 16px 0; border-top: 3px double #111111; padding: 14px 0 16px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase">Total taxes and fees</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 40px; font-weight: 600; letter-spacing: -0.03em; line-height: 1">$1,976.00</span>
+<span style="font-size: 14px; color: #3C4149">Price plus fees: <span style="font-family: 'IBM Plex Mono', monospace; color: #111111">$31,976.00</span></span>
+</div>
+<div style="border-top: 1px solid #111111; padding: 14px 16px; background: #FBF1EC; font-size: 14px; color: #3A2A24"><span style="display: block; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: #8A2508; margin-bottom: 2px">Not included</span>State inspection portion, up to $30.75. It depends on the inspection type, so it is left out rather than guessed.</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 0">
+<h2 style="margin: 0 0 10px; font-size: 20px; letter-spacing: -0.01em; border-bottom: 1px solid #111111; padding-bottom: 8px">Sources</h2>
+<div id="s1" style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-bottom: 1px solid #D9D9D4"><span style="font-size: 15px"><span style="font-family: 'IBM Plex Mono', monospace; color: #B8320F">[1]</span> Motor vehicle sales and use tax, 6.25%</span><span style="font-size: 14px; color: #4A4F57">Texas Comptroller &middot; <a href="state-page-phone.html">Open page</a></span></div>
+<div id="s2" style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-bottom: 1px solid #D9D9D4"><span style="font-size: 15px"><span style="font-family: 'IBM Plex Mono', monospace; color: #B8320F">[2]</span> Title manual, Table 3-1: $33 in 42 counties, $28 elsewhere</span><span style="font-size: 14px; color: #4A4F57">TxDMV &middot; <a href="state-page-phone.html">Open page</a></span></div>
+<div id="s3" style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-bottom: 1px solid #D9D9D4"><span style="font-size: 15px"><span style="font-family: 'IBM Plex Mono', monospace; color: #B8320F">[3]</span> Fee Chart 1C, effective Jan 1, 2026</span><span style="font-size: 14px; color: #4A4F57">TxDMV &middot; <a href="state-page-phone.html">Open page</a></span></div>
+<div id="s4" style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-bottom: 1px solid #D9D9D4"><span style="font-size: 15px"><span style="font-family: 'IBM Plex Mono', monospace; color: #B8320F">[4]</span> Register your vehicle: insurance check and processing fees</span><span style="font-size: 14px; color: #4A4F57">TxDMV &middot; <a href="state-page-phone.html">Open page</a></span></div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-size: 20px; letter-spacing: -0.01em">How Texas works out this bill</h2>
+<p style="margin: 0; color: #3C4149; font-size: 15px">Texas charges 6.25% of the price, less any trade-in allowance, when you title the vehicle. The title fee depends on your county, and registration renews every year with a small county fee.</p>
+<details style="border-top: 1px solid #111111; padding: 12px 0"><summary style="font-weight: 600; cursor: pointer; min-height: 28px">Does a trade-in lower the tax?</summary><p style="margin: 8px 0 0; color: #3C4149; font-size: 15px">Yes. The trade-in comes off the price before the tax is applied.</p></details>
+<details style="border-top: 1px solid #111111; border-bottom: 1px solid #111111; padding: 12px 0"><summary style="font-weight: 600; cursor: pointer; min-height: 28px">Why is my title fee $33 and not $28?</summary><p style="margin: 8px 0 0; color: #3C4149; font-size: 15px">Residents of counties in a federal nonattainment area or an affected county pay $33. Everyone else pays $28.</p></details>
+</section>
+
+</main>
+
+<footer style="border-top: 1px solid #111111; padding: 20px 16px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; color: #4A4F57">
+<nav aria-label="Footer" style="display: flex; flex-wrap: wrap; gap: 8px 20px"><a href="state-page-phone.html" style="color: #4A4F57">Methodology</a><a href="state-page-phone.html" style="color: #4A4F57">Contact</a><a href="state-page-phone.html" style="color: #4A4F57">Privacy</a></nav>
+<span>Estimates only, not tax or legal advice.</span>
+</footer>
+
+</div>
+</body>
+</html>

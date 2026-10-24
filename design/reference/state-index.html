@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sumdock state index</title>
+<!-- Static visual reference exported from the Sumdock design canvas. Not production code:
+     rebuild this in the Next.js components. See design/README.md. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#111111}a:hover{color:#B8320F}
+.row:hover{background:#FFFFFF}
+</style>
+</head>
+<body>
+<div style="background: #F4F4F1; color: #111111; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.5; min-height: 100%">
+
+<header style="border-bottom: 1px solid #111111">
+<div style="max-width: 1200px; margin: 0 auto; padding: 18px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
+<a href="home.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 18px; letter-spacing: -0.02em">
+<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><rect x="1" y="1" width="18" height="18" fill="none" stroke="#111111" stroke-width="2"></rect><path d="M5 14h10M5 10h10M5 6h6" stroke="#B8320F" stroke-width="2"></path></svg>
+sumdock
+</a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 28px; font-size: 14px; font-weight: 500">
+<a href="state-index.html" style="text-decoration: none; border-bottom: 2px solid #B8320F; padding-bottom: 2px">Vehicle costs</a>
+<a href="home.html" style="text-decoration: none; color: #4A4F57">Methodology</a>
+<a href="home.html" style="text-decoration: none; color: #4A4F57">Changelog</a>
+<a href="home.html" style="text-decoration: none; color: #4A4F57">About</a>
+</nav>
+</div>
+</header>
+
+<main style="max-width: 1200px; margin: 0 auto; padding: 40px 32px 72px; display: flex; flex-direction: column; gap: 36px">
+
+<section style="display: flex; flex-direction: column; gap: 14px; max-width: 760px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #4A4F57">Home / Vehicle costs</div>
+<h1 style="margin: 0; font-size: 44px; line-height: 1.08; letter-spacing: -0.025em; font-weight: 700">Vehicle tax, title and registration, by state.</h1>
+<p style="margin: 0; color: #3C4149; font-size: 18px">Choose the state you register in. Each page itemizes the bill and cites the official page behind every line.</p>
+</section>
+
+<section style="overflow-x: auto">
+<div style="min-width: 760px; border-top: 1px solid #111111; border-bottom: 1px solid #111111">
+<div style="display: flex; gap: 20px; padding: 10px 16px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: #4A4F57; border-bottom: 1px solid #111111">
+<span style="flex: 2 1 0">State</span><span style="flex: 3 1 0">Main tax</span><span style="flex: 2 1 0">Data status</span><span style="flex: 1 1 0">Reviewed</span><span style="width: 24px"></span>
+</div>
+
+<a class="row" href="state-page-desktop.html" style="display: flex; align-items: center; gap: 20px; padding: 16px; border-bottom: 1px solid #D9D9D4; text-decoration: none; color: #111111"><span style="flex: 2 1 0; font-weight: 600; font-size: 18px">California</span><span style="flex: 3 1 0; color: #3C4149">7.25% sales tax plus local rate</span><span style="flex: 2 1 0; font-size: 14px; font-weight: 500"><span style="display: inline-block; width: 9px; height: 9px; background: #111111; margin-right: 8px"></span>Verified</span><span style="flex: 1 1 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #4A4F57">Oct 24, 2026</span><span aria-hidden="true" style="width: 24px">&rarr;</span></a>
+<a class="row" href="state-page-desktop.html" style="display: flex; align-items: center; gap: 20px; padding: 16px; border-bottom: 1px solid #D9D9D4; text-decoration: none; color: #111111"><span style="flex: 2 1 0; font-weight: 600; font-size: 18px">Florida</span><span style="flex: 3 1 0; color: #3C4149">6% sales tax plus county surtax</span><span style="flex: 2 1 0; font-size: 14px; font-weight: 500"><span style="display: inline-block; width: 9px; height: 9px; border: 2px solid #B8320F; box-sizing: border-box; margin-right: 8px"></span>Partly verified</span><span style="flex: 1 1 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #4A4F57">Oct 24, 2026</span><span aria-hidden="true" style="width: 24px">&rarr;</span></a>
+<a class="row" href="state-page-desktop.html" style="display: flex; align-items: center; gap: 20px; padding: 16px; border-bottom: 1px solid #D9D9D4; text-decoration: none; color: #111111"><span style="flex: 2 1 0; font-weight: 600; font-size: 18px">Georgia</span><span style="flex: 3 1 0; color: #3C4149">7% one-time title tax</span><span style="flex: 2 1 0; font-size: 14px; font-weight: 500"><span style="display: inline-block; width: 9px; height: 9px; border: 2px solid #B8320F; box-sizing: border-box; margin-right: 8px"></span>Partly verified</span><span style="flex: 1 1 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #4A4F57">Oct 24, 2026</span><span aria-hidden="true" style="width: 24px">&rarr;</span></a>
+<div style="display: flex; align-items: center; gap: 20px; padding: 16px; border-bottom: 1px solid #D9D9D4; color: #4A4F57"><span style="flex: 2 1 0; font-weight: 600; font-size: 18px">Michigan</span><span style="flex: 3 1 0">6% sales tax. Registration fee not confirmed yet.</span><span style="flex: 2 1 0; font-size: 14px; font-weight: 500"><span style="display: inline-block; width: 9px; height: 9px; border: 2px dashed #4A4F57; box-sizing: border-box; margin-right: 8px"></span>In review</span><span style="flex: 1 1 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px">Oct 24, 2026</span><span style="width: 24px"></span></div>
+<a class="row" href="state-page-desktop.html" style="display: flex; align-items: center; gap: 20px; padding: 16px; border-bottom: 1px solid #D9D9D4; text-decoration: none; color: #111111"><span style="flex: 2 1 0; font-weight: 600; font-size: 18px">New York</span><span style="flex: 3 1 0; color: #3C4149">4% sales tax plus county and city rate</span><span style="flex: 2 1 0; font-size: 14px; font-weight: 500"><span style="display: inline-block; width: 9px; height: 9px; background: #111111; margin-right: 8px"></span>Verified</span><span style="flex: 1 1 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #4A4F57">Oct 24, 2026</span><span aria-hidden="true" style="width: 24px">&rarr;</span></a>
+<a class="row" href="state-page-desktop.html" style="display: flex; align-items: center; gap: 20px; padding: 16px; border-bottom: 1px solid #D9D9D4; text-decoration: none; color: #111111"><span style="flex: 2 1 0; font-weight: 600; font-size: 18px">North Carolina</span><span style="flex: 3 1 0; color: #3C4149">3% highway use tax</span><span style="flex: 2 1 0; font-size: 14px; font-weight: 500"><span style="display: inline-block; width: 9px; height: 9px; border: 2px solid #B8320F; box-sizing: border-box; margin-right: 8px"></span>Partly verified</span><span style="flex: 1 1 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #4A4F57">Oct 24, 2026</span><span aria-hidden="true" style="width: 24px">&rarr;</span></a>
+<a class="row" href="state-page-desktop.html" style="display: flex; align-items: center; gap: 20px; padding: 16px; border-bottom: 1px solid #D9D9D4; text-decoration: none; color: #111111"><span style="flex: 2 1 0; font-weight: 600; font-size: 18px">Ohio</span><span style="flex: 3 1 0; color: #3C4149">5.75% sales tax plus county rate</span><span style="flex: 2 1 0; font-size: 14px; font-weight: 500"><span style="display: inline-block; width: 9px; height: 9px; border: 2px solid #B8320F; box-sizing: border-box; margin-right: 8px"></span>Partly verified</span><span style="flex: 1 1 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #4A4F57">Oct 24, 2026</span><span aria-hidden="true" style="width: 24px">&rarr;</span></a>
+<a class="row" href="state-page-desktop.html" style="display: flex; align-items: center; gap: 20px; padding: 16px; border-bottom: 1px solid #D9D9D4; text-decoration: none; color: #111111"><span style="flex: 2 1 0; font-weight: 600; font-size: 18px">Oregon</span><span style="flex: 3 1 0; color: #3C4149">No sales tax</span><span style="flex: 2 1 0; font-size: 14px; font-weight: 500"><span style="display: inline-block; width: 9px; height: 9px; background: #111111; margin-right: 8px"></span>Verified</span><span style="flex: 1 1 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #4A4F57">Oct 24, 2026</span><span aria-hidden="true" style="width: 24px">&rarr;</span></a>
+<a class="row" href="state-page-desktop.html" style="display: flex; align-items: center; gap: 20px; padding: 16px; border-bottom: 1px solid #D9D9D4; text-decoration: none; color: #111111"><span style="flex: 2 1 0; font-weight: 600; font-size: 18px">Pennsylvania</span><span style="flex: 3 1 0; color: #3C4149">6% sales tax plus county surtax</span><span style="flex: 2 1 0; font-size: 14px; font-weight: 500"><span style="display: inline-block; width: 9px; height: 9px; background: #111111; margin-right: 8px"></span>Verified</span><span style="flex: 1 1 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #4A4F57">Oct 24, 2026</span><span aria-hidden="true" style="width: 24px">&rarr;</span></a>
+<a class="row" href="state-page-desktop.html" style="display: flex; align-items: center; gap: 20px; padding: 16px; text-decoration: none; color: #111111"><span style="flex: 2 1 0; font-weight: 600; font-size: 18px">Texas</span><span style="flex: 3 1 0; color: #3C4149">6.25% motor vehicle tax</span><span style="flex: 2 1 0; font-size: 14px; font-weight: 500"><span style="display: inline-block; width: 9px; height: 9px; border: 2px solid #B8320F; box-sizing: border-box; margin-right: 8px"></span>Partly verified</span><span style="flex: 1 1 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #4A4F57">Oct 24, 2026</span><span aria-hidden="true" style="width: 24px">&rarr;</span></a>
+</div>
+</section>
+
+<section style="display: flex; flex-wrap: wrap; gap: 28px; font-size: 14px; color: #3C4149">
+<span style="display: inline-flex; align-items: center"><span style="display: inline-block; width: 9px; height: 9px; background: #111111; margin-right: 8px"></span>Verified: every figure in the total is confirmed on an official page.</span>
+<span style="display: inline-flex; align-items: center"><span style="display: inline-block; width: 9px; height: 9px; border: 2px solid #B8320F; box-sizing: border-box; margin-right: 8px"></span>Partly verified: some figures are marked &ldquo;check source&rdquo;.</span>
+<span style="display: inline-flex; align-items: center"><span style="display: inline-block; width: 9px; height: 9px; border: 2px dashed #4A4F57; box-sizing: border-box; margin-right: 8px"></span>In review: a core figure is not confirmed, so the page is not yet public.</span>
+</section>
+
+</main>
+
+<footer style="border-top: 1px solid #111111">
+<div style="max-width: 1200px; margin: 0 auto; padding: 24px 32px; display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; font-size: 14px; color: #4A4F57">
+<span>Sumdock. Estimates only, not tax or legal advice.</span>
+<nav aria-label="Footer" style="display: flex; flex-wrap: wrap; gap: 22px">
+<a href="home.html" style="color: #4A4F57">Methodology</a><a href="home.html" style="color: #4A4F57">Contact</a><a href="home.html" style="color: #4A4F57">Privacy</a>
+</nav>
+</div>
+</footer>
+
+</div>
+</body>
+</html>
