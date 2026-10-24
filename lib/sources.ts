@@ -46,3 +46,9 @@ export function collectSources(state: StateData): { source: Source; usedFor: str
   if (state.localRates) add(state.localRates.label, state.localRates.rates.sources);
   return [...map.values()];
 }
+
+/** Short name for a source link: the part of the title before " - " (the agency), or the whole title. */
+export function shortTitle(title: string): string {
+  const head = title.split(" - ")[0].trim();
+  return head || title;
+}

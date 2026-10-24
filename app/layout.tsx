@@ -28,10 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/contact/">Contact</Link>
               <Link href="/privacy/">Privacy</Link>
             </nav>
-            <p>
-              Estimates only, not tax or legal advice. Figures come from the official pages linked on each state page and can
-              change. Confirm with your state agency before you pay.
-            </p>
+            <p>© {site.name}. Estimates only, not tax or legal advice.</p>
           </div>
         </footer>
       </body>

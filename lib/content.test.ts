@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { calculate } from "./calc";
-import { DEFAULT_INPUTS, expandTokens, figures, generatedFaq, tradeInExample, workedExamples } from "./content";
+import { expandTokens, exampleScenarios, figures, generatedFaq, generatedSummary } from "./content";
 import { loadStates } from "./data";
 import { collectSources, sourcesForLine } from "./sources";
 import type { StateData } from "./types";
@@ -9,31 +9,42 @@ import type { StateData } from "./types";
 const states = loadStates();
 
 describe.each(states.map((s) => [s.name, s] as const))("%s page content", (_name, s) => {
-  it("worked examples are exactly what calculate() returns", () => {
-    for (const ex of workedExamples(s)) {
-      expect(ex.result).toEqual(calculate(s, ex.inputs));
-      expect(ex.inputs.price).toBeGreaterThan(0);
+  it("scenarios are exactly what calculate() returns", () => {
+    const sc = exampleScenarios(s);
+    expect(sc.length).toBe(3);
+    for (const x of sc) {
+      expect(x.result).toEqual(calculate(s, x.inputs));
+      expect(x.inputs.price).toBeGreaterThan(0);
     }
   });
 
-  it("trade-in example matches two calculate() runs", () => {
-    const t = tradeInExample(s);
+  it("a trade-in scenario only appears when it really lowers the sales tax, and its sentence uses calculate() figures", () => {
+    const t = exampleScenarios(s).find((x) => x.inputs.tradeIn > 0);
     if (!t) return;
-    const find = (tradeIn: number) =>
-      calculate(s, { ...DEFAULT_INPUTS, price: t.price, tradeIn }).lines.find((l) => l.id === "state-tax")!.amount;
-    expect(t.without).toBe(find(0));
-    expect(t.with).toBe(find(t.tradeIn));
-    expect(t.with).toBeLessThan(t.without);
+    const base = calculate(s, { ...t.inputs, tradeIn: 0 }).lines.find((l) => l.id === "state-tax")!.amount;
+    const withT = t.result.lines.find((l) => l.id === "state-tax")!.amount;
+    expect(withT).toBeLessThan(base);
+    expect(t.description).toContain((base - withT).toLocaleString("en-US", { style: "currency", currency: "USD" }));
   });
 
-  it("every result line has a source to link to", () => {
-    for (const ex of workedExamples(s)) {
-      for (const l of ex.result.lines) expect(sourcesForLine(s, l.id).length, l.id).toBeGreaterThan(0);
+  it("an electric scenario only appears for states with an EV fee", () => {
+    const hasEv = s.fees.some((f) => f.when?.fuel === "ev" || f.minForEv !== undefined);
+    expect(exampleScenarios(s).some((x) => x.inputs.fuel === "ev")).toBe(hasEv);
+  });
+
+  it("every result line in every scenario has a source to link to", () => {
+    for (const x of exampleScenarios(s)) {
+      for (const l of x.result.lines) expect(sourcesForLine(s, l.id).length, l.id).toBeGreaterThan(0);
     }
+  });
+
+  it("summary quotes the state rate straight from the data", () => {
+    const rate = s.salesTax.stateRatePct.value;
+    expect(generatedSummary(s).join(" ")).toContain(`${rate}%`);
   });
 
   it("generated FAQ always cites a source", () => {
-    for (const f of generatedFaq(s)) expect(f.sources.length).toBeGreaterThan(0);
+    for (const f of generatedFaq(s)) expect(f.sources.length > 0 || !!f.link, f.q).toBe(true);
   });
 
   it("figures list one row per rule and fee", () => {

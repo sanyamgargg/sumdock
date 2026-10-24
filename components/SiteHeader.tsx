@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const NAV = [
@@ -11,6 +12,7 @@ const NAV = [
 
 export default function SiteHeader({ name }: { name: string }) {
   const [open, setOpen] = useState(false);
+  const path = usePathname() ?? "";
   return (
     <header className="site-header">
       <div className="container site-header__row">
@@ -35,7 +37,14 @@ export default function SiteHeader({ name }: { name: string }) {
         </button>
         <nav id="site-nav" aria-label="Main" className={open ? "site-nav is-open" : "site-nav"}>
           {NAV.map((n) => (
-            <Link key={n.href} href={n.href} onClick={() => setOpen(false)}>{n.label}</Link>
+            <Link
+              key={n.href}
+              href={n.href}
+              onClick={() => setOpen(false)}
+              aria-current={path.startsWith(n.href) ? "page" : undefined}
+            >
+              {n.label}
+            </Link>
           ))}
         </nav>
       </div>

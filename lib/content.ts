@@ -1,5 +1,5 @@
 import { calculate, isUsable } from "./calc";
-import { usdShort } from "./format";
+import { formatDate, usd, usdShort } from "./format";
 import type { Inputs, Result, Source, StateData, Status } from "./types";
 
 /** Starting values of the calculator. The worked examples reuse them so the two never drift apart. */
@@ -17,30 +17,81 @@ export const DEFAULT_INPUTS: Inputs = {
   outOfStateNewDealer: false,
 };
 
-/** Illustrative purchase prices for the worked examples. These are inputs, not state data. */
-const EXAMPLE_PRICES = [15000, 30000, 50000];
-const EXAMPLE_TRADE_IN = 10000;
+/** Illustrative inputs for the worked examples. These are inputs, not state data. */
+const EXAMPLE = { plain: 20000, withTrade: { price: 30000, tradeIn: 8000 }, ev: 45000, fallback: 50000 };
 
-export interface Example {
+export interface Scenario {
+  caption: string;
   inputs: Inputs;
   result: Result;
+  /** One generated sentence under the total. */
+  description: string;
 }
 
-export function workedExamples(state: StateData): Example[] {
-  return EXAMPLE_PRICES.map((price) => {
-    const inputs = { ...DEFAULT_INPUTS, price };
-    return { inputs, result: calculate(state, inputs) };
-  });
+const lineText = (r: Result) => r.lines.map((l) => `${l.label} ${usd(l.amount)}`).join(", ");
+
+/**
+ * Up to three scenarios, every figure from calculate(): no trade-in, a trade-in (only when the state's
+ * trade-in rule is usable and changes the tax), and an electric vehicle (only when the state has an EV fee).
+ */
+export function exampleScenarios(state: StateData): Scenario[] {
+  const out: Scenario[] = [];
+  const run = (caption: string, patch: Partial<Inputs>, describe?: (r: Result) => string | null) => {
+    const inputs = { ...DEFAULT_INPUTS, ...patch };
+    const result = calculate(state, inputs);
+    out.push({ caption, inputs, result, description: describe?.(result) ?? `${lineText(result)}.` });
+  };
+
+  run("Gas vehicle, no trade-in", { price: EXAMPLE.plain });
+
+  const t = EXAMPLE.withTrade;
+  const without = calculate(state, { ...DEFAULT_INPUTS, price: t.price }).lines.find((l) => l.id === "state-tax");
+  const withTrade = calculate(state, { ...DEFAULT_INPUTS, price: t.price, tradeIn: t.tradeIn }).lines.find((l) => l.id === "state-tax");
+  if (without && withTrade && without.amount > withTrade.amount) {
+    run("Gas vehicle with a trade-in", { price: t.price, tradeIn: t.tradeIn }, () =>
+      `Tax is charged on ${usdShort(t.price - t.tradeIn)}, so the trade-in saves ${usd(without.amount - withTrade.amount)} in sales tax.`);
+  } else {
+    run("Gas vehicle, no trade-in", { price: t.price });
+  }
+
+  const hasEvFee = state.fees.some((f) => f.when?.fuel === "ev" || f.minForEv !== undefined);
+  if (hasEvFee) run("Electric vehicle", { price: EXAMPLE.ev, fuel: "ev" });
+  else run("Gas vehicle, no trade-in", { price: EXAMPLE.fallback });
+  return out;
 }
 
-/** Same purchase with and without a trade-in, or null when the trade-in does not change the sales tax line. */
-export function tradeInExample(state: StateData) {
-  const base = { ...DEFAULT_INPUTS };
-  const withTrade = { ...DEFAULT_INPUTS, tradeIn: EXAMPLE_TRADE_IN };
-  const a = calculate(state, base).lines.find((l) => l.id === "state-tax");
-  const b = calculate(state, withTrade).lines.find((l) => l.id === "state-tax");
-  if (!a || !b || a.amount === b.amount) return null;
-  return { price: base.price, tradeIn: EXAMPLE_TRADE_IN, without: a.amount, with: b.amount };
+/** Heading for a scenario card, e.g. "$30,000 vehicle" or "$30,000 vehicle, $8,000 trade-in". */
+export const scenarioTitle = (s: Scenario) =>
+  s.inputs.tradeIn > 0 ? `${usdShort(s.inputs.price)} vehicle, ${usdShort(s.inputs.tradeIn)} trade-in` : `${usdShort(s.inputs.price)} vehicle`;
+
+/** Plain-English summary of the rules, one sentence each, written only from usable values. */
+export function generatedSummary(state: StateData): string[] {
+  const st = state.salesTax;
+  const out: string[] = [];
+  const rate = st.stateRatePct;
+  const trade = st.tradeInReducesBase;
+  if (rate.value !== null && isUsable(rate.status)) {
+    const tradeOk = trade.value !== null && isUsable(trade.status);
+    if (rate.value === 0) out.push(`The state sales tax rate in our ${state.name} data is 0%.`);
+    else if (tradeOk && trade.value) out.push(`${state.name} charges ${rate.value}% state sales tax on the price of a vehicle, less any trade-in allowance.`);
+    else if (tradeOk) out.push(`${state.name} charges ${rate.value}% state sales tax on the price of a vehicle. A trade-in does not lower the taxable price.`);
+    else out.push(`${state.name} charges ${rate.value}% state sales tax on the price of a vehicle.`);
+  }
+  if (st.useTax?.value && isUsable(st.useTax.status)) {
+    out.push(`${st.useTax.value.label} is ${st.useTax.value.ratePct}% and applies only to a new vehicle bought from a dealer outside ${state.name}.`);
+  }
+  const l = st.local;
+  if (l.value && isUsable(l.status)) {
+    out.push(l.value.mode === "none"
+      ? `Our sources list no local sales tax on vehicles in ${state.name}.`
+      : `Local sales tax depends on where you live. Choose your county in the calculator to fill in the local rate.`);
+  }
+  if (state.counties?.fees.value && isUsable(state.counties.fees.status)) {
+    out.push(`${state.counties.label} depends on the county you choose.`);
+  }
+  out.push("Title and registration fees are listed in the result, each with a link to the page it came from.");
+  out.push("A value marked “check source” rests on a weaker source, such as a county page. Confirm it before you pay.");
+  return out;
 }
 
 const STATUS_LABEL: Record<Status, string> = {
@@ -86,6 +137,10 @@ export interface FaqItem {
   a: string;
   note?: string;
   sources: Source[];
+  /** Rule questions are replaced by a state's written FAQ; "site" questions are always shown. */
+  kind: "rule" | "site";
+  /** For answers about the site itself rather than a rule, which have no data-file source. */
+  link?: { href: string; label: string };
 }
 
 /** Questions answerable straight from usable values in the data file. Anything unconfirmed is skipped. */
@@ -101,17 +156,19 @@ export function generatedFaq(state: StateData): FaqItem[] {
         : `No. In ${state.name} the trade-in value does not reduce the price the state sales tax is figured on.`,
       note: t.note,
       sources: t.sources,
+      kind: "rule",
     });
   }
   const c = st.outOfStateCredit;
   if (c.value !== null && isUsable(c.status)) {
     out.push({
-      q: "Do I get credit for tax I already paid to another state?",
+      q: "What if I bought the car in another state?",
       a: c.value
-        ? `Yes. ${state.name} gives credit for sales or use tax already paid to another state. The calculator never credits more than the tax owed here.`
-        : `No. The calculator applies no credit for tax paid to another state, because ${state.name} does not provide one.`,
+        ? `${state.name} gives credit for sales or use tax already paid to another state. Enter that amount in the calculator. It never credits more than the tax owed here.`
+        : `The calculator applies no credit for tax paid to another state, because ${state.name} does not provide one.`,
       note: c.note,
       sources: c.sources,
+      kind: "rule",
     });
   }
   const l = st.local;
@@ -124,8 +181,16 @@ export function generatedFaq(state: StateData): FaqItem[] {
           : `Yes, it depends on where you live. Pick your county in the calculator, or enter your local rate yourself.`,
       note: l.note ?? l.value.rangeNote ?? undefined,
       sources: l.sources,
+      kind: "rule",
     });
   }
+  out.push({
+    q: "How often is this page updated?",
+    a: `The data on this page was last reviewed on ${formatDate(state.lastReviewed)}. Pages get a changed-page check each month and a full re-verification each January and July.`,
+    sources: [],
+    kind: "site",
+    link: { href: "/methodology/", label: "How we check numbers" },
+  });
   return out;
 }
 

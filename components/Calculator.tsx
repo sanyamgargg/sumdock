@@ -4,8 +4,8 @@ import { useEffect, useId, useMemo, useState } from "react";
 import AdSlot from "@/components/AdSlot";
 import { calculate } from "@/lib/calc";
 import { DEFAULT_INPUTS } from "@/lib/content";
-import { formatDate, groupNumber, parseNumber, usd } from "@/lib/format";
-import { sourcesForLine } from "@/lib/sources";
+import { formatDate, groupNumber, parseNumber, usd, usdShort } from "@/lib/format";
+import { shortTitle, sourcesForLine } from "@/lib/sources";
 import type { Inputs, StateData } from "@/lib/types";
 
 /** Text field for dollars or percents. Shows "30,000" but keeps a number in state. */
@@ -98,16 +98,23 @@ export default function Calculator({ state }: { state: StateData }) {
   const showLocalRate = !!local && local.mode === "user-entered";
   const hasLocation = !!rateTable || counties.length > 0 || showLocalRate;
 
-  const placeLabel = rateTable ? [ratePlace, rateCounty].filter(Boolean).join(", ") : i.county ? `${i.county} County` : "";
-  const where = placeLabel ? `${placeLabel}. ` : "";
+  const countyName = (c: string) => (c ? `${c} County` : "");
+  const placeLabel = rateTable
+    ? [ratePlace, countyName(rateCounty)].filter(Boolean).join(", ")
+    : countyName(i.county);
+  const subtitle = `on a ${usdShort(i.price)} vehicle${placeLabel ? ` in ${placeLabel}` : ""}. Price plus these items comes to ${usd(i.price + result.total)}.`;
+  const countyHint = state.counties ? `The ${state.counties.label.toLowerCase()} is added for the county you choose.` : undefined;
 
   return (
     <div className="calc-layout">
-      <form className="card calc-form" onSubmit={(e) => e.preventDefault()} aria-label={`${state.name} vehicle cost inputs`}>
+      <form className="card calc-form" onSubmit={(e) => e.preventDefault()} aria-labelledby="form-title">
+        <h2 id="form-title" className="calc-form__title">Your purchase</h2>
         <fieldset>
           <legend>Price</legend>
-          <NumberField label="Vehicle price" prefix="$" value={i.price} onValue={(n) => set("price", n)} />
-          <NumberField label="Trade-in value" prefix="$" value={i.tradeIn} onValue={(n) => set("tradeIn", n)} />
+          <div className="field-row">
+            <NumberField label="Vehicle price" prefix="$" value={i.price} onValue={(n) => set("price", n)} />
+            <NumberField label="Trade-in value" prefix="$" value={i.tradeIn} onValue={(n) => set("tradeIn", n)} />
+          </div>
           <NumberField label="Tax already paid to another state" prefix="$" value={i.outOfStateTaxPaid} onValue={(n) => set("outOfStateTaxPaid", n)} />
           {state.salesTax.useTax && (
             <CheckField
@@ -147,7 +154,7 @@ export default function Calculator({ state }: { state: StateData }) {
               </>
             )}
             {counties.length > 0 && (
-              <SelectField label="County" value={i.county} onChange={(v) => set("county", v)}>
+              <SelectField label="County" value={i.county} onChange={(v) => set("county", v)} hint={countyHint}>
                 <option value="">Choose your county</option>
                 {counties.map((c) => <option key={c} value={c}>{c}</option>)}
               </SelectField>
@@ -203,6 +210,10 @@ export default function Calculator({ state }: { state: StateData }) {
             <CheckField label="No existing plate to transfer" checked={i.noPlateToTransfer} onChange={(v) => set("noPlateToTransfer", v)} />
           )}
         </fieldset>
+
+        <p className="calc-form__note">
+          Estimate only. Not tax or legal advice. Confirm with your {state.name} state agency before you pay.
+        </p>
       </form>
 
       <div className="result-col">
@@ -210,49 +221,60 @@ export default function Calculator({ state }: { state: StateData }) {
           <div className="result-card__head">
             <h2 id="result-title" className="result-card__title">Estimated taxes and fees</h2>
             <div className="result-card__total">{usd(result.total)}</div>
-            <div className="result-card__sub">
-              {where}Price plus these items: {usd(i.price + result.total)}
-            </div>
+            <div className="result-card__sub">{subtitle}</div>
           </div>
 
-          <ul className="lines">
-            {result.lines.map((l) => {
-              const src = sourcesForLine(state, l.id)[0];
-              return (
-                <li key={l.id} className="line">
-                  <span className="line__main">
-                    <span>
+          <div className="lines-wrap">
+            <div className="lines-head" aria-hidden="true">
+              <span>Item</span><span>Source</span><span>Amount</span>
+            </div>
+            <ul className="lines">
+              {result.lines.map((l) => {
+                const src = sourcesForLine(state, l.id)[0];
+                return (
+                  <li key={l.id} className="line">
+                    <span className="line__label">
                       {l.label}
                       {l.status === "partial" && <span className="tag">check source</span>}
                     </span>
-                    {src && (
-                      <a href={src.url} target="_blank" rel="noopener noreferrer" className="line__src">{src.title}</a>
+                    {src ? (
+                      <a href={src.url} target="_blank" rel="noopener noreferrer" className="line__src" title={src.title}>
+                        {shortTitle(src.title)}
+                      </a>
+                    ) : (
+                      <span className="line__src" />
                     )}
+                    <b className="line__amt">{usd(l.amount)}</b>
                     {l.status === "partial" && l.note && <small className="line__note">{l.note}</small>}
-                  </span>
-                  <b className="line__amt">{usd(l.amount)}</b>
-                </li>
-              );
-            })}
-            {result.lines.length === 0 && <li className="line">Nothing could be priced from confirmed sources yet.</li>}
-          </ul>
+                  </li>
+                );
+              })}
+              {result.lines.length === 0 && <li className="line line--empty">Nothing could be priced from confirmed sources yet.</li>}
+              <li className="line line--total">
+                <span className="line__label">Total</span>
+                <span className="line__src" />
+                <b className="line__amt">{usd(result.total)}</b>
+              </li>
+            </ul>
+          </div>
 
           {result.excluded.length > 0 && (
             <div className="excluded">
               <b>Not included yet</b>
               <ul>
                 {result.excluded.map((e) => (
-                  <li key={e.label}>{e.label}: {e.reason}</li>
+                  <li key={e.label}><b>{e.label}.</b> {e.reason}</li>
                 ))}
               </ul>
             </div>
           )}
-
-          <p className="result-card__checked">
-            Last checked: {formatDate(state.lastReviewed)}. This is an estimate. Confirm with {state.name} before you pay.
-          </p>
         </section>
-        <AdSlot name="below-result" minHeight={280} />
+
+        <div className="result-meta">
+          <span>Last checked {formatDate(state.lastReviewed)}</span>
+          <a href="#sources">See all sources</a>
+        </div>
+        <AdSlot name="below-result" minHeight={250} />
       </div>
     </div>
   );
