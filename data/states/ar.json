@@ -1,0 +1,185 @@
+{
+  "code": "AR",
+  "name": "Arkansas",
+  "slug": "arkansas",
+  "lastReviewed": "2026-10-24",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 6.5,
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Arkansas DFA - Motor Vehicle FAQs",
+          "url": "https://www.dfa.arkansas.gov/office/motor-vehicle/faqs-for-dsmv/",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The department lists 6.5% for a new vehicle. A used vehicle priced $4,000 through $9,999 is listed at 3.5% and one at $3,999 or less has no tax, so the 6.5% is right for new vehicles and used ones at $10,000 or more only."
+    },
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Arkansas Gross Receipts Tax Rule GR-12, Sale of motor vehicles, trailers and semitrailers (Cornell LII)",
+          "url": "https://www.law.cornell.edu/regulations/arkansas/006-05-06-Ark-Code-R-SS-12",
+          "accessed": "2026-10-24",
+          "publisherType": "secondary"
+        }
+      ],
+      "note": "Tax is due on the difference between the price and the trade-in credit, and the trade-in must itself be a licensed motor vehicle, trailer or semitrailer. The rule text comes from a legal-text site, not the agency."
+    },
+    "local": {
+      "value": {
+        "mode": "user-entered",
+        "capBase": null,
+        "rangeNote": "Arkansas cities and counties add their own sales tax. The state sources used here do not list local rates, so enter your combined city and county rate (ask your dealer or check the state's local rate list)."
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Arkansas DFA - Motor Vehicle FAQs",
+          "url": "https://www.dfa.arkansas.gov/office/motor-vehicle/faqs-for-dsmv/",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "No state page found that says local tax is collected on a vehicle at registration, so the local rate is left for you to enter."
+    },
+    "outOfStateCredit": {
+      "value": false,
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Arkansas Gross Receipts Tax Rule GR-12, Sale of motor vehicles, trailers and semitrailers (Cornell LII)",
+          "url": "https://www.law.cornell.edu/regulations/arkansas/006-05-06-Ark-Code-R-SS-12",
+          "accessed": "2026-10-24",
+          "publisherType": "secondary"
+        }
+      ],
+      "note": "No credit for sales or use tax paid to another state on a vehicle first registered by the purchaser in Arkansas (purchases after Nov 3, 1989)."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Title",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 10,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Arkansas DFA - Motor vehicle registration fee schedule",
+            "url": "https://dfa.arkansas.gov/wp-content/uploads/mv-reg-fees.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Title fee on the department's fee schedule."
+      }
+    },
+    {
+      "id": "registration",
+      "label": "Registration (passenger, by weight)",
+      "kind": "weightTable",
+      "frequency": "annual",
+      "weightTable": [
+        {
+          "upTo": 3000,
+          "fee": 19.5
+        },
+        {
+          "upTo": 4500,
+          "fee": 27.5
+        },
+        {
+          "upTo": null,
+          "fee": 32.5
+        }
+      ],
+      "amount": {
+        "value": 1,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Arkansas DFA - Motor vehicle registration fee schedule",
+            "url": "https://dfa.arkansas.gov/wp-content/uploads/mv-reg-fees.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Registration fee by weight plus the validation decal fee of $2.50. Postage is separate."
+      }
+    },
+    {
+      "id": "ev-fee",
+      "label": "Electric vehicle fee (all-electric)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "ev"
+      },
+      "amount": {
+        "value": 200,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "U.S. Dept. of Energy AFDC - Arkansas electric and hybrid vehicle registration fees (Ark. Code 27-14-614)",
+            "url": "https://afdc.energy.gov/laws/12182",
+            "accessed": "2026-10-24",
+            "publisherType": "secondary"
+          }
+        ],
+        "note": "Yearly fee for an all-electric vehicle under Ark. Code 27-14-614. Hybrids and plug-in hybrids pay smaller fees that are not included."
+      }
+    }
+  ],
+  "notes": [
+    "Arkansas counties assess a yearly personal property tax on the vehicle, which is not included.",
+    "Registration amounts include the $2.50 validation decal fee; a small postage fee is not included.",
+    "A used vehicle priced from $4,000 to $9,999 is taxed at a lower state rate than the 6.5% used here; under $4,000 no tax is due."
+  ],
+  "content": {
+    "intro": "{state} charges {stateRate} state sales tax on a new vehicle, plus city and county tax. Registration is paid every year by weight.",
+    "howItWorks": [
+      {
+        "text": "The state rate is {stateRate} for a new vehicle. A used vehicle in a lower price range is taxed at a lower state rate.",
+        "sources": [
+          "https://www.dfa.arkansas.gov/office/motor-vehicle/faqs-for-dsmv/"
+        ]
+      },
+      {
+        "text": "A trade-in lowers the price the tax is figured on, but only when the trade-in is itself a licensed motor vehicle.",
+        "sources": [
+          "https://www.law.cornell.edu/regulations/arkansas/006-05-06-Ark-Code-R-SS-12"
+        ]
+      },
+      {
+        "text": "Tax paid to another state on a vehicle first registered here is not credited against the Arkansas tax.",
+        "sources": [
+          "https://www.law.cornell.edu/regulations/arkansas/006-05-06-Ark-Code-R-SS-12"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does a trade-in lower the sales tax in Arkansas?",
+        "text": "Yes, tax is due on the difference between the price and the trade-in credit, if the trade-in is a motor vehicle, trailer or semitrailer.",
+        "sources": [
+          "https://www.law.cornell.edu/regulations/arkansas/006-05-06-Ark-Code-R-SS-12"
+        ]
+      },
+      {
+        "q": "Does Arkansas give credit for tax paid in another state?",
+        "text": "Not for a vehicle that you first register in Arkansas.",
+        "sources": [
+          "https://www.law.cornell.edu/regulations/arkansas/006-05-06-Ark-Code-R-SS-12"
+        ]
+      }
+    ]
+  }
+}

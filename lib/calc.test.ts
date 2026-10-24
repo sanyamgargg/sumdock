@@ -790,3 +790,22 @@ describe("South Carolina", () => {
   });
 });
 
+
+describe("Arkansas", () => {
+  const ar = load("ar");
+  it("is publishable", () => expect(publishability(ar).publishable).toBe(true));
+  it("taxes the price less a trade-in at 6.5% plus the entered local rate", () => {
+    const r = calculate(ar, { ...base, price: 30000, tradeIn: 10000, localRatePct: 3 });
+    expect(line(r, "state-tax")).toBe(1300);
+    expect(line(r, "local-tax")).toBe(600);
+  });
+  it("charges registration by weight including the decal fee", () => {
+    expect(line(calculate(ar, { ...base, weightLbs: 3000 }), "registration")).toBe(19.5);
+    expect(line(calculate(ar, { ...base, weightLbs: 3500 }), "registration")).toBe(27.5);
+    expect(line(calculate(ar, { ...base, weightLbs: 5000 }), "registration")).toBe(32.5);
+  });
+  it("charges the EV fee only for EVs", () => {
+    expect(line(calculate(ar, base), "ev-fee")).toBeUndefined();
+    expect(line(calculate(ar, { ...base, fuel: "ev" }), "ev-fee")).toBe(200);
+  });
+});

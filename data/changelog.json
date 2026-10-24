@@ -3,6 +3,12 @@
   "entries": [
     {
       "date": "2026-10-24",
+      "state": "AR",
+      "stateName": "Arkansas",
+      "summary": "Added state with the 6.5% state sales tax (new vehicles and used ones priced $10,000 or more), trade-in rule, an entered local rate, title, registration by weight and the electric vehicle fee. Lower state rates for used vehicles under $10,000 and the yearly county personal property tax are not included."
+    },
+    {
+      "date": "2026-10-24",
       "state": "SC",
       "stateName": "South Carolina",
       "summary": "Added state with the 5% infrastructure maintenance fee (capped at $500, paid instead of sales tax), title, two-year registration and the electric vehicle fee. The county vehicle property tax and the hybrid fee are not included."
