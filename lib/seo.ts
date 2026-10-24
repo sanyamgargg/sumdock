@@ -28,7 +28,7 @@ export function exampleTotal(s: StateData): number | null {
 export function stateDescription(s: StateData): string {
   const total = exampleTotal(s);
   const rate = s.salesTax.stateRatePct;
-  const rateText = rate.value !== null && isUsable(rate.status) ? `${rate.value}% state sales tax, ` : "";
+  const rateText = rate.value !== null && isUsable(rate.status) ? `${rate.value}% ${s.salesTax.taxName ?? "state sales tax"}, ` : "";
   const ex = total === null ? "" : ` Example: a ${usd(DEFAULT_INPUTS.price)} vehicle comes to ${usd(total)} in taxes and fees.`;
   return `${s.name} vehicle costs: ${rateText}title and registration fees, each linked to the official ${s.name} page and last checked ${formatDate(s.lastReviewed)}.${ex}`;
 }

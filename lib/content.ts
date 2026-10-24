@@ -115,7 +115,7 @@ export interface Figure {
 export function figures(state: StateData): Figure[] {
   const st = state.salesTax;
   const out: Figure[] = [
-    { label: "State sales tax rate", value: st.stateRatePct.value === null ? "Unknown" : `${st.stateRatePct.value}%`, status: st.stateRatePct.status, note: st.stateRatePct.note, sources: st.stateRatePct.sources },
+    { label: st.taxName ? `State rate (${st.taxName})` : "State sales tax rate", value: st.stateRatePct.value === null ? "Unknown" : `${st.stateRatePct.value}%`, status: st.stateRatePct.status, note: st.stateRatePct.note, sources: st.stateRatePct.sources },
     { label: "Trade-in reduces taxable price", value: st.tradeInReducesBase.value === null ? "Unknown" : st.tradeInReducesBase.value ? "Yes" : "No", status: st.tradeInReducesBase.status, note: st.tradeInReducesBase.note, sources: st.tradeInReducesBase.sources },
     { label: "Local tax", value: st.local.value ? (st.local.value.mode === "none" ? "None" : "Varies by location") : "Unknown", status: st.local.status, note: st.local.note, sources: st.local.sources },
   ];

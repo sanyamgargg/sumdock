@@ -83,6 +83,10 @@ export interface StateData {
     higherRate?: Sourced<{ overPrice: number; ratePct: number }> | null;
     /** Most the trade-in can reduce the taxable price (Michigan: 12000). Omit when there is no cap. */
     tradeInCap?: number | null;
+    /** Most the state tax can be, in dollars (South Carolina: the infrastructure maintenance fee is capped). Omit when there is no cap. */
+    maxTax?: number | null;
+    /** What the state charges instead of a sales tax, for the line label (South Carolina: "infrastructure maintenance fee"). Default "sales tax". */
+    taxName?: string;
     local: Sourced<LocalRule>;
     outOfStateCredit: Sourced<boolean>;
     useTax: Sourced<UseTaxRule> | null;

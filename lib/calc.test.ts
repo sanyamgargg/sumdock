@@ -735,3 +735,58 @@ describe("Kansas", () => {
   });
 });
 
+describe("Tennessee", () => {
+  const tn = load("tn");
+  it("is publishable", () => expect(publishability(tn).publishable).toBe(true));
+  it("taxes the price less a trade-in at 7%", () => {
+    expect(line(calculate(tn, { ...base, price: 30000, tradeIn: 10000 }), "state-tax")).toBe(1400);
+  });
+  it("applies the local rate to only the first $1,600", () => {
+    expect(line(calculate(tn, { ...base, price: 30000, localRatePct: 2.75 }), "local-tax")).toBe(44);
+  });
+  it("adds the flat additional state tax for prices above $3,200", () => {
+    expect(line(calculate(tn, { ...base, price: 30000 }), "single-article-tax")).toBe(44);
+    expect(line(calculate(tn, { ...base, price: 3000 }), "single-article-tax")).toBeUndefined();
+  });
+  it("charges title, clerk fee and registration, plus the EV fee only for EVs", () => {
+    const r = calculate(tn, base);
+    expect(line(r, "title")).toBe(14);
+    expect(line(r, "title-clerk-fee")).toBe(8.5);
+    expect(line(r, "registration")).toBe(26.5);
+    expect(line(r, "ev-fee")).toBeUndefined();
+    expect(line(calculate(tn, { ...base, fuel: "ev" }), "ev-fee")).toBe(200);
+  });
+  it("lists the county wheel tax as not included", () => {
+    expect(calculate(tn, base).excluded.map((e) => e.label)).toContain("County wheel tax and clerk fees");
+  });
+});
+
+describe("South Carolina", () => {
+  const sc = load("sc");
+  it("is publishable", () => expect(publishability(sc).publishable).toBe(true));
+  it("charges 5% below the cap and the cap above it", () => {
+    expect(line(calculate(sc, { ...base, price: 8000 }), "state-tax")).toBe(400);
+    expect(line(calculate(sc, { ...base, price: 30000 }), "state-tax")).toBe(500);
+    expect(line(calculate(sc, { ...base, price: 90000 }), "state-tax")).toBe(500);
+  });
+  it("names the fee on the receipt", () => {
+    const l = calculate(sc, base).lines.find((x) => x.id === "state-tax")!;
+    expect(l.label).toContain("infrastructure maintenance fee");
+    expect(l.label).toContain("$500");
+  });
+  it("a trade-in lowers the fee below the cap", () => {
+    expect(line(calculate(sc, { ...base, price: 12000, tradeIn: 4000 }), "state-tax")).toBe(400);
+  });
+  it("credits tax paid elsewhere against the capped fee", () => {
+    expect(line(calculate(sc, { ...base, price: 30000, outOfStateTaxPaid: 800 }), "oos-credit")).toBe(-500);
+  });
+  it("charges title and registration, plus the EV fee only for EVs, and lists the county tax", () => {
+    const r = calculate(sc, base);
+    expect(line(r, "title")).toBe(15);
+    expect(line(r, "registration")).toBe(40);
+    expect(line(r, "ev-fee")).toBeUndefined();
+    expect(line(calculate(sc, { ...base, fuel: "ev" }), "ev-fee")).toBe(120);
+    expect(r.excluded.map((e) => e.label)).toContain("County vehicle property tax");
+  });
+});
+

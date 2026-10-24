@@ -1,0 +1,272 @@
+{
+  "code": "TN",
+  "name": "Tennessee",
+  "slug": "tennessee",
+  "lastReviewed": "2026-10-24",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 7,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Tennessee Dept. of Revenue - SUT-6, Single Article Tax overview (Mar 2025)",
+          "url": "https://revenue.support.tn.gov/hc/en-us/articles/360058138992-SUT-6-Single-Article-Tax-Overview-and-Application",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Tennessee Dept. of Revenue - County Clerk Sales and Use Tax Manual for Automobiles & Boats (March 2021)",
+          "url": "https://www.tn.gov/content/dam/tn/revenue/documents/tax_manuals/County%20Clerk%20Manual%20March%202021.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The 7% state tax applies to the entire purchase price. An additional state tax applies to part of the price, shown as a separate line."
+    },
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Tennessee Dept. of Revenue - County Clerk Sales and Use Tax Manual for Automobiles & Boats (March 2021)",
+          "url": "https://www.tn.gov/content/dam/tn/revenue/documents/tax_manuals/County%20Clerk%20Manual%20March%202021.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Tax is figured on the net difference between the sales price and the trade-in. The trade-in must be listed on the customer's invoice and be of like kind and character."
+    },
+    "local": {
+      "value": {
+        "mode": "user-entered",
+        "capBase": 1600,
+        "rangeNote": "The local tax applies only to the first part of the price. Enter your county or city rate from the state's rate lookup."
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Tennessee Dept. of Revenue - Single article special tax rates",
+          "url": "https://www.tn.gov/revenue/taxes/sales-and-use-tax/single-article-special-tax-rates.html",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Tennessee Dept. of Revenue - SUT-6, Single Article Tax overview (Mar 2025)",
+          "url": "https://revenue.support.tn.gov/hc/en-us/articles/360058138992-SUT-6-Single-Article-Tax-Overview-and-Application",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Tennessee Dept. of Revenue - County Clerk Sales and Use Tax Manual for Automobiles & Boats (March 2021)",
+          "url": "https://www.tn.gov/content/dam/tn/revenue/documents/tax_manuals/County%20Clerk%20Manual%20March%202021.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The local tax applies only to the first $1,600 of the price of a single article. The sources do not list local rates, so you enter yours."
+    },
+    "outOfStateCredit": {
+      "value": true,
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Tennessee Dept. of Revenue - County Clerk Sales and Use Tax Manual for Automobiles & Boats (March 2021)",
+          "url": "https://www.tn.gov/content/dam/tn/revenue/documents/tax_manuals/County%20Clerk%20Manual%20March%202021.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Credit is given for sales or use tax paid in another state if you relocate to Tennessee and show proof of a legally imposed tax."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "single-article-tax",
+      "label": "Additional state tax on the second $1,600 of the price (2.75%)",
+      "kind": "flat",
+      "frequency": "once",
+      "when": {
+        "priceAtLeast": 3200
+      },
+      "amount": {
+        "value": 44,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Tennessee Dept. of Revenue - SUT-6, Single Article Tax overview (Mar 2025)",
+            "url": "https://revenue.support.tn.gov/hc/en-us/articles/360058138992-SUT-6-Single-Article-Tax-Overview-and-Application",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Tennessee Dept. of Revenue - County Clerk Sales and Use Tax Manual for Automobiles & Boats (March 2021)",
+            "url": "https://www.tn.gov/content/dam/tn/revenue/documents/tax_manuals/County%20Clerk%20Manual%20March%202021.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The 2.75% applies to the part of the price above $1,600 up to $3,200, so it is $44 for any vehicle taxed on more than $3,200. A vehicle taxed on less than that pays a smaller amount that this calculator does not work out."
+      }
+    },
+    {
+      "id": "title",
+      "label": "Title",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 14,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Tennessee Dept. of Revenue - Title and registration application RV-F1315201 (Rev. 04-20)",
+            "url": "https://www.tn.gov:443/content/dam/tn/revenue/documents/forms/titlereg/f1315201Fill-in.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Title application form lists a $14.00 title fee."
+      }
+    },
+    {
+      "id": "title-clerk-fee",
+      "label": "County clerk fee for handling the title application",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 8.5,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Tennessee Dept. of Revenue - Notice #22-11, county motor vehicle title fee (June 2022)",
+            "url": "https://www.tennessee.gov/content/dam/tn/revenue/documents/notices/titlereg/tr22-11.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The fee paid to county clerks for receiving and forwarding each title application, in effect since July 1, 2022."
+      }
+    },
+    {
+      "id": "registration",
+      "label": "Registration (standard)",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 26.5,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Tennessee Dept. of Revenue - VR-5, Registration fees for hybrid or electric vehicles (Jan 2024)",
+            "url": "https://revenue.support.tn.gov/hc/en-us/articles/360060541291-VR-5-Registration-Fees-for-Hybrid-or-Electric-Vehicles",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The state's standard registration fee. County clerks may add fees."
+      }
+    },
+    {
+      "id": "ev-fee",
+      "label": "Electric vehicle fee (all-electric)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "ev"
+      },
+      "amount": {
+        "value": 200,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Tennessee Dept. of Revenue - VR-5, Registration fees for hybrid or electric vehicles (Jan 2024)",
+            "url": "https://revenue.support.tn.gov/hc/en-us/articles/360060541291-VR-5-Registration-Fees-for-Hybrid-or-Electric-Vehicles",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "This amount is for renewals before January 1, 2027, when it rises. Hybrids and plug-in hybrids pay a separate fee that is not included."
+      }
+    },
+    {
+      "id": "county-wheel-tax",
+      "label": "County wheel tax and clerk fees",
+      "kind": "flat",
+      "frequency": "annual",
+      "excludedReason": "Many counties and cities add a wheel tax and clerk fees at registration. The amounts differ by county, so they are not included.",
+      "amount": {
+        "value": null,
+        "status": "unverified",
+        "sources": [
+          {
+            "title": "Tennessee Dept. of Revenue - VR-5, Registration fees for hybrid or electric vehicles (Jan 2024)",
+            "url": "https://revenue.support.tn.gov/hc/en-us/articles/360060541291-VR-5-Registration-Fees-for-Hybrid-or-Electric-Vehicles",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    }
+  ],
+  "notes": [
+    "The additional state tax on the second $1,600 is a flat amount for vehicles priced above $3,200.",
+    "Many counties add a yearly wheel tax and clerk fees, which are not included.",
+    "The electric vehicle fee rises on January 1, 2027."
+  ],
+  "content": {
+    "intro": "{state} charges {stateRate} state sales tax on the whole price, an extra state tax on a slice of the price, and a local tax that applies only to the first part of the price.",
+    "howItWorks": [
+      {
+        "text": "The state rate is {stateRate} of the purchase price after your trade-in. The trade-in must be listed on the invoice and be of like kind.",
+        "sources": [
+          "https://revenue.support.tn.gov/hc/en-us/articles/360058138992-SUT-6-Single-Article-Tax-Overview-and-Application",
+          "https://www.tn.gov/content/dam/tn/revenue/documents/tax_manuals/County%20Clerk%20Manual%20March%202021.pdf"
+        ]
+      },
+      {
+        "text": "An additional state tax applies to the slice of the price between two set amounts, so for most vehicles it is the same flat dollar amount.",
+        "sources": [
+          "https://revenue.support.tn.gov/hc/en-us/articles/360058138992-SUT-6-Single-Article-Tax-Overview-and-Application",
+          "https://www.tn.gov/content/dam/tn/revenue/documents/tax_manuals/County%20Clerk%20Manual%20March%202021.pdf"
+        ]
+      },
+      {
+        "text": "The local tax applies only to the first part of the price, so it adds a small, nearly fixed amount for most vehicles.",
+        "sources": [
+          "https://www.tn.gov/revenue/taxes/sales-and-use-tax/single-article-special-tax-rates.html",
+          "https://www.tn.gov/content/dam/tn/revenue/documents/tax_manuals/County%20Clerk%20Manual%20March%202021.pdf"
+        ]
+      },
+      {
+        "text": "Registration is paid every year, and many counties add a wheel tax and clerk fees on top.",
+        "sources": [
+          "https://revenue.support.tn.gov/hc/en-us/articles/360060541291-VR-5-Registration-Fees-for-Hybrid-or-Electric-Vehicles"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does a trade-in lower the sales tax in Tennessee?",
+        "text": "Yes. Tax is figured on the net difference between the price and the trade-in, as long as the trade-in is listed on the invoice and is of like kind and character.",
+        "sources": [
+          "https://www.tn.gov/content/dam/tn/revenue/documents/tax_manuals/County%20Clerk%20Manual%20March%202021.pdf"
+        ]
+      },
+      {
+        "q": "Why is the local tax so small?",
+        "text": "The local tax applies only to the first part of the price of a single item, so it does not grow with the price of the vehicle.",
+        "sources": [
+          "https://www.tn.gov/revenue/taxes/sales-and-use-tax/single-article-special-tax-rates.html",
+          "https://www.tn.gov/content/dam/tn/revenue/documents/tax_manuals/County%20Clerk%20Manual%20March%202021.pdf"
+        ]
+      },
+      {
+        "q": "Do electric vehicles pay more to register?",
+        "text": "Yes. All-electric vehicles pay an additional yearly fee on top of the standard registration fee, and the state has set a higher amount that starts on a scheduled date.",
+        "sources": [
+          "https://revenue.support.tn.gov/hc/en-us/articles/360060541291-VR-5-Registration-Fees-for-Hybrid-or-Electric-Vehicles"
+        ]
+      }
+    ]
+  }
+}

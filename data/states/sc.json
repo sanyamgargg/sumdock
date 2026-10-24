@@ -1,0 +1,214 @@
+{
+  "code": "SC",
+  "name": "South Carolina",
+  "slug": "south-carolina",
+  "lastReviewed": "2026-10-24",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 5,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "South Carolina DOR - Sales and Use Tax: Auto and Truck Dealers Guide (Dec 2025)",
+          "url": "https://dor.sc.gov/resources-site/lawandpolicy/Documents/sales-and-use-tax-auto-and-truck-dealers-guide.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "South Carolina DMV - Fees",
+          "url": "https://dmv.sc.gov/Fees",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Vehicles pay an infrastructure maintenance fee of 5% of the gross proceeds of the sale, no more than $500. It is paid to the DMV when you register, instead of sales tax."
+    },
+    "maxTax": 500,
+    "taxName": "infrastructure maintenance fee",
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "South Carolina DOR - Sales and Use Tax: Auto and Truck Dealers Guide (Dec 2025)",
+          "url": "https://dor.sc.gov/resources-site/lawandpolicy/Documents/sales-and-use-tax-auto-and-truck-dealers-guide.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The guide defines gross proceeds of sales as not including the value of any trade-in, and the fee is figured on the gross proceeds."
+    },
+    "local": {
+      "value": {
+        "mode": "none",
+        "capBase": null,
+        "rangeNote": null
+      },
+      "status": "verified",
+      "sources": [
+        {
+          "title": "South Carolina DOR - Sales and Use Tax: Auto and Truck Dealers Guide (Dec 2025)",
+          "url": "https://dor.sc.gov/resources-site/lawandpolicy/Documents/sales-and-use-tax-auto-and-truck-dealers-guide.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Sales subject to the fee are exempt from state and local sales and use taxes."
+    },
+    "outOfStateCredit": {
+      "value": true,
+      "status": "partial",
+      "sources": [
+        {
+          "title": "South Carolina DOR - Sales and Use Tax: Auto and Truck Dealers Guide (Dec 2025)",
+          "url": "https://dor.sc.gov/resources-site/lawandpolicy/Documents/sales-and-use-tax-auto-and-truck-dealers-guide.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The guide says a credit for tax paid to another state may apply to the infrastructure maintenance fee. A vehicle first registered in another state by the same owner pays a flat $250 fee instead."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Title",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 15,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "South Carolina DMV - Fees",
+            "url": "https://dmv.sc.gov/Fees",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Expedited title is $35 in person only."
+      }
+    },
+    {
+      "id": "registration",
+      "label": "Registration (most passenger cars)",
+      "kind": "flat",
+      "frequency": "biennial",
+      "amount": {
+        "value": 40,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "South Carolina DMV - Fees",
+            "url": "https://dmv.sc.gov/Fees",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Paid once every two years. Drivers aged 64 pay $38, and drivers 65 or older or with a disability pay $36."
+      }
+    },
+    {
+      "id": "ev-fee",
+      "label": "Electric vehicle fee",
+      "kind": "flat",
+      "frequency": "biennial",
+      "when": {
+        "fuel": "ev"
+      },
+      "amount": {
+        "value": 120,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "South Carolina DMV - Fees",
+            "url": "https://dmv.sc.gov/Fees",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Added to the registration fee. Hybrids pay $60 on top and are not modeled."
+      }
+    },
+    {
+      "id": "county-property-tax",
+      "label": "County vehicle property tax",
+      "kind": "flat",
+      "frequency": "annual",
+      "excludedReason": "Counties bill a yearly property tax on the vehicle, and you must pay it before you can register with the DMV. The amount depends on your county and the vehicle's value, so it is not included.",
+      "amount": {
+        "value": null,
+        "status": "unverified",
+        "sources": [
+          {
+            "title": "Greenville County Auditor - Vehicle registration and property tax",
+            "url": "https://www.greenvillecounty.org/auditor/VehicleRegistration.aspx",
+            "accessed": "2026-10-24",
+            "publisherType": "county-agency"
+          }
+        ]
+      }
+    }
+  ],
+  "notes": [
+    "The infrastructure maintenance fee replaces sales tax and is capped, so expensive vehicles pay the same top amount.",
+    "A vehicle first registered in another state by the same owner pays a flat $250 fee instead of the percentage.",
+    "A hybrid vehicle adds $60 to registration, which is not included."
+  ],
+  "content": {
+    "intro": "{state} has no sales tax on a vehicle. Instead you pay an infrastructure maintenance fee of {stateRate} of the price, capped at a top amount, plus a title fee and a two-year registration fee.",
+    "howItWorks": [
+      {
+        "text": "The infrastructure maintenance fee is {stateRate} of the gross proceeds of the sale, up to a maximum. The value of a trade-in is not part of the gross proceeds.",
+        "sources": [
+          "https://dor.sc.gov/resources-site/lawandpolicy/Documents/sales-and-use-tax-auto-and-truck-dealers-guide.pdf",
+          "https://dmv.sc.gov/Fees"
+        ]
+      },
+      {
+        "text": "A sale that pays the fee is exempt from state and local sales and use taxes, so no county or city tax is added on top.",
+        "sources": [
+          "https://dor.sc.gov/resources-site/lawandpolicy/Documents/sales-and-use-tax-auto-and-truck-dealers-guide.pdf"
+        ]
+      },
+      {
+        "text": "A vehicle first registered in another state and later registered here by the same owner pays a flat fee, not a percentage.",
+        "sources": [
+          "https://dor.sc.gov/resources-site/lawandpolicy/Documents/sales-and-use-tax-auto-and-truck-dealers-guide.pdf",
+          "https://dmv.sc.gov/Fees"
+        ]
+      },
+      {
+        "text": "Counties bill a yearly property tax on vehicles, and you must pay it before registering. It is not part of this total.",
+        "sources": [
+          "https://www.greenvillecounty.org/auditor/VehicleRegistration.aspx"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is there a sales tax on cars in South Carolina?",
+        "text": "No. Vehicles pay an infrastructure maintenance fee instead, which is a percentage of the price with a maximum amount.",
+        "sources": [
+          "https://dor.sc.gov/resources-site/lawandpolicy/Documents/sales-and-use-tax-auto-and-truck-dealers-guide.pdf",
+          "https://dmv.sc.gov/Fees"
+        ]
+      },
+      {
+        "q": "Does a trade-in lower the fee?",
+        "text": "Yes. The fee is figured on the gross proceeds of the sale, which the DOR guide defines as not including the value of any trade-in.",
+        "sources": [
+          "https://dor.sc.gov/resources-site/lawandpolicy/Documents/sales-and-use-tax-auto-and-truck-dealers-guide.pdf"
+        ]
+      },
+      {
+        "q": "Is the county property tax included?",
+        "text": "No. It is billed by your county and depends on the vehicle's value, and it must be paid before you register.",
+        "sources": [
+          "https://www.greenvillecounty.org/auditor/VehicleRegistration.aspx"
+        ]
+      }
+    ]
+  }
+}

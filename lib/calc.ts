@@ -43,9 +43,11 @@ export function calculate(state: StateData, i: Inputs): Result {
       excluded.push({ label: "Higher sales tax rate", reason: `A higher rate applies above $${hr!.value!.overPrice.toLocaleString("en-US")}, but it is not yet verified, so the standard rate is used.` });
     }
     const rateNow = useHigher ? hr!.value!.ratePct : rate.value;
-    const stateTax = round2((base * rateNow) / 100);
+    const rawTax = round2((base * rateNow) / 100);
+    const stateTax = st.maxTax != null ? Math.min(rawTax, st.maxTax) : rawTax;
     if (rateNow > 0) {
-      lines.push({ id: "state-tax", label: `${state.name} sales tax (${rateNow}%)`, amount: stateTax, status: useHigher ? hr!.status : rate.status, note: useHigher ? hr!.note : rate.note });
+      const capText = st.maxTax != null ? `, up to $${st.maxTax.toLocaleString("en-US")}` : "";
+      lines.push({ id: "state-tax", label: `${state.name} ${st.taxName ?? "sales tax"} (${rateNow}%${capText})`, amount: stateTax, status: useHigher ? hr!.status : rate.status, note: useHigher ? hr!.note : rate.note });
     }
 
     const local = st.local;

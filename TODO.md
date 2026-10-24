@@ -8,34 +8,28 @@ Two columns per state: what only Sanyam can do (blocked sites, accounts, pushing
 | Spot-check one city with a price tier (for example Avondale, 5,000 dollar tier) on the ADOR rate look-up tool or with a dealer, and tell Claude if the tax on a 30,000 dollar car differs from the calculator | City tax is now modeled (96 cities, 33 with a lower rate above a set price). Table wording says only "Single Item Over" for some cities; treated as the part above the price. Confirm from an ADOR source, then mark the local rate verified |
 | | Vehicle license tax is not included (needs list price and age inputs) |
 
-## South Carolina (researched, not added)
-| Sanyam | Claude |
-|---|---|
-| Links: https://dor.sc.gov/resources-site/lawandpolicy/Documents/sales-and-use-tax-auto-and-truck-dealers-guide.pdf and https://dmv.sc.gov/Fees . Ask SCDOR or SCDMV whether a trade-in lowers the IMF base | Official facts found: infrastructure maintenance fee (IMF) of 5% of gross proceeds, at most $500, in place of state and local sales tax (SCDOR dealers guide, Dec 2025); title $15; registration $40 every two years; hybrid +$60, EV +$120 (dmv.sc.gov/Fees) |
-| | Blocked: no official page says whether a trade-in lowers the IMF base, so the state cannot be published. Needs a "maximum tax" field in the calculator too |
-
 ## Idaho (researched, not added)
 | Sanyam | Claude |
 |---|---|
-| Links: https://itd.idaho.gov/dmv/vehicle-registration/ and https://itd.idaho.gov/dmv/vehicle-titles/ . Check the age bands in the fee table with an ITD office or the page itself | Official ITD page: registration by vehicle age ($69 for 1 or 2 years, $57 for the 3 to 6 band, $45 for 7 or more, EV +$140, plug-in hybrid +$75) plus county registration and title admin fees for 44 counties; title $14 |
-| | Blocked: the page prints the middle band as "3 or 6 years" and has no row for 0, 4 or 5 years, so the fee cannot be modeled safely. Needs a finer age input and a county fee table |
+| Ask ITD (or check their page again) what the middle age band really is: the page prints "3 or 6 years" and has no row for 0, 4 or 5 years (your saved PDF shows the same) | Official ITD page: registration $69 for 1 or 2 years old, $57 for the middle band, $45 for 7 or more, EV +$140, plug-in hybrid +$75; title $14 plus county admin fees for 44 counties |
+| | Blocked: the age bands and a finer vehicle age input in the calculator |
 
 ## North Dakota (researched, not added)
 | Sanyam | Claude |
 |---|---|
-| If you can open it, download https://www.dot.nd.gov/sites/default/files/documents/Motor%20Vehicle%20Services/registration-manual.pdf and save it in tmp/ (my tools cannot read the fee table in it) | Verified so far (tax.nd.gov): 5% excise tax on purchase price less trade-in; credit for excise tax paid elsewhere if the other state allows a reciprocal credit |
-| | From the DOT manual: title $5; electric vehicle road use fee $120, plug-in hybrid $50 on top of registration |
-| | Blocked: the passenger registration fee depends on weight and the year first registered, and the table is in the part of the PDF I cannot read |
+| Download https://www.dot.nd.gov/sites/www/files/documents/MVD%20-%202%20Passenger%20Fee%202023.pdf (my tools get an error on it) and save it in tmp/. The registration-manual.pdf you added does not contain the fee table | Verified so far: 5% excise tax on purchase price less trade-in, credit if the other state allows a reciprocal credit (tax.nd.gov); title $5, abandoned vehicle disposal fee $1.50, electric $120 and plug-in hybrid $50 road use fees (DOT manual, Rev. 07/25) |
+| | Blocked: the passenger registration fee depends on weight and the year first registered. The 2023 schedule may also have changed under a 2025 bill, so check it is current |
 
 ## South Dakota (researched, not added)
 | Sanyam | Claude |
 |---|---|
-| Links: https://dor.sd.gov/individuals/motor-vehicle/cars-trucks-vans/ (open the non-commercial license fees PDF linked there and save it in tmp/) | 4% excise tax on purchase price and a $10 title fee are on dor.sd.gov, but the page does not say whether a trade-in lowers the price, and registration amounts are in a separate PDF |
+| Find an official SD DOR page that says whether a trade-in lowers the 4% excise tax base (the cars-trucks-vans page does not say) | Have: 4% excise tax on purchase price, $10 title fee, and the staggered non-commercial license fee table (non-commercial-vehicle-license-fee.pdf in tmp/): by weight and vehicle age, per month of registration |
+| | Blocked: trade-in rule, and the calculator needs a vehicle age input finer than new, recent and older to use the 0 to 9 versus 10+ year bands |
 
 ## Rhode Island, New Mexico, Maine (researched, not added)
 | Sanyam | Claude |
 |---|---|
-| Open https://dmv.ri.gov/registrations-plates-titles/registration/registration-fees in your browser (it shows a bot check to me) and send me the passenger "New" and "Renewal" rows | Rhode Island: 7% sales tax on purchase price minus trade-in for dealer sales (passenger vehicles only); title $52.50 (dmv.ri.gov, no date on pages). Blocked on registration amounts and the credit for tax paid elsewhere |
+| Find the Rhode Island passenger registration fee by weight (your saved page says only "based on vehicle weight" and lists no amounts; try the RI DMV registration fee schedule or the statute table) | Rhode Island: 7% sales tax on purchase price minus trade-in for dealer sales (passenger vehicles only); new title $53.50 including the $3.50 technology surcharge; passenger registration adds $3.50 and a $20 DOT surcharge per year plus an EV fee. Blocked on the weight table and credit for tax paid elsewhere |
 | Find the registration fee table by weight and model year at https://www.mvd.newmexico.gov/what-is-the-fee-for-registering-my-vehicle/ or a linked PDF | New Mexico: 4% excise tax on price minus trade-in, credit for tax paid elsewhere (tax.newmexico.gov, page modified Apr 2026). Registration is $27 to $62 a year by weight and model year, but no table found; title fee not found |
 | Nothing yet | Maine: 5.5% sales tax and $33 title fee are on maine.gov/sos; the page does not say if a trade-in lowers the tax, registration amounts are on a separate page, and the yearly excise tax is billed by your town |
 
@@ -100,7 +94,7 @@ Two columns per state: what only Sanyam can do (blocked sites, accounts, pushing
 Registration tax is based on the vehicle's value, so it would be left out; not started.
 
 ## Added since the last list
-Kansas, Nebraska, Vermont, West Virginia, Connecticut, Alabama, Wisconsin, Indiana, Massachusetts, New Jersey, Virginia, Washington, Arizona. Indiana and Massachusetts: yearly excise taxes are not included (Indiana depends on value and county, Massachusetts is billed by your city or town).
+Tennessee, South Carolina, Kansas, Nebraska, Vermont, West Virginia, Connecticut, Alabama, Wisconsin, Indiana, Massachusetts, New Jersey, Virginia, Washington, Arizona. Indiana and Massachusetts: yearly excise taxes are not included (Indiana depends on value and county, Massachusetts is billed by your city or town).
 
 ## Other states waiting
 | Sanyam | Claude |

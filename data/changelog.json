@@ -3,6 +3,18 @@
   "entries": [
     {
       "date": "2026-10-24",
+      "state": "SC",
+      "stateName": "South Carolina",
+      "summary": "Added state with the 5% infrastructure maintenance fee (capped at $500, paid instead of sales tax), title, two-year registration and the electric vehicle fee. The county vehicle property tax and the hybrid fee are not included."
+    },
+    {
+      "date": "2026-10-24",
+      "state": "TN",
+      "stateName": "Tennessee",
+      "summary": "Added state with the 7% state sales tax after trade-in, the additional state tax on the second $1,600, the local tax on the first $1,600 (you enter the rate), title, county clerk title fee, registration and the electric vehicle fee. County wheel taxes and clerk registration fees are not included."
+    },
+    {
+      "date": "2026-10-24",
       "state": "KS",
       "stateName": "Kansas",
       "summary": "Added state with the 6.5% state sales tax after trade-in, an entered local rate, title, registration by weight, the county service fee and the electric vehicle fee. The yearly county property tax and hybrid fees are not included."
