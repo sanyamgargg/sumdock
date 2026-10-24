@@ -1,0 +1,213 @@
+{
+  "code": "IN",
+  "name": "Indiana",
+  "slug": "indiana",
+  "lastReviewed": "2026-10-24",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 7,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Indiana DOR - Sales Tax Information Bulletin #84 (May 2026)",
+          "url": "https://www.in.gov/dor/files/sib84.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ]
+    },
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Indiana DOR - Sales Tax Information Bulletin #28S, Sales of motor vehicles and trailers (May 2026)",
+          "url": "https://www.in.gov/dor/files/sib28s.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Applies to a like-kind exchange where the traded-in vehicle is owned and titled in the customer's name. Negative equity is not part of the taxable price."
+    },
+    "local": {
+      "value": {
+        "mode": "none",
+        "capBase": null,
+        "rangeNote": null
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Indiana DOR - Sales Tax Information Bulletin #84 (May 2026)",
+          "url": "https://www.in.gov/dor/files/sib84.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The bulletin states one 7% sales tax rate on retail transactions in Indiana. Counties may add vehicle excise or wheel tax at registration, which is not included."
+    },
+    "outOfStateCredit": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Indiana DOR - Sales Tax Information Bulletin #28S, Sales of motor vehicles and trailers (May 2026)",
+          "url": "https://www.in.gov/dor/files/sib28s.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "When a vehicle bought elsewhere is registered in Indiana, use tax is owed on the difference between the other state's rate and Indiana's."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Title",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 15,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Indiana BMV - Fee chart (revised 1/1/26)",
+            "url": "https://www.in.gov/bmv/files/Fee_Chart.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "registration",
+      "label": "Registration (passenger)",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 21.35,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Indiana BMV - Fee chart (revised 1/1/26)",
+            "url": "https://www.in.gov/bmv/files/Fee_Chart.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "transportation-fee",
+      "label": "Transportation infrastructure improvement fee",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 15,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Indiana BMV - Fee chart (revised 1/1/26)",
+            "url": "https://www.in.gov/bmv/files/Fee_Chart.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Listed on the fee chart as a fee charged with registration."
+      }
+    },
+    {
+      "id": "ev-fee",
+      "label": "Electric vehicle supplemental fee",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "ev"
+      },
+      "amount": {
+        "value": 242,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Indiana BMV - Fee chart (revised 1/1/26)",
+            "url": "https://www.in.gov/bmv/files/Fee_Chart.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Hybrid vehicles pay an $81 supplemental fee, which the calculator does not include."
+      }
+    },
+    {
+      "id": "excise-tax",
+      "label": "Vehicle excise tax and county wheel tax",
+      "kind": "flat",
+      "frequency": "annual",
+      "excludedReason": "Indiana charges a yearly excise tax based on the vehicle's value and age, and some counties add a wheel tax. The amount depends on your county, so it is not included.",
+      "amount": {
+        "value": null,
+        "status": "unverified",
+        "sources": [
+          {
+            "title": "Indiana BMV - County vehicle excise tax and wheel tax",
+            "url": "https://www.in.gov/bmv/fees-taxes/vehicle-registration-fees-and-taxes/county-vehicle-excise-tax-and-wheel-tax/",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    }
+  ],
+  "notes": [
+    "The yearly vehicle excise tax and any county wheel tax are not included.",
+    "A hybrid vehicle pays a separate supplemental fee that is not included."
+  ],
+  "content": {
+    "intro": "{state} charges {stateRate} sales tax on a vehicle, with no local sales tax, plus a title fee and registration fees. A yearly excise tax based on the vehicle's value is billed at registration.",
+    "howItWorks": [
+      {
+        "text": "The sales tax rate is {stateRate}. A trade-in comes off the price when the vehicle you trade in is titled in your name.",
+        "sources": [
+          "https://www.in.gov/dor/files/sib84.pdf",
+          "https://www.in.gov/dor/files/sib28s.pdf"
+        ]
+      },
+      {
+        "text": "If you buy in another state and register here, you owe use tax on the difference between the other state's rate and the Indiana rate.",
+        "sources": [
+          "https://www.in.gov/dor/files/sib28s.pdf"
+        ]
+      },
+      {
+        "text": "Registration is paid each year. The state also charges a yearly excise tax, and some counties add a wheel tax, which are not part of this total.",
+        "sources": [
+          "https://www.in.gov/bmv/fees-taxes/vehicle-registration-fees-and-taxes/county-vehicle-excise-tax-and-wheel-tax/"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does a trade-in lower the sales tax in Indiana?",
+        "text": "Yes, for a like-kind exchange where the vehicle you trade in is owned and titled in your name. Negative equity does not count.",
+        "sources": [
+          "https://www.in.gov/dor/files/sib28s.pdf"
+        ]
+      },
+      {
+        "q": "Why is the excise tax not in the total?",
+        "text": "The yearly excise tax depends on the vehicle's value and age, and some counties add a wheel tax, so it is shown as not included.",
+        "sources": [
+          "https://www.in.gov/bmv/fees-taxes/vehicle-registration-fees-and-taxes/county-vehicle-excise-tax-and-wheel-tax/"
+        ]
+      },
+      {
+        "q": "Do electric vehicles pay an extra fee?",
+        "text": "Yes. Electric vehicles pay a supplemental fee on top of registration, and hybrids pay a separate smaller one.",
+        "sources": [
+          "https://www.in.gov/bmv/files/Fee_Chart.pdf"
+        ]
+      }
+    ]
+  }
+}

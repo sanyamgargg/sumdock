@@ -506,3 +506,24 @@ describe("Massachusetts", () => {
     expect(line(calculate(ma, { ...base, price: 10000, outOfStateTaxPaid: 9999 }), "oos-credit")).toBe(-625);
   });
 });
+
+describe("Indiana", () => {
+  const inState = load("in");
+  it("is publishable", () => expect(publishability(inState).publishable).toBe(true));
+  it("taxes the price less a trade-in at 7%", () => {
+    expect(line(calculate(inState, { ...base, price: 30000, tradeIn: 10000 }), "state-tax")).toBe(1400);
+  });
+  it("charges title, registration and the transportation fee", () => {
+    const r = calculate(inState, base);
+    expect(line(r, "title")).toBe(15);
+    expect(line(r, "registration")).toBe(21.35);
+    expect(line(r, "transportation-fee")).toBe(15);
+    expect(line(r, "ev-fee")).toBeUndefined();
+  });
+  it("adds the electric vehicle supplemental fee only for EVs", () => {
+    expect(line(calculate(inState, { ...base, fuel: "ev" }), "ev-fee")).toBe(242);
+  });
+  it("lists the excise tax as not included", () => {
+    expect(calculate(inState, base).excluded.map((e) => e.label)).toContain("Vehicle excise tax and county wheel tax");
+  });
+});

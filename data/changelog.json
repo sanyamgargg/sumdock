@@ -3,6 +3,12 @@
   "entries": [
     {
       "date": "2026-10-24",
+      "state": "IN",
+      "stateName": "Indiana",
+      "summary": "Added state with the 7% sales tax, title, registration and the electric vehicle supplemental fee. The yearly excise tax and county wheel tax are not included."
+    },
+    {
+      "date": "2026-10-24",
       "state": "MA",
       "stateName": "Massachusetts",
       "summary": "Added state with the 6.25% sales tax, title fee and two-year registration. The yearly excise tax billed by your city or town is not included."
