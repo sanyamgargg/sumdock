@@ -79,6 +79,8 @@ export interface StateData {
   /** Optional combined sales/use tax rates by county and city, used to fill the local rate. */
   localRates?: {
     label: string;
+    /** combined: rate includes the state rate (subtract it). localOnly: the rate is the local part already. */
+    mode: "combined" | "localOnly";
     rates: Sourced<Record<string, { county: number; places: Record<string, number> }>>;
   };
   notes: string[];

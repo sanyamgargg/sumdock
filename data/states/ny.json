@@ -40,7 +40,7 @@
       "value": {
         "mode": "user-entered",
         "capBase": null,
-        "rangeNote": "Enter your combined county/city rate including the 0.375% MCTD rate if you live in the commuter district. Combined rates are in Tax Department Publication 718."
+        "rangeNote": "Pick your county to fill the combined rate. Rates in the commuter district (NYC, Nassau, Suffolk, Rockland, Westchester, Putnam, Orange, Dutchess) already include 0.375%."
       },
       "status": "verified",
       "sources": [
@@ -392,5 +392,291 @@
     "Minimum 2-year registration of $32.50 also applies to 6+ cylinder vehicles; not modeled.",
     "County use tax and the $50 commuter-district fee depend on county and are not yet in the total.",
     "Private sales are taxed by the DMV on the DTF-802 statement; not modeled."
-  ]
+  ],
+  "localRates": {
+    "label": "Combined state and local sales tax rate by county",
+    "mode": "combined",
+    "rates": {
+      "value": {
+        "Albany": {
+          "county": 8.0,
+          "places": {}
+        },
+        "Allegany": {
+          "county": 8.5,
+          "places": {}
+        },
+        "Broome": {
+          "county": 8.0,
+          "places": {}
+        },
+        "Cattaraugus": {
+          "county": 8.0,
+          "places": {
+            "Olean": 8.0,
+            "Salamanca": 8.0
+          }
+        },
+        "Cayuga": {
+          "county": 8.0,
+          "places": {
+            "Auburn": 8.0
+          }
+        },
+        "Chautauqua": {
+          "county": 8.0,
+          "places": {}
+        },
+        "Chemung": {
+          "county": 8.0,
+          "places": {}
+        },
+        "Chenango": {
+          "county": 8.0,
+          "places": {
+            "Norwich": 8.0
+          }
+        },
+        "Clinton": {
+          "county": 8.0,
+          "places": {}
+        },
+        "Columbia": {
+          "county": 8.0,
+          "places": {}
+        },
+        "Cortland": {
+          "county": 8.0,
+          "places": {}
+        },
+        "Delaware": {
+          "county": 8.0,
+          "places": {}
+        },
+        "Dutchess": {
+          "county": 8.125,
+          "places": {}
+        },
+        "Erie": {
+          "county": 8.75,
+          "places": {}
+        },
+        "Essex": {
+          "county": 8.0,
+          "places": {}
+        },
+        "Franklin": {
+          "county": 8.0,
+          "places": {}
+        },
+        "Fulton": {
+          "county": 8.0,
+          "places": {
+            "Gloversville": 8.0,
+            "Johnstown": 8.0
+          }
+        },
+        "Genesee": {
+          "county": 8.0,
+          "places": {}
+        },
+        "Greene": {
+          "county": 8.0,
+          "places": {}
+        },
+        "Hamilton": {
+          "county": 8.0,
+          "places": {}
+        },
+        "Herkimer": {
+          "county": 8.25,
+          "places": {}
+        },
+        "Jefferson": {
+          "county": 8.0,
+          "places": {}
+        },
+        "Lewis": {
+          "county": 8.0,
+          "places": {}
+        },
+        "Livingston": {
+          "county": 8.0,
+          "places": {}
+        },
+        "Madison": {
+          "county": 8.0,
+          "places": {
+            "Oneida (city)": 8.0
+          }
+        },
+        "Monroe": {
+          "county": 8.0,
+          "places": {}
+        },
+        "Montgomery": {
+          "county": 8.0,
+          "places": {}
+        },
+        "Nassau": {
+          "county": 8.625,
+          "places": {}
+        },
+        "New York City (Bronx, Brooklyn, Manhattan, Queens, Staten Island)": {
+          "county": 8.875,
+          "places": {}
+        },
+        "Niagara": {
+          "county": 8.0,
+          "places": {}
+        },
+        "Oneida": {
+          "county": 8.75,
+          "places": {
+            "Rome": 8.75,
+            "Utica": 8.75
+          }
+        },
+        "Onondaga": {
+          "county": 8.0,
+          "places": {}
+        },
+        "Ontario": {
+          "county": 7.5,
+          "places": {}
+        },
+        "Orange": {
+          "county": 8.125,
+          "places": {}
+        },
+        "Orleans": {
+          "county": 8.0,
+          "places": {}
+        },
+        "Oswego": {
+          "county": 8.0,
+          "places": {
+            "Oswego (city)": 8.0
+          }
+        },
+        "Otsego": {
+          "county": 8.0,
+          "places": {}
+        },
+        "Putnam": {
+          "county": 8.375,
+          "places": {}
+        },
+        "Rensselaer": {
+          "county": 8.0,
+          "places": {}
+        },
+        "Rockland": {
+          "county": 8.375,
+          "places": {}
+        },
+        "St. Lawrence": {
+          "county": 8.0,
+          "places": {
+            "Ogdensburg": 8.0
+          }
+        },
+        "Saratoga": {
+          "county": 7.0,
+          "places": {
+            "Saratoga Springs": 7.0
+          }
+        },
+        "Schenectady": {
+          "county": 8.0,
+          "places": {}
+        },
+        "Schoharie": {
+          "county": 8.0,
+          "places": {}
+        },
+        "Schuyler": {
+          "county": 8.0,
+          "places": {}
+        },
+        "Seneca": {
+          "county": 8.0,
+          "places": {}
+        },
+        "Steuben": {
+          "county": 8.0,
+          "places": {}
+        },
+        "Suffolk": {
+          "county": 8.75,
+          "places": {}
+        },
+        "Sullivan": {
+          "county": 8.0,
+          "places": {}
+        },
+        "Tioga": {
+          "county": 8.0,
+          "places": {}
+        },
+        "Tompkins": {
+          "county": 8.0,
+          "places": {
+            "Ithaca": 8.0
+          }
+        },
+        "Ulster": {
+          "county": 8.0,
+          "places": {}
+        },
+        "Warren": {
+          "county": 7.0,
+          "places": {
+            "Glens Falls": 7.0
+          }
+        },
+        "Washington": {
+          "county": 7.0,
+          "places": {}
+        },
+        "Wayne": {
+          "county": 8.0,
+          "places": {}
+        },
+        "Westchester": {
+          "county": 8.375,
+          "places": {
+            "Mount Vernon": 8.375,
+            "New Rochelle": 8.375,
+            "White Plains": 8.375,
+            "Yonkers": 8.875
+          }
+        },
+        "Wyoming": {
+          "county": 8.0,
+          "places": {}
+        },
+        "Yates": {
+          "county": 8.0,
+          "places": {}
+        }
+      },
+      "status": "verified",
+      "sources": [
+        {
+          "title": "NY Tax Dept - Publication 718 (2/25), Sales and Use Tax Rates by Jurisdiction (effective March 1, 2025)",
+          "url": "https://www.tax.ny.gov/pdf/publications/sales/pub718.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "NY Tax Dept - Locality rate change notices (latest: ST-25-1, Suffolk, effective March 1, 2025)",
+          "url": "https://www.tax.ny.gov/forms/locality_rate_changes.htm",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Combined rate including the 4% state rate; rates marked with an asterisk in the publication already include the 0.375% commuter-district tax. Use the Tax Department's rate lookup for exact jurisdiction by address."
+    }
+  }
 }

@@ -58,9 +58,11 @@ for (const f of files) {
     checkSourced(f, "localRates.rates", d.localRates.rates);
     const base = st.stateRatePct?.value ?? 0;
     for (const [county, e] of Object.entries(d.localRates.rates?.value ?? {})) {
-      if (typeof e.county !== "number" || e.county < base) err(f, `localRates ${county}: county rate must be a number >= state rate`);
+      const floor = d.localRates.mode === "combined" ? base : 0;
+      if (!["combined", "localOnly"].includes(d.localRates.mode)) err(f, "localRates.mode must be combined or localOnly");
+      if (typeof e.county !== "number" || e.county < floor) err(f, `localRates ${county}: county rate must be a number >= state rate`);
       for (const [place, r] of Object.entries(e.places ?? {}))
-        if (typeof r !== "number" || r < base || r > 15) err(f, `localRates ${county}/${place}: implausible rate ${r}`);
+        if (typeof r !== "number" || r < floor || r > 15) err(f, `localRates ${county}/${place}: implausible rate ${r}`);
     }
   }
 

@@ -32,7 +32,7 @@ npm run build             # validate, then export static site to ./out
 
 ## Not built yet
 
-Per-state changelog, AdSense, county registration fees for CA, county data for NY/FL, private-party rules, remaining states.
+Per-state changelog, AdSense, county registration fees and fees by county (CA, NY, FL), private-party rules, remaining states.
 
 ## Hosting (Cloudflare Workers static assets)
 

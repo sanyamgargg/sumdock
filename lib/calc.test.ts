@@ -190,3 +190,28 @@ describe("California combined rates by county and city", () => {
     expect(tax).toBeCloseTo(30000 * 0.1125, 2);
   });
 });
+
+describe("New York and Florida county rates", () => {
+  const ny = load("ny").localRates!.rates.value!;
+  const fl = load("fl").localRates!.rates.value!;
+  it("NY matches Publication 718 spot checks", () => {
+    expect(Object.keys(ny)).toHaveLength(58);
+    expect(ny["Erie"].county).toBe(8.75);
+    expect(ny["Suffolk"].county).toBe(8.75);
+    expect(ny["Ontario"].county).toBe(7.5);
+    expect(ny["Westchester"].places["Yonkers"]).toBe(8.875);
+    expect(ny["New York City (Bronx, Brooklyn, Manhattan, Queens, Staten Island)"].county).toBe(8.875);
+  });
+  it("FL matches DR-15DSS spot checks", () => {
+    expect(Object.keys(fl)).toHaveLength(67);
+    expect(fl["Hamilton"].county).toBe(2);
+    expect(fl["Citrus"].county).toBe(0);
+    expect(fl["Palm Beach"].county).toBe(0.5);
+    expect(fl["Miami-Dade"].county).toBe(1);
+    expect(Object.values(fl).reduce((s, c) => s + c.county, 0)).toBeCloseTo(73.5, 6);
+  });
+  it("FL surtax from a county rate applies to first $5,000 only", () => {
+    const r = calculate(load("fl"), { ...base, price: 30000, tradeIn: 0, localRatePct: fl["Hillsborough"].county });
+    expect(line(r, "local-tax")).toBeCloseTo(75, 2);
+  });
+});

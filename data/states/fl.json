@@ -239,5 +239,291 @@
     "Surtax is based on the county of the purchaser's address; look up the rate in DOR form DR-15DSS.",
     "Card/online processing fees ($2.00 online, 2.5% at some counties) and delinquent fees are not modeled.",
     "Hope Scholarship contribution ($105) is optional and not included."
-  ]
+  ],
+  "localRates": {
+    "label": "Discretionary sales surtax by county",
+    "mode": "localOnly",
+    "rates": {
+      "value": {
+        "Alachua": {
+          "county": 1.5,
+          "places": {}
+        },
+        "Baker": {
+          "county": 1,
+          "places": {}
+        },
+        "Bay": {
+          "county": 1,
+          "places": {}
+        },
+        "Bradford": {
+          "county": 1,
+          "places": {}
+        },
+        "Brevard": {
+          "county": 1,
+          "places": {}
+        },
+        "Broward": {
+          "county": 1,
+          "places": {}
+        },
+        "Calhoun": {
+          "county": 1.5,
+          "places": {}
+        },
+        "Charlotte": {
+          "county": 1,
+          "places": {}
+        },
+        "Citrus": {
+          "county": 0,
+          "places": {}
+        },
+        "Clay": {
+          "county": 1.5,
+          "places": {}
+        },
+        "Collier": {
+          "county": 0,
+          "places": {}
+        },
+        "Columbia": {
+          "county": 1.5,
+          "places": {}
+        },
+        "DeSoto": {
+          "county": 1.5,
+          "places": {}
+        },
+        "Dixie": {
+          "county": 1,
+          "places": {}
+        },
+        "Duval": {
+          "county": 1.5,
+          "places": {}
+        },
+        "Escambia": {
+          "county": 1.5,
+          "places": {}
+        },
+        "Flagler": {
+          "county": 1,
+          "places": {}
+        },
+        "Franklin": {
+          "county": 1.5,
+          "places": {}
+        },
+        "Gadsden": {
+          "county": 1.5,
+          "places": {}
+        },
+        "Gilchrist": {
+          "county": 1,
+          "places": {}
+        },
+        "Glades": {
+          "county": 1,
+          "places": {}
+        },
+        "Gulf": {
+          "county": 1,
+          "places": {}
+        },
+        "Hamilton": {
+          "county": 2,
+          "places": {}
+        },
+        "Hardee": {
+          "county": 1,
+          "places": {}
+        },
+        "Hendry": {
+          "county": 1.5,
+          "places": {}
+        },
+        "Hernando": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Highlands": {
+          "county": 1.5,
+          "places": {}
+        },
+        "Hillsborough": {
+          "county": 1.5,
+          "places": {}
+        },
+        "Holmes": {
+          "county": 1.5,
+          "places": {}
+        },
+        "Indian River": {
+          "county": 1,
+          "places": {}
+        },
+        "Jackson": {
+          "county": 1.5,
+          "places": {}
+        },
+        "Jefferson": {
+          "county": 1,
+          "places": {}
+        },
+        "Lafayette": {
+          "county": 1,
+          "places": {}
+        },
+        "Lake": {
+          "county": 1,
+          "places": {}
+        },
+        "Lee": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Leon": {
+          "county": 1.5,
+          "places": {}
+        },
+        "Levy": {
+          "county": 1,
+          "places": {}
+        },
+        "Liberty": {
+          "county": 1.5,
+          "places": {}
+        },
+        "Madison": {
+          "county": 1.5,
+          "places": {}
+        },
+        "Manatee": {
+          "county": 1,
+          "places": {}
+        },
+        "Marion": {
+          "county": 1.5,
+          "places": {}
+        },
+        "Martin": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Miami-Dade": {
+          "county": 1,
+          "places": {}
+        },
+        "Monroe": {
+          "county": 1.5,
+          "places": {}
+        },
+        "Nassau": {
+          "county": 1,
+          "places": {}
+        },
+        "Okaloosa": {
+          "county": 1,
+          "places": {}
+        },
+        "Okeechobee": {
+          "county": 1,
+          "places": {}
+        },
+        "Orange": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Osceola": {
+          "county": 1.5,
+          "places": {}
+        },
+        "Palm Beach": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Pasco": {
+          "county": 1,
+          "places": {}
+        },
+        "Pinellas": {
+          "county": 1,
+          "places": {}
+        },
+        "Polk": {
+          "county": 1,
+          "places": {}
+        },
+        "Putnam": {
+          "county": 1,
+          "places": {}
+        },
+        "St. Johns": {
+          "county": 0.5,
+          "places": {}
+        },
+        "St. Lucie": {
+          "county": 1,
+          "places": {}
+        },
+        "Santa Rosa": {
+          "county": 1,
+          "places": {}
+        },
+        "Sarasota": {
+          "county": 1,
+          "places": {}
+        },
+        "Seminole": {
+          "county": 1,
+          "places": {}
+        },
+        "Sumter": {
+          "county": 1,
+          "places": {}
+        },
+        "Suwannee": {
+          "county": 1,
+          "places": {}
+        },
+        "Taylor": {
+          "county": 1,
+          "places": {}
+        },
+        "Union": {
+          "county": 1,
+          "places": {}
+        },
+        "Volusia": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Wakulla": {
+          "county": 1.5,
+          "places": {}
+        },
+        "Walton": {
+          "county": 1,
+          "places": {}
+        },
+        "Washington": {
+          "county": 1.5,
+          "places": {}
+        }
+      },
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Florida DOR - Discretionary Sales Surtax Information for Calendar Year 2026 (DR-15DSS, R. 11/25)",
+          "url": "https://floridarevenue.com/Forms_library/current/dr15dss_26.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Total surtax rate per county for 2026. Applies to the first $5,000 of the price. Some county surtaxes expire during 2026-2028."
+    }
+  }
 }

@@ -39,7 +39,8 @@ export default function Calculator({ state }: { state: StateData }) {
     const entry = rateTable?.[county];
     if (!entry) return;
     const combined = place && entry.places[place] !== undefined ? entry.places[place] : entry.county;
-    set("localRatePct", Math.max(0, Math.round((combined - stateRate) * 1000) / 1000));
+    const offset = state.localRates?.mode === "localOnly" ? 0 : stateRate;
+    set("localRatePct", Math.max(0, Math.round((combined - offset) * 1000) / 1000));
   };
   const hasWeightTable = state.fees.some((f) => f.kind === "weightTable");
   const hasPlate = state.fees.some((f) => f.when?.noPlateToTransfer !== undefined);
@@ -55,13 +56,13 @@ export default function Calculator({ state }: { state: StateData }) {
         </label>
         {rateTable && (
           <>
-            <label>County (for local tax rate)
+            <label>County{state.localRates?.mode === "localOnly" ? " (for surtax rate)" : " (for local tax rate)"}
               <select value={rateCounty} onChange={(e) => applyRate(e.target.value, "")}>
                 <option value="">Choose your county</option>
                 {rateCounties.map((n) => <option key={n} value={n}>{n}</option>)}
               </select>
             </label>
-            {rateCounty && (
+            {rateCounty && Object.keys(rateTable[rateCounty].places).length > 0 && (
               <label>City or area
                 <select value={ratePlace} onChange={(e) => applyRate(rateCounty, e.target.value)}>
                   <option value="">Not listed / county rate ({rateTable[rateCounty].county}% combined)</option>
@@ -69,7 +70,7 @@ export default function Calculator({ state }: { state: StateData }) {
                     <option key={p} value={p}>{p} ({rateTable[rateCounty].places[p]}% combined)</option>
                   ))}
                 </select>
-                <small>Pick the city or area where the vehicle is registered. You can still edit the local rate below.</small>
+                <small>Pick the city or area where you live. You can still edit the local rate below.</small>
               </label>
             )}
           </>

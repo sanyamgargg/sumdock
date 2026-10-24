@@ -843,6 +843,7 @@
         }
       ],
       "note": "Combined rate including the 7.25% state rate. Not every community is listed; city districts can differ by address. Los Angeles city and some others are not on the sheet, so enter your rate from the CDTFA lookup."
-    }
+    },
+    "mode": "combined"
   }
 }
