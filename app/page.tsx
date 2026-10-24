@@ -4,8 +4,8 @@ import { site } from "@/lib/site";
 
 const HONEST = [
   {
-    title: "Official sources only",
-    body: "Figures come from state revenue and motor vehicle agency pages, each linked next to the number.",
+    title: "Government sources only",
+    body: "Figures come from state revenue and motor vehicle agency pages, and in a few places county agency pages. Each is linked next to the number.",
   },
   {
     title: "Dated and re-checked",

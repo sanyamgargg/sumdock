@@ -20,8 +20,9 @@ export default function Methodology() {
       <h2>Where numbers come from</h2>
       <p>
         Figures are taken from state revenue and motor vehicle agency pages and forms. Each value is stored with the
-        page address and the date it was opened. County agency pages and third-party sites are used only to fill a
-        gap or cross-check, and are marked as such.
+        page address and the date it was opened. Where a state publishes a figure only on a county agency page, that
+        page is used and marked as a county source. Private and third-party websites are never the source of a
+        number in a total.
       </p>
 
       <h2>What the labels mean</h2>
