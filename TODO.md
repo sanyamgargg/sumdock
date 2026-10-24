@@ -8,6 +8,12 @@ Two columns per state: what only Sanyam can do (blocked sites, accounts, pushing
 | Spot-check one city with a price tier (for example Avondale, 5,000 dollar tier) on the ADOR rate look-up tool or with a dealer, and tell Claude if the tax on a 30,000 dollar car differs from the calculator | City tax is now modeled (96 cities, 33 with a lower rate above a set price). Table wording says only "Single Item Over" for some cities; treated as the part above the price. Confirm from an ADOR source, then mark the local rate verified |
 | | Vehicle license tax is not included (needs list price and age inputs) |
 
+## South Carolina (researched, not added)
+| Sanyam | Claude |
+|---|---|
+| Nothing yet | Official facts found: infrastructure maintenance fee (IMF) of 5% of gross proceeds, at most $500, in place of state and local sales tax (SCDOR dealers guide, Dec 2025); title $15; registration $40 every two years; hybrid +$60, EV +$120 (dmv.sc.gov/Fees) |
+| | Blocked: no official page says whether a trade-in lowers the IMF base, so the state cannot be published. Needs a "maximum tax" field in the calculator too |
+
 ## Washington (added)
 | Sanyam | Claude |
 |---|---|
