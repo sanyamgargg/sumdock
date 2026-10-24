@@ -36,6 +36,49 @@ function checkSourced(file, where, s) {
   }
 }
 
+
+// Optional hand-written prose. No digits (figures come from {state} and {stateRate} tokens) and every
+// block must cite URLs that are already sources elsewhere in the same file.
+function collectUrls(o, out = new Set()) {
+  if (Array.isArray(o)) o.forEach((x) => collectUrls(x, out));
+  else if (o && typeof o === "object") {
+    if (Array.isArray(o.sources)) for (const s of o.sources) if (s && typeof s === "object" && s.url) out.add(s.url);
+    for (const [k, v] of Object.entries(o)) if (k !== "content") collectUrls(v, out);
+  }
+  return out;
+}
+function checkText(file, where, text) {
+  if (typeof text !== "string" || text.trim() === "") return err(file, `${where}: must be a non-empty string`);
+  const stripped = text.replace(/\{(state|stateRate)\}/g, "");
+  if (/\d/.test(stripped)) err(file, `${where}: contains a digit; use {stateRate} or leave the figure to the generated sections`);
+  if (/[{}]/.test(stripped)) err(file, `${where}: unknown token (allowed: {state}, {stateRate})`);
+}
+function checkBlock(file, where, b, urls) {
+  if (!b || typeof b !== "object") return err(file, `${where}: must be an object`);
+  checkText(file, `${where}.text`, b.text);
+  if (!Array.isArray(b.sources) || b.sources.length === 0) return err(file, `${where}: needs at least one source URL`);
+  for (const u of b.sources) if (!urls.has(u)) err(file, `${where}: source ${u} is not a source in this file`);
+}
+function checkContent(file, d) {
+  const c = d.content;
+  if (!c || typeof c !== "object" || Array.isArray(c)) return err(file, "content: must be an object");
+  for (const k of Object.keys(c)) if (!["intro", "howItWorks", "faq"].includes(k)) err(file, `content.${k}: unknown key`);
+  const urls = collectUrls(d);
+  if (c.intro !== undefined) checkText(file, "content.intro", c.intro);
+  if (c.howItWorks !== undefined) {
+    if (!Array.isArray(c.howItWorks)) err(file, "content.howItWorks: must be an array");
+    else c.howItWorks.forEach((b, n) => checkBlock(file, `content.howItWorks[${n}]`, b, urls));
+  }
+  if (c.faq !== undefined) {
+    if (!Array.isArray(c.faq)) err(file, "content.faq: must be an array");
+    else c.faq.forEach((b, n) => {
+      checkBlock(file, `content.faq[${n}]`, b, urls);
+      if (typeof b?.q !== "string" || !b.q.trim()) err(file, `content.faq[${n}].q: must be a non-empty string`);
+      else if (/\d/.test(b.q)) err(file, `content.faq[${n}].q: contains a digit`);
+    });
+  }
+}
+
 const files = fs.readdirSync(dir).filter((f) => f.endsWith(".json"));
 if (files.length === 0) err("data/states", "no state files found");
 
@@ -65,6 +108,9 @@ for (const f of files) {
         if (typeof r !== "number" || r < floor || r > 15) err(f, `localRates ${county}/${place}: implausible rate ${r}`);
     }
   }
+
+
+  if (d.content !== undefined) checkContent(f, d);
 
   const ids = new Set();
   for (const fee of d.fees ?? []) {

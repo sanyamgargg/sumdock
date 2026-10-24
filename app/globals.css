@@ -196,3 +196,34 @@ select { width: 100%; height: var(--field); padding: 0 12px; font: inherit; font
 .ad-slot { width: 100%; }
 .crumbs li { display: inline-flex; align-items: center; }
 .crumbs li [aria-hidden="true"] { margin: 0 8px; }
+
+/* State content */
+.content { display: flex; flex-direction: column; gap: 32px; margin-top: 12px; }
+.content section { display: flex; flex-direction: column; gap: 12px; }
+.content p { margin: 0; color: var(--body); }
+.muted { color: var(--muted) !important; font-size: 15px; }
+.src-link { display: block; font-size: 13px; padding: 2px 0; }
+.prose-block__src { display: flex; flex-wrap: wrap; gap: 0 8px; align-items: baseline; }
+.facts { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.fact { display: flex; flex-direction: column; gap: 4px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-field); padding: 12px 14px; }
+.fact__head { display: flex; justify-content: space-between; gap: 12px; font-weight: 600; }
+.fact__value { font-variant-numeric: tabular-nums; text-align: right; }
+.fact__note { color: var(--muted); }
+.status { align-self: flex-start; font-size: 12px; font-weight: 600; border-radius: var(--radius-sm); padding: 1px 6px; background: var(--accent-tint); color: var(--accent-tint-fg); }
+.status--partial, .status--conflict, .status--unverified { background: var(--warn-bg); color: var(--warn-fg); }
+.examples { display: grid; gap: 12px; }
+.example h3 { margin-bottom: 8px; }
+.line--total { border-top: 2px solid var(--line-strong); font-weight: 700; }
+.example__excl { margin-top: 8px !important; color: var(--muted) !important; }
+.faq { display: flex; flex-direction: column; gap: 10px; }
+.faq__item { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius-field); padding: 0 16px; }
+.faq__item summary { font-weight: 600; cursor: pointer; min-height: var(--touch); display: flex; align-items: center; padding: 8px 0; }
+.faq__item[open] { padding-bottom: 14px; }
+.faq__item p { margin: 0 0 8px; }
+.table-scroll { overflow-x: auto; }
+.sources { font-size: 14px; min-width: 520px; }
+.plain-list { margin: 0; padding-left: 20px; color: var(--body); display: flex; flex-direction: column; gap: 6px; }
+@media (min-width: 700px) {
+  .examples { grid-template-columns: repeat(3, 1fr); }
+  .facts { grid-template-columns: repeat(2, 1fr); }
+}

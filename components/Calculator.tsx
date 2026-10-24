@@ -3,6 +3,7 @@
 import { useEffect, useId, useMemo, useState } from "react";
 import AdSlot from "@/components/AdSlot";
 import { calculate } from "@/lib/calc";
+import { DEFAULT_INPUTS } from "@/lib/content";
 import { formatDate, groupNumber, parseNumber, usd } from "@/lib/format";
 import { sourcesForLine } from "@/lib/sources";
 import type { Inputs, StateData } from "@/lib/types";
@@ -71,19 +72,7 @@ function CheckField({ label, checked, onChange }: { label: string; checked: bool
 }
 
 export default function Calculator({ state }: { state: StateData }) {
-  const [i, setI] = useState<Inputs>({
-    price: 30000,
-    tradeIn: 0,
-    localRatePct: 0,
-    outOfStateTaxPaid: 0,
-    fuel: "gas",
-    mpgBand: "20-39",
-    weightBand: "mid",
-    weightLbs: 3500,
-    county: "",
-    noPlateToTransfer: true,
-    outOfStateNewDealer: false,
-  });
+  const [i, setI] = useState<Inputs>(DEFAULT_INPUTS);
   const set = <K extends keyof Inputs>(k: K, v: Inputs[K]) => setI((p) => ({ ...p, [k]: v }));
   const result = useMemo(() => calculate(state, i), [state, i]);
   const local = state.salesTax.local.value;

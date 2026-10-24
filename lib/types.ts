@@ -84,6 +84,24 @@ export interface StateData {
     rates: Sourced<Record<string, { county: number; places: Record<string, number> }>>;
   };
   notes: string[];
+  /**
+   * Optional hand-written prose for the state page. No digits allowed in the text: figures come from
+   * tokens ({state}, {stateRate}) so they always match the data. Each block must cite source URLs
+   * that already appear in this file. Checked by scripts/validate-data.mjs.
+   */
+  content?: StateContent;
+}
+
+export interface ContentBlock {
+  text: string;
+  /** URLs that back the rule the text states. Each must be a source elsewhere in this file. */
+  sources: string[];
+}
+
+export interface StateContent {
+  intro?: string;
+  howItWorks?: ContentBlock[];
+  faq?: (ContentBlock & { q: string })[];
 }
 
 export interface Inputs {
