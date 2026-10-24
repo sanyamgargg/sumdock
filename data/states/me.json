@@ -1,0 +1,162 @@
+{
+  "code": "ME",
+  "name": "Maine",
+  "slug": "maine",
+  "lastReviewed": "2026-10-24",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 5.5,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Maine Secretary of State BMV - Registering a passenger vehicle",
+          "url": "https://www.maine.gov/sos/bmv/registration/passenger.html",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The BMV says you must pay Maine's sales tax of 5.5% on the purchase price when you buy from a private seller or an out-of-state dealer."
+    },
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Maine Revenue Services - Instructional Bulletin 39, Sale price (rev. Oct 4, 2019)",
+          "url": "https://www.maine.gov/REVENUE/salesuse/IB39SalePriceOct042019.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "When a motor vehicle is traded toward another motor vehicle, tax is figured only on the difference between the sale price and the trade-in value. A trade of a different kind of item does not lower the tax."
+    },
+    "local": {
+      "value": {
+        "mode": "none",
+        "capBase": null,
+        "rangeNote": null
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Maine Secretary of State BMV - Registering a passenger vehicle",
+          "url": "https://www.maine.gov/sos/bmv/registration/passenger.html",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Maine towns charge a yearly excise tax, not a local sales tax. The BMV page does not say outright that there is no local sales tax."
+    },
+    "outOfStateCredit": {
+      "value": null,
+      "status": "unverified",
+      "sources": [
+        {
+          "title": "Maine Secretary of State BMV - Registering a passenger vehicle",
+          "url": "https://www.maine.gov/sos/bmv/registration/passenger.html",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "No page found that says whether tax paid to another state is credited."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Title",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 33,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Maine Secretary of State BMV - Title fees",
+            "url": "https://www.maine.gov/sos/bmv/vehicles/titles/title-fees",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Maine Secretary of State BMV - Registering a passenger vehicle",
+            "url": "https://www.maine.gov/sos/bmv/registration/passenger.html",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Application for a certificate of title. Expedited issuance costs $10 more."
+      }
+    },
+    {
+      "id": "registration",
+      "label": "Registration (passenger vehicle)",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 35,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Maine Revised Statutes, Title 29-A, section 501 (registration fees)",
+            "url": "https://legislature.maine.gov/legis/statutes/29-A/title29-Asec501.html",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "State fee for an automobile or a pickup registered for 6,000 pounds or less. Your town adds its own agent fees."
+      }
+    },
+    {
+      "id": "excise-tax",
+      "label": "Municipal excise tax",
+      "kind": "flat",
+      "frequency": "annual",
+      "excludedReason": "Your town collects a yearly excise tax. For a new vehicle it is figured from the manufacturer's suggested retail price, so it is left out.",
+      "amount": {
+        "value": null,
+        "status": "unverified",
+        "sources": [
+          {
+            "title": "Maine Secretary of State BMV - Registering a passenger vehicle",
+            "url": "https://www.maine.gov/sos/bmv/registration/passenger.html",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    }
+  ],
+  "notes": [
+    "The yearly excise tax is collected by your town and is not included.",
+    "Towns add small agent fees to the state registration fee.",
+    "Tax paid to another state is not credited here because no state page confirms the rule."
+  ],
+  "content": {
+    "intro": "{state} charges {stateRate} sales tax on a vehicle, a flat title fee and a yearly registration fee. Your town also bills a yearly excise tax based on the vehicle's original price.",
+    "howItWorks": [
+      {
+        "text": "The sales tax rate is {stateRate} of the purchase price. When a vehicle is traded toward another vehicle, the tax is figured only on the difference.",
+        "sources": [
+          "https://www.maine.gov/sos/bmv/registration/passenger.html",
+          "https://www.maine.gov/REVENUE/salesuse/IB39SalePriceOct042019.pdf"
+        ]
+      },
+      {
+        "text": "Your town collects the excise tax at the town office when you register. For a new vehicle it is based on the manufacturer's suggested retail price.",
+        "sources": [
+          "https://www.maine.gov/sos/bmv/registration/passenger.html"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does a trade-in lower the sales tax in Maine?",
+        "text": "Yes, when you trade one motor vehicle toward another, tax is figured on the difference. A trade of another kind of item does not lower it.",
+        "sources": [
+          "https://www.maine.gov/REVENUE/salesuse/IB39SalePriceOct042019.pdf"
+        ]
+      }
+    ]
+  }
+}

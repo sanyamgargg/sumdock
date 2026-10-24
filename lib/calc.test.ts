@@ -877,3 +877,21 @@ describe("Alaska", () => {
     expect(r.excluded.map((e) => e.label)).toContain("Motor vehicle registration tax");
   });
 });
+
+describe("Maine", () => {
+  const me = load("me");
+  it("is publishable", () => expect(publishability(me).publishable).toBe(true));
+  it("taxes the price less a trade-in at 5.5%", () => {
+    expect(line(calculate(me, { ...base, price: 30000, tradeIn: 10000 }), "state-tax")).toBe(1100);
+  });
+  it("applies no credit because the rule is unverified", () => {
+    const r = calculate(me, { ...base, outOfStateTaxPaid: 500 });
+    expect(r.lines.some((l) => l.id === "oos-credit")).toBe(false);
+  });
+  it("charges title and registration and lists the excise tax as not included", () => {
+    const r = calculate(me, base);
+    expect(line(r, "title")).toBe(33);
+    expect(line(r, "registration")).toBe(35);
+    expect(r.excluded.map((e) => e.label)).toContain("Municipal excise tax");
+  });
+});

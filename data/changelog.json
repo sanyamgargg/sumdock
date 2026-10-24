@@ -3,6 +3,12 @@
   "entries": [
     {
       "date": "2026-10-24",
+      "state": "ME",
+      "stateName": "Maine",
+      "summary": "Added state with the 5.5% sales tax (tax only on the difference when a vehicle is traded toward a vehicle), title and registration. The town's yearly excise tax is not included, and credit for tax paid elsewhere is not applied."
+    },
+    {
+      "date": "2026-10-24",
       "state": "AK",
       "stateName": "Alaska",
       "summary": "Added state with no state sales tax, an entered local rate, title and the two-year registration fee. The motor vehicle registration tax, which depends on location and model year, is not included."
