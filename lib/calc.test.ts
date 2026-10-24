@@ -895,3 +895,22 @@ describe("Maine", () => {
     expect(r.excluded.map((e) => e.label)).toContain("Municipal excise tax");
   });
 });
+
+describe("Montana", () => {
+  const mt = load("mt");
+  it("is publishable", () => expect(publishability(mt).publishable).toBe(true));
+  it("charges no sales tax", () => {
+    expect(line(calculate(mt, { ...base, price: 40000 }), "state-tax")).toBeUndefined();
+  });
+  it("picks the registration fee by vehicle age", () => {
+    expect(line(calculate(mt, { ...base, ageYears: 0 }), "registration-0-4")).toBe(217);
+    expect(line(calculate(mt, { ...base, ageYears: 4 }), "registration-0-4")).toBe(217);
+    expect(line(calculate(mt, { ...base, ageYears: 5 }), "registration-5-10")).toBe(87);
+    expect(line(calculate(mt, { ...base, ageYears: 10 }), "registration-5-10")).toBe(87);
+    expect(line(calculate(mt, { ...base, ageYears: 11 }), "registration-11-plus")).toBe(28);
+    expect(line(calculate(mt, { ...base, ageYears: 5 }), "registration-0-4")).toBeUndefined();
+  });
+  it("treats a missing age as zero", () => {
+    expect(line(calculate(mt, base), "registration-0-4")).toBe(217);
+  });
+});

@@ -15,6 +15,9 @@ function matches(when: FeeWhen | undefined, i: Inputs): boolean {
   if (when.noPlateToTransfer !== undefined && when.noPlateToTransfer !== i.noPlateToTransfer) return false;
   if (when.vehicleAge !== undefined && !(Array.isArray(when.vehicleAge) ? when.vehicleAge : [when.vehicleAge]).includes(i.vehicleAge)) return false;
   if (when.priceAtLeast !== undefined && i.price < when.priceAtLeast) return false;
+  const years = i.ageYears ?? 0;
+  if (when.ageYearsMin !== undefined && years < when.ageYearsMin) return false;
+  if (when.ageYearsMax !== undefined && years > when.ageYearsMax) return false;
   if (when.anyOf !== undefined && !when.anyOf.some((w) => matches(w, i))) return false;
   return true;
 }

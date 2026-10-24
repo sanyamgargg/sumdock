@@ -3,6 +3,12 @@
   "entries": [
     {
       "date": "2026-10-24",
+      "state": "MT",
+      "stateName": "Montana",
+      "summary": "Added state with no sales tax, title and the yearly registration fee by vehicle age (a new vehicle age input). The county option tax and luxury fee are not included."
+    },
+    {
+      "date": "2026-10-24",
       "state": "ME",
       "stateName": "Maine",
       "summary": "Added state with the 5.5% sales tax (tax only on the difference when a vehicle is traded toward a vehicle), title and registration. The town's yearly excise tax is not included, and credit for tax paid elsewhere is not applied."

@@ -55,4 +55,12 @@ describe("share links", () => {
     const counties = Object.keys(ny.counties!.fees.value!);
     expect(decodeInputs(`county=${encodeURIComponent(counties[0])}`, ny).inputs.county).toBe(counties[0]);
   });
+  it("round-trips the vehicle age in years and drops bad values", () => {
+    const q = encodeInputs({ ...DEFAULT_INPUTS, ageYears: 7 }, { rateCounty: "", ratePlace: "", rateEdited: false });
+    expect(q).toContain("years=7");
+    expect(decodeInputs(q, ny).inputs.ageYears).toBe(7);
+    expect(decodeInputs("years=-3", ny).inputs.ageYears).toBeUndefined();
+    expect(decodeInputs("years=900", ny).inputs.ageYears).toBeUndefined();
+    expect(encodeInputs(DEFAULT_INPUTS, { rateCounty: "", ratePlace: "", rateEdited: false })).not.toContain("years");
+  });
 });

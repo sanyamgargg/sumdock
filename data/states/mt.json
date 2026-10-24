@@ -1,0 +1,260 @@
+{
+  "code": "MT",
+  "name": "Montana",
+  "slug": "montana",
+  "lastReviewed": "2026-10-24",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 0,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Montana Legislative Fiscal Division - Vehicle fee brochure (Aug 31, 2021)",
+          "url": "https://archive.legmt.gov/content/publications/fiscal/2023-Interim/Aug-2021/Vehicle-Fee-Brochure.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The state's fiscal division brochure says Montana has no sales tax."
+    },
+    "tradeInReducesBase": {
+      "value": false,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Montana Legislative Fiscal Division - Vehicle fee brochure (Aug 31, 2021)",
+          "url": "https://archive.legmt.gov/content/publications/fiscal/2023-Interim/Aug-2021/Vehicle-Fee-Brochure.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Not applicable: Montana has no sales tax."
+    },
+    "local": {
+      "value": {
+        "mode": "none",
+        "capBase": null,
+        "rangeNote": null
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Montana Legislative Fiscal Division - Vehicle fee brochure (Aug 31, 2021)",
+          "url": "https://archive.legmt.gov/content/publications/fiscal/2023-Interim/Aug-2021/Vehicle-Fee-Brochure.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "There is no local sales tax. Counties may charge a local option tax on the vehicle's value at registration, which is not included."
+    },
+    "outOfStateCredit": {
+      "value": false,
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Montana Legislative Fiscal Division - Vehicle fee brochure (Aug 31, 2021)",
+          "url": "https://archive.legmt.gov/content/publications/fiscal/2023-Interim/Aug-2021/Vehicle-Fee-Brochure.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "No sales tax to credit against."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Title",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 12,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Yellowstone County, Montana - Motor vehicle fee schedules",
+            "url": "https://www.yellowstonecountymt.gov/Treasurer/MotorV/schedules.asp",
+            "accessed": "2026-10-24",
+            "publisherType": "county-agency"
+          }
+        ],
+        "note": "Title issuance fee on Yellowstone County's page. The state fiscal brochure does not list a title fee."
+      }
+    },
+    {
+      "id": "registration-0-4",
+      "label": "Registration (vehicle 4 years old or less)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "ageYearsMax": 4
+      },
+      "amount": {
+        "value": 217,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Montana Legislative Fiscal Division - Vehicle fee brochure (Aug 31, 2021)",
+            "url": "https://archive.legmt.gov/content/publications/fiscal/2023-Interim/Aug-2021/Vehicle-Fee-Brochure.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Yellowstone County, Montana - Motor vehicle fee schedules",
+            "url": "https://www.yellowstonecountymt.gov/Treasurer/MotorV/schedules.asp",
+            "accessed": "2026-10-24",
+            "publisherType": "county-agency"
+          }
+        ],
+        "note": "Annual light vehicle registration fee."
+      }
+    },
+    {
+      "id": "registration-5-10",
+      "label": "Registration (vehicle 5 to 10 years old)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "ageYearsMin": 5,
+        "ageYearsMax": 10
+      },
+      "amount": {
+        "value": 87,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Montana Legislative Fiscal Division - Vehicle fee brochure (Aug 31, 2021)",
+            "url": "https://archive.legmt.gov/content/publications/fiscal/2023-Interim/Aug-2021/Vehicle-Fee-Brochure.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Yellowstone County, Montana - Motor vehicle fee schedules",
+            "url": "https://www.yellowstonecountymt.gov/Treasurer/MotorV/schedules.asp",
+            "accessed": "2026-10-24",
+            "publisherType": "county-agency"
+          }
+        ],
+        "note": "Annual light vehicle registration fee."
+      }
+    },
+    {
+      "id": "registration-11-plus",
+      "label": "Registration (vehicle 11 years or older)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "ageYearsMin": 11
+      },
+      "amount": {
+        "value": 28,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Montana Legislative Fiscal Division - Vehicle fee brochure (Aug 31, 2021)",
+            "url": "https://archive.legmt.gov/content/publications/fiscal/2023-Interim/Aug-2021/Vehicle-Fee-Brochure.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Yellowstone County, Montana - Motor vehicle fee schedules",
+            "url": "https://www.yellowstonecountymt.gov/Treasurer/MotorV/schedules.asp",
+            "accessed": "2026-10-24",
+            "publisherType": "county-agency"
+          }
+        ],
+        "note": "Annual light vehicle registration fee. A permanent registration is available for $87.50 instead."
+      }
+    },
+    {
+      "id": "mhp-fee",
+      "label": "Highway patrol salary and retention fee",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 10,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Yellowstone County, Montana - Motor vehicle fee schedules",
+            "url": "https://www.yellowstonecountymt.gov/Treasurer/MotorV/schedules.asp",
+            "accessed": "2026-10-24",
+            "publisherType": "county-agency"
+          }
+        ],
+        "note": "Charged with annual registration on Yellowstone County's page."
+      }
+    },
+    {
+      "id": "county-option-tax",
+      "label": "County option tax",
+      "kind": "flat",
+      "frequency": "annual",
+      "excludedReason": "Counties may charge up to a set share of the vehicle's taxable value, which is based on the original price and age. Six counties charge none. It is left out because the calculator does not ask for the original price.",
+      "amount": {
+        "value": null,
+        "status": "unverified",
+        "sources": [
+          {
+            "title": "Montana Legislative Fiscal Division - Vehicle fee brochure (Aug 31, 2021)",
+            "url": "https://archive.legmt.gov/content/publications/fiscal/2023-Interim/Aug-2021/Vehicle-Fee-Brochure.pdf",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Yellowstone County, Montana - Motor vehicle fee schedules",
+            "url": "https://www.yellowstonecountymt.gov/Treasurer/MotorV/schedules.asp",
+            "accessed": "2026-10-24",
+            "publisherType": "county-agency"
+          }
+        ]
+      }
+    }
+  ],
+  "notes": [
+    "A luxury fee of $825 a year applies to light vehicles with a retail value above $150,000, which is not included.",
+    "The county option tax, a 3% state administrative fee on payments and new plate fees are not included.",
+    "Registration fees follow the vehicle's age; enter the vehicle's age in years to pick the right fee."
+  ],
+  "content": {
+    "intro": "{state} has no sales tax. You pay a title fee and a yearly registration fee that falls as the vehicle gets older, and your county may add a local option tax on the vehicle's value.",
+    "howItWorks": [
+      {
+        "text": "The state has no sales tax, so the price of the vehicle is not taxed when you buy it.",
+        "sources": [
+          "https://archive.legmt.gov/content/publications/fiscal/2023-Interim/Aug-2021/Vehicle-Fee-Brochure.pdf"
+        ]
+      },
+      {
+        "text": "The yearly registration fee depends on the vehicle's age. It is highest for a vehicle four years old or less and drops in two steps as the vehicle ages.",
+        "sources": [
+          "https://archive.legmt.gov/content/publications/fiscal/2023-Interim/Aug-2021/Vehicle-Fee-Brochure.pdf",
+          "https://www.yellowstonecountymt.gov/Treasurer/MotorV/schedules.asp"
+        ]
+      },
+      {
+        "text": "Counties may charge a local option tax on the vehicle's value. A few counties charge none.",
+        "sources": [
+          "https://archive.legmt.gov/content/publications/fiscal/2023-Interim/Aug-2021/Vehicle-Fee-Brochure.pdf"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is there sales tax on a car in Montana?",
+        "text": "No. Montana has no sales tax.",
+        "sources": [
+          "https://archive.legmt.gov/content/publications/fiscal/2023-Interim/Aug-2021/Vehicle-Fee-Brochure.pdf"
+        ]
+      },
+      {
+        "q": "Why does registration cost less for an older vehicle?",
+        "text": "The fee is set in age bands, and older vehicles fall in cheaper bands.",
+        "sources": [
+          "https://archive.legmt.gov/content/publications/fiscal/2023-Interim/Aug-2021/Vehicle-Fee-Brochure.pdf"
+        ]
+      }
+    ]
+  }
+}

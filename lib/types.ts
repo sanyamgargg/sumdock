@@ -33,6 +33,10 @@ export interface FeeWhen {
   vehicleAge?: VehicleAge | VehicleAge[];
   /** Matches when the vehicle price is at least this much (before any trade-in). */
   priceAtLeast?: number;
+  /** Vehicle age in years (current year minus model year). Matches when the age is at least this. Needs the vehicle age input. */
+  ageYearsMin?: number;
+  /** Matches when the age in years is at most this. */
+  ageYearsMax?: number;
   /** Matches when at least one of these conditions matches, in addition to the conditions above. */
   anyOf?: FeeWhen[];
 }
@@ -155,6 +159,8 @@ export interface Inputs {
   county: string;
   noPlateToTransfer: boolean;
   vehicleAge: VehicleAge;
+  /** Vehicle age in years (current year minus model year). Used by states whose fees change with each year of age. Missing means 0. */
+  ageYears?: number;
   outOfStateNewDealer: boolean;
 }
 

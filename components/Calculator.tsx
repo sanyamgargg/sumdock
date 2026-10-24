@@ -143,6 +143,8 @@ export default function Calculator({ state, children }: { state: StateData; chil
   const hasWeightTable = state.fees.some((f) => f.kind === "weightTable");
   const whenUsesAge = (w?: FeeWhen): boolean => !!w && (w.vehicleAge !== undefined || (w.anyOf ?? []).some(whenUsesAge));
   const usesAge = state.fees.some((f) => whenUsesAge(f.when));
+  const whenUsesYears = (w?: FeeWhen): boolean => !!w && (w.ageYearsMin !== undefined || w.ageYearsMax !== undefined || (w.anyOf ?? []).some(whenUsesYears));
+  const usesYears = state.fees.some((f) => whenUsesYears(f.when));
   const hasPlate = state.fees.some((f) => f.when?.noPlateToTransfer !== undefined);
   const showLocalRate = !!local && local.mode === "user-entered";
   const hasLocation = !!rateTable || counties.length > 0 || showLocalRate;
@@ -275,6 +277,17 @@ export default function Calculator({ state, children }: { state: StateData; chil
                   value={i.weightLbs}
                   onValue={(n) => set("weightLbs", n)}
                   hint="Curb weight from the registration or manufacturer sticker."
+                />
+              )}
+              {usesYears && (
+                <NumberField
+                  label="Vehicle age (years)"
+                  suffix="years"
+                  decimals={0}
+                  mode="numeric"
+                  value={i.ageYears ?? 0}
+                  onValue={(n) => set("ageYears", Math.max(0, Math.min(60, Math.round(n))))}
+                  hint="This year minus the model year. Use 0 for the current model year."
                 />
               )}
               {hasPlate && (

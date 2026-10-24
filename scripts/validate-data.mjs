@@ -137,6 +137,7 @@ for (const f of files) {
       if (!w) return;
       for (const a of [].concat(w.vehicleAge ?? [])) if (!AGES.includes(a)) err(f, `${where}: bad vehicleAge "${a}"`);
       if (w.priceAtLeast !== undefined && typeof w.priceAtLeast !== "number") err(f, `${where}: priceAtLeast must be a number`);
+      for (const k of ["ageYearsMin", "ageYearsMax"]) if (w[k] !== undefined && (typeof w[k] !== "number" || w[k] < 0)) err(f, `${where}: ${k} must be a number of years, zero or more`);
       for (const x of w.anyOf ?? []) checkWhen(x, `${where}.anyOf`);
     };
     checkWhen(fee.when, `fees.${fee.id}.when`);
