@@ -977,3 +977,23 @@ describe("Washington credit for tax paid elsewhere", () => {
     expect(line(r, "oos-credit")).toBe(-500);
   });
 });
+
+describe("Rhode Island", () => {
+  const ri = load("ri");
+  it("is publishable", () => expect(publishability(ri).publishable).toBe(true));
+  it("taxes the price less a trade-in at 7%", () => {
+    expect(line(calculate(ri, { ...base, price: 30000, tradeIn: 10000 }), "state-tax")).toBe(1400);
+  });
+  it("prices two-year registration by weight", () => {
+    expect(line(calculate(ri, { ...base, weightLbs: 3500 }), "registration")).toBe(60);
+    expect(line(calculate(ri, { ...base, weightLbs: 4500 }), "registration")).toBe(80);
+  });
+  it("adds title, surcharges and the EV fee only for EVs", () => {
+    const r = calculate(ri, base);
+    expect(line(r, "title")).toBe(53.5);
+    expect(line(r, "dot-surcharge")).toBe(40);
+    expect(line(r, "technology-surcharge")).toBe(3.5);
+    expect(line(r, "ev-fee")).toBeUndefined();
+    expect(line(calculate(ri, { ...base, fuel: "ev" }), "ev-fee")).toBe(400);
+  });
+});

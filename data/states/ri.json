@@ -1,0 +1,295 @@
+{
+  "code": "RI",
+  "name": "Rhode Island",
+  "slug": "rhode-island",
+  "lastReviewed": "2026-10-24",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 7,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Rhode Island DMV - Sales tax on vehicles",
+          "url": "https://dmv.ri.gov/registrations-plates-titles/sales-tax",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "7% of the purchase price, minus trade-in and other allowances, for a dealer sale of a passenger vehicle. A private sale is taxed on the greater of book value or price for newer vehicles."
+    },
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Rhode Island DMV - Sales tax on vehicles",
+          "url": "https://dmv.ri.gov/registrations-plates-titles/sales-tax",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Rhode Island Sales and Use Tax Regulation SU 280-RICR-20-70-28 (motor vehicles)",
+          "url": "https://rules.sos.ri.gov/Regulations/part/280-20-70-28",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "A trade-in allowance reduces the taxable price for a dealer sale of a passenger vehicle. A truck traded in does not reduce it."
+    },
+    "local": {
+      "value": {
+        "mode": "none",
+        "capBase": null,
+        "rangeNote": null
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Rhode Island DMV - Sales tax on vehicles",
+          "url": "https://dmv.ri.gov/registrations-plates-titles/sales-tax",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The state describes one 7% rate. Cities and towns bill a separate yearly excise tax, which is not included."
+    },
+    "outOfStateCredit": {
+      "value": null,
+      "status": "unverified",
+      "sources": [
+        {
+          "title": "Rhode Island Sales and Use Tax Regulation SU 280-RICR-20-70-28 (motor vehicles)",
+          "url": "https://rules.sos.ri.gov/Regulations/part/280-20-70-28",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The regulation gives a credit only for gifts. No general credit rule was found."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Title (includes $3.50 technology surcharge)",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 53.5,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Rhode Island DMV - Registration and title fees",
+            "url": "https://dmv.ri.gov/registrations-plates-titles/registration/registration-fees",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "New title fee as listed by the DMV, including a $3.50 technology surcharge."
+      }
+    },
+    {
+      "id": "registration",
+      "label": "Registration (passenger, 2 years)",
+      "kind": "weightTable",
+      "frequency": "biennial",
+      "weightTable": [
+        {
+          "upTo": 4000,
+          "fee": 60
+        },
+        {
+          "upTo": 5000,
+          "fee": 80
+        },
+        {
+          "upTo": 6000,
+          "fee": 96
+        },
+        {
+          "upTo": 7000,
+          "fee": 112
+        },
+        {
+          "upTo": 8000,
+          "fee": 128
+        },
+        {
+          "upTo": 9000,
+          "fee": 140
+        },
+        {
+          "upTo": 10000,
+          "fee": 156
+        },
+        {
+          "upTo": 12000,
+          "fee": 212
+        },
+        {
+          "upTo": 14000,
+          "fee": 248
+        },
+        {
+          "upTo": 16000,
+          "fee": 280
+        },
+        {
+          "upTo": 18000,
+          "fee": 316
+        },
+        {
+          "upTo": 20000,
+          "fee": 352
+        },
+        {
+          "upTo": null,
+          "fee": 388
+        }
+      ],
+      "amount": {
+        "value": 1,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Rhode Island DMV - Weight-based registration and surcharge fees, and electric and hybrid fees",
+            "url": "https://dmv.ri.gov/media/561/download",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Two years of the annual fee by weight. A new registration is prorated by date, so a first-year amount can be lower."
+      }
+    },
+    {
+      "id": "dot-surcharge",
+      "label": "Transportation (DOT) surcharge, 2 years",
+      "kind": "flat",
+      "frequency": "biennial",
+      "amount": {
+        "value": 40,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Rhode Island DMV - Weight-based registration and surcharge fees, and electric and hybrid fees",
+            "url": "https://dmv.ri.gov/media/561/download",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Rhode Island DMV - Registration and title fees",
+            "url": "https://dmv.ri.gov/registrations-plates-titles/registration/registration-fees",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "$20 a year added to the registration fee."
+      }
+    },
+    {
+      "id": "technology-surcharge",
+      "label": "Technology surcharge (registration)",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 3.5,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Rhode Island DMV - Registration and title fees",
+            "url": "https://dmv.ri.gov/registrations-plates-titles/registration/registration-fees",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Added to each registration transaction."
+      }
+    },
+    {
+      "id": "ev-fee",
+      "label": "Electric vehicle fee (all-electric, 2 years)",
+      "kind": "flat",
+      "frequency": "biennial",
+      "when": {
+        "fuel": "ev"
+      },
+      "amount": {
+        "value": 400,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Rhode Island DMV - Weight-based registration and surcharge fees, and electric and hybrid fees",
+            "url": "https://dmv.ri.gov/media/561/download",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "$200 per year for a battery electric vehicle. Plug-in hybrids pay $100 a year and other hybrids $50, which are not included."
+      }
+    },
+    {
+      "id": "excise-tax",
+      "label": "Municipal excise tax",
+      "kind": "flat",
+      "frequency": "annual",
+      "excludedReason": "Your city or town bills a yearly motor vehicle excise tax based on the vehicle's value, so it is left out.",
+      "amount": {
+        "value": null,
+        "status": "unverified",
+        "sources": [
+          {
+            "title": "Rhode Island DMV - Registration and title fees",
+            "url": "https://dmv.ri.gov/registrations-plates-titles/registration/registration-fees",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    }
+  ],
+  "notes": [
+    "Registration lasts two years and the amounts shown are for the full two-year term; a new registration is prorated by date.",
+    "Your city or town bills a yearly excise tax on the vehicle, which is not included.",
+    "Plug-in hybrids pay $100 a year and other hybrids $50 a year, which are not included.",
+    "Tax paid to another state is not credited here because no rule for it was found."
+  ],
+  "content": {
+    "intro": "{state} charges {stateRate} sales tax on the price of a vehicle bought from a dealer, less your trade-in. Registration lasts two years and depends on weight, and your city or town bills a yearly excise tax.",
+    "howItWorks": [
+      {
+        "text": "The sales tax is {stateRate} of the purchase price minus trade-in and other allowances for a dealer sale of a passenger vehicle.",
+        "sources": [
+          "https://dmv.ri.gov/registrations-plates-titles/sales-tax"
+        ]
+      },
+      {
+        "text": "A private sale is taxed on the greater of the book value or the sale price for newer vehicles.",
+        "sources": [
+          "https://dmv.ri.gov/registrations-plates-titles/sales-tax"
+        ]
+      },
+      {
+        "text": "Registration fees follow the vehicle's weight, and a state transportation surcharge is added for each year.",
+        "sources": [
+          "https://dmv.ri.gov/media/561/download"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does a trade-in lower the sales tax in Rhode Island?",
+        "text": "Yes for a dealer sale of a passenger vehicle, the tax is figured on the price minus the trade-in and other allowances.",
+        "sources": [
+          "https://dmv.ri.gov/registrations-plates-titles/sales-tax"
+        ]
+      },
+      {
+        "q": "How long does registration last?",
+        "text": "A renewal covers two years, and the weight-based fee is charged for the full term.",
+        "sources": [
+          "https://dmv.ri.gov/registrations-plates-titles/registration/registration-fees"
+        ]
+      }
+    ]
+  }
+}

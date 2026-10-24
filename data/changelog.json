@@ -3,6 +3,12 @@
   "entries": [
     {
       "date": "2026-10-24",
+      "state": "RI",
+      "stateName": "Rhode Island",
+      "summary": "Added state with the 7% sales tax after trade-in, title, two-year registration by weight, the transportation surcharge, technology surcharge and the electric vehicle fee. The yearly city or town excise tax is not included."
+    },
+    {
+      "date": "2026-10-24",
       "state": "KS",
       "stateName": "Kansas",
       "summary": "The 6.5% state rate is now verified against the Department of Revenue's sales tax page."
