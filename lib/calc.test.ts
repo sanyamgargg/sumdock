@@ -303,3 +303,22 @@ describe("North Carolina", () => {
   });
 });
 
+describe("Michigan", () => {
+  const mi = load("mi");
+  it("is not publishable yet because registration is left out", () => {
+    expect(publishability(mi).publishable).toBe(false);
+    expect(publishability(mi).reasons).toContain("no verified registration fee");
+    const r = calculate(mi, { ...base, price: 30000 });
+    expect(line(r, "state-tax")).toBe(1800);
+    expect(line(r, "title")).toBe(15);
+    expect(r.excluded.some((e) => e.label.includes("Registration"))).toBe(true);
+  });
+  it("caps the trade-in reduction at 12,000", () => {
+    const r = calculate(mi, { ...base, price: 40000, tradeIn: 20000 });
+    expect(line(r, "state-tax")).toBe(1680);
+  });
+  it("adds the electric vehicle fee", () => {
+    expect(line(calculate(mi, { ...base, price: 30000, fuel: "ev" }), "ev-fee")).toBe(267);
+  });
+});
+

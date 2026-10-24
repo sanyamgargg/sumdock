@@ -94,6 +94,7 @@ for (const f of files) {
   if (f.replace(".json", "").toUpperCase() !== d.code) err(f, "file name must match state code");
 
   const st = d.salesTax ?? {};
+  if (st.tradeInCap != null && !(typeof st.tradeInCap === "number" && st.tradeInCap > 0)) err(f, "salesTax.tradeInCap must be a positive number");
   for (const k of ["stateRatePct", "tradeInReducesBase", "local", "outOfStateCredit"]) checkSourced(f, `salesTax.${k}`, st[k]);
   if (st.useTax) checkSourced(f, "salesTax.useTax", st.useTax);
 

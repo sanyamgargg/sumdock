@@ -1,0 +1,204 @@
+{
+  "code": "MI",
+  "name": "Michigan",
+  "slug": "michigan",
+  "lastReviewed": "2026-10-24",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 6,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Michigan Treasury - Form 485, Instructions for Vehicle Dealers Collecting Sales Tax (Rev. 11-25)",
+          "url": "https://www.michigan.gov/taxes/-/media/Project/Websites/taxes/Forms/SUW/TY2026/485_11-25.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Michigan Secretary of State - Title transfer and vehicle registration",
+          "url": "https://www.michigan.gov/sos/all-services/title-transfer-and-vehicle-registration",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ]
+    },
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Michigan Treasury - Form 485, Instructions for Vehicle Dealers Collecting Sales Tax (Rev. 11-25)",
+          "url": "https://www.michigan.gov/taxes/-/media/Project/Websites/taxes/Forms/SUW/TY2026/485_11-25.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Applies to a trade-in toward a vehicle bought from a licensed dealer. For 2026 the reduction is limited to the agreed trade-in value or $12,000, whichever is less."
+    },
+    "tradeInCap": 12000,
+    "local": {
+      "value": {
+        "mode": "none",
+        "capBase": null,
+        "rangeNote": null
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Michigan Secretary of State - Title transfer and vehicle registration",
+          "url": "https://www.michigan.gov/sos/all-services/title-transfer-and-vehicle-registration",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The state pages list one 6% rate and no local vehicle sales tax."
+    },
+    "outOfStateCredit": {
+      "value": null,
+      "status": "unverified",
+      "sources": [
+        {
+          "title": "Michigan Treasury - Form 485, Instructions for Vehicle Dealers Collecting Sales Tax (Rev. 11-25)",
+          "url": "https://www.michigan.gov/taxes/-/media/Project/Websites/taxes/Forms/SUW/TY2026/485_11-25.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Form 485 explains credits for dealers selling to out-of-state buyers. A rule for buyers registering in Michigan was not confirmed."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Title transfer",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 15,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Michigan Secretary of State - Title transfer and vehicle registration",
+            "url": "https://www.michigan.gov/sos/all-services/title-transfer-and-vehicle-registration",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "registration",
+      "label": "Registration (plate fee)",
+      "kind": "flat",
+      "frequency": "annual",
+      "excludedReason": "Michigan sets the fee from the vehicle's original list price (MSRP) and its age, which this calculator does not ask for, so it is left out. Use the Secretary of State registration fee calculator.",
+      "amount": {
+        "value": null,
+        "status": "unverified",
+        "sources": [
+          {
+            "title": "Michigan Secretary of State - Title transfer and vehicle registration",
+            "url": "https://www.michigan.gov/sos/all-services/title-transfer-and-vehicle-registration",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Michigan Secretary of State - License plates and tabs",
+            "url": "https://www.michigan.gov/sos/vehicle/license-plates/plates-and-tabs",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-fee",
+      "label": "Electric vehicle fee",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "ev"
+      },
+      "amount": {
+        "value": 267,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Michigan Secretary of State - License plates and tabs",
+            "url": "https://www.michigan.gov/sos/vehicle/license-plates/plates-and-tabs",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Charged in addition to the regular registration fee, at renewal. Trucks and buses pay $367. Plug-in hybrids pay $113, not included."
+      }
+    }
+  ],
+  "notes": [
+    "Registration depends on the vehicle's original list price and age and is not included; use the state's registration fee calculator. The state page is not indexed until this is modeled.",
+    "The trade-in credit applies to dealer purchases and is limited to a set amount that the state publishes each year.",
+    "Recreation Passport ($15) and plate transfer fees are optional and not included."
+  ],
+  "content": {
+    "intro": "{state} charges {stateRate} sales tax on a vehicle, a title fee, and a yearly registration fee based on the vehicle's list price. Electric vehicles pay an additional yearly fee.",
+    "howItWorks": [
+      {
+        "text": "The sales tax rate is {stateRate}. When you buy from a licensed dealer, a trade-in lowers the taxable price, but only up to a yearly limit set by the state.",
+        "sources": [
+          "https://www.michigan.gov/taxes/-/media/Project/Websites/taxes/Forms/SUW/TY2026/485_11-25.pdf"
+        ]
+      },
+      {
+        "text": "The title fee is charged once when the vehicle is transferred into your name.",
+        "sources": [
+          "https://www.michigan.gov/sos/all-services/title-transfer-and-vehicle-registration"
+        ]
+      },
+      {
+        "text": "The registration fee is a share of the vehicle's list price when it was new, and it falls over the next few years. This calculator does not include it, because the state's percentages could not be confirmed. The state has its own fee calculator.",
+        "sources": [
+          "https://www.michigan.gov/sos/all-services/title-transfer-and-vehicle-registration",
+          "https://www.michigan.gov/sos/vehicle/license-plates/plates-and-tabs"
+        ]
+      },
+      {
+        "text": "Electric vehicles pay an extra yearly fee on top of registration, and plug-in hybrids pay a smaller one.",
+        "sources": [
+          "https://www.michigan.gov/sos/vehicle/license-plates/plates-and-tabs"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does a trade-in lower the sales tax in Michigan?",
+        "text": "Yes, when you buy from a licensed dealer, up to a limit the state sets each year.",
+        "sources": [
+          "https://www.michigan.gov/taxes/-/media/Project/Websites/taxes/Forms/SUW/TY2026/485_11-25.pdf"
+        ]
+      },
+      {
+        "q": "Why is the registration fee not in the total?",
+        "text": "It depends on the vehicle's original list price. The state's percentage table could not be confirmed, so it is shown as not included.",
+        "sources": [
+          "https://www.michigan.gov/sos/all-services/title-transfer-and-vehicle-registration",
+          "https://www.michigan.gov/sos/vehicle/license-plates/plates-and-tabs"
+        ]
+      },
+      {
+        "q": "Do electric vehicles pay more?",
+        "text": "Yes. They pay an extra yearly fee in addition to registration.",
+        "sources": [
+          "https://www.michigan.gov/sos/vehicle/license-plates/plates-and-tabs"
+        ]
+      },
+      {
+        "q": "Is there a local sales tax on vehicles?",
+        "text": "The state pages list a single state rate and no local vehicle tax.",
+        "sources": [
+          "https://www.michigan.gov/sos/all-services/title-transfer-and-vehicle-registration"
+        ]
+      }
+    ]
+  }
+}

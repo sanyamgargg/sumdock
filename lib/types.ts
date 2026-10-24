@@ -66,6 +66,8 @@ export interface StateData {
   salesTax: {
     stateRatePct: Sourced<number>;
     tradeInReducesBase: Sourced<boolean>;
+    /** Most the trade-in can reduce the taxable price (Michigan: 12000). Omit when there is no cap. */
+    tradeInCap?: number | null;
     local: Sourced<LocalRule>;
     outOfStateCredit: Sourced<boolean>;
     useTax: Sourced<UseTaxRule> | null;

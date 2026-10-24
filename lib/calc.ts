@@ -32,7 +32,7 @@ export function calculate(state: StateData, i: Inputs): Result {
     if (trade.value === null || !isUsable(trade.status)) {
       excluded.push({ label: "Trade-in credit", reason: "Trade-in rule not yet verified; no credit applied." });
     }
-    const base = Math.max(0, i.price - (reduces ? i.tradeIn : 0));
+    const base = Math.max(0, i.price - (reduces ? Math.min(i.tradeIn, st.tradeInCap ?? Infinity) : 0));
     const stateTax = round2((base * rate.value) / 100);
     if (rate.value > 0) {
       lines.push({ id: "state-tax", label: `${state.name} sales tax (${rate.value}%)`, amount: stateTax, status: rate.status, note: rate.note });
