@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import StatusMark from "@/components/StatusMark";
+import StateIndex, { type StateRow } from "@/components/StateIndex";
 import { mainTaxSummary, verificationStatus } from "@/lib/content";
 import { loadStates } from "@/lib/data";
 import { formatDate } from "@/lib/format";
@@ -12,7 +11,18 @@ export const metadata: Metadata = {
 };
 
 export default function VehicleIndex() {
-  const states = loadStates();
+  const rows: StateRow[] = loadStates().map((s) => {
+    const v = verificationStatus(s);
+    return {
+      slug: s.slug,
+      name: s.name,
+      code: s.code,
+      tax: mainTaxSummary(s),
+      status: v.status,
+      statusLabel: v.label,
+      reviewed: formatDate(s.lastReviewed),
+    };
+  });
   return (
     <div className="stack">
       <header className="page-head">
@@ -23,38 +33,7 @@ export default function VehicleIndex() {
         </p>
       </header>
 
-      <section aria-labelledby="states-title">
-        <h2 id="states-title" className="sr-only">States</h2>
-        <div className="states__head" aria-hidden="true">
-          <span>State</span><span>Main tax</span><span>Data status</span><span>Reviewed</span><span />
-        </div>
-        <ul className="states">
-          {states.map((s) => {
-            const v = verificationStatus(s);
-            const review = v.status === "in-review";
-            return (
-              <li key={s.slug} className={review ? "state-row is-review" : "state-row"}>
-                <span className="state-row__name">{review ? s.name : <Link href={`/vehicle/${s.slug}/`}>{s.name}</Link>}</span>
-                <span className="state-row__tax">{mainTaxSummary(s)}</span>
-                <span className="state-row__status"><StatusMark status={v.status} label={v.label} /></span>
-                <span className="state-row__date">{formatDate(s.lastReviewed)}</span>
-                <span className="state-row__go">
-                  {!review && (
-                    <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-                      <path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" fill="none" />
-                    </svg>
-                  )}
-                </span>
-              </li>
-            );
-          })}
-        </ul>
-        <ul className="legend" aria-label="What the status words mean">
-          <li><StatusMark status="verified" label="Verified" />: every figure in the total is confirmed on an official page.</li>
-          <li><StatusMark status="partial" label="Partly verified" />: some figures are marked “check source”.</li>
-          <li><StatusMark status="in-review" label="In review" />: a core figure is not confirmed, so the page is not yet public.</li>
-        </ul>
-      </section>
+      <StateIndex rows={rows} />
     </div>
   );
 }
