@@ -1,4 +1,4 @@
-import { calculate, isUsable } from "./calc";
+import { calculate, isUsable, publishability } from "./calc";
 import { formatDate, usd, usdShort } from "./format";
 import type { Inputs, Result, Source, StateData, Status } from "./types";
 
@@ -212,4 +212,27 @@ export function sourcesByUrl(state: StateData, urls: string[]): Source[] {
     ...(state.localRates?.rates.sources ?? []),
   ];
   return urls.map((u) => all.find((s) => s.url === u)).filter((s): s is Source => !!s);
+}
+
+export type Verification = "verified" | "partial" | "in-review";
+
+/**
+ * How far a state's data can be relied on, for the state index.
+ * in-review: core figures missing (the page is noindex). partial: publishable, but at least one value that
+ * enters totals is a "check source" one. verified: every value that enters totals is verified.
+ */
+export function verificationStatus(state: StateData): { status: Verification; label: string; note: string } {
+  if (!publishability(state).publishable) {
+    return {
+      status: "in-review",
+      label: "In review",
+      note: "Some core figures are not confirmed yet. Totals leave out anything unconfirmed.",
+    };
+  }
+  const st = state.salesTax;
+  const used = [st.stateRatePct, st.tradeInReducesBase, st.local, ...state.fees.map((f) => f.amount)].filter((s) => isUsable(s.status));
+  if (used.some((s) => s.status === "partial")) {
+    return { status: "partial", label: "Partly verified", note: "Some figures are marked “check source”." };
+  }
+  return { status: "verified", label: "Verified", note: "Core figures confirmed on official pages." };
 }

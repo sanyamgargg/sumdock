@@ -83,10 +83,13 @@ export default function Calculator({ state }: { state: StateData }) {
   const rateCounties = rateTable ? Object.keys(rateTable).sort() : [];
   const [rateCounty, setRateCounty] = useState("");
   const [ratePlace, setRatePlace] = useState("");
+  // True once the person types their own local rate, so the hint can say the value is no longer auto-filled.
+  const [rateEdited, setRateEdited] = useState(false);
   const stateRate = state.salesTax.stateRatePct.value ?? 0;
   const applyRate = (county: string, place: string) => {
     setRateCounty(county);
     setRatePlace(place);
+    setRateEdited(false);
     // When one picker drives both the tax rate and a county fee table (New York), keep them in step.
     if (state.counties) set("county", county);
     const entry = rateTable?.[county];
@@ -102,9 +105,18 @@ export default function Calculator({ state }: { state: StateData }) {
 
   const countyName = (c: string) => (c ? `${c} County` : "");
   const placeLabel = rateTable
-    ? [ratePlace, countyName(rateCounty)].filter(Boolean).join(", ")
+    ? [ratePlace === rateCounty ? "" : ratePlace, countyName(rateCounty)].filter(Boolean).join(", ")
     : countyName(i.county);
-  const subtitle = `on a ${usdShort(i.price)} vehicle${placeLabel ? ` in ${placeLabel}` : ""}. Price plus these items comes to ${usd(i.price + result.total)}.`;
+  const onPlace = placeLabel ? ` in ${placeLabel}` : "";
+  const hasTrade = i.tradeIn > 0;
+  const costLabel = hasTrade ? "Price after trade-in, plus these items" : "Price plus these items";
+  const cost = Math.max(0, i.price - i.tradeIn) + result.total;
+  const tradeWarning = i.tradeIn > i.price ? "This trade-in is more than the vehicle price, so the amount left to tax is zero." : undefined;
+  const rateHint = [
+    rateTable && rateCounty && !rateEdited ? "Filled in from your county or city. Type a different rate to override it." : null,
+    rateTable && rateEdited ? "You changed this rate. Choose your county again to reset it." : null,
+    local?.rangeNote ?? null,
+  ].filter(Boolean).join(" ") || undefined;
   const countyHint = state.counties ? `The ${state.counties.label.toLowerCase()} is added for the county you choose.` : undefined;
 
   return (
@@ -115,7 +127,7 @@ export default function Calculator({ state }: { state: StateData }) {
           <legend>Price</legend>
           <div className="field-row">
             <NumberField label="Vehicle price" prefix="$" value={i.price} onValue={(n) => set("price", n)} />
-            <NumberField label="Trade-in value" prefix="$" value={i.tradeIn} onValue={(n) => set("tradeIn", n)} />
+            <NumberField label="Trade-in value" prefix="$" value={i.tradeIn} onValue={(n) => set("tradeIn", n)} hint={tradeWarning} />
           </div>
           <NumberField label="Tax already paid to another state" prefix="$" value={i.outOfStateTaxPaid} onValue={(n) => set("outOfStateTaxPaid", n)} />
           {state.salesTax.useTax && (
@@ -136,6 +148,7 @@ export default function Calculator({ state }: { state: StateData }) {
                   label={`County${state.counties ? "" : state.localRates?.mode === "localOnly" ? " (for surtax rate)" : " (for local tax rate)"}`}
                   value={rateCounty}
                   onChange={(v) => applyRate(v, "")}
+                  hint="Choose your county first. If it lists cities or areas, a second menu appears so you can pick yours. The local rate then fills in below."
                 >
                   <option value="">Choose your county</option>
                   {rateCounties.map((n) => <option key={n} value={n}>{n}</option>)}
@@ -145,7 +158,7 @@ export default function Calculator({ state }: { state: StateData }) {
                     label="City or area"
                     value={ratePlace}
                     onChange={(v) => applyRate(rateCounty, v)}
-                    hint="Pick the city or area where you live. You can still edit the local rate below."
+                    hint="The local rate below updates when you pick one."
                   >
                     <option value="">Not listed / county rate ({rateTable[rateCounty].county}% combined)</option>
                     {Object.keys(rateTable[rateCounty].places).sort().map((p) => (
@@ -167,8 +180,8 @@ export default function Calculator({ state }: { state: StateData }) {
                 suffix="%"
                 decimals={3}
                 value={i.localRatePct}
-                onValue={(n) => set("localRatePct", n)}
-                hint={local.rangeNote ?? undefined}
+                onValue={(n) => { setRateEdited(true); set("localRatePct", n); }}
+                hint={rateHint}
               />
             )}
           </fieldset>
@@ -223,7 +236,8 @@ export default function Calculator({ state }: { state: StateData }) {
           <div className="result-card__head">
             <h2 id="result-title" className="result-card__title">Estimated taxes and fees</h2>
             <div className="result-card__total">{usd(result.total)}</div>
-            <div className="result-card__sub">{subtitle}</div>
+            <div className="result-card__sub">On a {usdShort(i.price)} vehicle{onPlace}.</div>
+            <div className="result-card__cost">{costLabel}: <b>{usd(cost)}</b></div>
           </div>
 
           <div className="lines-wrap">

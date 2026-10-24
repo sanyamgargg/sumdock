@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { calculate } from "./calc";
-import { expandTokens, exampleScenarios, figures, generatedFaq, generatedSummary } from "./content";
+import { calculate, publishability } from "./calc";
+import { expandTokens, exampleScenarios, figures, generatedFaq, generatedSummary, verificationStatus } from "./content";
 import { loadStates } from "./data";
 import { collectSources, sourcesForLine } from "./sources";
 import type { StateData } from "./types";
@@ -95,5 +95,32 @@ describe("validate-data content check", () => {
     expect(run({ howItWorks: [{ text: "It costs 5 dollars.", sources: [url] }] }).status).toBe(1);
     expect(run({ howItWorks: [{ text: "No source given.", sources: [] }] }).status).toBe(1);
     expect(run({ howItWorks: [{ text: "Wrong source.", sources: ["https://example.com/x"] }] }).status).toBe(1);
+  });
+});
+
+describe("verificationStatus", () => {
+  it("is in-review exactly when the state is not publishable", () => {
+    for (const s of states) {
+      expect(verificationStatus(s).status === "in-review", s.name).toBe(!publishability(s).publishable);
+    }
+  });
+
+  it("is verified only when every value that enters totals is verified", () => {
+    for (const s of states) {
+      const v = verificationStatus(s);
+      if (v.status !== "verified") continue;
+      const st = s.salesTax;
+      for (const x of [st.stateRatePct, st.tradeInReducesBase, st.local, ...s.fees.map((f) => f.amount)]) {
+        if (x.status === "partial") throw new Error(`${s.name} reported verified with a partial value`);
+      }
+    }
+  });
+
+  it("downgrades a verified state when one value becomes partial", () => {
+    const base = states.find((x) => verificationStatus(x).status === "verified");
+    if (!base) return;
+    const copy: StateData = structuredClone(base);
+    copy.salesTax.stateRatePct.status = "partial";
+    expect(verificationStatus(copy).status).toBe("partial");
   });
 });

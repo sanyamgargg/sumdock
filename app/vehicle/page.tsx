@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { publishability } from "@/lib/calc";
+import { verificationStatus } from "@/lib/content";
 import { loadStates } from "@/lib/data";
+import { formatDate } from "@/lib/format";
 
 export const metadata: Metadata = {
   title: "Vehicle Sales Tax, Title and Registration Costs by State",
@@ -22,13 +23,16 @@ export default function VehicleIndex() {
       </section>
       <ul className="state-grid">
         {states.map((s) => {
-          const ok = publishability(s).publishable;
+          const v = verificationStatus(s);
           return (
             <li key={s.slug}>
               <Link href={`/vehicle/${s.slug}/`} className="state-card">
                 <span className="state-card__name">{s.name}</span>
+                <span className={`vstatus vstatus--${v.status}`}>
+                  <span aria-hidden="true">{v.status === "verified" ? "✓" : v.status === "partial" ? "◐" : "!"}</span> {v.label}
+                </span>
                 <span className="state-card__meta">
-                  {ok ? `Data reviewed ${s.lastReviewed}` : <span className="tag tag--plain">In review</span>}
+                  {v.status === "in-review" ? v.note : `Data reviewed ${formatDate(s.lastReviewed)}`}
                 </span>
               </Link>
             </li>
