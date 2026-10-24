@@ -13,7 +13,7 @@ export default function Breadcrumbs({ items }: { items: Crumb[] }) {
         {items.map((c, i) => (
           <li key={c.label}>
             {c.href ? <Link href={c.href}>{c.label}</Link> : <span aria-current="page">{c.label}</span>}
-            {i < items.length - 1 && <span aria-hidden="true"> / </span>}
+            {i < items.length - 1 && <span aria-hidden="true" className="crumbs__sep">/</span>}
           </li>
         ))}
       </ol>

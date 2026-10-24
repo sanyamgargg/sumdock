@@ -7,7 +7,7 @@ export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const u = (p: string) => `${site.url}${p}`;
-  const fixed = ["/", "/vehicle/", "/about/", "/methodology/", "/contact/", "/privacy/"];
+  const fixed = ["/", "/vehicle/", "/about/", "/methodology/", "/changelog/", "/contact/", "/privacy/"];
   const states = loadStates()
     .filter((s) => publishability(s).publishable)
     .map((s) => ({ path: `/vehicle/${s.slug}/`, lastModified: s.lastReviewed }));

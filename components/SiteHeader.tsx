@@ -2,28 +2,46 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const NAV = [
-  { href: "/vehicle/", label: "Vehicle calculator" },
+  { href: "/vehicle/", label: "Vehicle costs" },
   { href: "/methodology/", label: "Methodology" },
+  { href: "/changelog/", label: "Changelog" },
   { href: "/about/", label: "About" },
 ];
 
-export default function SiteHeader({ name }: { name: string }) {
+export default function SiteHeader() {
   const [open, setOpen] = useState(false);
   const path = usePathname() ?? "";
+  const button = useRef<HTMLButtonElement>(null);
+
+  // Escape closes the phone menu and returns focus to its button.
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setOpen(false);
+        button.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open]);
+
   return (
     <header className="site-header">
-      <div className="container site-header__row">
+      <div className="site-header__row">
         <Link href="/" className="brand" onClick={() => setOpen(false)}>
-          <svg width="24" height="24" viewBox="0 0 26 26" aria-hidden="true">
-            <rect x="1" y="1" width="24" height="24" rx="6" fill="currentColor" className="brand__mark" />
-            <path d="M7 14.5h12M7 10h12M7 19h7" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" fill="none" />
+          <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+            <rect x="1" y="1" width="18" height="18" fill="none" stroke="#111111" strokeWidth="2" />
+            <path d="M5 14h10M5 10h10" stroke="#111111" strokeWidth="2" fill="none" />
+            <path d="M5 6h6" stroke="#B8320F" strokeWidth="2" fill="none" />
           </svg>
-          {name}
+          sumdock
         </Link>
         <button
+          ref={button}
           type="button"
           className="menu-btn"
           aria-label={open ? "Close menu" : "Open menu"}
@@ -32,7 +50,7 @@ export default function SiteHeader({ name }: { name: string }) {
           onClick={() => setOpen((o) => !o)}
         >
           <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
-            <path d={open ? "M4 4l12 12M16 4L4 16" : "M3 6h14M3 10h14M3 14h14"} stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none" />
+            <path d={open ? "M4 4l12 12M16 4L4 16" : "M3 6h14M3 10h14M3 14h14"} stroke="currentColor" strokeWidth="2" fill="none" />
           </svg>
         </button>
         <nav id="site-nav" aria-label="Main" className={open ? "site-nav is-open" : "site-nav"}>
@@ -43,7 +61,7 @@ export default function SiteHeader({ name }: { name: string }) {
               onClick={() => setOpen(false)}
               aria-current={path.startsWith(n.href) ? "page" : undefined}
             >
-              {n.label}
+              <span>{n.label}</span>
             </Link>
           ))}
         </nav>
