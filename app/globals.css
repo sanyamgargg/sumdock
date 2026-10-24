@@ -85,4 +85,31 @@ input[type="number"], input[type="text"], select { height: var(--field); padding
 td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
 tr.total td { font-weight: 700; border-bottom: 0; font-size: 1.1rem; }
 .sources small { color: var(--muted); }
-.footnav { margin-bottom: 8px; }
+
+/* Header */
+.site-header { background: var(--card); border-bottom: 1px solid var(--line); position: relative; }
+.site-header__row { display: flex; align-items: center; justify-content: space-between; min-height: 64px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--fg); font-weight: 700; font-size: 18px; min-height: var(--touch); }
+.brand__mark { color: var(--accent); }
+.menu-btn { width: var(--touch); height: var(--touch); border: 1px solid var(--line); background: var(--card); color: var(--fg); border-radius: var(--radius-field); display: flex; align-items: center; justify-content: center; cursor: pointer; }
+.site-nav { display: none; width: 100%; flex-direction: column; padding: 4px 0 12px; }
+.site-nav.is-open { display: flex; }
+.site-nav a { display: flex; align-items: center; min-height: var(--touch); color: var(--fg); text-decoration: none; font-weight: 500; border-top: 1px solid var(--line); }
+.site-nav a:hover { color: var(--accent); }
+@media (min-width: 760px) {
+  .menu-btn { display: none; }
+  .site-nav, .site-nav.is-open { display: flex; flex-direction: row; width: auto; padding: 0; gap: 8px; }
+  .site-nav a { border-top: 0; padding: 0 12px; border-radius: var(--radius-field); }
+}
+
+/* Footer */
+.site-footer { background: var(--card); border-top: 1px solid var(--line); margin-top: 24px; color: var(--muted); font-size: 13px; }
+.site-footer__inner { padding-top: 20px; padding-bottom: 24px; display: flex; flex-direction: column; gap: 10px; }
+.site-footer p { margin: 0; max-width: 70ch; }
+.footnav { display: flex; flex-wrap: wrap; gap: 0 18px; font-size: 14px; }
+.footnav a { color: var(--muted); display: inline-flex; align-items: center; min-height: var(--touch); }
+
+/* Breadcrumbs */
+.crumbs { font-size: 13px; color: var(--muted); }
+.crumbs ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; }
+.crumbs a { color: var(--muted); display: inline-flex; align-items: center; min-height: 24px; }

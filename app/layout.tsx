@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
+import SiteHeader from "@/components/SiteHeader";
 import { site } from "@/lib/site";
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600", "700"], display: "swap", variable: "--font-inter" });
@@ -15,19 +17,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en-US" className={inter.variable}>
       <body>
-        <header className="site">
-          <a href="/" className="brand">{site.name}</a>
-        </header>
-        <main className="container page">{children}</main>
-        <footer className="site">
-          <nav className="footnav">
-            <a href="/about/">About</a> · <a href="/methodology/">Methodology</a> · <a href="/contact/">Contact</a> ·{" "}
-            <a href="/privacy/">Privacy</a>
-          </nav>
-          <p>
-            Estimates only, not tax or legal advice. Figures come from the official pages linked on each state page and can
-            change. Confirm with your state agency before you pay.
-          </p>
+        <a href="#main" className="skip">Skip to content</a>
+        <SiteHeader name={site.name} />
+        <main id="main" className="container page">{children}</main>
+        <footer className="site-footer">
+          <div className="container site-footer__inner">
+            <nav aria-label="Footer" className="footnav">
+              <Link href="/about/">About</Link>
+              <Link href="/methodology/">Methodology</Link>
+              <Link href="/contact/">Contact</Link>
+              <Link href="/privacy/">Privacy</Link>
+            </nav>
+            <p>
+              Estimates only, not tax or legal advice. Figures come from the official pages linked on each state page and can
+              change. Confirm with your state agency before you pay.
+            </p>
+          </div>
         </footer>
       </body>
     </html>
