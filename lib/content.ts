@@ -221,6 +221,32 @@ export type Verification = "verified" | "partial" | "in-review";
  * in-review: core figures missing (the page is noindex). partial: publishable, but at least one value that
  * enters totals is a "check source" one. verified: every value that enters totals is verified.
  */
+/**
+ * One line for the state index: the state rate, and what kind of local rate sits on top of it.
+ * Built from the data file so it cannot drift from the calculator. In-review states say so instead of
+ * implying every figure is settled.
+ */
+export function mainTaxSummary(state: StateData): string {
+  const rate = state.salesTax.stateRatePct.value;
+  const rates = state.localRates?.rates.value ?? null;
+  let line: string;
+  if (rate === null || !isUsable(state.salesTax.stateRatePct.status)) {
+    line = "State rate not confirmed yet";
+  } else if (rate === 0) {
+    line = "No sales tax";
+  } else {
+    line = `${rate}% sales tax`;
+    const hasPlaces = !!rates && Object.values(rates).some((c) => Object.keys(c.places).length > 0);
+    if (rates) {
+      if (state.localRates?.mode === "localOnly") line += hasPlaces ? " plus county and city surtax" : " plus county surtax";
+      else line += hasPlaces ? " plus county and city rate" : " plus county rate";
+    } else if (state.salesTax.local.value?.mode === "user-entered") {
+      line += " plus local rate";
+    }
+  }
+  return verificationStatus(state).status === "in-review" ? `${line}. Some figures are not confirmed yet.` : line;
+}
+
 export function verificationStatus(state: StateData): { status: Verification; label: string; note: string } {
   if (!publishability(state).publishable) {
     return {

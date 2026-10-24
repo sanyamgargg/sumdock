@@ -1,9 +1,9 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { calculate, publishability } from "./calc";
-import { expandTokens, exampleScenarios, figures, generatedFaq, generatedSummary, verificationStatus } from "./content";
+import { DEFAULT_INPUTS, expandTokens, exampleScenarios, figures, generatedFaq, generatedSummary, mainTaxSummary, verificationStatus } from "./content";
 import { loadStates } from "./data";
-import { collectSources, sourcesForLine } from "./sources";
+import { collectSources, footnotes, sourcesForLine, splitTitle } from "./sources";
 import type { StateData } from "./types";
 
 const states = loadStates();
@@ -122,5 +122,62 @@ describe("verificationStatus", () => {
     const copy: StateData = structuredClone(base);
     copy.salesTax.stateRatePct.status = "partial";
     expect(verificationStatus(copy).status).toBe("partial");
+  });
+});
+
+describe("statement footnotes", () => {
+  it.each(states.map((s) => [s.name, s] as const))("%s: numbers follow line order and shared sources share a number", (_n, s) => {
+    const county = s.counties?.fees.value ? Object.keys(s.counties.fees.value)[0] : "";
+    const result = calculate(s, { ...DEFAULT_INPUTS, county, localRatePct: 1 });
+    const ids = result.lines.map((l) => l.id);
+    const fn = footnotes(s, ids);
+    // Every source in the file is listed exactly once, numbered 1..n.
+    const urls = fn.ordered.map((x) => x.source.url);
+    expect(new Set(urls).size).toBe(urls.length);
+    expect(urls.length).toBe(collectSources(s).length);
+    // A line's numbers point at its own sources.
+    for (const id of ids) {
+      const expected = sourcesForLine(s, id).map((src) => urls.indexOf(src.url) + 1);
+      expect(fn.byLine[id]).toEqual([...new Set(expected)]);
+    }
+    // First appearance order: no line introduces a number more than one above everything seen before it.
+    let seen = 0;
+    for (const id of ids) {
+      for (const n of fn.byLine[id]) {
+        expect(n).toBeLessThanOrEqual(seen + 1);
+        seen = Math.max(seen, n);
+      }
+    }
+  });
+
+  it("two lines that cite the same page get the same number", () => {
+    const tx = states.find((s) => s.slug === "texas")!;
+    const result = calculate(tx, { ...DEFAULT_INPUTS, county: "Travis" });
+    const fn = footnotes(tx, result.lines.map((l) => l.id));
+    const shared = Object.values(fn.byLine).flat();
+    expect(shared.length).toBeGreaterThan(new Set(shared).size);
+  });
+});
+
+describe("splitTitle", () => {
+  it("splits the publisher from the page name", () => {
+    expect(splitTitle("TxDMV - Title Manual")).toEqual({ publisher: "TxDMV", page: "Title Manual" });
+    expect(splitTitle("Title Manual")).toEqual({ publisher: null, page: "Title Manual" });
+  });
+});
+
+describe("mainTaxSummary", () => {
+  it.each(states.map((s) => [s.name, s] as const))("%s: starts from the data file's own rate", (_n, s) => {
+    const text = mainTaxSummary(s);
+    const rate = s.salesTax.stateRatePct.value;
+    if (rate === 0) expect(text).toMatch(/^No sales tax/);
+    else expect(text.startsWith(`${rate}% sales tax`)).toBe(true);
+    if (verificationStatus(s).status === "in-review") expect(text).toContain("not confirmed");
+  });
+
+  it("describes the kind of local rate", () => {
+    const by = (slug: string) => states.find((s) => s.slug === slug)!;
+    expect(mainTaxSummary(by("florida"))).toContain("county surtax");
+    expect(mainTaxSummary(by("texas"))).toBe(`${by("texas").salesTax.stateRatePct.value}% sales tax`);
   });
 });
