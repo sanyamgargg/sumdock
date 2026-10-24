@@ -37,5 +37,12 @@ Five states live: TX (with 254 county fees), CA (58 counties, 331 cities), FL (6
 3. Monthly check for changed pages, full re-verification each January and July.
 4. Apply to AdSense after the site has been live for several weeks with more than five states and original content.
 
+## Design
+The visual direction is "Statement": the result is an itemized receipt with dotted leaders, numbered footnotes and a sources table. Tokens, components and accessibility rules are in `design/README.md`; the reference pages are in `design/reference/` (HTML and PNG). Rebuild from those, do not edit them.
+- Styles live in `app/globals.css` (tokens, base) and one file per area in `app/styles/` (shell, form, statement, sources, content, index, home). Square corners, 1px ink borders, IBM Plex Sans and Mono through `next/font/google`.
+- Footnote numbers come from `footnotes()` in `lib/sources.ts`: sources are numbered in the order the statement lines appear, lines that share a source share a number. The sources table is rendered by `Calculator` so the numbers follow the current county or city choice.
+- Status words (`Verified`, `Partly verified`, `In review`) come from `verificationStatus()`. Always show the word with the glyph. In-review states are not links on the index.
+- Ad slots take no space until `NEXT_PUBLIC_ADS_ENABLED=1` is set at build time. Set it when the first ad unit goes in, so the layout does not jump.
+
 ## Style
 Plain English, US spelling, no marketing claims. Pages must say what is estimated and what is left out. Keep copy honest: "estimate", not "exact".
