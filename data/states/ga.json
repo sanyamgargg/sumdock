@@ -1,0 +1,199 @@
+{
+  "code": "GA",
+  "name": "Georgia",
+  "slug": "georgia",
+  "lastReviewed": "2026-10-24",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 7,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Georgia DOR - Title Ad Valorem Tax (TAVT) and Annual Ad Valorem Tax",
+          "url": "https://dor.georgia.gov/motor-vehicles/vehicle-taxes-title-ad-valorem-tax-tavt-and-annual-ad-valorem-tax",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Georgia charges a one-time Title Ad Valorem Tax (TAVT) of 7.0% of fair market value instead of sales tax. New Georgia residents bringing a vehicle pay 3%; family transfers pay 0.5%."
+    },
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Georgia DOR - Title Ad Valorem Tax (TAVT) FAQ",
+          "url": "https://dor.georgia.gov/node/25891",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "A trade-in reduces the value only when a dealer makes the sale, not in a private sale. For a new vehicle, rebates and dealer cash discounts also reduce it."
+    },
+    "local": {
+      "value": {
+        "mode": "none",
+        "capBase": null,
+        "rangeNote": null
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Georgia DOR - Title Ad Valorem Tax (TAVT) and Annual Ad Valorem Tax",
+          "url": "https://dor.georgia.gov/motor-vehicles/vehicle-taxes-title-ad-valorem-tax-tavt-and-annual-ad-valorem-tax",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "TAVT is one state-set rate. Vehicles titled under TAVT do not pay the yearly local ad valorem tax."
+    },
+    "outOfStateCredit": {
+      "value": false,
+      "status": "unverified",
+      "sources": [
+        {
+          "title": "Georgia DOR - Title Ad Valorem Tax (TAVT) and Annual Ad Valorem Tax",
+          "url": "https://dor.georgia.gov/motor-vehicles/vehicle-taxes-title-ad-valorem-tax-tavt-and-annual-ad-valorem-tax",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The pages reviewed do not describe a credit for tax paid to another state."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Title application",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 18,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Georgia DOR - Motor Vehicle Fees, Fines and Penalties",
+            "url": "https://dor.georgia.gov/motor-vehicles/vehicle-registration-license-plates/motor-vehicles-fees-fines-and-penalties",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "registration",
+      "label": "License plate registration (1 year)",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 20,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Georgia DOR - Motor Vehicle Fees, Fines and Penalties",
+            "url": "https://dor.georgia.gov/motor-vehicles/vehicle-registration-license-plates/motor-vehicles-fees-fines-and-penalties",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Regular passenger car or light pickup truck. County tag offices may add small service charges."
+      }
+    },
+    {
+      "id": "ev-fee",
+      "label": "Electric vehicle annual fee",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "ev"
+      },
+      "amount": {
+        "value": 238.59,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Georgia DOR - Alternative Fuel and Low-Speed Vehicles Annual Licensing Fees (July 2026)",
+            "url": "https://dor.georgia.gov/alternative-fuel-and-low-speed-vehicles-annual-licensing-fees-july-2026",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Non-commercial motor vehicle fee for registrations beginning or renewing July 1, 2026 to June 30, 2027. The page does not name electric vehicles separately, and it is not stated whether it replaces or adds to the $20 fee; it is added here. Plug-in hybrids pay only if they choose an alternative fuel plate; non-plug-in hybrids are exempt."
+      }
+    }
+  ],
+  "notes": [
+    "Georgia taxes the fair market value: for a used vehicle this is the state assessment manual value, which can differ from the price you pay. The calculator uses the price you enter, so for a used vehicle compare it with the state estimator.",
+    "Delivery, freight and doc fees count toward the value of a new vehicle.",
+    "The Georgia DOR TAVT estimator is the official source for the exact figure."
+  ],
+  "content": {
+    "intro": "{state} does not charge sales tax on vehicles. It charges a one-time title ad valorem tax of {stateRate} of the vehicle's value when you title it, plus a title fee and a yearly registration fee.",
+    "howItWorks": [
+      {
+        "text": "The tax is {stateRate} of the fair market value, paid once when the vehicle is titled. For a new vehicle the value is the higher of the selling price or the state schedule value. For a used vehicle it is the value in the state assessment manual.",
+        "sources": [
+          "https://dor.georgia.gov/node/25891",
+          "https://dor.georgia.gov/motor-vehicles/vehicle-taxes-title-ad-valorem-tax-tavt-and-annual-ad-valorem-tax"
+        ]
+      },
+      {
+        "text": "At a dealer, a trade-in lowers the taxable value, and so do rebates and dealer discounts on a new vehicle. In a private sale the trade-in does not count.",
+        "sources": [
+          "https://dor.georgia.gov/node/25891"
+        ]
+      },
+      {
+        "text": "People who move to the state and bring a vehicle pay a lower rate, and transfers between family members pay a much lower one. The calculator uses the standard rate.",
+        "sources": [
+          "https://dor.georgia.gov/motor-vehicles/vehicle-taxes-title-ad-valorem-tax-tavt-and-annual-ad-valorem-tax"
+        ]
+      },
+      {
+        "text": "The title fee is charged once and registration is renewed every year. Electric vehicles pay an additional yearly fee that the state publishes each July.",
+        "sources": [
+          "https://dor.georgia.gov/motor-vehicles/vehicle-registration-license-plates/motor-vehicles-fees-fines-and-penalties",
+          "https://dor.georgia.gov/alternative-fuel-and-low-speed-vehicles-annual-licensing-fees-july-2026"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is there sales tax on a car in Georgia?",
+        "text": "No. The title ad valorem tax takes its place and is paid once when the vehicle is titled.",
+        "sources": [
+          "https://dor.georgia.gov/motor-vehicles/vehicle-taxes-title-ad-valorem-tax-tavt-and-annual-ad-valorem-tax"
+        ]
+      },
+      {
+        "q": "Is the tax based on the price I paid?",
+        "text": "Not always. For a used vehicle it is based on the state's assessed value, which can differ from the price. For a new vehicle it is the higher of the price or the state value.",
+        "sources": [
+          "https://dor.georgia.gov/node/25891"
+        ]
+      },
+      {
+        "q": "Does a trade-in lower the tax?",
+        "text": "Yes when a dealer makes the sale. It does not in a private sale.",
+        "sources": [
+          "https://dor.georgia.gov/node/25891"
+        ]
+      },
+      {
+        "q": "Do I pay the yearly local vehicle tax too?",
+        "text": "Vehicles titled under this tax do not pay the yearly local ad valorem tax, though that tax still applies to vehicles that are not titled this way.",
+        "sources": [
+          "https://dor.georgia.gov/motor-vehicles/vehicle-taxes-title-ad-valorem-tax-tavt-and-annual-ad-valorem-tax"
+        ]
+      },
+      {
+        "q": "Do electric vehicles pay more?",
+        "text": "Yes. They pay an extra yearly licensing fee, published by the state each July.",
+        "sources": [
+          "https://dor.georgia.gov/alternative-fuel-and-low-speed-vehicles-annual-licensing-fees-july-2026"
+        ]
+      }
+    ]
+  }
+}

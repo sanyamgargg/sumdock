@@ -273,3 +273,18 @@ describe("Ohio", () => {
   });
 });
 
+describe("Georgia", () => {
+  const ga = load("ga");
+  it("charges 7% TAVT with trade-in reduction, title and registration", () => {
+    expect(publishability(ga).publishable).toBe(true);
+    const r = calculate(ga, { ...base, price: 30000, tradeIn: 10000 });
+    expect(line(r, "state-tax")).toBe(1400);
+    expect(line(r, "title")).toBe(18);
+    expect(line(r, "registration")).toBe(20);
+  });
+  it("adds the electric vehicle fee", () => {
+    const r = calculate(ga, { ...base, price: 30000, fuel: "ev" });
+    expect(line(r, "ev-fee")).toBe(238.59);
+  });
+});
+
