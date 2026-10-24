@@ -525,5 +525,61 @@
       ],
       "note": "Total surtax rate per county for 2026. Applies to the first $5,000 of the price. Some county surtaxes expire during 2026-2028."
     }
+  },
+  "content": {
+    "intro": "{state} charges {stateRate} state sales tax on the price. Counties may add a surtax that applies only to the first part of the price, and you pay a title fee and a registration fee on top.",
+    "howItWorks": [
+      {
+        "text": "The state rate is {stateRate}. A dealer can subtract a trade-in allowance when the vehicle is traded in as part of the same transaction.",
+        "sources": [
+          "https://floridarevenue.com/taxes/taxesfees/pages/sales_tax.aspx",
+          "https://floridarevenue.com/Forms_library/gt800030.pdf"
+        ]
+      },
+      {
+        "text": "Counties may add a discretionary sales surtax, but it applies only to the first part of the price, up to a limit set by the state. The rate depends on the county of your address. Pick your county and the calculator fills it in.",
+        "sources": [
+          "https://floridarevenue.com/Forms_library/gt800030.pdf",
+          "https://floridarevenue.com/Forms_library/current/dr15dss_26.pdf"
+        ]
+      },
+      {
+        "text": "You also pay a title fee set by the state highway safety department, and a registration fee that depends on the vehicle's weight. If you have no plate to transfer, an initial registration fee and a plate fee apply as well.",
+        "sources": [
+          "https://www.flhsmv.gov/fees/",
+          "https://www.flhsmv.gov/motor-vehicles-tags-titles/license-plates-registration/motor-vehicle-registrations/"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does a trade-in lower the tax in Florida?",
+        "text": "Yes, when the trade-in is part of the same transaction. In a private sale the buyer must trade in an aircraft, boat, vehicle or mobile home in the same transaction to get the deduction.",
+        "sources": [
+          "https://floridarevenue.com/Forms_library/gt800030.pdf"
+        ]
+      },
+      {
+        "q": "What if I bought the vehicle in another state?",
+        "text": "Florida gives credit when documents show a like tax was lawfully paid to another state, territory or the District of Columbia.",
+        "sources": [
+          "https://floridarevenue.com/Forms_library/gt800030.pdf"
+        ]
+      },
+      {
+        "q": "Is the county surtax charged on the whole price?",
+        "text": "No. It applies only to the first part of the price, up to a limit set by the state.",
+        "sources": [
+          "https://floridarevenue.com/Forms_library/gt800030.pdf"
+        ]
+      },
+      {
+        "q": "Is there an electric vehicle fee?",
+        "text": "We did not find one on the state highway safety department's fee pages, so none is added. If that changes, the page will be updated.",
+        "sources": [
+          "https://www.flhsmv.gov/fees/"
+        ]
+      }
+    ]
   }
 }

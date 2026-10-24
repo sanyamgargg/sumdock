@@ -845,5 +845,62 @@
       "note": "Combined rate including the 7.25% state rate. Not every community is listed; city districts can differ by address. Los Angeles city and some others are not on the sheet, so enter your rate from the CDTFA lookup."
     },
     "mode": "combined"
+  },
+  "content": {
+    "intro": "{state} adds district taxes on top of a base sales tax of {stateRate}, and a trade-in does not lower the tax. Registration is made up of several fees, including one based on the value of the vehicle.",
+    "howItWorks": [
+      {
+        "text": "The base rate is {stateRate}, and district taxes for your city or county are added on top. Pick your county and city and the calculator fills in the combined rate published by the tax agency.",
+        "sources": [
+          "https://www.cdtfa.ca.gov/taxes-and-fees/sales-use-tax-rates.htm",
+          "https://cdtfa.ca.gov/taxes-and-fees/TaxRatesbyCountyandCity.pdf"
+        ]
+      },
+      {
+        "text": "Unlike most states, a trade-in does not reduce the tax. The taxable price includes the value of anything you trade in.",
+        "sources": [
+          "https://cdtfa.ca.gov/formspubs/pub52.pdf",
+          "https://cdtfa.ca.gov/taxes-and-fees/applying-tax-sales-purchases-faq.htm"
+        ]
+      },
+      {
+        "text": "Registration has several parts: a base registration fee, a highway patrol fee, a vehicle license fee that is a percentage of the vehicle's value, and a transportation improvement fee that depends on the vehicle's value. The vehicle license fee falls over the first years of ownership; the calculator shows the first-year amount.",
+        "sources": [
+          "https://www.dmv.ca.gov/portal/vehicle-registration/registration-fees/",
+          "https://www.dmv.ca.gov/portal/registration-fees/"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does a trade-in lower the sales tax in California?",
+        "text": "No. The taxable price includes the value of the property you trade in, so a trade-in does not reduce the tax.",
+        "sources": [
+          "https://cdtfa.ca.gov/formspubs/pub52.pdf"
+        ]
+      },
+      {
+        "q": "What if I bought the vehicle in another state?",
+        "text": "California gives credit for sales or use tax paid to another state. If that tax was lower than the California tax, you owe the difference. The DMV needs proof of the tax you paid.",
+        "sources": [
+          "https://cdtfa.ca.gov/formspubs/pub52.pdf"
+        ]
+      },
+      {
+        "q": "Why is my city's rate different from the county rate?",
+        "text": "Cities and districts can add their own taxes on top of the base rate. The tax agency publishes a combined rate for each county and for the cities it lists. If your city is not on that list, use the agency's rate lookup.",
+        "sources": [
+          "https://cdtfa.ca.gov/taxes-and-fees/TaxRatesbyCountyandCity.pdf",
+          "https://www.cdtfa.ca.gov/taxes-and-fees/sales-use-tax-rates.htm"
+        ]
+      },
+      {
+        "q": "Do electric vehicles pay an extra fee?",
+        "text": "A road improvement fee applies to newer zero-emission vehicles at renewal. The calculator leaves it out because the rules for used vehicles are not confirmed on an official page.",
+        "sources": [
+          "https://www.dmv.ca.gov/portal/vehicle-registration/registration-fees/"
+        ]
+      }
+    ]
   }
 }

@@ -120,5 +120,59 @@
   "notes": [
     "County vehicle registration fees (for example in Multnomah and Washington counties) are not modeled and need a separate source.",
     "Prices for 4-year registration and rental vehicles are on the ODOT page but not modeled."
-  ]
+  ],
+  "content": {
+    "intro": "{state} has no general sales tax, so most buyers pay no tax on the price. You pay title and registration fees that depend on fuel economy, and a small use tax in one specific case.",
+    "howItWorks": [
+      {
+        "text": "The state does not have a general sales or use tax.",
+        "sources": [
+          "https://www.oregon.gov/dor/programs/businesses/Pages/Sales-Tax.aspx"
+        ]
+      },
+      {
+        "text": "A vehicle use tax applies in one case: a vehicle bought from a dealer outside the state that meets the mileage and weight limits in the form instructions. It is a small percentage of the retail price and is due within a set time after purchase. Tax paid to another jurisdiction on the vehicle can be subtracted.",
+        "sources": [
+          "https://www.oregon.gov/dor/forms/FormsPubs/form-or-591-c-instructions_612-004-1.pdf"
+        ]
+      },
+      {
+        "text": "Title and registration fees depend on the fuel economy band and on whether the vehicle is electric. Owners enrolled in the state road usage program can pay less; the calculator does not model that.",
+        "sources": [
+          "https://www.oregon.gov/odot/DMV/docs/chapter_m.pdf"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Do I pay sales tax on a car in Oregon?",
+        "text": "No. The state does not have a general sales tax.",
+        "sources": [
+          "https://www.oregon.gov/dor/programs/businesses/Pages/Sales-Tax.aspx"
+        ]
+      },
+      {
+        "q": "Does a trade-in matter?",
+        "text": "With no sales tax, a trade-in does not change the tax. It matters only for the use tax, where the instructions list only rebates and fees as deductions.",
+        "sources": [
+          "https://www.oregon.gov/dor/programs/businesses/Pages/Sales-Tax.aspx",
+          "https://www.oregon.gov/dor/forms/FormsPubs/form-or-591-c-instructions_612-004-1.pdf"
+        ]
+      },
+      {
+        "q": "What if I bought the vehicle in another state?",
+        "text": "Tax paid to another jurisdiction on the vehicle's value can be subtracted from any Oregon use tax due.",
+        "sources": [
+          "https://www.oregon.gov/dor/forms/FormsPubs/form-or-591-c-instructions_612-004-1.pdf"
+        ]
+      },
+      {
+        "q": "Do county fees apply?",
+        "text": "Some counties charge extra vehicle registration fees. They are not included here yet because they need a separate official source.",
+        "sources": [
+          "https://www.oregon.gov/odot/DMV/docs/chapter_m.pdf"
+        ]
+      }
+    ]
+  }
 }

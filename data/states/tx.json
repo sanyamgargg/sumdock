@@ -407,5 +407,66 @@
       ],
       "note": "All 254 counties transcribed from the official chart; spot-checked against separate reads of the same chart. Do a full line-by-line check before launch. The chart spells one county 'Dimmitt'; the county's name is Dimmit."
     }
+  },
+  "content": {
+    "intro": "{state} charges a motor vehicle sales tax of {stateRate} on the price, then adds a title fee and a registration fee. This calculator adds the pieces up and shows the official page behind each one.",
+    "howItWorks": [
+      {
+        "text": "The tax is figured on the sales price minus any trade-in allowance, so a trade-in lowers the tax you owe.",
+        "sources": [
+          "https://www.comptroller.texas.gov/taxes/motor-vehicle/sales-use.php"
+        ]
+      },
+      {
+        "text": "If you already paid sales or use tax to another state on the same vehicle, {state} gives credit for it.",
+        "sources": [
+          "https://www.comptroller.texas.gov/taxes/motor-vehicle/sales-use.php"
+        ]
+      },
+      {
+        "text": "Registration is an annual fee for passenger cars and light trucks up to a weight limit, with a small insurance verification charge added on top. Counties then add their own registration fees, which is why the calculator asks for your county. Fully electric vehicles pay an extra annual fee that hybrids do not.",
+        "sources": [
+          "https://www.txdmv.gov/motorists/register-your-vehicle",
+          "https://www.txdmv.gov/sites/default/files/body-files/FeeChart_1C.pdf"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does a trade-in lower the tax in Texas?",
+        "text": "Yes. The state taxes the sales price minus any trade-in allowance.",
+        "sources": [
+          "https://www.comptroller.texas.gov/taxes/motor-vehicle/sales-use.php"
+        ]
+      },
+      {
+        "q": "What if I bought the vehicle in another state?",
+        "text": "Texas gives credit for sales or use tax you paid to another state. Keep your proof of payment.",
+        "sources": [
+          "https://www.comptroller.texas.gov/taxes/motor-vehicle/sales-use.php"
+        ]
+      },
+      {
+        "q": "Do hybrids pay the electric vehicle fee?",
+        "text": "No. The extra annual fee applies to fully electric vehicles, not hybrids.",
+        "sources": [
+          "https://www.txdmv.gov/motorists/register-your-vehicle"
+        ]
+      },
+      {
+        "q": "Why does my county matter?",
+        "text": "Counties add their own fees to registration, and the amount differs by county. The calculator uses the county table from the state fee chart.",
+        "sources": [
+          "https://www.txdmv.gov/sites/default/files/body-files/FeeChart_1C.pdf"
+        ]
+      },
+      {
+        "q": "Why is the title fee marked as needing a check?",
+        "text": "The state lists two title fee amounts depending on the county but does not say which counties pay which, so the calculator uses the lower amount and flags it.",
+        "sources": [
+          "https://www.txdmv.gov/motorists/buying-or-selling-a-vehicle/out-of-state-and-foreign-vehicles"
+        ]
+      }
+    ]
   }
 }

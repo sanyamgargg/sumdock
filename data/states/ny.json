@@ -678,5 +678,61 @@
       ],
       "note": "Combined rate including the 4% state rate; rates marked with an asterisk in the publication already include the 0.375% commuter-district tax. Use the Tax Department's rate lookup for exact jurisdiction by address."
     }
+  },
+  "content": {
+    "intro": "{state} charges {stateRate} state sales tax, plus a county or city tax based on where you live. Registration covers two years and the fee depends on the weight of the vehicle.",
+    "howItWorks": [
+      {
+        "text": "The state rate is {stateRate}. Counties and some cities add their own tax, and a vehicle is taxed at the rate where the owner lives, normally the registration address. In the commuter district the rate also includes a transportation tax. Pick your county and the calculator fills in the combined rate.",
+        "sources": [
+          "https://www.tax.ny.gov/pubs_and_bulls/tg_bulletins/st/sales_tax_rates_additional_sales_taxes_and_fees.htm",
+          "https://www.tax.ny.gov/pdf/publications/sales/pub718.pdf"
+        ]
+      },
+      {
+        "text": "A trade-in allowance granted by a dealer lowers the taxable amount.",
+        "sources": [
+          "https://www.tax.ny.gov/pdf/current_forms/st/dtf804.pdf"
+        ]
+      },
+      {
+        "text": "Registration is for two years and the fee depends on the vehicle's weight. A title fee and a plate fee are charged on first registration.",
+        "sources": [
+          "https://dmv.ny.gov/forms/mv202.pdf",
+          "https://dmv.ny.gov/registration/passenger-vehicle-registration-fees-use-taxes-and-supplemental-fees"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does a trade-in lower the sales tax in New York?",
+        "text": "A trade-in allowance granted by a dealer lowers the taxable amount.",
+        "sources": [
+          "https://www.tax.ny.gov/pdf/current_forms/st/dtf804.pdf"
+        ]
+      },
+      {
+        "q": "Can I get credit for tax paid in another state?",
+        "text": "Sometimes. The other state's tax must have been paid, that state must give New York a reciprocal credit, and you must not be due a refund. Not every state qualifies.",
+        "sources": [
+          "https://www.tax.ny.gov/pdf/current_forms/st/dtf804.pdf",
+          "https://dmv.ny.gov/registration/sales-tax-information"
+        ]
+      },
+      {
+        "q": "Which rate applies, where I bought or where I live?",
+        "text": "The rate where you live applies, normally the registration address.",
+        "sources": [
+          "https://www.tax.ny.gov/pubs_and_bulls/tg_bulletins/st/sales_tax_rates_additional_sales_taxes_and_fees.htm"
+        ]
+      },
+      {
+        "q": "What is not in the total yet?",
+        "text": "A county use tax and a commuter district fee depend on your county and are not in the total yet. They are listed under items not included.",
+        "sources": [
+          "https://dmv.ny.gov/registration/passenger-vehicle-registration-fees-use-taxes-and-supplemental-fees"
+        ]
+      }
+    ]
   }
 }
