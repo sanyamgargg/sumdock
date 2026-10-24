@@ -1,0 +1,177 @@
+{
+  "code": "DE",
+  "name": "Delaware",
+  "slug": "delaware",
+  "lastReviewed": "2026-10-24",
+  "salesTax": {
+    "taxName": "document fee",
+    "stateRatePct": {
+      "value": 5.25,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Delaware Code, Title 30, Chapter 30 - Motor vehicle document fee",
+          "url": "https://delcode.delaware.gov/title30/c030/",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Delaware News - DMV fees increase in October 2025 (document fee 4.25% to 5.25%)",
+          "url": "https://news.delaware.gov/2025/09/30/dmv-fees-increase-in-october-2025/",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Delaware has no sales tax. It charges a one-time document fee when a vehicle is titled. The statute sets $5.25 for each $100 of the purchase price, and the state announced the change from 4.25% to 5.25% on Oct 1, 2025. The statute rounds to the nearest dollar and has lower flat amounts under $500."
+    },
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Delaware Code, Title 30, Chapter 30 - Motor vehicle document fee",
+          "url": "https://delcode.delaware.gov/title30/c030/",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The purchase price is the gross price less any trade-in or allowance. With no trade-in, a private sale of another vehicle within 60 days before or after the title date earns the same credit."
+    },
+    "local": {
+      "value": {
+        "mode": "none",
+        "capBase": null,
+        "rangeNote": null
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Delaware Code, Title 30, Chapter 30 - Motor vehicle document fee",
+          "url": "https://delcode.delaware.gov/title30/c030/",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The document fee is a state fee; no local charge is described in the statute."
+    },
+    "outOfStateCredit": {
+      "value": false,
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Delaware Code, Title 30, Chapter 30 - Motor vehicle document fee",
+          "url": "https://delcode.delaware.gov/title30/c030/",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "A vehicle bought and registered in another state is exempt from the document fee if a sales, transfer or similar tax was paid there within 90 days before Delaware titling. This is a full exemption, not a credit, so it is not calculated here."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Title",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 35,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Delaware Code, Title 21, Chapter 23 - Certificates of title",
+            "url": "https://delcode.delaware.gov/title21/c023/sc01/index.html",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Fee for issuing a certificate of title for a vehicle, Title 21, section 2305."
+      }
+    },
+    {
+      "id": "registration",
+      "label": "Registration (passenger vehicle)",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 40,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Delaware Code, Title 21, Chapter 21, Subchapter IV - Registration fees",
+            "url": "https://delcode.delaware.gov/title21/c021/sc04/index.html",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "$40 per year for a vehicle used for carrying persons. Registration is for 12 months."
+      }
+    },
+    {
+      "id": "ev-fee",
+      "label": "Electric vehicle fee (all-electric)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "ev"
+      },
+      "amount": {
+        "value": 110,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Delaware Code, Title 21, Chapter 21, Subchapter IV - Registration fees",
+            "url": "https://delcode.delaware.gov/title21/c021/sc04/index.html",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Added to the registration fee for an electric motor vehicle of 6,000 pounds or less. The code page does not define the three electric vehicle types, so this assumes the highest-fee type is the all-electric one."
+      }
+    }
+  ],
+  "notes": [
+    "The document fee is rounded to the nearest dollar and is lower in flat amounts for prices under $500; the calculator uses a straight 5.25%.",
+    "If you bought the vehicle in another state and paid a sales or similar tax there within 90 days before titling in Delaware, the document fee may not apply at all."
+  ],
+  "content": {
+    "intro": "{state} has no sales tax. It charges a one-time document fee of {stateRate} of the purchase price when you title a vehicle, plus a flat title fee and a yearly registration fee.",
+    "howItWorks": [
+      {
+        "text": "The document fee is {stateRate} of the purchase price. A trade-in lowers the price, and so does a sale of another vehicle within a set window if you have no trade-in.",
+        "sources": [
+          "https://delcode.delaware.gov/title30/c030/"
+        ]
+      },
+      {
+        "text": "If you bought and registered the vehicle in another state and paid a sales or similar tax there recently, the document fee may not apply.",
+        "sources": [
+          "https://delcode.delaware.gov/title30/c030/"
+        ]
+      },
+      {
+        "text": "The state announced an increase of the document fee from a lower rate to the current one in a recent fee change.",
+        "sources": [
+          "https://news.delaware.gov/2025/09/30/dmv-fees-increase-in-october-2025/"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does Delaware have a sales tax on cars?",
+        "text": "No. It charges a document fee on the purchase price when a vehicle is titled.",
+        "sources": [
+          "https://delcode.delaware.gov/title30/c030/"
+        ]
+      },
+      {
+        "q": "Does a trade-in lower the document fee?",
+        "text": "Yes, the purchase price is the gross price less any trade-in or allowance.",
+        "sources": [
+          "https://delcode.delaware.gov/title30/c030/"
+        ]
+      }
+    ]
+  }
+}

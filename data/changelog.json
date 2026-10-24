@@ -3,6 +3,12 @@
   "entries": [
     {
       "date": "2026-10-24",
+      "state": "DE",
+      "stateName": "Delaware",
+      "summary": "Added state with the 5.25% document fee (Delaware has no sales tax) after trade-in, title, registration and the electric vehicle fee. The fee's rounding rules are not modeled."
+    },
+    {
+      "date": "2026-10-24",
       "state": "MS",
       "stateName": "Mississippi",
       "summary": "Added state with the 5% sales tax after trade-in, no credit for tax paid elsewhere, title and first-time registration. Yearly county ad valorem and privilege taxes are not included."

@@ -846,3 +846,18 @@ describe("Mississippi", () => {
     expect(line(r, "registration")).toBe(14);
   });
 });
+
+describe("Delaware", () => {
+  const de = load("de");
+  it("is publishable", () => expect(publishability(de).publishable).toBe(true));
+  it("charges the document fee on the price less a trade-in", () => {
+    expect(line(calculate(de, { ...base, price: 30000, tradeIn: 10000 }), "state-tax")).toBe(1050);
+  });
+  it("charges title and registration, and the EV fee only for EVs", () => {
+    const r = calculate(de, base);
+    expect(line(r, "title")).toBe(35);
+    expect(line(r, "registration")).toBe(40);
+    expect(line(r, "ev-fee")).toBeUndefined();
+    expect(line(calculate(de, { ...base, fuel: "ev" }), "ev-fee")).toBe(110);
+  });
+});
