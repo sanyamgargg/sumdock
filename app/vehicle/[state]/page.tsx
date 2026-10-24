@@ -5,7 +5,9 @@ import Calculator from "@/components/Calculator";
 import StateContent from "@/components/StateContent";
 import WhatChanged from "@/components/WhatChanged";
 import { publishability } from "@/lib/calc";
+import JsonLd from "@/components/JsonLd";
 import { loadState, loadStates } from "@/lib/data";
+import { answerSentence, stateMetadata, statePageLd } from "@/lib/seo";
 
 export const dynamicParams = false;
 
@@ -17,14 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const { state } = await params;
   const s = loadState(state);
   if (!s) return {};
-  const { publishable } = publishability(s);
-  return {
-    title: `${s.name} Vehicle Sales Tax, Title & Registration Fees`,
-    description: `Estimate ${s.name} vehicle sales tax, title and registration fees, with official sources and the date each figure was last checked.`,
-    // Pages whose core numbers are not verified stay out of search results.
-    alternates: { canonical: `/vehicle/${s.slug}/` },
-    robots: publishable ? undefined : { index: false, follow: false },
-  };
+  return stateMetadata(s);
 }
 
 export default async function StatePage({ params }: { params: Promise<{ state: string }> }) {
@@ -32,9 +27,11 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
   const s = loadState(state);
   if (!s) notFound();
   const pub = publishability(s);
+  const answer = answerSentence(s);
 
   return (
     <div className="stack">
+      <JsonLd data={statePageLd(s)} />
       <header className="page-head">
         <Breadcrumbs items={[{ label: "Vehicle costs", href: "/vehicle/" }, { label: s.name }]} />
         <h1>What a vehicle purchase costs in {s.name}, itemized and sourced.</h1>
@@ -42,6 +39,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           Sales tax, title and registration for a vehicle registered in {s.name}. Every line cites the page it came from and the
           day we opened it.
         </p>
+        {answer && <p className="lede">{answer}</p>}
       </header>
 
       {!pub.publishable && (

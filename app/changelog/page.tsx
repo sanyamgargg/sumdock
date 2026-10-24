@@ -1,13 +1,10 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { loadChangelog, loadStates } from "@/lib/data";
 import { formatDate } from "@/lib/format";
 
-export const metadata: Metadata = {
-  title: "Changelog",
-  description: "Every change to a state's numbers or rules on Sumdock, newest first.",
-  alternates: { canonical: "/changelog/" },
-};
+export const metadata: Metadata = pageMetadata("/changelog/", "Changelog", "Every change to a state's numbers or rules on Sumdock, newest first.");
 
 export default function Changelog() {
   const entries = loadChangelog();

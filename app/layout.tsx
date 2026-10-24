@@ -3,6 +3,7 @@ import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
+import { openGraph } from "@/lib/seo";
 import { site } from "@/lib/site";
 
 const plexSans = IBM_Plex_Sans({ subsets: ["latin"], weight: ["400", "500", "600", "700"], display: "swap", variable: "--font-plex-sans" });
@@ -12,6 +13,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: { default: `${site.name}: calculators with sourced numbers`, template: `%s | ${site.name}` },
   description: site.tagline,
+  openGraph: openGraph("/", `${site.name}: calculators with sourced numbers`, site.tagline),
+  twitter: { card: "summary", title: site.name, description: site.tagline },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

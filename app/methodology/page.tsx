@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { publishability } from "@/lib/calc";
 import { loadStates } from "@/lib/data";
 
-export const metadata: Metadata = {
-  title: "Methodology and Data Sources",
-  description: "How vehicle tax and fee figures are collected, verified, tested and kept current.",
-};
+export const metadata: Metadata = pageMetadata("/methodology/", "Methodology and Data Sources", "How vehicle tax and fee figures are collected, verified, tested and kept current.");
 
 export default function Methodology() {
   const states = loadStates();

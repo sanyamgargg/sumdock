@@ -149,3 +149,14 @@ export function llmsTxt(states: StateData[]): string {
   ];
   return lines.join("\n");
 }
+
+/** Metadata for a static page: unique title and description, canonical and social tags. */
+export function pageMetadata(path: string, title: string, description: string) {
+  return {
+    title,
+    description,
+    alternates: { canonical: path },
+    openGraph: openGraph(path, title, description),
+    twitter: { card: "summary" as const, title, description },
+  };
+}

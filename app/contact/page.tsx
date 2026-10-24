@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Contact",
-  description: `How to reach ${site.author}, the person who runs ${site.name}.`,
-};
+export const metadata: Metadata = pageMetadata("/contact/", "Contact", `How to reach ${site.author}, the person who runs ${site.name}.`);
 
 export default function Contact() {
   return (

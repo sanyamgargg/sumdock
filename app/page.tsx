@@ -1,4 +1,6 @@
 import Link from "next/link";
+import JsonLd from "@/components/JsonLd";
+import { siteLd } from "@/lib/seo";
 import Statement from "@/components/Statement";
 import { calculate } from "@/lib/calc";
 import { DEFAULT_INPUTS, verificationStatus } from "@/lib/content";
@@ -40,6 +42,7 @@ export default function Home() {
 
   return (
     <div className="stack stack--home">
+      <JsonLd data={siteLd()} />
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero__copy">
           <p className="hero__eyebrow label">Calculators with receipts</p>

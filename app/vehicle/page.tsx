@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import StateIndex, { type StateRow } from "@/components/StateIndex";
 import { mainTaxSummary, verificationStatus } from "@/lib/content";
 import { loadStates } from "@/lib/data";
 import { formatDate } from "@/lib/format";
 
-export const metadata: Metadata = {
-  title: "Vehicle Sales Tax, Title and Registration Costs by State",
-  alternates: { canonical: "/vehicle/" },
-};
+export const metadata: Metadata = pageMetadata(
+  "/vehicle/",
+  "Vehicle Sales Tax, Title and Registration Costs by State",
+  "Pick a state to estimate vehicle sales tax, title and registration fees. Every figure links to the official page it came from.",
+);
 
 export default function VehicleIndex() {
   const rows: StateRow[] = loadStates().map((s) => {

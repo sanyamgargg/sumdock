@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description: `What data ${site.name} collects, how cookies and advertising work, and your choices.`,
-};
+export const metadata: Metadata = pageMetadata("/privacy/", "Privacy Policy", `What data ${site.name} collects, how cookies and advertising work, and your choices.`);
 
 export default function Privacy() {
   return (
