@@ -1,0 +1,615 @@
+{
+  "code": "OH",
+  "name": "Ohio",
+  "slug": "ohio",
+  "lastReviewed": "2026-10-24",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 5.75,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Ohio Department of Taxation - Sales and Use Tax Rates by County (Oct 1 - Dec 31, 2026)",
+          "url": "https://tax.ohio.gov/business/sales-and-use-tax/rate-tables/by-county-q4-2026",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "State rate row of the Department of Taxation county rate table."
+    },
+    "tradeInReducesBase": {
+      "value": false,
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Ohio Department of Taxation - Sales Tax for Motor Vehicles, Watercraft, and Aircraft",
+          "url": "https://tax.ohio.gov/business/sales-and-use-tax/motor-vehicles",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "A trade-in allowance reduces the price only when you buy a NEW motor vehicle. For a used vehicle the trade-in does not reduce the tax. The calculator does not ask whether the vehicle is new, so it applies no trade-in credit; buyers of new vehicles may owe less than shown."
+    },
+    "local": {
+      "value": {
+        "mode": "user-entered",
+        "capBase": null,
+        "rangeNote": "Pick your county to fill the county part of the rate. Some cities in Delaware, Fairfield, Licking, Union and Wood counties have a transit-area rate listed separately."
+      },
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Ohio Department of Taxation - Sales and Use Tax Rates by County (Oct 1 - Dec 31, 2026)",
+          "url": "https://tax.ohio.gov/business/sales-and-use-tax/rate-tables/by-county-q4-2026",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Ohio Department of Taxation - Sales Tax for Motor Vehicles, Watercraft, and Aircraft",
+          "url": "https://tax.ohio.gov/business/sales-and-use-tax/motor-vehicles",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The tax uses the rate of the purchaser's county of residence. Rates are published by quarter and can change on the first day of a quarter."
+    },
+    "outOfStateCredit": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Ohio Department of Taxation - Sales Tax for Motor Vehicles, Watercraft, and Aircraft",
+          "url": "https://tax.ohio.gov/business/sales-and-use-tax/motor-vehicles",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "A credit is generally allowed for sales or use tax legally paid to another state. If the tax paid elsewhere equals or exceeds the Ohio tax, nothing more is owed. Proof must be given to the clerk of courts."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Certificate of title",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 18,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Ohio Revised Code 4505.09 - certificate of title fee",
+            "url": "https://codes.ohio.gov/ohio-revised-code/section-4505.09",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Ohio BMV - Documents & Fees",
+            "url": "https://www.bmv.ohio.gov/doc-fees.aspx",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "A county that adopts a resolution can charge $23 instead."
+      }
+    },
+    {
+      "id": "registration",
+      "label": "Registration (passenger vehicle, 1 year)",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 36,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Ohio BMV - Documents & Fees",
+            "url": "https://www.bmv.ohio.gov/doc-fees.aspx",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Ohio Revised Code 4503.04 - annual license tax",
+            "url": "https://codes.ohio.gov/ohio-revised-code/section-4503.04",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Annual license tax of $20 plus the $16 administration and enforcement fee. County and municipal permissive taxes and deputy registrar service fees are added at the BMV and are not included."
+      }
+    },
+    {
+      "id": "ev-fee",
+      "label": "Electric vehicle fee (1 year)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "ev"
+      },
+      "amount": {
+        "value": 200,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Ohio BMV - Vehicle registration, first issuance (fuel type fees)",
+            "url": "https://www.bmv.ohio.gov/vr-firstissuance.aspx",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Ohio BMV - Documents & Fees",
+            "url": "https://www.bmv.ohio.gov/doc-fees.aspx",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Charged on first registration and each renewal for model year 2009 or newer; multi-year renewals pay it for each year. Hybrids pay $100 and plug-in hybrids $150 a year; the calculator counts hybrids as gas vehicles and does not include that."
+      }
+    }
+  ],
+  "localRates": {
+    "label": "Combined sales tax rate by county",
+    "mode": "combined",
+    "rates": {
+      "value": {
+        "Adams": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Allen": {
+          "county": 6.85,
+          "places": {}
+        },
+        "Ashland": {
+          "county": 7,
+          "places": {}
+        },
+        "Ashtabula": {
+          "county": 6.75,
+          "places": {}
+        },
+        "Athens": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Auglaize": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Belmont": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Brown": {
+          "county": 7,
+          "places": {}
+        },
+        "Butler": {
+          "county": 6.5,
+          "places": {}
+        },
+        "Carroll": {
+          "county": 6.75,
+          "places": {}
+        },
+        "Champaign": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Clark": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Clermont": {
+          "county": 6.75,
+          "places": {}
+        },
+        "Clinton": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Columbiana": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Coshocton": {
+          "county": 7.75,
+          "places": {}
+        },
+        "Crawford": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Cuyahoga": {
+          "county": 8,
+          "places": {}
+        },
+        "Darke": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Defiance": {
+          "county": 6.75,
+          "places": {}
+        },
+        "Delaware": {
+          "county": 7,
+          "places": {}
+        },
+        "Delaware (COTA)": {
+          "county": 8,
+          "places": {}
+        },
+        "Erie": {
+          "county": 6.75,
+          "places": {}
+        },
+        "Fairfield": {
+          "county": 6.75,
+          "places": {}
+        },
+        "Fairfield (COTA)": {
+          "county": 7.75,
+          "places": {}
+        },
+        "Fayette": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Franklin": {
+          "county": 8,
+          "places": {}
+        },
+        "Fulton": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Gallia": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Geauga": {
+          "county": 6.75,
+          "places": {}
+        },
+        "Greene": {
+          "county": 6.75,
+          "places": {}
+        },
+        "Guernsey": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Hamilton": {
+          "county": 7.8,
+          "places": {}
+        },
+        "Hancock": {
+          "county": 6.75,
+          "places": {}
+        },
+        "Hardin": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Harrison": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Henry": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Highland": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Hocking": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Holmes": {
+          "county": 7,
+          "places": {}
+        },
+        "Huron": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Jackson": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Jefferson": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Knox": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Lake": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Lawrence": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Licking": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Licking (COTA)": {
+          "county": 8.25,
+          "places": {}
+        },
+        "Logan": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Lorain": {
+          "county": 6.5,
+          "places": {}
+        },
+        "Lucas": {
+          "county": 7.75,
+          "places": {}
+        },
+        "Madison": {
+          "county": 7,
+          "places": {}
+        },
+        "Mahoning": {
+          "county": 7.5,
+          "places": {}
+        },
+        "Marion": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Medina": {
+          "county": 6.75,
+          "places": {}
+        },
+        "Meigs": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Mercer": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Miami": {
+          "county": 7,
+          "places": {}
+        },
+        "Monroe": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Montgomery": {
+          "county": 7.5,
+          "places": {}
+        },
+        "Morgan": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Morrow": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Muskingum": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Noble": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Ottawa": {
+          "county": 7,
+          "places": {}
+        },
+        "Paulding": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Perry": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Pickaway": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Pike": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Portage": {
+          "county": 7,
+          "places": {}
+        },
+        "Preble": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Putnam": {
+          "county": 7,
+          "places": {}
+        },
+        "Richland": {
+          "county": 7,
+          "places": {}
+        },
+        "Ross": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Sandusky": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Scioto": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Seneca": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Shelby": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Stark": {
+          "county": 6.5,
+          "places": {}
+        },
+        "Summit": {
+          "county": 6.75,
+          "places": {}
+        },
+        "Trumbull": {
+          "county": 6.75,
+          "places": {}
+        },
+        "Tuscarawas": {
+          "county": 6.75,
+          "places": {}
+        },
+        "Union": {
+          "county": 7,
+          "places": {}
+        },
+        "Union (COTA)": {
+          "county": 8,
+          "places": {}
+        },
+        "Van Wert": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Vinton": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Warren": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Washington": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Wayne": {
+          "county": 6.5,
+          "places": {}
+        },
+        "Williams": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Wood": {
+          "county": 6.75,
+          "places": {}
+        },
+        "Wood (TARTA)": {
+          "county": 7.25,
+          "places": {}
+        },
+        "Wyandot": {
+          "county": 7.25,
+          "places": {}
+        }
+      },
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Ohio Department of Taxation - Sales and Use Tax Rates by County (Oct 1 - Dec 31, 2026)",
+          "url": "https://tax.ohio.gov/business/sales-and-use-tax/rate-tables/by-county-q4-2026",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Combined state and county rate for October 1 to December 31, 2026. Transit-area entries (COTA, TARTA) apply to the listed parts of cities in that county."
+    }
+  },
+  "notes": [
+    "County and municipal permissive taxes on registration and deputy registrar fees are not included.",
+    "The tax base includes manufacturer rebates and cash down payments do not reduce it; the calculator uses the price you enter.",
+    "Leased vehicles, gifts and private sales follow other rules; not modeled."
+  ],
+  "content": {
+    "intro": "{state} charges {stateRate} state sales tax plus a county tax, so the total rate depends on where you live. You pay a title fee and a registration fee, and electric vehicles pay an extra yearly fee.",
+    "howItWorks": [
+      {
+        "text": "The state rate is {stateRate}. Each county adds its own rate, and the tax uses the rate in the county where you live. Pick your county and the calculator fills in the combined rate from the Department of Taxation table, which is published by quarter.",
+        "sources": [
+          "https://tax.ohio.gov/business/sales-and-use-tax/rate-tables/by-county-q4-2026",
+          "https://tax.ohio.gov/business/sales-and-use-tax/motor-vehicles"
+        ]
+      },
+      {
+        "text": "A trade-in lowers the price only when you buy a new vehicle. When you trade one used vehicle for another, the trade-in does not reduce the taxable price. This calculator does not ask whether the vehicle is new, so it shows no trade-in credit.",
+        "sources": [
+          "https://tax.ohio.gov/business/sales-and-use-tax/motor-vehicles"
+        ]
+      },
+      {
+        "text": "If you paid sales or use tax to another state on the same vehicle, {state} generally allows a credit. If the tax paid elsewhere is as much as the Ohio tax, nothing more is owed.",
+        "sources": [
+          "https://tax.ohio.gov/business/sales-and-use-tax/motor-vehicles"
+        ]
+      },
+      {
+        "text": "The title fee is charged once, and some counties add a small amount. Registration is a yearly fee. Electric vehicles pay an extra yearly fee, and hybrids and plug-in hybrids pay smaller ones.",
+        "sources": [
+          "https://codes.ohio.gov/ohio-revised-code/section-4505.09",
+          "https://www.bmv.ohio.gov/doc-fees.aspx",
+          "https://www.bmv.ohio.gov/vr-firstissuance.aspx"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does a trade-in lower the sales tax in Ohio?",
+        "text": "Only if you buy a new vehicle. When a used vehicle is traded for another used vehicle, the trade-in does not reduce the price that is taxed.",
+        "sources": [
+          "https://tax.ohio.gov/business/sales-and-use-tax/motor-vehicles"
+        ]
+      },
+      {
+        "q": "Which county rate applies to my purchase?",
+        "text": "The rate of the county where you live applies, not the county of the dealer.",
+        "sources": [
+          "https://tax.ohio.gov/business/sales-and-use-tax/motor-vehicles"
+        ]
+      },
+      {
+        "q": "What if I bought the vehicle in another state?",
+        "text": "Ohio generally gives credit for tax legally paid to another state. Bring proof of the tax paid to the clerk of courts.",
+        "sources": [
+          "https://tax.ohio.gov/business/sales-and-use-tax/motor-vehicles"
+        ]
+      },
+      {
+        "q": "Do hybrids pay an extra fee?",
+        "text": "Yes. Hybrids and plug-in hybrids pay a yearly fee, and electric vehicles pay a larger one. This calculator adds the electric vehicle fee and not the hybrid fees.",
+        "sources": [
+          "https://www.bmv.ohio.gov/vr-firstissuance.aspx"
+        ]
+      },
+      {
+        "q": "Why can the title fee be higher in some counties?",
+        "text": "A county can adopt a resolution that raises the title fee by a few dollars. The calculator uses the base fee.",
+        "sources": [
+          "https://codes.ohio.gov/ohio-revised-code/section-4505.09"
+        ]
+      }
+    ]
+  }
+}

@@ -248,3 +248,28 @@ describe("Pennsylvania", () => {
   });
 });
 
+describe("Ohio", () => {
+  const oh = load("oh");
+  const rates = oh.localRates!.rates.value!;
+  it("is publishable and lists 88 counties plus 5 transit-area rates", () => {
+    expect(publishability(oh).publishable).toBe(true);
+    expect(Object.keys(rates)).toHaveLength(93);
+    expect(rates["Franklin"].county).toBe(8);
+    expect(rates["Hamilton"].county).toBe(7.8);
+    expect(rates["Butler"].county).toBe(6.5);
+  });
+  it("uses the combined county rate and adds title and registration", () => {
+    // 7.25% combined in Adams County = 5.75% state + 1.5% local
+    const r = calculate(oh, { ...base, price: 20000, localRatePct: rates["Adams"].county - 5.75 });
+    expect(line(r, "state-tax")).toBe(1150);
+    expect(line(r, "local-tax")).toBe(300);
+    expect(line(r, "title")).toBe(18);
+    expect(line(r, "registration")).toBe(36);
+  });
+  it("applies no trade-in credit and adds the electric vehicle fee", () => {
+    const r = calculate(oh, { ...base, price: 20000, tradeIn: 5000, fuel: "ev" });
+    expect(line(r, "state-tax")).toBe(1150);
+    expect(line(r, "ev-fee")).toBe(200);
+  });
+});
+
