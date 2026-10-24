@@ -3,6 +3,12 @@
   "entries": [
     {
       "date": "2026-10-24",
+      "state": "WI",
+      "stateName": "Wisconsin",
+      "summary": "Added state with the 5% sales tax, county rates for all 72 counties and the City of Milwaukee, title, registration and the electric vehicle surcharge. The wheel tax is not included."
+    },
+    {
+      "date": "2026-10-24",
       "state": "IN",
       "stateName": "Indiana",
       "summary": "Added state with the 7% sales tax, title, registration and the electric vehicle supplemental fee. The yearly excise tax and county wheel tax are not included."

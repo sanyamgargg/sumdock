@@ -1,0 +1,542 @@
+{
+  "code": "WI",
+  "name": "Wisconsin",
+  "slug": "wisconsin",
+  "lastReviewed": "2026-10-24",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 5,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Wisconsin DOR - Tax rates and sales tax rate chart",
+          "url": "https://www.revenue.wi.gov/Pages/FAQS/pcs-taxrates.aspx",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Wisconsin DOR - Publication 201, Sales and use tax information (1/19)",
+          "url": "https://www.revenue.wi.gov/DOR%20Publications/pb201.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ]
+    },
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Wisconsin DOR - Publication 201, Sales and use tax information (1/19)",
+          "url": "https://www.revenue.wi.gov/DOR%20Publications/pb201.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Wisconsin DMV - Purchase price and trade-in FAQ",
+          "url": "https://wisconsindot.gov/Pages/online-srvcs/title-vehicle/faqs-purchase-price.aspx",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The taxable price is the price of the product purchased less the amount allowed for the product traded in. No deduction is allowed for something traded in for a service."
+    },
+    "local": {
+      "value": {
+        "mode": "user-entered",
+        "capBase": null,
+        "rangeNote": "Pick your county. The county tax applies where the vehicle will be customarily kept."
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Wisconsin DOR - Tax rates and sales tax rate chart",
+          "url": "https://www.revenue.wi.gov/Pages/FAQS/pcs-taxrates.aspx",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Wisconsin DOR - Fact Sheet 2113, used vehicles (Oct 2023)",
+          "url": "https://www.revenue.wi.gov/DOR%20Publications/2113usedvehicles.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ]
+    },
+    "outOfStateCredit": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Wisconsin DOR - Publication 201, Sales and use tax information (1/19)",
+          "url": "https://www.revenue.wi.gov/DOR%20Publications/pb201.pdf",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Credit for sales or use tax due and paid to another state, never more than the Wisconsin state, county and stadium use taxes."
+    },
+    "useTax": null
+  },
+  "localRates": {
+    "label": "County and city sales tax rate (added to the 5% state rate)",
+    "mode": "localOnly",
+    "rates": {
+      "value": {
+        "Adams": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Ashland": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Barron": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Bayfield": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Brown": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Buffalo": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Burnett": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Calumet": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Chippewa": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Clark": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Columbia": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Crawford": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Dane": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Dodge": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Door": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Douglas": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Dunn": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Eau Claire": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Florence": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Fond du Lac": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Forest": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Grant": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Green": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Green Lake": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Iowa": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Iron": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Jackson": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Jefferson": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Juneau": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Kenosha": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Kewaunee": {
+          "county": 0.5,
+          "places": {}
+        },
+        "La Crosse": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Lafayette": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Langlade": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Lincoln": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Manitowoc": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Marathon": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Marinette": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Marquette": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Menominee": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Milwaukee": {
+          "county": 0.9,
+          "places": {
+            "City of Milwaukee": 2.9
+          }
+        },
+        "Monroe": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Oconto": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Oneida": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Outagamie": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Ozaukee": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Pepin": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Pierce": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Polk": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Portage": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Price": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Racine": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Richland": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Rock": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Rusk": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Sauk": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Sawyer": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Shawano": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Sheboygan": {
+          "county": 0.5,
+          "places": {}
+        },
+        "St. Croix": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Taylor": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Trempealeau": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Vernon": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Vilas": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Walworth": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Washburn": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Washington": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Waukesha": {
+          "county": 0.0,
+          "places": {}
+        },
+        "Waupaca": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Waushara": {
+          "county": 0.5,
+          "places": {}
+        },
+        "Winnebago": {
+          "county": 0.0,
+          "places": {}
+        },
+        "Wood": {
+          "county": 0.5,
+          "places": {}
+        }
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Wisconsin DOR - Tax rates and sales tax rate chart",
+          "url": "https://www.revenue.wi.gov/Pages/FAQS/pcs-taxrates.aspx",
+          "accessed": "2026-10-24",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Seventy counties have a county tax, 0.5% except Milwaukee County at 0.9%. Waukesha and Winnebago have none. The City of Milwaukee adds 2% on top of the county rate. Read from the DOR chart page; confirm your county on the state rate look-up."
+    }
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Title (original or transfer)",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 214.5,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Wisconsin DMV - DMV fees",
+            "url": "https://wisconsindot.gov/Pages/dmv/vehicles/title-plates/dmv-fees.aspx",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "registration",
+      "label": "Registration, automobile (1 year)",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 85,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Wisconsin DMV - Fee schedule (registrations on or after Oct 1, 2025)",
+            "url": "https://wisconsindot.gov/Pages/dmv/vehicles/title-plates/fee-chart.aspx",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Wisconsin DMV - DMV fees",
+            "url": "https://wisconsindot.gov/Pages/dmv/vehicles/title-plates/dmv-fees.aspx",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Registrations effective on or after Oct 1, 2025."
+      }
+    },
+    {
+      "id": "ev-surcharge",
+      "label": "Electric vehicle surcharge",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "ev"
+      },
+      "amount": {
+        "value": 175,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Wisconsin DMV - Fee schedule (registrations on or after Oct 1, 2025)",
+            "url": "https://wisconsindot.gov/Pages/dmv/vehicles/title-plates/fee-chart.aspx",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Wisconsin DMV - DMV fees",
+            "url": "https://wisconsindot.gov/Pages/dmv/vehicles/title-plates/dmv-fees.aspx",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Added to the regular fee for autos and light trucks up to 8,000 lbs. Hybrids pay a $75 surcharge, which the calculator does not include."
+      }
+    },
+    {
+      "id": "wheel-tax",
+      "label": "Wheel tax (municipal or county registration fee)",
+      "kind": "flat",
+      "frequency": "annual",
+      "excludedReason": "Some counties and municipalities charge a wheel tax based on where the vehicle is customarily kept. The amount varies and is not included.",
+      "amount": {
+        "value": null,
+        "status": "unverified",
+        "sources": [
+          {
+            "title": "Wisconsin DMV - DMV fees",
+            "url": "https://wisconsindot.gov/Pages/dmv/vehicles/title-plates/dmv-fees.aspx",
+            "accessed": "2026-10-24",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    }
+  ],
+  "notes": [
+    "A $6 issuance fee applies to each license plate and is not included.",
+    "The wheel tax charged by some counties and municipalities is not included.",
+    "Hybrid vehicles pay a $75 surcharge that is not included."
+  ],
+  "content": {
+    "intro": "{state} charges {stateRate} state sales tax on a vehicle, plus a county tax of one half of a percent in most counties and a city tax in the City of Milwaukee. Title and registration fees are paid on top.",
+    "howItWorks": [
+      {
+        "text": "The state rate is {stateRate}. A trade-in comes off the price before the tax is figured, as long as you trade in a product and not a service.",
+        "sources": [
+          "https://www.revenue.wi.gov/DOR%20Publications/pb201.pdf",
+          "https://wisconsindot.gov/Pages/online-srvcs/title-vehicle/faqs-purchase-price.aspx"
+        ]
+      },
+      {
+        "text": "Counties add their own tax where the vehicle will be kept, and the City of Milwaukee adds a city tax on top. Two counties have no county tax.",
+        "sources": [
+          "https://www.revenue.wi.gov/Pages/FAQS/pcs-taxrates.aspx",
+          "https://www.revenue.wi.gov/DOR%20Publications/2113usedvehicles.pdf"
+        ]
+      },
+      {
+        "text": "Registration is paid each year. Electric vehicles pay a surcharge, and some counties and municipalities add a wheel tax that is not part of this total.",
+        "sources": [
+          "https://wisconsindot.gov/Pages/dmv/vehicles/title-plates/fee-chart.aspx",
+          "https://wisconsindot.gov/Pages/dmv/vehicles/title-plates/dmv-fees.aspx"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does a trade-in lower the sales tax in Wisconsin?",
+        "text": "Yes. The tax is figured on the price of the vehicle you buy less the amount allowed for the vehicle you trade in.",
+        "sources": [
+          "https://www.revenue.wi.gov/DOR%20Publications/pb201.pdf"
+        ]
+      },
+      {
+        "q": "Which county's tax do I pay?",
+        "text": "The tax for the county where the vehicle will be customarily kept.",
+        "sources": [
+          "https://www.revenue.wi.gov/DOR%20Publications/2113usedvehicles.pdf"
+        ]
+      },
+      {
+        "q": "What if I paid sales tax in another state?",
+        "text": "Wisconsin gives credit for sales or use tax properly paid to another state, up to the Wisconsin tax owed.",
+        "sources": [
+          "https://www.revenue.wi.gov/DOR%20Publications/pb201.pdf"
+        ]
+      },
+      {
+        "q": "Why is the wheel tax not in the total?",
+        "text": "Some counties and municipalities charge it, and the amount depends on where the vehicle is kept, so it is shown as not included.",
+        "sources": [
+          "https://wisconsindot.gov/Pages/dmv/vehicles/title-plates/dmv-fees.aspx"
+        ]
+      }
+    ]
+  }
+}

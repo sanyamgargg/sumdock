@@ -527,3 +527,33 @@ describe("Indiana", () => {
     expect(calculate(inState, base).excluded.map((e) => e.label)).toContain("Vehicle excise tax and county wheel tax");
   });
 });
+
+describe("Wisconsin", () => {
+  const wi = load("wi");
+  const rates = wi.localRates!.rates.value!;
+  it("is publishable with 72 counties", () => {
+    expect(publishability(wi).publishable).toBe(true);
+    expect(Object.keys(rates).length).toBe(72);
+  });
+  it("county rates follow the DOR chart", () => {
+    expect(rates["Dane"].county).toBe(0.5);
+    expect(rates["Milwaukee"].county).toBe(0.9);
+    expect(rates["Milwaukee"].places["City of Milwaukee"]).toBe(2.9);
+    expect(rates["Waukesha"].county).toBe(0);
+    expect(rates["Winnebago"].county).toBe(0);
+    expect(Object.values(rates).filter((c) => c.county === 0.5).length).toBe(69);
+  });
+  it("taxes the price less a trade-in at 5% plus the local rate", () => {
+    const r = calculate(wi, { ...base, price: 30000, tradeIn: 10000, localRatePct: 0.5 });
+    expect(line(r, "state-tax")).toBe(1000);
+    expect(line(r, "local-tax")).toBe(100);
+  });
+  it("charges title and registration; EV surcharge only for EVs; wheel tax not included", () => {
+    const r = calculate(wi, base);
+    expect(line(r, "title")).toBe(214.5);
+    expect(line(r, "registration")).toBe(85);
+    expect(line(r, "ev-surcharge")).toBeUndefined();
+    expect(line(calculate(wi, { ...base, fuel: "ev" }), "ev-surcharge")).toBe(175);
+    expect(r.excluded.map((e) => e.label)).toContain("Wheel tax (municipal or county registration fee)");
+  });
+});
