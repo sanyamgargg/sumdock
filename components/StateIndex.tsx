@@ -135,7 +135,7 @@ export default function StateIndex({ rows }: { rows: StateRow[] }) {
 
       <ul className="legend" aria-label="What the status words mean">
         <li><StatusMark status="verified" label="Verified" />: every figure in the total is confirmed on an official page.</li>
-        <li><StatusMark status="partial" label="Partly verified" />: some figures are marked “check source”.</li>
+        <li><StatusMark status="partial" label="Sourced, check details" />: every figure cites a source, but some are marked “check source” because the source is indirect, old or from a county page.</li>
         <li><StatusMark status="in-review" label="In review" />: a core figure is not confirmed, so the page is not yet public.</li>
       </ul>
     </section>

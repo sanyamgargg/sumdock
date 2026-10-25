@@ -2,7 +2,7 @@ import type { Verification } from "@/lib/content";
 
 /**
  * Small square glyph plus the status word. The word is always shown, so the mark never relies on colour alone.
- * Verified: solid ink square. Partly verified: square with a 2px accent border. In review: dashed gray square.
+ * Verified: solid ink square. Sourced, check details: square with a 2px accent border. In review: dashed gray square.
  */
 export default function StatusMark({ status, label }: { status: Verification; label: string }) {
   return (

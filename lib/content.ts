@@ -99,7 +99,7 @@ const STATUS_LABEL: Record<Status, string> = {
   verified: "Verified",
   partial: "Check source",
   conflict: "Sources disagree",
-  unverified: "Not verified",
+  unverified: "Not included",
 };
 export const statusLabel = (s: Status) => STATUS_LABEL[s];
 
@@ -262,7 +262,7 @@ export function verificationStatus(state: StateData): { status: Verification; la
   const st = state.salesTax;
   const used = [st.stateRatePct, st.tradeInReducesBase, st.local, ...state.fees.map((f) => f.amount)].filter((s) => isUsable(s.status));
   if (used.some((s) => s.status === "partial")) {
-    return { status: "partial", label: "Partly verified", note: "Some figures are marked “check source”." };
+    return { status: "partial", label: "Sourced, check details", note: "Every figure cites a source; some are marked “check source” because the source is indirect, old or from a county page." };
   }
   return { status: "verified", label: "Verified", note: "Core figures confirmed on official pages." };
 }

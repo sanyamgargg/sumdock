@@ -26,9 +26,9 @@ export default function Methodology() {
       <h2>What the labels mean</h2>
       <ul>
         <li><strong>verified</strong>: confirmed on an official state agency page.</li>
-        <li><strong>partial</strong>: an official source exists but something is missing or indirect (a county page, an older document, or a secondary confirmation). Shown with a &quot;check source&quot; tag.</li>
+        <li><strong>partial</strong>: an official source exists but something is missing or indirect (a county page, an older document, or a secondary confirmation). Shown with a &quot;check source&quot; tag, and a state with such figures is labeled &quot;Sourced, check details&quot;.</li>
         <li><strong>conflict</strong>: official pages disagree. The amount is left out of totals until resolved.</li>
-        <li><strong>unverified</strong>: no official source yet. Left out of totals.</li>
+        <li><strong>unverified</strong>: no official source yet. Left out of totals and shown as &quot;Not included&quot;.</li>
       </ul>
 
       <h2>How totals are calculated</h2>
