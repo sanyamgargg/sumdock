@@ -1,0 +1,128 @@
+{
+  "code": "WA",
+  "name": "Washington",
+  "slug": "washington",
+  "lastReviewed": "2026-11-10",
+  "formation": [
+    {
+      "id": "formation-filing",
+      "label": "Certificate of Formation filing fee",
+      "frequency": "once",
+      "main": true,
+      "amount": {
+        "value": 180,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Washington Secretary of State - LLC and PLLC filing resource page",
+            "url": "https://www.sos.wa.gov/corporations-charities/business-entities/limited-liability-company-llc-professional-llc-pllc-filing-resource-page",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Same fee online or on paper."
+      }
+    }
+  ],
+  "annual": [
+    {
+      "id": "annual-report",
+      "label": "Annual report fee",
+      "frequency": "annual",
+      "main": true,
+      "due": "By the last day of the month the LLC was formed, each year after formation.",
+      "firstYear": 2,
+      "amount": {
+        "value": 70,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Washington Secretary of State - LLC and PLLC filing resource page",
+            "url": "https://www.sos.wa.gov/corporations-charities/business-entities/limited-liability-company-llc-professional-llc-pllc-filing-resource-page",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The report is due by the entity's expiration date, the last day of the month in which it was formed. The first one falls a year after formation."
+      }
+    }
+  ],
+  "notIncluded": [
+    {
+      "label": "Initial report",
+      "reason": "Free when filed with the Certificate of Formation, which is how the estimate assumes it is filed. Filed separately within the first months, it costs a small fee.",
+      "sources": [
+        {
+          "title": "Washington Secretary of State - LLC and PLLC filing resource page",
+          "url": "https://www.sos.wa.gov/corporations-charities/business-entities/limited-liability-company-llc-professional-llc-pllc-filing-resource-page",
+          "accessed": "2026-11-10",
+          "publisherType": "state-agency"
+        }
+      ]
+    },
+    {
+      "label": "Late annual report fee",
+      "reason": "Only if the annual report is filed after the expiration date.",
+      "sources": [
+        {
+          "title": "Washington Secretary of State - LLC and PLLC filing resource page",
+          "url": "https://www.sos.wa.gov/corporations-charities/business-entities/limited-liability-company-llc-professional-llc-pllc-filing-resource-page",
+          "accessed": "2026-11-10",
+          "publisherType": "state-agency"
+        }
+      ]
+    },
+    {
+      "label": "Registered agent service",
+      "reason": "Only if you hire a registered agent. The agent sets the price, so it is not a state fee and is not in the total."
+    },
+    {
+      "label": "Name reservation",
+      "reason": "Optional. Reserving a name before you file is a separate charge and is not in the total."
+    },
+    {
+      "label": "Expedited filing and certified copies",
+      "reason": "Optional. Faster processing and certified copies cost extra and are not in the total."
+    },
+    {
+      "label": "Local business licenses and permits",
+      "reason": "City, county and industry licenses depend on where the business operates and what it does. None are in the total."
+    },
+    {
+      "label": "Federal and state income taxes",
+      "reason": "Taxes on the LLC's or its owners' income are not part of this estimate. This page is not legal or tax advice."
+    }
+  ],
+  "content": {
+    "intro": "{state} charges a one-time fee to file a Certificate of Formation and an annual report fee each year after that.",
+    "howItWorks": [
+      {
+        "text": "The Secretary of State lists the same Certificate of Formation fee for online and paper filing.",
+        "sources": [
+          "https://www.sos.wa.gov/corporations-charities/business-entities/limited-liability-company-llc-professional-llc-pllc-filing-resource-page"
+        ]
+      },
+      {
+        "text": "The initial report is free when filed with the Certificate of Formation. Filed later, within the first months, it has a small fee.",
+        "sources": [
+          "https://www.sos.wa.gov/corporations-charities/business-entities/limited-liability-company-llc-professional-llc-pllc-filing-resource-page"
+        ]
+      },
+      {
+        "text": "The annual report is due by the last day of the month in which the LLC was formed. A late report adds a delinquency fee.",
+        "sources": [
+          "https://www.sos.wa.gov/corporations-charities/business-entities/limited-liability-company-llc-professional-llc-pllc-filing-resource-page"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Do I need to file an initial report in {state}?",
+        "text": "Yes. It is free if you file it with the Certificate of Formation, and costs a small fee if filed separately.",
+        "sources": [
+          "https://www.sos.wa.gov/corporations-charities/business-entities/limited-liability-company-llc-professional-llc-pllc-filing-resource-page"
+        ]
+      }
+    ]
+  }
+}

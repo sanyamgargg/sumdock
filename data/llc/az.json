@@ -1,0 +1,128 @@
+{
+  "code": "AZ",
+  "name": "Arizona",
+  "slug": "arizona",
+  "lastReviewed": "2026-11-10",
+  "formation": [
+    {
+      "id": "formation-filing",
+      "label": "Articles of Organization filing fee",
+      "frequency": "once",
+      "main": true,
+      "amount": {
+        "value": 50,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Arizona Corporation Commission - Schedule of fees, limited liability companies, rev. 3.2026 (PDF)",
+            "url": "https://azcc.gov/docs/default-source/corps-files/fee-schedules/fee-schedule-llcs.pdf",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Arizona Corporation Commission - Instructions for Articles of Organization (PDF)",
+            "url": "https://azcc.gov/docs/default-source/corps-files/instructions/l010i-instructions-articles-of-organization.pdf",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Regular processing. Expedited processing costs more and is not used here."
+      }
+    }
+  ],
+  "annual": [
+    {
+      "id": "annual-report",
+      "label": "Annual report",
+      "frequency": "annual",
+      "main": true,
+      "due": "No annual report is required for LLCs.",
+      "firstYear": 1,
+      "amount": {
+        "value": 0,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Arizona Corporation Commission - Business services FAQs",
+            "url": "https://azcc.gov/faqs/BusinessServicesFAQs",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The Commission says LLCs are not required to file annual reports. Only corporations are."
+      }
+    }
+  ],
+  "notIncluded": [
+    {
+      "label": "Publication of the Articles",
+      "reason": "Required, but the cost depends on where the statutory agent is. If the agent's street address is in Maricopa or Pima county, the Commission publishes the notice on its website. Elsewhere you pay a newspaper to publish it.",
+      "sources": [
+        {
+          "title": "Arizona Corporation Commission - Instructions for Articles of Organization (PDF)",
+          "url": "https://azcc.gov/docs/default-source/corps-files/instructions/l010i-instructions-articles-of-organization.pdf",
+          "accessed": "2026-11-10",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Arizona Corporation Commission - Business services FAQs",
+          "url": "https://azcc.gov/faqs/BusinessServicesFAQs",
+          "accessed": "2026-11-10",
+          "publisherType": "state-agency"
+        }
+      ]
+    },
+    {
+      "label": "Registered agent service",
+      "reason": "Only if you hire a registered agent. The agent sets the price, so it is not a state fee and is not in the total."
+    },
+    {
+      "label": "Name reservation",
+      "reason": "Optional. Reserving a name before you file is a separate charge and is not in the total."
+    },
+    {
+      "label": "Expedited filing and certified copies",
+      "reason": "Optional. Faster processing and certified copies cost extra and are not in the total."
+    },
+    {
+      "label": "Local business licenses and permits",
+      "reason": "City, county and industry licenses depend on where the business operates and what it does. None are in the total."
+    },
+    {
+      "label": "Federal and state income taxes",
+      "reason": "Taxes on the LLC's or its owners' income are not part of this estimate. This page is not legal or tax advice."
+    }
+  ],
+  "content": {
+    "intro": "{state} charges a one-time fee to file Articles of Organization and has no annual report for LLCs. Publishing a notice of the filing can add a cost.",
+    "howItWorks": [
+      {
+        "text": "The Corporation Commission's fee schedule lists the regular fee for Articles of Organization and a higher fee for expedited processing.",
+        "sources": [
+          "https://azcc.gov/docs/default-source/corps-files/fee-schedules/fee-schedule-llcs.pdf"
+        ]
+      },
+      {
+        "text": "The Commission says LLCs do not file annual reports, so there is no yearly state fee in the estimate.",
+        "sources": [
+          "https://azcc.gov/faqs/BusinessServicesFAQs"
+        ]
+      },
+      {
+        "text": "A notice of the filing must be published after the Commission approves the Articles. If the statutory agent is in Maricopa or Pima county, the Commission posts it on its website. Otherwise it goes in a newspaper, which charges for it.",
+        "sources": [
+          "https://azcc.gov/docs/default-source/corps-files/instructions/l010i-instructions-articles-of-organization.pdf"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Do I have to publish my {state} Articles of Organization?",
+        "text": "Yes. The notice is posted by the Commission for agents in Maricopa or Pima county. Elsewhere it must run in a newspaper, and that cost is not in the estimate.",
+        "sources": [
+          "https://azcc.gov/docs/default-source/corps-files/instructions/l010i-instructions-articles-of-organization.pdf"
+        ]
+      }
+    ]
+  }
+}

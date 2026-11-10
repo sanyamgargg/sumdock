@@ -3,6 +3,69 @@
   "entries": [
     {
       "date": "2026-11-10",
+      "tool": "llc",
+      "state": "GA",
+      "stateName": "Georgia",
+      "summary": "Added the LLC cost page: the $110 Articles of Organization fee and the $60 annual registration from the Secretary of State's fee schedule and filing guide."
+    },
+    {
+      "date": "2026-11-10",
+      "tool": "llc",
+      "state": "IL",
+      "stateName": "Illinois",
+      "summary": "Added the LLC cost page: the $150 filing fee and $75 annual report fee set in the Limited Liability Company Act."
+    },
+    {
+      "date": "2026-11-10",
+      "tool": "llc",
+      "state": "OH",
+      "stateName": "Ohio",
+      "summary": "Added the LLC cost page: the $99 filing fee from the Legislative Service Commission's list of Secretary of State fees. Whether any yearly filing applies could not be confirmed on a Secretary of State page, so the page is not yet public."
+    },
+    {
+      "date": "2026-11-10",
+      "tool": "llc",
+      "state": "NC",
+      "stateName": "North Carolina",
+      "summary": "Added the LLC cost page: the $125 filing fee and $200 annual report fee from the Secretary of State's fee list, with the April 15 due date."
+    },
+    {
+      "date": "2026-11-10",
+      "tool": "llc",
+      "state": "PA",
+      "stateName": "Pennsylvania",
+      "summary": "Added the LLC cost page: the $125 Certificate of Organization fee and the $7 annual report fee from the Department of State."
+    },
+    {
+      "date": "2026-11-10",
+      "tool": "llc",
+      "state": "AZ",
+      "stateName": "Arizona",
+      "summary": "Added the LLC cost page: the $50 filing fee from the Corporation Commission's fee schedule. The Commission says LLCs file no annual report. Newspaper publication is listed as not included."
+    },
+    {
+      "date": "2026-11-10",
+      "tool": "llc",
+      "state": "MI",
+      "stateName": "Michigan",
+      "summary": "Added the LLC cost page: the $50 filing fee from the Articles of Organization form and the $25 annual statement fee from LARA."
+    },
+    {
+      "date": "2026-11-10",
+      "tool": "llc",
+      "state": "WA",
+      "stateName": "Washington",
+      "summary": "Added the LLC cost page: the $180 Certificate of Formation fee and $70 annual report fee from the Secretary of State."
+    },
+    {
+      "date": "2026-11-10",
+      "tool": "llc",
+      "state": "NJ",
+      "stateName": "New Jersey",
+      "summary": "Added the LLC cost page: the $100 Certificate of Formation fee and $75 annual report fee from the Division of Revenue and Enterprise Services fee schedule."
+    },
+    {
+      "date": "2026-11-10",
       "state": "FL",
       "stateName": "Florida",
       "tool": "llc",

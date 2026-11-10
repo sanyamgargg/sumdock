@@ -1,0 +1,121 @@
+{
+  "code": "PA",
+  "name": "Pennsylvania",
+  "slug": "pennsylvania",
+  "lastReviewed": "2026-11-10",
+  "formation": [
+    {
+      "id": "formation-filing",
+      "label": "Certificate of Organization filing fee",
+      "frequency": "once",
+      "main": true,
+      "amount": {
+        "value": 125,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Pennsylvania Department of State - Fees and payments",
+            "url": "https://www.pa.gov/agencies/dos/programs/business/fees-and-payments",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    }
+  ],
+  "annual": [
+    {
+      "id": "annual-report",
+      "label": "Annual report fee",
+      "frequency": "annual",
+      "main": true,
+      "due": "By September 30 each year, starting the year after the LLC is formed.",
+      "firstYear": 2,
+      "amount": {
+        "value": 7,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Pennsylvania Department of State - Annual reports",
+            "url": "https://www.pa.gov/agencies/dos/programs/business/types-of-filings-and-registrations/annual-reports",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Pennsylvania Department of State - Fees and payments",
+            "url": "https://www.pa.gov/agencies/dos/programs/business/fees-and-payments",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Fee for LLCs and other for-profit entities. LLCs with a not-for-profit purpose pay nothing. The first report is due the year after formation."
+      }
+    }
+  ],
+  "notIncluded": [
+    {
+      "label": "Reinstatement after dissolution",
+      "reason": "Only if the LLC is dissolved for not filing annual reports. The Department lists a reinstatement fee plus a fee for each missing report.",
+      "sources": [
+        {
+          "title": "Pennsylvania Department of State - Annual reports",
+          "url": "https://www.pa.gov/agencies/dos/programs/business/types-of-filings-and-registrations/annual-reports",
+          "accessed": "2026-11-10",
+          "publisherType": "state-agency"
+        }
+      ]
+    },
+    {
+      "label": "Registered agent service",
+      "reason": "Only if you hire a registered agent. The agent sets the price, so it is not a state fee and is not in the total."
+    },
+    {
+      "label": "Name reservation",
+      "reason": "Optional. Reserving a name before you file is a separate charge and is not in the total."
+    },
+    {
+      "label": "Expedited filing and certified copies",
+      "reason": "Optional. Faster processing and certified copies cost extra and are not in the total."
+    },
+    {
+      "label": "Local business licenses and permits",
+      "reason": "City, county and industry licenses depend on where the business operates and what it does. None are in the total."
+    },
+    {
+      "label": "Federal and state income taxes",
+      "reason": "Taxes on the LLC's or its owners' income are not part of this estimate. This page is not legal or tax advice."
+    }
+  ],
+  "content": {
+    "intro": "{state} charges a one-time fee to file a Certificate of Organization and a small annual report fee each year after that.",
+    "howItWorks": [
+      {
+        "text": "The Department of State lists the fee for a domestic LLC's Certificate of Organization and the annual report fee for for-profit entities.",
+        "sources": [
+          "https://www.pa.gov/agencies/dos/programs/business/fees-and-payments"
+        ]
+      },
+      {
+        "text": "LLCs file the annual report by the end of September. The first report is due the year after formation.",
+        "sources": [
+          "https://www.pa.gov/agencies/dos/programs/business/types-of-filings-and-registrations/annual-reports"
+        ]
+      },
+      {
+        "text": "An LLC that does not file can be administratively dissolved and loses the exclusive right to its name.",
+        "sources": [
+          "https://www.pa.gov/agencies/dos/programs/business/types-of-filings-and-registrations/annual-reports"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "What happens if a {state} LLC skips the annual report?",
+        "text": "The Department says it can be administratively dissolved and lose the exclusive right to its name. Reinstatement costs extra.",
+        "sources": [
+          "https://www.pa.gov/agencies/dos/programs/business/types-of-filings-and-registrations/annual-reports"
+        ]
+      }
+    ]
+  }
+}

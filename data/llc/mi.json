@@ -1,0 +1,121 @@
+{
+  "code": "MI",
+  "name": "Michigan",
+  "slug": "michigan",
+  "lastReviewed": "2026-11-10",
+  "formation": [
+    {
+      "id": "formation-filing",
+      "label": "Articles of Organization filing fee",
+      "frequency": "once",
+      "main": true,
+      "amount": {
+        "value": 50,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Michigan LARA - Articles of Organization, form CSCL/CD 700, rev. 07/25 (PDF)",
+            "url": "https://www.michigan.gov/lara/-/media/Project/Websites/lara/cscl/NonImages_new/Corps/forms/llc/700-0725.pdf",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    }
+  ],
+  "annual": [
+    {
+      "id": "annual-statement",
+      "label": "Annual statement fee",
+      "frequency": "annual",
+      "main": true,
+      "due": "By February 15 each year after the LLC is formed.",
+      "firstYear": 2,
+      "amount": {
+        "value": 25,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Michigan LARA - Annual reports and annual statements",
+            "url": "https://www.michigan.gov/lara/bureau-list/cscl/corps/michigan-business-roadmap/annual-reports-and-annual-statements",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Fee for a standard LLC; a professional LLC pays more. An LLC formed after September 30 skips the statement on the February 15 right after formation, so its first fee falls a year later than shown here."
+      }
+    }
+  ],
+  "notIncluded": [
+    {
+      "label": "Professional LLC annual statement",
+      "reason": "A professional LLC pays a higher annual statement fee than the standard LLC fee used here.",
+      "sources": [
+        {
+          "title": "Michigan LARA - Annual reports and annual statements",
+          "url": "https://www.michigan.gov/lara/bureau-list/cscl/corps/michigan-business-roadmap/annual-reports-and-annual-statements",
+          "accessed": "2026-11-10",
+          "publisherType": "state-agency"
+        }
+      ]
+    },
+    {
+      "label": "Late annual statement penalty",
+      "reason": "Only for a professional LLC filing after the due date, as listed by LARA.",
+      "sources": [
+        {
+          "title": "Michigan LARA - Annual reports and annual statements",
+          "url": "https://www.michigan.gov/lara/bureau-list/cscl/corps/michigan-business-roadmap/annual-reports-and-annual-statements",
+          "accessed": "2026-11-10",
+          "publisherType": "state-agency"
+        }
+      ]
+    },
+    {
+      "label": "Registered agent service",
+      "reason": "Only if you hire a registered agent. The agent sets the price, so it is not a state fee and is not in the total."
+    },
+    {
+      "label": "Name reservation",
+      "reason": "Optional. Reserving a name before you file is a separate charge and is not in the total."
+    },
+    {
+      "label": "Expedited filing and certified copies",
+      "reason": "Optional. Faster processing and certified copies cost extra and are not in the total."
+    },
+    {
+      "label": "Local business licenses and permits",
+      "reason": "City, county and industry licenses depend on where the business operates and what it does. None are in the total."
+    },
+    {
+      "label": "Federal and state income taxes",
+      "reason": "Taxes on the LLC's or its owners' income are not part of this estimate. This page is not legal or tax advice."
+    }
+  ],
+  "content": {
+    "intro": "{state} charges a one-time fee to file Articles of Organization and a small annual statement fee each year after that.",
+    "howItWorks": [
+      {
+        "text": "The Articles of Organization form lists the nonrefundable filing fee.",
+        "sources": [
+          "https://www.michigan.gov/lara/-/media/Project/Websites/lara/cscl/NonImages_new/Corps/forms/llc/700-0725.pdf"
+        ]
+      },
+      {
+        "text": "Every LLC files an annual statement by the middle of February each year after it is formed. An LLC formed after the end of September does not file on the February right after it is formed.",
+        "sources": [
+          "https://www.michigan.gov/lara/bureau-list/cscl/corps/michigan-business-roadmap/annual-reports-and-annual-statements"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "I formed my {state} LLC in the autumn. When is my first annual statement?",
+        "text": "If the LLC was formed after the end of September, it skips the February right after formation. Its first statement is due the following February.",
+        "sources": [
+          "https://www.michigan.gov/lara/bureau-list/cscl/corps/michigan-business-roadmap/annual-reports-and-annual-statements"
+        ]
+      }
+    ]
+  }
+}

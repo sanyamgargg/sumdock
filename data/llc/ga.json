@@ -1,0 +1,116 @@
+{
+  "code": "GA",
+  "name": "Georgia",
+  "slug": "georgia",
+  "lastReviewed": "2026-11-10",
+  "formation": [
+    {
+      "id": "formation-filing",
+      "label": "Articles of Organization filing fee",
+      "frequency": "once",
+      "main": true,
+      "amount": {
+        "value": 110,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Georgia Secretary of State - Corporations Division filing fees, effective September 6, 2025 (PDF)",
+            "url": "https://sos.ga.gov/sites/default/files/forms/Reference%20-%20Filing%20Fees%20%28Effective%209.6.2025%29.pdf",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The fee schedule lists a $100 filing fee plus a $10 charge, $110 in total, for online and paper filing."
+      }
+    }
+  ],
+  "annual": [
+    {
+      "id": "annual-registration",
+      "label": "Annual registration",
+      "frequency": "annual",
+      "main": true,
+      "due": "Between January 1 and April 1 each year, starting the year after the LLC is formed.",
+      "firstYear": 2,
+      "amount": {
+        "value": 60,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Georgia Secretary of State - How to guide: register a domestic entity",
+            "url": "https://sos.ga.gov/how-to-guide/how-guide-register-domestic-entity",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Georgia Secretary of State - Corporations Division filing fees, effective September 6, 2025 (PDF)",
+            "url": "https://sos.ga.gov/sites/default/files/forms/Reference%20-%20Filing%20Fees%20%28Effective%209.6.2025%29.pdf",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The Division lists $60: a $50 filing fee plus a $10 service charge. The first registration is due in the calendar year after formation."
+      }
+    }
+  ],
+  "notIncluded": [
+    {
+      "label": "Late annual registration penalty",
+      "reason": "Only if the annual registration is filed after April 1. The fee schedule lists a flat penalty.",
+      "sources": [
+        {
+          "title": "Georgia Secretary of State - Corporations Division filing fees, effective September 6, 2025 (PDF)",
+          "url": "https://sos.ga.gov/sites/default/files/forms/Reference%20-%20Filing%20Fees%20%28Effective%209.6.2025%29.pdf",
+          "accessed": "2026-11-10",
+          "publisherType": "state-agency"
+        }
+      ]
+    },
+    {
+      "label": "Registered agent service",
+      "reason": "Only if you hire a registered agent. The agent sets the price, so it is not a state fee and is not in the total."
+    },
+    {
+      "label": "Name reservation",
+      "reason": "Optional. Reserving a name before you file is a separate charge and is not in the total."
+    },
+    {
+      "label": "Expedited filing and certified copies",
+      "reason": "Optional. Faster processing and certified copies cost extra and are not in the total."
+    },
+    {
+      "label": "Local business licenses and permits",
+      "reason": "City, county and industry licenses depend on where the business operates and what it does. None are in the total."
+    },
+    {
+      "label": "Federal and state income taxes",
+      "reason": "Taxes on the LLC's or its owners' income are not part of this estimate. This page is not legal or tax advice."
+    }
+  ],
+  "content": {
+    "intro": "{state} charges a one-time fee to file Articles of Organization and a small annual registration fee each year after that.",
+    "howItWorks": [
+      {
+        "text": "The Corporations Division fee schedule lists the filing fee for Articles of Organization as a base fee plus a service charge. The estimate uses the total.",
+        "sources": [
+          "https://sos.ga.gov/sites/default/files/forms/Reference%20-%20Filing%20Fees%20%28Effective%209.6.2025%29.pdf"
+        ]
+      },
+      {
+        "text": "Every LLC files an annual registration between the start of January and the start of April. The first one is due in the calendar year after the LLC is formed.",
+        "sources": [
+          "https://sos.ga.gov/how-to-guide/how-guide-register-domestic-entity"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "When is the first {state} annual registration due?",
+        "text": "In the calendar year after the LLC is formed, between the start of January and the start of April.",
+        "sources": [
+          "https://sos.ga.gov/how-to-guide/how-guide-register-domestic-entity"
+        ]
+      }
+    ]
+  }
+}

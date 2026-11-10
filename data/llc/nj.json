@@ -1,0 +1,115 @@
+{
+  "code": "NJ",
+  "name": "New Jersey",
+  "slug": "new-jersey",
+  "lastReviewed": "2026-11-10",
+  "formation": [
+    {
+      "id": "formation-filing",
+      "label": "Certificate of Formation filing fee",
+      "frequency": "once",
+      "main": true,
+      "amount": {
+        "value": 100,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "New Jersey Division of Revenue and Enterprise Services - Registry fee schedules",
+            "url": "https://www.nj.gov/treasury/revenue/fees.shtml",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    }
+  ],
+  "annual": [
+    {
+      "id": "annual-report",
+      "label": "Annual report fee",
+      "frequency": "annual",
+      "main": true,
+      "due": "By the last day of the month the LLC was formed, each year after formation.",
+      "firstYear": 2,
+      "amount": {
+        "value": 75,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "New Jersey Division of Revenue and Enterprise Services - Registry fee schedules",
+            "url": "https://www.nj.gov/treasury/revenue/fees.shtml",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "New Jersey Business Portal - Taxes and annual report",
+            "url": "https://business.nj.gov/pages/filings-and-accounting",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Listed under LLC filing fees. The report is due by the end of the month in which the business was established, so the first one falls a year after formation."
+      }
+    }
+  ],
+  "notIncluded": [
+    {
+      "label": "Revocation for not filing",
+      "reason": "An LLC that does not file annual reports can have its registration revoked. Reinstatement costs extra.",
+      "sources": [
+        {
+          "title": "New Jersey Business Portal - Taxes and annual report",
+          "url": "https://business.nj.gov/pages/filings-and-accounting",
+          "accessed": "2026-11-10",
+          "publisherType": "state-agency"
+        }
+      ]
+    },
+    {
+      "label": "Registered agent service",
+      "reason": "Only if you hire a registered agent. The agent sets the price, so it is not a state fee and is not in the total."
+    },
+    {
+      "label": "Name reservation",
+      "reason": "Optional. Reserving a name before you file is a separate charge and is not in the total."
+    },
+    {
+      "label": "Expedited filing and certified copies",
+      "reason": "Optional. Faster processing and certified copies cost extra and are not in the total."
+    },
+    {
+      "label": "Local business licenses and permits",
+      "reason": "City, county and industry licenses depend on where the business operates and what it does. None are in the total."
+    },
+    {
+      "label": "Federal and state income taxes",
+      "reason": "Taxes on the LLC's or its owners' income are not part of this estimate. This page is not legal or tax advice."
+    }
+  ],
+  "content": {
+    "intro": "{state} charges a one-time fee to file a Certificate of Formation and an annual report fee each year after that.",
+    "howItWorks": [
+      {
+        "text": "The Division of Revenue and Enterprise Services lists the Certificate of Formation fee and the annual report fee in its LLC fee schedule.",
+        "sources": [
+          "https://www.nj.gov/treasury/revenue/fees.shtml"
+        ]
+      },
+      {
+        "text": "The annual report is due by the last day of the month in which the business was established. The business must file even if it gets no notice from the state.",
+        "sources": [
+          "https://business.nj.gov/pages/filings-and-accounting"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Will {state} remind me to file the annual report?",
+        "text": "Do not count on it. The state says the business is responsible for filing even without a notice, and not filing can lead to revocation.",
+        "sources": [
+          "https://business.nj.gov/pages/filings-and-accounting"
+        ]
+      }
+    ]
+  }
+}

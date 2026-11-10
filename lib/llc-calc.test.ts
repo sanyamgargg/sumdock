@@ -18,13 +18,30 @@ const EXPECTED: Record<string, { publishable: boolean; formation: number; yearly
   "new-york": { publishable: true, formation: 250, yearly: 0, biennial: 9, totals: [250, 259, 259, 268, 268] },
   // $110 + $400 tax for each year.
   delaware: { publishable: true, formation: 110, yearly: 400, biennial: 0, totals: [510, 910, 1310, 1710, 2110] },
-  // $100 filing fee only: the annual report fee is unverified, so it is left out and the page is not public.
   // $100 filing + $25 registered agent fee, $138.75 annual report from year 2 (Division of Corporations fee page).
   florida: { publishable: true, formation: 125, yearly: 138.75, biennial: 0, totals: [125, 263.75, 402.5, 541.25, 680] },
+  // $110 ($100 + $10 service charge), $60 annual registration from year 2.
+  georgia: { publishable: true, formation: 110, yearly: 60, biennial: 0, totals: [110, 170, 230, 290, 350] },
+  // $150 statutory filing fee, $75 annual report from year 2.
+  illinois: { publishable: true, formation: 150, yearly: 75, biennial: 0, totals: [150, 225, 300, 375, 450] },
+  // $99 filing fee; the yearly item is unverified, so it is left out and the page is not public.
+  ohio: { publishable: false, formation: 99, yearly: 0, biennial: 0, totals: [99, 99, 99, 99, 99] },
+  // $125 + $200 annual report from year 2.
+  "north-carolina": { publishable: true, formation: 125, yearly: 200, biennial: 0, totals: [125, 325, 525, 725, 925] },
+  // $125 + $7 annual report from year 2.
+  pennsylvania: { publishable: true, formation: 125, yearly: 7, biennial: 0, totals: [125, 132, 139, 146, 153] },
+  // $50 regular filing; LLCs file no annual report.
+  arizona: { publishable: true, formation: 50, yearly: 0, biennial: 0, totals: [50, 50, 50, 50, 50] },
+  // $50 + $25 annual statement from year 2.
+  michigan: { publishable: true, formation: 50, yearly: 25, biennial: 0, totals: [50, 75, 100, 125, 150] },
+  // $180 + $70 annual report from year 2; initial report free with formation.
+  washington: { publishable: true, formation: 180, yearly: 70, biennial: 0, totals: [180, 250, 320, 390, 460] },
+  // $100 + $75 annual report from year 2.
+  "new-jersey": { publishable: true, formation: 100, yearly: 75, biennial: 0, totals: [100, 175, 250, 325, 400] },
 };
 
 describe("LLC data set", () => {
-  it("has the five launch states and no others", () => {
+  it("has exactly the states in EXPECTED", () => {
     expect(loadLlcStates().map((s) => s.slug).sort()).toEqual(Object.keys(EXPECTED).sort());
   });
 });

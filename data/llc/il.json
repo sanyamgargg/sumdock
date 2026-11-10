@@ -1,0 +1,128 @@
+{
+  "code": "IL",
+  "name": "Illinois",
+  "slug": "illinois",
+  "lastReviewed": "2026-11-10",
+  "formation": [
+    {
+      "id": "formation-filing",
+      "label": "Articles of Organization filing fee",
+      "frequency": "once",
+      "main": true,
+      "amount": {
+        "value": 150,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Illinois General Assembly - 805 ILCS 180/50-10, Limited Liability Company Act fees",
+            "url": "https://ilga.gov/legislation/ilcs/documents/080501800K50-10.htm",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Fee set by statute for filing domestic articles of organization. An LLC with a series pays a higher fee, which is not used here."
+      }
+    }
+  ],
+  "annual": [
+    {
+      "id": "annual-report",
+      "label": "Annual report fee",
+      "frequency": "annual",
+      "main": true,
+      "due": "Within the 60 days before the first day of the LLC's anniversary month each year.",
+      "firstYear": 2,
+      "amount": {
+        "value": 75,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Illinois General Assembly - 805 ILCS 180/50-10, Limited Liability Company Act fees",
+            "url": "https://ilga.gov/legislation/ilcs/documents/080501800K50-10.htm",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Illinois General Assembly - 805 ILCS 180/50-1, annual report",
+            "url": "https://ilga.gov/legislation/ilcs/documents/080501800K50-1.htm",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Fee set by statute for an LLC annual report. Each series with a certificate of designation adds a further fee, which is not used here. The report is due before the anniversary month, so the first one falls in the year after formation."
+      }
+    }
+  ],
+  "notIncluded": [
+    {
+      "label": "Series LLC fees",
+      "reason": "Only for an LLC with series. Filing articles for a series LLC and each series on the annual report cost extra.",
+      "sources": [
+        {
+          "title": "Illinois General Assembly - 805 ILCS 180/50-10, Limited Liability Company Act fees",
+          "url": "https://ilga.gov/legislation/ilcs/documents/080501800K50-10.htm",
+          "accessed": "2026-11-10",
+          "publisherType": "state-agency"
+        }
+      ]
+    },
+    {
+      "label": "Late annual report penalty",
+      "reason": "Only if the annual report is filed late.",
+      "sources": [
+        {
+          "title": "Illinois General Assembly - 805 ILCS 180/50-10, Limited Liability Company Act fees",
+          "url": "https://ilga.gov/legislation/ilcs/documents/080501800K50-10.htm",
+          "accessed": "2026-11-10",
+          "publisherType": "state-agency"
+        }
+      ]
+    },
+    {
+      "label": "Registered agent service",
+      "reason": "Only if you hire a registered agent. The agent sets the price, so it is not a state fee and is not in the total."
+    },
+    {
+      "label": "Name reservation",
+      "reason": "Optional. Reserving a name before you file is a separate charge and is not in the total."
+    },
+    {
+      "label": "Expedited filing and certified copies",
+      "reason": "Optional. Faster processing and certified copies cost extra and are not in the total."
+    },
+    {
+      "label": "Local business licenses and permits",
+      "reason": "City, county and industry licenses depend on where the business operates and what it does. None are in the total."
+    },
+    {
+      "label": "Federal and state income taxes",
+      "reason": "Taxes on the LLC's or its owners' income are not part of this estimate. This page is not legal or tax advice."
+    }
+  ],
+  "content": {
+    "intro": "{state} sets its LLC fees in the Limited Liability Company Act: a one-time fee to file Articles of Organization and an annual report fee each year after that.",
+    "howItWorks": [
+      {
+        "text": "The Act lists the fee for filing domestic articles of organization and a higher fee for an LLC with series. The estimate uses the standard fee.",
+        "sources": [
+          "https://ilga.gov/legislation/ilcs/documents/080501800K50-10.htm"
+        ]
+      },
+      {
+        "text": "The annual report must reach the Secretary of State in the sixty days before the LLC's anniversary month begins, so the first report falls in the year after formation.",
+        "sources": [
+          "https://ilga.gov/legislation/ilcs/documents/080501800K50-1.htm"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does a series LLC in {state} cost more?",
+        "text": "Yes. The Act sets a higher fee for articles of an LLC with series, and an extra amount for each series on the annual report.",
+        "sources": [
+          "https://ilga.gov/legislation/ilcs/documents/080501800K50-10.htm"
+        ]
+      }
+    ]
+  }
+}

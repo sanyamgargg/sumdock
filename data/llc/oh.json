@@ -1,0 +1,92 @@
+{
+  "code": "OH",
+  "name": "Ohio",
+  "slug": "ohio",
+  "lastReviewed": "2026-11-10",
+  "formation": [
+    {
+      "id": "formation-filing",
+      "label": "Articles of Organization filing fee",
+      "frequency": "once",
+      "main": true,
+      "amount": {
+        "value": 99,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Ohio Legislative Service Commission - Secretary of State agency fees, January 30, 2026 (PDF)",
+            "url": "https://www.lsc.ohio.gov/assets/organizations/legislative-service-commission/files/2026-state-agency-fees-sos.pdf",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Listed as a one-time fee under Revised Code 111.16(F) in the Legislative Service Commission's list of Secretary of State fees."
+      }
+    }
+  ],
+  "annual": [
+    {
+      "id": "annual-report",
+      "label": "Annual report fee",
+      "frequency": "annual",
+      "main": true,
+      "due": "No annual report is listed for LLCs.",
+      "firstYear": 1,
+      "amount": {
+        "value": null,
+        "status": "unverified",
+        "sources": [
+          {
+            "title": "Ohio Legislative Service Commission - Secretary of State agency fees, January 30, 2026 (PDF)",
+            "url": "https://www.lsc.ohio.gov/assets/organizations/legislative-service-commission/files/2026-state-agency-fees-sos.pdf",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The fee list shows no annual or biennial report fee for LLCs, but we could not open a Secretary of State page that says so directly (the site shows a security check). Not counted until confirmed."
+      }
+    }
+  ],
+  "notIncluded": [
+    {
+      "label": "Registered agent service",
+      "reason": "Only if you hire a registered agent. The agent sets the price, so it is not a state fee and is not in the total."
+    },
+    {
+      "label": "Name reservation",
+      "reason": "Optional. Reserving a name before you file is a separate charge and is not in the total."
+    },
+    {
+      "label": "Expedited filing and certified copies",
+      "reason": "Optional. Faster processing and certified copies cost extra and are not in the total."
+    },
+    {
+      "label": "Local business licenses and permits",
+      "reason": "City, county and industry licenses depend on where the business operates and what it does. None are in the total."
+    },
+    {
+      "label": "Federal and state income taxes",
+      "reason": "Taxes on the LLC's or its owners' income are not part of this estimate. This page is not legal or tax advice."
+    }
+  ],
+  "content": {
+    "intro": "{state} charges a one-time fee to file Articles of Organization. We are still confirming whether any yearly state filing applies.",
+    "howItWorks": [
+      {
+        "text": "The Legislative Service Commission's list of Secretary of State fees gives the one-time fee for filing articles of organization for an LLC.",
+        "sources": [
+          "https://www.lsc.ohio.gov/assets/organizations/legislative-service-commission/files/2026-state-agency-fees-sos.pdf"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is the {state} filing fee charged every year?",
+        "text": "No. The Legislative Service Commission lists the fee for filing articles of organization as a one-time fee.",
+        "sources": [
+          "https://www.lsc.ohio.gov/assets/organizations/legislative-service-commission/files/2026-state-agency-fees-sos.pdf"
+        ]
+      }
+    ]
+  }
+}

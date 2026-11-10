@@ -1,0 +1,122 @@
+{
+  "code": "NC",
+  "name": "North Carolina",
+  "slug": "north-carolina",
+  "lastReviewed": "2026-11-10",
+  "formation": [
+    {
+      "id": "formation-filing",
+      "label": "Articles of Organization filing fee",
+      "frequency": "once",
+      "main": true,
+      "amount": {
+        "value": 125,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "North Carolina Secretary of State - Fees: Limited Liability Companies",
+            "url": "https://www.sosnc.gov/fees/by_title/_Business_Registration_Limited_Liability_Companies",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    }
+  ],
+  "annual": [
+    {
+      "id": "annual-report",
+      "label": "Annual report fee",
+      "frequency": "annual",
+      "main": true,
+      "due": "By April 15 each year, starting the year after the LLC is formed.",
+      "firstYear": 2,
+      "amount": {
+        "value": 200,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "North Carolina Secretary of State - Fees: Limited Liability Companies",
+            "url": "https://www.sosnc.gov/fees/by_title/_Business_Registration_Limited_Liability_Companies",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "North Carolina Secretary of State - Annual report due dates",
+            "url": "https://sosnc.gov/divisions/business_registration/annual_report_due_dates",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "North Carolina General Assembly - G.S. 57D-2-24, annual report",
+            "url": "https://ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_57D/GS_57D-2-24.html",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The Secretary of State lists the annual report fee for domestic and foreign LLCs. The first report is due by April 15 of the year after the articles take effect."
+      }
+    }
+  ],
+  "notIncluded": [
+    {
+      "label": "Reinstatement after dissolution",
+      "reason": "Only if the LLC is administratively dissolved, for example for not filing annual reports.",
+      "sources": [
+        {
+          "title": "North Carolina Secretary of State - Fees: Limited Liability Companies",
+          "url": "https://www.sosnc.gov/fees/by_title/_Business_Registration_Limited_Liability_Companies",
+          "accessed": "2026-11-10",
+          "publisherType": "state-agency"
+        }
+      ]
+    },
+    {
+      "label": "Registered agent service",
+      "reason": "Only if you hire a registered agent. The agent sets the price, so it is not a state fee and is not in the total."
+    },
+    {
+      "label": "Name reservation",
+      "reason": "Optional. Reserving a name before you file is a separate charge and is not in the total."
+    },
+    {
+      "label": "Expedited filing and certified copies",
+      "reason": "Optional. Faster processing and certified copies cost extra and are not in the total."
+    },
+    {
+      "label": "Local business licenses and permits",
+      "reason": "City, county and industry licenses depend on where the business operates and what it does. None are in the total."
+    },
+    {
+      "label": "Federal and state income taxes",
+      "reason": "Taxes on the LLC's or its owners' income are not part of this estimate. This page is not legal or tax advice."
+    }
+  ],
+  "content": {
+    "intro": "{state} charges a one-time fee to file Articles of Organization and an annual report fee each year after the year the LLC is formed.",
+    "howItWorks": [
+      {
+        "text": "The Secretary of State's fee list gives the fee for Articles of Organization and for the annual report.",
+        "sources": [
+          "https://www.sosnc.gov/fees/by_title/_Business_Registration_Limited_Liability_Companies"
+        ]
+      },
+      {
+        "text": "The annual report is due by the middle of April each year after the year of creation.",
+        "sources": [
+          "https://sosnc.gov/divisions/business_registration/annual_report_due_dates",
+          "https://ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_57D/GS_57D-2-24.html"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does a new {state} LLC file an annual report in its first year?",
+        "text": "No. The first report is due in April of the year after the articles take effect.",
+        "sources": [
+          "https://ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_57D/GS_57D-2-24.html"
+        ]
+      }
+    ]
+  }
+}
