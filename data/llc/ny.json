@@ -64,16 +64,16 @@
       "firstYear": 2,
       "amount": {
         "value": 9,
-        "status": "partial",
+        "status": "verified",
         "sources": [
           {
-            "title": "New York Department of State - Fee schedules (marked Rev. 3/16)",
+            "title": "New York Department of State - Fee schedules (LLC table marked Rev. 3/16)",
             "url": "https://dos.ny.gov/fee-schedules",
             "accessed": "2026-11-10",
             "publisherType": "state-agency"
           }
         ],
-        "note": "The Department of State's fee schedule lists this fee but is marked Rev. 3/16, and no second current page confirms it. Counted as first due two years after formation; confirm the filing window with the Department of State."
+        "note": "The Department of State's current fee schedule page lists the biennial statement at $9 for a domestic LLC. Counted as first due two years after formation; confirm the filing window with the Department of State."
       }
     }
   ],

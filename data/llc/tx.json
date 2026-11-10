@@ -15,7 +15,7 @@
         "sources": [
           {
             "title": "Texas Secretary of State - Form 205 instructions, Certificate of Formation for an LLC",
-            "url": "https://www.sos.texas.gov/corp/instructions/205.shtml",
+            "url": "https://www.sos.state.tx.us/corp/instructions/205.shtml",
             "accessed": "2026-11-10",
             "publisherType": "state-agency"
           }
@@ -43,7 +43,7 @@
             "publisherType": "state-agency"
           }
         ],
-        "note": "The Comptroller sets a no-tax-due threshold for each report year, and entities at or below it file an information report. The amount here is zero because no tax is due at or below the threshold; it is not a published fee, and the page lists no filing fee for the report. It does not apply to an LLC above the threshold."
+        "note": "The Comptroller sets a no-tax-due threshold for each report year. An LLC at or below it owes no franchise tax but must still file a Public Information Report or Ownership Information Report by the due date. The amount here is zero because no tax is due at or below the threshold; it is not a published fee, and the page lists no filing fee for the report. It does not apply to an LLC above the threshold."
       }
     }
   ],
@@ -66,7 +66,7 @@
       "sources": [
         {
           "title": "Texas Secretary of State - Form 205 instructions, Certificate of Formation for an LLC",
-          "url": "https://www.sos.texas.gov/corp/instructions/205.shtml",
+          "url": "https://www.sos.state.tx.us/corp/instructions/205.shtml",
           "accessed": "2026-11-10",
           "publisherType": "state-agency"
         }
@@ -99,13 +99,13 @@
       {
         "text": "The Secretary of State charges a filing fee for the Certificate of Formation. Paying by card online adds a convenience fee, which the estimate leaves out.",
         "sources": [
-          "https://www.sos.texas.gov/corp/instructions/205.shtml"
+          "https://www.sos.state.tx.us/corp/instructions/205.shtml"
         ]
       },
       {
         "text": "The Secretary of State notes that LLCs are subject to a state franchise tax. The Comptroller sets a no-tax-due threshold for each report year. An LLC at or below it owes no franchise tax and files an information report instead.",
         "sources": [
-          "https://www.sos.texas.gov/corp/instructions/205.shtml",
+          "https://www.sos.state.tx.us/corp/instructions/205.shtml",
           "https://comptroller.texas.gov/taxes/franchise/"
         ]
       },

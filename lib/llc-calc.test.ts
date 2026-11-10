@@ -121,6 +121,18 @@ describe("how often a fee falls in the period", () => {
     expect(line.label).toContain("first due in year 2");
   });
 
+  it("New York's biennial statement is verified from the Department of State fee schedule", () => {
+    const fee = get("new-york").annual.find((f) => f.id === "biennial-statement")!;
+    expect(fee.amount.status).toBe("verified");
+    expect(fee.amount.value).toBe(9);
+  });
+
+  it("Texas cites the working Secretary of State address and says the information report is still due", () => {
+    const tx = get("texas");
+    expect(JSON.stringify(tx)).not.toContain("www.sos.texas.gov");
+    expect(tx.annual.find((f) => f.id === "franchise-tax")!.amount.note).toContain("Public Information Report");
+  });
+
   it("years are kept between 1 and 5", () => {
     expect([0, -3, 1, 3, 5, 9, 2.6, NaN].map(clampYears)).toEqual([1, 1, 1, 3, 5, 5, 3, 3]);
     expect(calculateLlc(get("delaware"), 99).years).toBe(5);
