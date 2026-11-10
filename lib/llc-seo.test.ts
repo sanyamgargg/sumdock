@@ -7,7 +7,15 @@ import { loadStates } from "./data";
 
 const states = loadLlcStates();
 const live = states.filter((s) => llcPublishability(s).publishable);
-const dead = states.filter((s) => !llcPublishability(s).publishable);
+// A copy of a live state with its yearly fee unverified, so the noindex path stays tested when every real state is live.
+const unconfirmed = (() => {
+  const s = JSON.parse(JSON.stringify(states[0]));
+  s.slug = "unconfirmed-test";
+  s.name = "Unconfirmed Test";
+  s.annual.forEach((f: { amount: { status: string; value: number | null } }) => { f.amount.status = "unverified"; f.amount.value = null; });
+  return s as (typeof states)[number];
+})();
+const dead = [...states.filter((s) => !llcPublishability(s).publishable), unconfirmed];
 
 describe("LLC seo", () => {
   it("has live and unpublishable states to check", () => {

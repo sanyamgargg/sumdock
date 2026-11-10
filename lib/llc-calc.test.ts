@@ -19,7 +19,8 @@ const EXPECTED: Record<string, { publishable: boolean; formation: number; yearly
   // $110 + $400 tax for each year.
   delaware: { publishable: true, formation: 110, yearly: 400, biennial: 0, totals: [510, 910, 1310, 1710, 2110] },
   // $100 filing fee only: the annual report fee is unverified, so it is left out and the page is not public.
-  florida: { publishable: false, formation: 100, yearly: 0, biennial: 0, totals: [100, 100, 100, 100, 100] },
+  // $100 filing + $25 registered agent fee, $138.75 annual report from year 2 (Division of Corporations fee page).
+  florida: { publishable: true, formation: 125, yearly: 138.75, biennial: 0, totals: [125, 263.75, 402.5, 541.25, 680] },
 };
 
 describe("LLC data set", () => {
@@ -55,14 +56,12 @@ describe.each(Object.entries(EXPECTED))("%s", (slug, want) => {
 });
 
 describe("unverified items", () => {
-  const fl = get("florida");
-
   it("are excluded from the total and listed with a reason", () => {
-    const r = calculateLlc(fl, 3);
+    const s: LlcState = JSON.parse(JSON.stringify(get("florida")));
+    s.annual[0].amount = { ...s.annual[0].amount, status: "unverified", value: null, note: "test" };
+    const r = calculateLlc(s, 3);
     expect(r.lines.some((l) => l.id === "annual-report")).toBe(false);
-    const hit = r.excluded.find((e) => e.label === "Annual report fee");
-    expect(hit).toBeDefined();
-    expect(hit!.reason).toMatch(/not confirmed/i);
+    expect(r.excluded.find((e) => e.label === "Annual report fee")).toBeDefined();
   });
 
   it("are never counted, whatever their value", () => {

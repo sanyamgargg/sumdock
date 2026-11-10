@@ -3,6 +3,13 @@
   "entries": [
     {
       "date": "2026-11-10",
+      "state": "FL",
+      "stateName": "Florida",
+      "tool": "llc",
+      "summary": "Confirmed the $125 formation cost ($100 filing fee plus the required $25 registered agent fee) and the $138.75 yearly annual report fee on the Division of Corporations' fee page. The page is now published."
+    },
+    {
+      "date": "2026-11-10",
       "tool": "llc",
       "state": "CA",
       "stateName": "California",
