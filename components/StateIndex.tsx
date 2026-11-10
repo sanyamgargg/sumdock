@@ -32,12 +32,12 @@ function matches(r: StateRow, q: string): boolean {
 }
 
 /** The state list with a search field above it. */
-export default function StateIndex({ rows }: { rows: StateRow[] }) {
+export default function StateIndex({ rows, basePath = "/vehicle/", taxHeading = "Main tax" }: { rows: StateRow[]; basePath?: string; taxHeading?: string }) {
   const router = useRouter();
   const [q, setQ] = useState("");
   const shown = useMemo(() => rows.filter((r) => matches(r, q)), [rows, q]);
 
-  const open = (r: StateRow) => router.push(`/vehicle/${r.slug}/`);
+  const open = (r: StateRow) => router.push(`${basePath}${r.slug}/`);
   const submit = () => {
     // Enter jumps straight to the state when the search has narrowed to one page you can open.
     if (shown.length === 1 && shown[0].status !== "in-review") open(shown[0]);
@@ -108,14 +108,14 @@ export default function StateIndex({ rows }: { rows: StateRow[] }) {
       ) : (
         <>
           <div className="states__head" aria-hidden="true">
-            <span>State</span><span>Main tax</span><span>Data status</span><span>Reviewed</span><span />
+            <span>State</span><span>{taxHeading}</span><span>Data status</span><span>Reviewed</span><span />
           </div>
           <ul className="states">
             {shown.map((r) => {
               const review = r.status === "in-review";
               return (
                 <li key={r.slug} className={review ? "state-row is-review" : "state-row"}>
-                  <span className="state-row__name">{review ? r.name : <Link href={`/vehicle/${r.slug}/`}>{r.name}</Link>}</span>
+                  <span className="state-row__name">{review ? r.name : <Link href={`${basePath}${r.slug}/`}>{r.name}</Link>}</span>
                   <span className="state-row__tax">{r.tax}</span>
                   <span className="state-row__status"><StatusMark status={r.status} label={r.statusLabel} /></span>
                   <span className="state-row__date">{r.reviewed}</span>

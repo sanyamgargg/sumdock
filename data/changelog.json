@@ -2,6 +2,41 @@
   "note": "Newest first. One entry per change to a state's numbers or rules. Do not edit past entries.",
   "entries": [
     {
+      "date": "2026-11-10",
+      "tool": "llc",
+      "state": "CA",
+      "stateName": "California",
+      "summary": "Added the LLC cost page: the Articles of Organization filing fee, the Statement of Information every two years and the annual LLC tax, each from the Secretary of State or Franchise Tax Board. The income-based LLC fee is not included."
+    },
+    {
+      "date": "2026-11-10",
+      "tool": "llc",
+      "state": "TX",
+      "stateName": "Texas",
+      "summary": "Added the LLC cost page: the Certificate of Formation filing fee and the franchise tax report. The yearly tax is counted as zero for an LLC at or below the Comptroller's no-tax-due threshold and marked as needing a check. Franchise tax above the threshold is not included."
+    },
+    {
+      "date": "2026-11-10",
+      "tool": "llc",
+      "state": "FL",
+      "stateName": "Florida",
+      "summary": "Added the LLC cost page with the Articles of Organization filing fee from state law. The yearly annual report fee could not be confirmed from the Division of Corporations' fee page, so the page is not yet public."
+    },
+    {
+      "date": "2026-11-10",
+      "tool": "llc",
+      "state": "NY",
+      "stateName": "New York",
+      "summary": "Added the LLC cost page: the Articles of Organization filing fee, the Certificate of Publication filing fee and the biennial statement fee, which is marked as needing a check. Newspaper publication costs and the Tax Department's LLC filing fee are not included."
+    },
+    {
+      "date": "2026-11-10",
+      "tool": "llc",
+      "state": "DE",
+      "stateName": "Delaware",
+      "summary": "Added the LLC cost page: the Certificate of Formation filing fee from the August 2026 fee schedule and the flat annual LLC tax due each June."
+    },
+    {
       "date": "2026-10-24",
       "state": "RI",
       "stateName": "Rhode Island",

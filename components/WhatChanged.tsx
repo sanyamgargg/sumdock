@@ -1,10 +1,9 @@
-import { loadChangelog } from "@/lib/data";
+import { loadChangelog, type ChangelogTool } from "@/lib/data";
 import { formatDate } from "@/lib/format";
-import type { StateData } from "@/lib/types";
 
 /** Changes to this state's numbers and rules, newest first, from data/changelog.json. Renders nothing if there are none. */
-export default function WhatChanged({ state }: { state: StateData }) {
-  const entries = loadChangelog().filter((e) => e.state === state.code);
+export default function WhatChanged({ state, tool = "vehicle" }: { state: { code: string; name: string }; tool?: ChangelogTool }) {
+  const entries = loadChangelog().filter((e) => e.state === state.code && e.tool === tool);
   if (entries.length === 0) return null;
   return (
     <section aria-labelledby="changed" className="changed">

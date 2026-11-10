@@ -1,0 +1,178 @@
+{
+  "code": "NY",
+  "name": "New York",
+  "slug": "new-york",
+  "lastReviewed": "2026-11-10",
+  "formation": [
+    {
+      "id": "formation-filing",
+      "label": "Articles of Organization filing fee",
+      "frequency": "once",
+      "amount": {
+        "value": 200,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "New York Department of State - Forming a Limited Liability Company in New York",
+            "url": "https://dos.ny.gov/forming-limited-liability-company-new-york",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "New York Department of State - Fee schedules (marked Rev. 3/16)",
+            "url": "https://dos.ny.gov/fee-schedules",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Stated on the Department of State's formation page and listed in its fee schedule."
+      },
+      "main": true
+    },
+    {
+      "id": "certificate-of-publication",
+      "label": "Certificate of Publication filing fee",
+      "frequency": "once",
+      "amount": {
+        "value": 50,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "New York Department of State - Forming a Limited Liability Company in New York",
+            "url": "https://dos.ny.gov/forming-limited-liability-company-new-york",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "New York Department of State - Fee schedules (marked Rev. 3/16)",
+            "url": "https://dos.ny.gov/fee-schedules",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The Department of State charges this fee to file proof of the required newspaper publication. The newspapers' own charges are separate and are not in the total."
+      }
+    }
+  ],
+  "annual": [
+    {
+      "id": "biennial-statement",
+      "label": "Biennial statement filing fee",
+      "frequency": "biennial",
+      "main": true,
+      "due": "Filed every two years. Counted here as first due in the second year after formation.",
+      "firstYear": 2,
+      "amount": {
+        "value": 9,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "New York Department of State - Fee schedules (marked Rev. 3/16)",
+            "url": "https://dos.ny.gov/fee-schedules",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The Department of State's fee schedule lists this fee but is marked Rev. 3/16, and no second current page confirms it. Counted as first due two years after formation; confirm the filing window with the Department of State."
+      }
+    }
+  ],
+  "notIncluded": [
+    {
+      "label": "Newspaper publication",
+      "reason": "Most LLCs must publish a notice in two newspapers chosen by the county clerk where the LLC's office is located. What the newspapers charge depends on the county and the papers, and the state publishes no single price, so it is not in the total.",
+      "sources": [
+        {
+          "title": "New York Department of State - Forming a Limited Liability Company in New York",
+          "url": "https://dos.ny.gov/forming-limited-liability-company-new-york",
+          "accessed": "2026-11-10",
+          "publisherType": "state-agency"
+        }
+      ]
+    },
+    {
+      "label": "Annual LLC filing fee to the Tax Department",
+      "reason": "An LLC with income, gain, loss or deduction from New York sources pays a filing fee to the Tax Department. It depends on the LLC's New York source income and tax treatment, so it is not in the total. An LLC with no New York source income does not file the form.",
+      "sources": [
+        {
+          "title": "New York Tax Department - Instructions for Form IT-204-LL (filing fee)",
+          "url": "https://www.tax.ny.gov/pdf/current_forms/it/it204lli.pdf",
+          "accessed": "2026-11-10",
+          "publisherType": "state-agency"
+        }
+      ]
+    },
+    {
+      "label": "Registered agent service",
+      "reason": "Only if you hire a registered agent. The agent sets the price, so it is not a state fee and is not in the total."
+    },
+    {
+      "label": "Name reservation",
+      "reason": "Optional. Reserving a name before you file is a separate charge and is not in the total."
+    },
+    {
+      "label": "Expedited filing and certified copies",
+      "reason": "Optional. Faster processing and certified copies cost extra and are not in the total."
+    },
+    {
+      "label": "Local business licenses and permits",
+      "reason": "City, county and industry licenses depend on where the business operates and what it does. None are in the total."
+    },
+    {
+      "label": "Federal and state income taxes",
+      "reason": "Taxes on the LLC's or its owners' income are not part of this estimate. This page is not legal or tax advice."
+    }
+  ],
+  "content": {
+    "intro": "{state} charges a filing fee to form an LLC, then requires a notice of the new LLC to be published in newspapers, and a short statement to the Department of State every second year.",
+    "howItWorks": [
+      {
+        "text": "After the Articles of Organization are filed, a copy or a notice must be published in two newspapers for six weeks in a row. The county clerk of the county where the LLC's office is located designates the newspapers.",
+        "sources": [
+          "https://dos.ny.gov/forming-limited-liability-company-new-york"
+        ]
+      },
+      {
+        "text": "Proof of publication is then filed with the Department of State, which charges its own filing fee. Newspaper charges are set by the newspapers and vary by county, so the estimate leaves them out.",
+        "sources": [
+          "https://dos.ny.gov/forming-limited-liability-company-new-york"
+        ]
+      },
+      {
+        "text": "If the certificate of publication is not filed within the deadline, the LLC's authority to do business is suspended.",
+        "sources": [
+          "https://dos.ny.gov/forming-limited-liability-company-new-york"
+        ]
+      },
+      {
+        "text": "Instead of an annual report, {state} lists a biennial statement fee in its fee schedule. The schedule we could read is old, so that figure is marked as needing a check.",
+        "sources": [
+          "https://dos.ny.gov/fee-schedules"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "How much does the {state} publication requirement cost?",
+        "text": "It depends on the county and the newspapers chosen. The state does not set one price, so the estimate leaves it out and counts only the Department of State's filing fee for the certificate.",
+        "sources": [
+          "https://dos.ny.gov/forming-limited-liability-company-new-york"
+        ]
+      },
+      {
+        "q": "What happens if a {state} LLC does not publish?",
+        "text": "The Department of State says the LLC's authority to do business is suspended if the certificate of publication is not filed within the deadline.",
+        "sources": [
+          "https://dos.ny.gov/forming-limited-liability-company-new-york"
+        ]
+      },
+      {
+        "q": "Does an LLC in {state} pay a Tax Department filing fee?",
+        "text": "An LLC with income, gain, loss or deduction from {state} sources does. The amount depends on its {state} source income, so the estimate leaves it out.",
+        "sources": [
+          "https://www.tax.ny.gov/pdf/current_forms/it/it204lli.pdf"
+        ]
+      }
+    ]
+  }
+}

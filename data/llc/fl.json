@@ -1,0 +1,159 @@
+{
+  "code": "FL",
+  "name": "Florida",
+  "slug": "florida",
+  "lastReviewed": "2026-11-10",
+  "formation": [
+    {
+      "id": "formation-filing",
+      "label": "Articles of Organization filing fee",
+      "frequency": "once",
+      "main": true,
+      "amount": {
+        "value": 100,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Florida Statutes, section 605.0213 - Fees of the department (LLC)",
+            "url": "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0600-0699/0605/Sections/0605.0213.html",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Florida Statutes section 605.0213 sets this fee for filing original articles of organization. The Division of Corporations' own fee page, which would show what it charges in total, could not be opened."
+      }
+    }
+  ],
+  "annual": [
+    {
+      "id": "annual-report",
+      "label": "Annual report fee",
+      "frequency": "annual",
+      "main": true,
+      "due": "Delivered between January 1 and May 1 each year, first in the year after the LLC is formed.",
+      "firstYear": 2,
+      "amount": {
+        "value": null,
+        "status": "unverified",
+        "sources": [
+          {
+            "title": "Florida Statutes, section 605.0213 - Fees of the department (LLC)",
+            "url": "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0600-0699/0605/Sections/0605.0213.html",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Florida Statutes, section 605.0212 - Annual report for department (LLC)",
+            "url": "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0600-0699/0605/Sections/0605.0212.html",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Florida Statutes section 605.0213 lists a fee for filing an annual report, but the Division of Corporations' fee pages, which show what it actually charges at filing, returned an access error and could not be read. Nothing is added to the total until that page is confirmed."
+      }
+    }
+  ],
+  "notIncluded": [
+    {
+      "label": "Registered agent designation fee",
+      "reason": "State law lists a fee for a certificate designating or changing a registered agent. We could not confirm from the Division of Corporations' fee page whether it is charged when you form the LLC, so it is not in the total.",
+      "sources": [
+        {
+          "title": "Florida Statutes, section 605.0213 - Fees of the department (LLC)",
+          "url": "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0600-0699/0605/Sections/0605.0213.html",
+          "accessed": "2026-11-10",
+          "publisherType": "state-agency"
+        }
+      ]
+    },
+    {
+      "label": "Late fee for a missed annual report",
+      "reason": "Not a cost every LLC pays, and we could not confirm the amount from the Division's fee page. The statute says an LLC that does not file can be dissolved and cannot bring or defend a lawsuit in Florida courts until it files.",
+      "sources": [
+        {
+          "title": "Florida Statutes, section 605.0212 - Annual report for department (LLC)",
+          "url": "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0600-0699/0605/Sections/0605.0212.html",
+          "accessed": "2026-11-10",
+          "publisherType": "state-agency"
+        }
+      ]
+    },
+    {
+      "label": "Certified copy",
+      "reason": "Optional. State law lists a separate fee for a certified copy.",
+      "sources": [
+        {
+          "title": "Florida Statutes, section 605.0213 - Fees of the department (LLC)",
+          "url": "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0600-0699/0605/Sections/0605.0213.html",
+          "accessed": "2026-11-10",
+          "publisherType": "state-agency"
+        }
+      ]
+    },
+    {
+      "label": "Registered agent service",
+      "reason": "Only if you hire a registered agent. The agent sets the price, so it is not a state fee and is not in the total."
+    },
+    {
+      "label": "Name reservation",
+      "reason": "Optional. Reserving a name before you file is a separate charge and is not in the total."
+    },
+    {
+      "label": "Local business licenses and permits",
+      "reason": "City, county and industry licenses depend on where the business operates and what it does. None are in the total."
+    },
+    {
+      "label": "Federal and state income taxes",
+      "reason": "Taxes on the LLC's or its owners' income are not part of this estimate. This page is not legal or tax advice."
+    },
+    {
+      "label": "Expedited filing",
+      "reason": "Optional. Faster processing costs extra and is not in the total."
+    }
+  ],
+  "content": {
+    "intro": "{state} charges a filing fee to form an LLC and requires an annual report early each year. The yearly fee is not in the estimate yet, because we could not confirm it from the agency's own fee page.",
+    "howItWorks": [
+      {
+        "text": "The fees the Department of State charges for LLC filings are set in {state} law, including the fee to file the Articles of Organization.",
+        "sources": [
+          "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0600-0699/0605/Sections/0605.0213.html"
+        ]
+      },
+      {
+        "text": "The annual report must be delivered within a set window early each year, starting in the year after the LLC is formed.",
+        "sources": [
+          "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0600-0699/0605/Sections/0605.0212.html"
+        ]
+      },
+      {
+        "text": "An LLC that does not file the annual report can be dissolved, and it may not bring or defend a lawsuit in {state} courts until the report is filed and the fees and penalties are paid.",
+        "sources": [
+          "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0600-0699/0605/Sections/0605.0212.html"
+        ]
+      },
+      {
+        "text": "This page is held back from search engines until the yearly fee is confirmed from the Division of Corporations, so the total below leaves it out.",
+        "sources": [
+          "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0600-0699/0605/Sections/0605.0213.html"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "When is the annual report due for a {state} LLC?",
+        "text": "It is delivered within a window early each year, and the first one falls in the year after the LLC is formed.",
+        "sources": [
+          "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0600-0699/0605/Sections/0605.0212.html"
+        ]
+      },
+      {
+        "q": "What happens if a {state} LLC misses the annual report?",
+        "text": "It can be dissolved, and until it files and pays the fees and penalties it may not bring or defend a lawsuit in {state} courts.",
+        "sources": [
+          "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0600-0699/0605/Sections/0605.0212.html"
+        ]
+      }
+    ]
+  }
+}

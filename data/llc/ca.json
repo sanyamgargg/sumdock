@@ -1,0 +1,162 @@
+{
+  "code": "CA",
+  "name": "California",
+  "slug": "california",
+  "lastReviewed": "2026-11-10",
+  "formation": [
+    {
+      "id": "formation-filing",
+      "label": "Articles of Organization filing fee",
+      "frequency": "once",
+      "main": true,
+      "amount": {
+        "value": 70,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "California Secretary of State - Limited Liability Companies (LLC) forms and fees",
+            "url": "https://www.sos.ca.gov/business-programs/cannabizfile/cannabis-forms-and-fees/limited-liability-companies-llc-california",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Fee for forming a California LLC, from the Secretary of State's LLC fee table. The table lists this filing as online only."
+      }
+    }
+  ],
+  "annual": [
+    {
+      "id": "franchise-tax",
+      "label": "Annual LLC tax (Franchise Tax Board)",
+      "frequency": "annual",
+      "main": true,
+      "due": "Due on the 15th day of the 4th month after the LLC registers with the Secretary of State, then on the same day each year.",
+      "firstYear": 1,
+      "amount": {
+        "value": 800,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "California Franchise Tax Board - Limited liability company",
+            "url": "https://www.ftb.ca.gov/file/business/types/limited-liability-company/index.html",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The Franchise Tax Board says every LLC doing business or organized in California pays this tax, even with no business activity, until the LLC is cancelled. A first-year exemption applied only to tax years that began before 2024, so a new LLC owes it in its first year."
+      }
+    },
+    {
+      "id": "statement-of-information",
+      "label": "Statement of Information (Secretary of State)",
+      "frequency": "biennial",
+      "due": "Due within 90 days of registering, then every two years.",
+      "firstYear": 1,
+      "amount": {
+        "value": 20,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "California Secretary of State - Limited Liability Companies (LLC) forms and fees",
+            "url": "https://www.sos.ca.gov/business-programs/cannabizfile/cannabis-forms-and-fees/limited-liability-companies-llc-california",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "California Secretary of State - Business entities frequently asked questions",
+            "url": "https://www.sos.ca.gov/business-programs/business-entities/faqs",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The LLC fee table lists $20. The Secretary of State's general FAQ gives a fee of $20 or $25 for a Statement of Information, which covers more than one entity type."
+      }
+    }
+  ],
+  "notIncluded": [
+    {
+      "label": "LLC fee for California income over $250,000",
+      "reason": "Charged only on larger California income and it rises in steps with income, so it depends on your numbers. The Franchise Tax Board lists the steps.",
+      "sources": [
+        {
+          "title": "California Franchise Tax Board - Limited liability company",
+          "url": "https://www.ftb.ca.gov/file/business/types/limited-liability-company/index.html",
+          "accessed": "2026-11-10",
+          "publisherType": "state-agency"
+        }
+      ]
+    },
+    {
+      "label": "Registered agent service",
+      "reason": "Only if you hire a registered agent. The agent sets the price, so it is not a state fee and is not in the total."
+    },
+    {
+      "label": "Name reservation",
+      "reason": "Optional. Reserving a name before you file is a separate charge and is not in the total."
+    },
+    {
+      "label": "Expedited filing and certified copies",
+      "reason": "Optional. Faster processing and certified copies cost extra and are not in the total."
+    },
+    {
+      "label": "Local business licenses and permits",
+      "reason": "City, county and industry licenses depend on where the business operates and what it does. None are in the total."
+    },
+    {
+      "label": "Federal and state income taxes",
+      "reason": "Taxes on the LLC's or its owners' income are not part of this estimate. This page is not legal or tax advice."
+    }
+  ],
+  "content": {
+    "intro": "{state} charges an LLC two kinds of state cost: filing fees to the Secretary of State, and a yearly tax to the Franchise Tax Board that is due whether or not the LLC earns anything.",
+    "howItWorks": [
+      {
+        "text": "The Secretary of State charges a filing fee for the Articles of Organization. It also requires a Statement of Information soon after the LLC registers and again every two years, each with its own fee.",
+        "sources": [
+          "https://www.sos.ca.gov/business-programs/cannabizfile/cannabis-forms-and-fees/limited-liability-companies-llc-california"
+        ]
+      },
+      {
+        "text": "The Franchise Tax Board charges every LLC that is organized or doing business in {state} an annual tax, even if the LLC is not conducting business, until the LLC is cancelled. The first year's tax is due a few months after the LLC registers with the Secretary of State.",
+        "sources": [
+          "https://www.ftb.ca.gov/file/business/types/limited-liability-company/index.html"
+        ]
+      },
+      {
+        "text": "A first-year exemption from the annual tax covered only a limited run of earlier tax years. According to the Franchise Tax Board's page it has ended, so a new LLC owes the tax in its first year.",
+        "sources": [
+          "https://www.ftb.ca.gov/file/business/types/limited-liability-company/index.html"
+        ]
+      },
+      {
+        "text": "An LLC with larger {state} income also pays a fee that rises in steps with that income. It is not in the estimate because it depends on your own income.",
+        "sources": [
+          "https://www.ftb.ca.gov/file/business/types/limited-liability-company/index.html"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Do I owe the annual LLC tax in {state} if my LLC earns nothing?",
+        "text": "Yes. The Franchise Tax Board says the tax is due even if you are not conducting business, until you cancel your LLC.",
+        "sources": [
+          "https://www.ftb.ca.gov/file/business/types/limited-liability-company/index.html"
+        ]
+      },
+      {
+        "q": "Is the Statement of Information a yearly filing?",
+        "text": "No. It is due within a set period after the LLC registers and every two years after that, so the estimate counts it on that schedule.",
+        "sources": [
+          "https://www.sos.ca.gov/business-programs/cannabizfile/cannabis-forms-and-fees/limited-liability-companies-llc-california"
+        ]
+      },
+      {
+        "q": "Is there a way to avoid the first-year tax?",
+        "text": "The Franchise Tax Board describes a short-form cancellation for an LLC cancelled within its first year, which avoids the tax for that year. A first-year exemption that applied to earlier tax years has ended.",
+        "sources": [
+          "https://www.ftb.ca.gov/file/business/types/limited-liability-company/index.html"
+        ]
+      }
+    ]
+  }
+}

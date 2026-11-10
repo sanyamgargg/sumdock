@@ -9,5 +9,5 @@ export const site = {
   // TODO: choose a public contact address (ideally a dedicated one such as hello@sumdock.com).
   contactEmail: "hello@sumdock.com" as string | null,
   url: "https://sumdock.com",
-  updated: "2026-10-24",
+  updated: "2026-11-10",
 };

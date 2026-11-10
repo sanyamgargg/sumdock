@@ -1,8 +1,9 @@
 import { loadStates } from "@/lib/data";
+import { loadLlcStates } from "@/lib/llc-data";
 import { llmsTxt } from "@/lib/seo";
 
 export const dynamic = "force-static";
 
 export function GET() {
-  return new Response(llmsTxt(loadStates()), { headers: { "content-type": "text/plain; charset=utf-8" } });
+  return new Response(llmsTxt(loadStates(), loadLlcStates()), { headers: { "content-type": "text/plain; charset=utf-8" } });
 }

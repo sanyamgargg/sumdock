@@ -12,8 +12,12 @@ export function loadStates(): StateData[] {
     .sort((a, b) => a.name.localeCompare(b.name));
 }
 
+export type ChangelogTool = "vehicle" | "llc";
+
 export interface ChangelogEntry {
   date: string;
+  /** Which calculator the change belongs to. Entries written before the LLC tool have none and count as vehicle. */
+  tool: ChangelogTool;
   state: string;
   stateName: string;
   summary: string;
@@ -21,8 +25,10 @@ export interface ChangelogEntry {
 
 /** Changes to state numbers and rules, newest first, as written in data/changelog.json. */
 export function loadChangelog(): ChangelogEntry[] {
-  const raw = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "changelog.json"), "utf8")) as { entries: ChangelogEntry[] };
-  return raw.entries;
+  const raw = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "changelog.json"), "utf8")) as {
+    entries: (Omit<ChangelogEntry, "tool"> & { tool?: ChangelogTool })[];
+  };
+  return raw.entries.map((e) => ({ ...e, tool: e.tool ?? "vehicle" }));
 }
 
 export function loadState(slug: string): StateData | undefined {

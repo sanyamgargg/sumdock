@@ -2,11 +2,14 @@ import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 import { publishability } from "@/lib/calc";
 import { loadStates } from "@/lib/data";
+import { llcPublishability } from "@/lib/llc-calc";
+import { loadLlcStates } from "@/lib/llc-data";
 
 export const metadata: Metadata = pageMetadata("/methodology/", "Methodology and Data Sources", "How vehicle tax and fee figures are collected, verified, tested and kept current.");
 
 export default function Methodology() {
   const states = loadStates();
+  const llcStates = loadLlcStates();
   return (
     <>
       <h1>Methodology</h1>
@@ -54,6 +57,32 @@ export default function Methodology() {
               <td><a href={`/vehicle/${s.slug}/`}>{s.name}</a></td>
               <td>Reviewed {s.lastReviewed}</td>
               <td>{publishability(s).publishable ? "Core figures confirmed" : "Still being verified"}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      <h2 id="llc">LLC cost estimates</h2>
+      <p>
+        The LLC calculator uses the same labels and rules as the vehicle calculator. Its figures come from each state&apos;s own
+        agencies: the Secretary of State or Division of Corporations for filing fees and reports, the revenue or tax agency
+        for franchise or annual taxes, and the state&apos;s statutes where they set a fee. Law firms, formation services and
+        blogs are never used as a source.
+      </p>
+      <ul>
+        <li>The estimate covers the state fee to form a domestic LLC, plus the yearly or every-second-year fees to keep it active, over 1 to 5 years.</li>
+        <li>A fee due every second year is counted only when it falls in the chosen period. A fee first due after the formation year is counted from the year it is first due.</li>
+        <li>A page is public only when the formation filing fee and the main yearly fee are confirmed. Otherwise it is not indexed and the missing figure is listed as not included.</li>
+        <li>Left out: a registered agent if you hire one, name reservation, expedited filing, certified copies, local business licenses, newspaper publication costs where a state requires them, card fees, and federal and state income taxes. Taxes that depend on income, such as a franchise tax above a threshold, are listed but not priced.</li>
+        <li>This is not legal or tax advice.</li>
+      </ul>
+      <table>
+        <tbody>
+          {llcStates.map((s) => (
+            <tr key={s.slug}>
+              <td><a href={`/llc/${s.slug}/`}>{s.name} LLC</a></td>
+              <td>Reviewed {s.lastReviewed}</td>
+              <td>{llcPublishability(s).publishable ? "Core figures confirmed" : "Still being verified"}</td>
             </tr>
           ))}
         </tbody>

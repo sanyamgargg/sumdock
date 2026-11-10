@@ -1,4 +1,6 @@
 import { calculate, isUsable, publishability } from "./calc";
+import { llcPublishability } from "./llc-calc";
+import type { LlcState } from "./llc-types";
 import { DEFAULT_INPUTS, expandTokens, generatedFaq } from "./content";
 import { formatDate, usd } from "./format";
 import { site } from "./site";
@@ -125,8 +127,9 @@ export function statePageLd(s: StateData): Json {
 }
 
 /** Plain-text index for AI tools (served at /llms.txt). Lists only publishable states. */
-export function llmsTxt(states: StateData[]): string {
+export function llmsTxt(states: StateData[], llcStates: LlcState[] = []): string {
   const live = states.filter((s) => publishability(s).publishable);
+  const llcLive = llcStates.filter((s) => llcPublishability(s).publishable);
   const lines = [
     `# ${site.name}`,
     "",
@@ -135,10 +138,14 @@ export function llmsTxt(states: StateData[]): string {
     "## Calculators",
     "",
     `- [Vehicle sales tax, title and registration](${abs("/vehicle/")}): state-by-state estimates for buying a vehicle.`,
+    `- [LLC cost by state](${abs("/llc/")}): state fees to form an LLC and keep it in good standing.`,
     "",
     "## States",
     "",
     ...live.map((s) => `- [${s.name}](${abs(`/vehicle/${s.slug}/`)}): last reviewed ${formatDate(s.lastReviewed)}.`),
+    ...(llcLive.length > 0
+      ? ["", "## LLC cost pages", "", ...llcLive.map((s) => `- [${s.name} LLC](${abs(`/llc/${s.slug}/`)}): last reviewed ${formatDate(s.lastReviewed)}.`)]
+      : []),
     "",
     "## About the data",
     "",

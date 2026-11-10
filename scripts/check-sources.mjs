@@ -1,29 +1,31 @@
-// Monthly source check: opens every source URL used in data/states/*.json,
+// Monthly source check: opens every source URL used in data/states/*.json and data/llc/*.json,
 // hashes the readable text, and compares it with data/source-snapshots.json.
 // Writes a Markdown report to source-report.md when anything changed or failed.
 // Usage: node scripts/check-sources.mjs [--list]   (--list only prints the URLs)
 import { readFileSync, writeFileSync, readdirSync, existsSync } from "node:fs";
 import { createHash } from "node:crypto";
 
-const DIR = "data/states";
+const DIRS = [["data/states", ""], ["data/llc", "LLC "]];
 const SNAP = "data/source-snapshots.json";
 const today = new Date().toISOString().slice(0, 10);
 
-function collect(node, out, file) {
-  if (Array.isArray(node)) return node.forEach((n) => collect(n, out, file));
+function collect(node, out, file, prefix) {
+  if (Array.isArray(node)) return node.forEach((n) => collect(n, out, file, prefix));
   if (node && typeof node === "object") {
     if (typeof node.url === "string" && node.url.startsWith("http") && node.accessed) {
       const e = out.get(node.url) ?? { title: node.title, states: new Set() };
-      e.states.add(file.replace(".json", "").toUpperCase());
+      e.states.add(prefix + file.replace(".json", "").toUpperCase());
       out.set(node.url, e);
     }
-    Object.values(node).forEach((n) => collect(n, out, file));
+    Object.values(node).forEach((n) => collect(n, out, file, prefix));
   }
 }
 
 const urls = new Map();
-for (const f of readdirSync(DIR).filter((f) => f.endsWith(".json"))) {
-  collect(JSON.parse(readFileSync(`${DIR}/${f}`, "utf8")), urls, f);
+for (const [dir, prefix] of DIRS) {
+  for (const f of readdirSync(dir).filter((f) => f.endsWith(".json"))) {
+    collect(JSON.parse(readFileSync(`${dir}/${f}`, "utf8")), urls, f, prefix);
+  }
 }
 if (process.argv.includes("--list")) {
   for (const [u, e] of urls) console.log(`${[...e.states].join(",")}\t${u}`);

@@ -6,6 +6,8 @@ import Statement from "@/components/Statement";
 import { calculate } from "@/lib/calc";
 import { DEFAULT_INPUTS, verificationStatus } from "@/lib/content";
 import { loadStates } from "@/lib/data";
+import { llcVerification } from "@/lib/llc-content";
+import { loadLlcStates } from "@/lib/llc-data";
 import { usdShort } from "@/lib/format";
 import { footnotes } from "@/lib/sources";
 import { site } from "@/lib/site";
@@ -34,6 +36,8 @@ export default function Home() {
   const states = loadStates();
   // States listed as live are the ones that are not still in review.
   const live = states.filter((s) => verificationStatus(s).status !== "in-review");
+
+  const llcLive = loadLlcStates().filter((s) => llcVerification(s).status !== "in-review");
 
   // The sample statement is a real calculation on the Texas data, run when the site is built.
   const tx = states.find((s) => s.slug === "texas");
@@ -85,7 +89,7 @@ export default function Home() {
       <section aria-labelledby="tools" className="tools">
         <div className="section-head">
           <h2 id="tools">Calculators</h2>
-          <p className="section-head__meta">1 live, more on the way</p>
+          <p className="section-head__meta">2 live, more on the way</p>
         </div>
         <article className="tool">
           <div className="tool__copy">
@@ -96,6 +100,19 @@ export default function Home() {
           <ul className="chips" aria-label="States available now">
             {live.map((s) => (
               <li key={s.slug}><Link href={`/vehicle/${s.slug}/`}>{s.name}</Link></li>
+            ))}
+            <li className="chips__more">more soon</li>
+          </ul>
+        </article>
+        <article className="tool">
+          <div className="tool__copy">
+            <span className="tool__tag">Live</span>
+            <h3 className="tool__title"><Link href="/llc/">LLC cost by state</Link></h3>
+            <p>What it costs to form an LLC and keep it in good standing: state filing fees, yearly reports and franchise taxes, and what is left out.</p>
+          </div>
+          <ul className="chips" aria-label="States available now">
+            {llcLive.map((s) => (
+              <li key={s.slug}><Link href={`/llc/${s.slug}/`}>{s.name}</Link></li>
             ))}
             <li className="chips__more">more soon</li>
           </ul>

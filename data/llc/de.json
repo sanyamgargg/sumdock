@@ -1,0 +1,129 @@
+{
+  "code": "DE",
+  "name": "Delaware",
+  "slug": "delaware",
+  "lastReviewed": "2026-11-10",
+  "formation": [
+    {
+      "id": "formation-filing",
+      "label": "Certificate of Formation filing fee",
+      "frequency": "once",
+      "main": true,
+      "amount": {
+        "value": 110,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Delaware Division of Corporations - Fee schedule, revised August 1, 2026 (PDF)",
+            "url": "https://corpfiles.delaware.gov/Fee_Schedule/AugustFee2026.pdf",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "State filing fee for a domestic LLC formation in the Division of Corporations fee schedule revised August 1, 2026. The same schedule lists separate charges for certified copies and faster service."
+      }
+    }
+  ],
+  "annual": [
+    {
+      "id": "annual-tax",
+      "label": "Annual LLC tax",
+      "frequency": "annual",
+      "main": true,
+      "due": "The tax for the prior year is due on or before June 1.",
+      "firstYear": 1,
+      "amount": {
+        "value": 400,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Delaware Division of Corporations - Pay LLC, LP and GP taxes",
+            "url": "https://corp.delaware.gov/alt-entitytaxinstructions/",
+            "accessed": "2026-11-10",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The Division says every LLC formed or registered in Delaware pays this annual tax, with no requirement to file an annual report. There is no proration. The tax is assessed for each calendar year the LLC is active, and it is due by June 1 of the following year."
+      }
+    }
+  ],
+  "notIncluded": [
+    {
+      "label": "Late payment penalty",
+      "reason": "Only if the annual tax is paid after the due date. The Division lists a flat penalty plus monthly interest on the tax and penalty.",
+      "sources": [
+        {
+          "title": "Delaware Division of Corporations - Pay LLC, LP and GP taxes",
+          "url": "https://corp.delaware.gov/alt-entitytaxinstructions/",
+          "accessed": "2026-11-10",
+          "publisherType": "state-agency"
+        }
+      ]
+    },
+    {
+      "label": "Registered agent service",
+      "reason": "Only if you hire a registered agent. The agent sets the price, so it is not a state fee and is not in the total."
+    },
+    {
+      "label": "Name reservation",
+      "reason": "Optional. Reserving a name before you file is a separate charge and is not in the total."
+    },
+    {
+      "label": "Expedited filing and certified copies",
+      "reason": "Optional. Faster processing and certified copies cost extra and are not in the total."
+    },
+    {
+      "label": "Local business licenses and permits",
+      "reason": "City, county and industry licenses depend on where the business operates and what it does. None are in the total."
+    },
+    {
+      "label": "Federal and state income taxes",
+      "reason": "Taxes on the LLC's or its owners' income are not part of this estimate. This page is not legal or tax advice."
+    }
+  ],
+  "content": {
+    "intro": "{state} charges a one-time filing fee for the Certificate of Formation and a flat annual tax on every LLC. It does not require an LLC to file an annual report.",
+    "howItWorks": [
+      {
+        "text": "The Division of Corporations publishes a fee schedule with the state filing fee for a domestic LLC, plus separate charges for certified copies and faster service. Copies and faster service are not in the estimate.",
+        "sources": [
+          "https://corpfiles.delaware.gov/Fee_Schedule/AugustFee2026.pdf"
+        ]
+      },
+      {
+        "text": "Every LLC formed or registered in {state} pays the same flat annual tax, and there is no requirement to file an annual report. The tax for the prior year is due by the first of June.",
+        "sources": [
+          "https://corp.delaware.gov/alt-entitytaxinstructions/"
+        ]
+      },
+      {
+        "text": "The tax is not prorated. It is assessed for any calendar year in which the LLC is active in the Division's records at any time.",
+        "sources": [
+          "https://corp.delaware.gov/alt-entitytaxinstructions/"
+        ]
+      },
+      {
+        "text": "Paying late brings a penalty plus monthly interest on the tax and the penalty.",
+        "sources": [
+          "https://corp.delaware.gov/alt-entitytaxinstructions/"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does a {state} LLC have to file an annual report?",
+        "text": "No. The Division says there is no annual report requirement for an LLC, but the annual tax must be paid by its due date.",
+        "sources": [
+          "https://corp.delaware.gov/alt-entitytaxinstructions/"
+        ]
+      },
+      {
+        "q": "Is the {state} LLC tax lower if I form late in the year?",
+        "text": "No. The Division says there is no proration of the annual tax.",
+        "sources": [
+          "https://corp.delaware.gov/alt-entitytaxinstructions/"
+        ]
+      }
+    ]
+  }
+}
