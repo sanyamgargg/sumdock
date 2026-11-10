@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
 import { siteLd } from "@/lib/seo";
@@ -8,6 +9,11 @@ import { loadStates } from "@/lib/data";
 import { usdShort } from "@/lib/format";
 import { footnotes } from "@/lib/sources";
 import { site } from "@/lib/site";
+
+/** The home page needs its own canonical: the root layout sets none, and Google flagged it as a duplicate. */
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 const HONEST = [
   {
