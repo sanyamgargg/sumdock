@@ -1092,3 +1092,31 @@ describe("Missouri", () => {
     expect(line(r, "title-processing")).toBe(9);
   });
 });
+
+describe("Utah", () => {
+  const ut = load("ut");
+  it("is publishable", () => expect(publishability(ut).publishable).toBe(true));
+  it("taxes the price less a trade-in at 4.85% plus the entered local rate", () => {
+    const r = calculate(ut, { ...base, price: 30000, tradeIn: 10000, localRatePct: 2.4 });
+    expect(line(r, "state-tax")).toBe(970);
+    expect(line(r, "local-tax")).toBe(480);
+  });
+  it("picks one uniform fee by age from the 2026 table", () => {
+    const uni = (ageYears: number) => calculate(ut, { ...base, ageYears }).lines.filter((l) => l.id.startsWith("registration-uniform")).map((l) => l.amount);
+    expect(uni(0)).toEqual([150]);
+    expect(uni(2)).toEqual([150]);
+    expect(uni(3)).toEqual([110]);
+    expect(uni(6)).toEqual([80]);
+    expect(uni(9)).toEqual([50]);
+    expect(uni(12)).toEqual([10]);
+  });
+  it("adds title, registration, driver education and uninsured motorist fees", () => {
+    const r = calculate(ut, base);
+    expect([line(r, "title"), line(r, "registration"), line(r, "driver-education"), line(r, "uninsured-motorist")]).toEqual([6, 44, 2.5, 1]);
+  });
+  it("lists the EV fee as not included", () => {
+    const r = calculate(ut, { ...base, fuel: "ev" });
+    expect(line(r, "ev-fee")).toBeUndefined();
+    expect(r.excluded.map((e) => e.label)).toContain("Electric vehicle fee");
+  });
+});

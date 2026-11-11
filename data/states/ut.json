@@ -1,0 +1,338 @@
+{
+  "code": "UT",
+  "name": "Utah",
+  "slug": "utah",
+  "lastReviewed": "2026-11-11",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 4.85,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Utah State Tax Commission - Combined sales and use tax rates, effective October 1, 2026 (PDF)",
+          "url": "https://files.tax.utah.gov/tax/salestax/rate/26q4combined.pdf",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The state part of every combined rate on the Tax Commission's list."
+    },
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Utah State Tax Commission - Publication 5, sales tax for vehicle dealers (Rev. 8/24, PDF)",
+          "url": "https://files.tax.utah.gov/tax/forms/2025/pub-05.pdf",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "A trade-in allowance may be left out of the amount taxed when the trade is part of the same sale between the same two parties."
+    },
+    "local": {
+      "value": {
+        "mode": "user-entered",
+        "capBase": null,
+        "rangeNote": "Local rates are added to the state rate. For a sale at a Utah dealer the rate where the dealer is applies. Combined rates on the October 2026 list run from 6.35% to 10.05%; enter the combined rate less the 4.85% state rate."
+      },
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Utah State Tax Commission - Combined sales and use tax rates, effective October 1, 2026 (PDF)",
+          "url": "https://files.tax.utah.gov/tax/salestax/rate/26q4combined.pdf",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Utah State Tax Commission - Publication 25, sales and use tax general information (PDF)",
+          "url": "https://files.tax.utah.gov/tax/forms/pubs/pub-25.pdf",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Publication 25 sources an in-state retail sale to the seller's place of business."
+    },
+    "outOfStateCredit": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Utah State Tax Commission - Publication 5, sales tax for vehicle dealers (Rev. 8/24, PDF)",
+          "url": "https://files.tax.utah.gov/tax/forms/2025/pub-05.pdf",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Utah gives credit for tax properly due and paid first to another state."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Title fee",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 6,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Utah DMV - Summary of common fees",
+            "url": "https://dmv.utah.gov/register/registration-taxes-fees/summary-of-common-fees/",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "registration",
+      "label": "Registration fee",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 44,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Utah Code 41-1a-1206, registration fees (effective January 1, 2026, PDF)",
+            "url": "https://le.utah.gov/xcode/Title41/Chapter1a/C41-1a-S1206_2026010120250507.pdf",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The amount written in Utah Code for a vehicle of fourteen thousand pounds or less. The law adjusts registration fees each year for inflation, and the DMV does not print the current amount, so the fee you pay may be a little higher."
+      }
+    },
+    {
+      "id": "registration-uniform-0-2",
+      "label": "Uniform age-based fee (model years 2024 to 2026)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "ageYearsMax": 2
+      },
+      "amount": {
+        "value": 150,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Utah DMV - 2026 uniform age-based fee tables",
+            "url": "https://dmv.utah.gov/register/registration-taxes-fees/uniform-fees/",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The DMV's 2026 table sets the fee by model year. The calculator turns model years into ages counted from 2026, so the bands move each January."
+      }
+    },
+    {
+      "id": "registration-uniform-3-5",
+      "label": "Uniform age-based fee (model years 2021 to 2023)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "ageYearsMin": 3,
+        "ageYearsMax": 5
+      },
+      "amount": {
+        "value": 110,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Utah DMV - 2026 uniform age-based fee tables",
+            "url": "https://dmv.utah.gov/register/registration-taxes-fees/uniform-fees/",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The DMV's 2026 table sets the fee by model year. The calculator turns model years into ages counted from 2026, so the bands move each January."
+      }
+    },
+    {
+      "id": "registration-uniform-6-8",
+      "label": "Uniform age-based fee (model years 2018 to 2020)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "ageYearsMin": 6,
+        "ageYearsMax": 8
+      },
+      "amount": {
+        "value": 80,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Utah DMV - 2026 uniform age-based fee tables",
+            "url": "https://dmv.utah.gov/register/registration-taxes-fees/uniform-fees/",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The DMV's 2026 table sets the fee by model year. The calculator turns model years into ages counted from 2026, so the bands move each January."
+      }
+    },
+    {
+      "id": "registration-uniform-9-11",
+      "label": "Uniform age-based fee (model years 2015 to 2017)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "ageYearsMin": 9,
+        "ageYearsMax": 11
+      },
+      "amount": {
+        "value": 50,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Utah DMV - 2026 uniform age-based fee tables",
+            "url": "https://dmv.utah.gov/register/registration-taxes-fees/uniform-fees/",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The DMV's 2026 table sets the fee by model year. The calculator turns model years into ages counted from 2026, so the bands move each January."
+      }
+    },
+    {
+      "id": "registration-uniform-12-plus",
+      "label": "Uniform age-based fee (model year 2014 and older)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "ageYearsMin": 12
+      },
+      "amount": {
+        "value": 10,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Utah DMV - 2026 uniform age-based fee tables",
+            "url": "https://dmv.utah.gov/register/registration-taxes-fees/uniform-fees/",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The DMV's 2026 table sets the fee by model year. The calculator turns model years into ages counted from 2026, so the bands move each January."
+      }
+    },
+    {
+      "id": "driver-education",
+      "label": "Driver education fee",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 2.5,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Utah DMV - Registration taxes and fees",
+            "url": "https://dmv.utah.gov/register/registration-taxes-fees/",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "uninsured-motorist",
+      "label": "Uninsured motorist identification fee",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 1,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Utah DMV - Registration taxes and fees",
+            "url": "https://dmv.utah.gov/register/registration-taxes-fees/",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-fee",
+      "label": "Electric vehicle fee",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "ev"
+      },
+      "excludedReason": "Electric vehicles pay a flat fee or a per-mile road usage charge; the DMV page does not print the amount.",
+      "amount": {
+        "value": null,
+        "status": "unverified",
+        "sources": [
+          {
+            "title": "Utah DMV - Registration taxes and fees",
+            "url": "https://dmv.utah.gov/register/registration-taxes-fees/",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Utah Code 41-1a-1206, registration fees (effective January 1, 2026, PDF)",
+            "url": "https://le.utah.gov/xcode/Title41/Chapter1a/C41-1a-S1206_2026010120250507.pdf",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Electric vehicles pay a flat fee or a per-mile road usage charge. The DMV page does not print the flat fee amount."
+      }
+    }
+  ],
+  "notes": [
+    "A ten-dollar corridor fee in some counties and an air pollution control fee in a few counties are not included.",
+    "Hybrid and plug-in hybrid vehicles pay an extra registration fee; the calculator has no hybrid option yet.",
+    "Safety and emissions inspection fees are not included."
+  ],
+  "content": {
+    "intro": "{state} charges {stateRate} state sales tax plus local tax, then a registration fee and an age-based uniform fee every year.",
+    "howItWorks": [
+      {
+        "text": "Every combined rate on the Tax Commission's list includes the state rate. Local rates are added on top.",
+        "sources": [
+          "https://files.tax.utah.gov/tax/salestax/rate/26q4combined.pdf"
+        ]
+      },
+      {
+        "text": "A trade-in that is part of the same sale comes off the amount taxed.",
+        "sources": [
+          "https://files.tax.utah.gov/tax/forms/2025/pub-05.pdf"
+        ]
+      },
+      {
+        "text": "Instead of property tax, most passenger vehicles pay a uniform fee set by model year. Newer vehicles pay more.",
+        "sources": [
+          "https://dmv.utah.gov/register/registration-taxes-fees/uniform-fees/"
+        ]
+      },
+      {
+        "text": "A driver education fee and an uninsured motorist identification fee are added to each registration.",
+        "sources": [
+          "https://dmv.utah.gov/register/registration-taxes-fees/"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Which local rate applies when I buy from a {state} dealer?",
+        "text": "The Tax Commission sources a retail sale made in the state to the seller's place of business, so the rate where the dealer is applies.",
+        "sources": [
+          "https://files.tax.utah.gov/tax/forms/pubs/pub-25.pdf"
+        ]
+      },
+      {
+        "q": "Does {state} give credit for tax paid in another state?",
+        "text": "Yes. The Tax Commission allows credit for tax properly due and paid first to another state.",
+        "sources": [
+          "https://files.tax.utah.gov/tax/forms/2025/pub-05.pdf"
+        ]
+      }
+    ]
+  }
+}
