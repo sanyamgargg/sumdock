@@ -3,6 +3,12 @@
   "entries": [
     {
       "date": "2026-11-11",
+      "state": "IA",
+      "stateName": "Iowa",
+      "summary": "Added Iowa from the 2026 Iowa Code: the fee for new registration ($10 plus 5% of the price less a trade-in, with credit for tax paid to another state), the $30 title fee, and registration at 1% of value plus 40 cents per 100 pounds. The value part for a new vehicle uses your price in place of the DOT's value and is marked check source; for a used vehicle it is not included."
+    },
+    {
+      "date": "2026-11-11",
       "state": "MD",
       "stateName": "Maryland",
       "summary": "Added Maryland: the 6.5% title excise tax after trade-in, registration by weight from July 2025 and the $40 yearly surcharge from the Maryland Code, and the $200 title fee and out-of-state credit rule from the MVA title and registration manual."

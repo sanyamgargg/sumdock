@@ -1193,3 +1193,28 @@ describe("Maryland", () => {
     expect(line(r, "oos-credit")).toBeUndefined();
   });
 });
+
+describe("Iowa", () => {
+  const ia = load("ia");
+  it("is publishable", () => expect(publishability(ia).publishable).toBe(true));
+  it("charges $10 plus 5% of the price less a trade-in", () => {
+    const r = calculate(ia, { ...base, price: 30000, tradeIn: 10000 });
+    expect(line(r, "state-tax")).toBe(1000);
+    expect(line(r, "new-registration-base")).toBe(10);
+  });
+  it("collects only the difference when tax was paid to another state", () => {
+    const r = calculate(ia, { ...base, price: 30000, outOfStateTaxPaid: 900 });
+    expect(line(r, "state-tax")! + line(r, "oos-credit")!).toBe(600);
+  });
+  it("charges registration at 1% of a new vehicle's price plus 40 cents per 100 lbs", () => {
+    const r = calculate(ia, { ...base, price: 30000, weightLbs: 3450 });
+    expect(line(r, "registration-value")).toBe(300);
+    expect(line(r, "registration-weight")).toBe(14);
+  });
+  it("leaves out the value part for a used vehicle", () => {
+    const r = calculate(ia, { ...base, vehicleAge: "older", ageYears: 6 });
+    expect(line(r, "registration-value")).toBeUndefined();
+    expect(r.excluded.map((e) => e.label)).toContain("Registration (value part)");
+  });
+  it("charges the $30 title fee", () => expect(line(calculate(ia, base), "title")).toBe(30));
+});

@@ -1,0 +1,603 @@
+{
+  "code": "IA",
+  "name": "Iowa",
+  "slug": "iowa",
+  "lastReviewed": "2026-11-11",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 5,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Iowa Code 321.105A, fee for new registration (2026 Code, PDF)",
+          "url": "https://www.legis.iowa.gov/docs/code/321.105A.pdf",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Iowa charges a fee for new registration of ten dollars plus five percent of the purchase price instead of sales tax. The ten dollars is listed as its own line."
+    },
+    "taxName": "fee for new registration",
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Iowa Code 321.105A, fee for new registration (2026 Code, PDF)",
+          "url": "https://www.legis.iowa.gov/docs/code/321.105A.pdf",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The trade-in value comes off the purchase price when the same person is on the titles of both vehicles, with exceptions for spouses, some relatives and co-signers."
+    },
+    "local": {
+      "value": {
+        "mode": "none",
+        "capBase": null,
+        "rangeNote": null
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Iowa Code 321.105A, fee for new registration (2026 Code, PDF)",
+          "url": "https://www.legis.iowa.gov/docs/code/321.105A.pdf",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The fee for new registration is a state fee charged in place of sales tax. The Code section does not mention a local add-on, but it does not say outright that none applies."
+    },
+    "outOfStateCredit": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Iowa Code 321.105A, fee for new registration (2026 Code, PDF)",
+          "url": "https://www.legis.iowa.gov/docs/code/321.105A.pdf",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Tax paid to another state reduces the fee; if it is less than the fee, the difference is collected."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "new-registration-base",
+      "label": "Fee for new registration (fixed part)",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 10,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Iowa Code 321.105A, fee for new registration (2026 Code, PDF)",
+            "url": "https://www.legis.iowa.gov/docs/code/321.105A.pdf",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "title",
+      "label": "Title fee",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 30,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Iowa Code 321.20, certificate of title fee (2026 Code, PDF)",
+            "url": "https://www.legis.iowa.gov/docs/code/321.20.pdf",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Iowa Acts 2024, chapter 1145 (PDF)",
+            "url": "https://www.legis.iowa.gov/docs/publications/iactc/90.2/CH1145.pdf",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Raised to thirty dollars from January 1, 2025."
+      }
+    },
+    {
+      "id": "registration-value",
+      "label": "Registration (value part, new vehicle)",
+      "kind": "percentOfValue",
+      "frequency": "annual",
+      "when": {
+        "ageYearsMax": 0,
+        "vehicleAge": "new"
+      },
+      "amount": {
+        "value": 1,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Iowa Code 321.109, automobile registration fee (2026 Code, PDF)",
+            "url": "https://www.legis.iowa.gov/docs/code/321.109.pdf",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "One percent of the value the DOT fixes for the vehicle. The calculator uses the price you enter in place of that value, so the amount can differ."
+      }
+    },
+    {
+      "id": "registration-value-used",
+      "label": "Registration (value part)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "anyOf": [
+          {
+            "ageYearsMin": 1
+          },
+          {
+            "vehicleAge": [
+              "recent",
+              "older"
+            ]
+          }
+        ]
+      },
+      "excludedReason": "Charged on the value the DOT fixes for the vehicle, which the calculator does not ask for.",
+      "amount": {
+        "value": null,
+        "status": "unverified",
+        "sources": [
+          {
+            "title": "Iowa Code 321.109, automobile registration fee (2026 Code, PDF)",
+            "url": "https://www.legis.iowa.gov/docs/code/321.109.pdf",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Charged on the value the DOT fixes for the vehicle, which the calculator does not ask for."
+      }
+    },
+    {
+      "id": "registration-weight",
+      "label": "Registration (weight part)",
+      "kind": "weightTable",
+      "frequency": "annual",
+      "weightTable": [
+        {
+          "upTo": 1000,
+          "fee": 4.0
+        },
+        {
+          "upTo": 1100,
+          "fee": 4.4
+        },
+        {
+          "upTo": 1200,
+          "fee": 4.8
+        },
+        {
+          "upTo": 1300,
+          "fee": 5.2
+        },
+        {
+          "upTo": 1400,
+          "fee": 5.6
+        },
+        {
+          "upTo": 1500,
+          "fee": 6.0
+        },
+        {
+          "upTo": 1600,
+          "fee": 6.4
+        },
+        {
+          "upTo": 1700,
+          "fee": 6.8
+        },
+        {
+          "upTo": 1800,
+          "fee": 7.2
+        },
+        {
+          "upTo": 1900,
+          "fee": 7.6
+        },
+        {
+          "upTo": 2000,
+          "fee": 8.0
+        },
+        {
+          "upTo": 2100,
+          "fee": 8.4
+        },
+        {
+          "upTo": 2200,
+          "fee": 8.8
+        },
+        {
+          "upTo": 2300,
+          "fee": 9.2
+        },
+        {
+          "upTo": 2400,
+          "fee": 9.6
+        },
+        {
+          "upTo": 2500,
+          "fee": 10.0
+        },
+        {
+          "upTo": 2600,
+          "fee": 10.4
+        },
+        {
+          "upTo": 2700,
+          "fee": 10.8
+        },
+        {
+          "upTo": 2800,
+          "fee": 11.2
+        },
+        {
+          "upTo": 2900,
+          "fee": 11.6
+        },
+        {
+          "upTo": 3000,
+          "fee": 12.0
+        },
+        {
+          "upTo": 3100,
+          "fee": 12.4
+        },
+        {
+          "upTo": 3200,
+          "fee": 12.8
+        },
+        {
+          "upTo": 3300,
+          "fee": 13.2
+        },
+        {
+          "upTo": 3400,
+          "fee": 13.6
+        },
+        {
+          "upTo": 3500,
+          "fee": 14.0
+        },
+        {
+          "upTo": 3600,
+          "fee": 14.4
+        },
+        {
+          "upTo": 3700,
+          "fee": 14.8
+        },
+        {
+          "upTo": 3800,
+          "fee": 15.2
+        },
+        {
+          "upTo": 3900,
+          "fee": 15.6
+        },
+        {
+          "upTo": 4000,
+          "fee": 16.0
+        },
+        {
+          "upTo": 4100,
+          "fee": 16.4
+        },
+        {
+          "upTo": 4200,
+          "fee": 16.8
+        },
+        {
+          "upTo": 4300,
+          "fee": 17.2
+        },
+        {
+          "upTo": 4400,
+          "fee": 17.6
+        },
+        {
+          "upTo": 4500,
+          "fee": 18.0
+        },
+        {
+          "upTo": 4600,
+          "fee": 18.4
+        },
+        {
+          "upTo": 4700,
+          "fee": 18.8
+        },
+        {
+          "upTo": 4800,
+          "fee": 19.2
+        },
+        {
+          "upTo": 4900,
+          "fee": 19.6
+        },
+        {
+          "upTo": 5000,
+          "fee": 20.0
+        },
+        {
+          "upTo": 5100,
+          "fee": 20.4
+        },
+        {
+          "upTo": 5200,
+          "fee": 20.8
+        },
+        {
+          "upTo": 5300,
+          "fee": 21.2
+        },
+        {
+          "upTo": 5400,
+          "fee": 21.6
+        },
+        {
+          "upTo": 5500,
+          "fee": 22.0
+        },
+        {
+          "upTo": 5600,
+          "fee": 22.4
+        },
+        {
+          "upTo": 5700,
+          "fee": 22.8
+        },
+        {
+          "upTo": 5800,
+          "fee": 23.2
+        },
+        {
+          "upTo": 5900,
+          "fee": 23.6
+        },
+        {
+          "upTo": 6000,
+          "fee": 24.0
+        },
+        {
+          "upTo": 6100,
+          "fee": 24.4
+        },
+        {
+          "upTo": 6200,
+          "fee": 24.8
+        },
+        {
+          "upTo": 6300,
+          "fee": 25.2
+        },
+        {
+          "upTo": 6400,
+          "fee": 25.6
+        },
+        {
+          "upTo": 6500,
+          "fee": 26.0
+        },
+        {
+          "upTo": 6600,
+          "fee": 26.4
+        },
+        {
+          "upTo": 6700,
+          "fee": 26.8
+        },
+        {
+          "upTo": 6800,
+          "fee": 27.2
+        },
+        {
+          "upTo": 6900,
+          "fee": 27.6
+        },
+        {
+          "upTo": 7000,
+          "fee": 28.0
+        },
+        {
+          "upTo": 7100,
+          "fee": 28.4
+        },
+        {
+          "upTo": 7200,
+          "fee": 28.8
+        },
+        {
+          "upTo": 7300,
+          "fee": 29.2
+        },
+        {
+          "upTo": 7400,
+          "fee": 29.6
+        },
+        {
+          "upTo": 7500,
+          "fee": 30.0
+        },
+        {
+          "upTo": 7600,
+          "fee": 30.4
+        },
+        {
+          "upTo": 7700,
+          "fee": 30.8
+        },
+        {
+          "upTo": 7800,
+          "fee": 31.2
+        },
+        {
+          "upTo": 7900,
+          "fee": 31.6
+        },
+        {
+          "upTo": 8000,
+          "fee": 32.0
+        },
+        {
+          "upTo": 8100,
+          "fee": 32.4
+        },
+        {
+          "upTo": 8200,
+          "fee": 32.8
+        },
+        {
+          "upTo": 8300,
+          "fee": 33.2
+        },
+        {
+          "upTo": 8400,
+          "fee": 33.6
+        },
+        {
+          "upTo": 8500,
+          "fee": 34.0
+        },
+        {
+          "upTo": 8600,
+          "fee": 34.4
+        },
+        {
+          "upTo": 8700,
+          "fee": 34.8
+        },
+        {
+          "upTo": 8800,
+          "fee": 35.2
+        },
+        {
+          "upTo": 8900,
+          "fee": 35.6
+        },
+        {
+          "upTo": 9000,
+          "fee": 36.0
+        },
+        {
+          "upTo": 9100,
+          "fee": 36.4
+        },
+        {
+          "upTo": 9200,
+          "fee": 36.8
+        },
+        {
+          "upTo": 9300,
+          "fee": 37.2
+        },
+        {
+          "upTo": 9400,
+          "fee": 37.6
+        },
+        {
+          "upTo": 9500,
+          "fee": 38.0
+        },
+        {
+          "upTo": 9600,
+          "fee": 38.4
+        },
+        {
+          "upTo": 9700,
+          "fee": 38.8
+        },
+        {
+          "upTo": 9800,
+          "fee": 39.2
+        },
+        {
+          "upTo": 9900,
+          "fee": 39.6
+        },
+        {
+          "upTo": 10000,
+          "fee": 40.0
+        }
+      ],
+      "amount": {
+        "value": 1,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Iowa Code 321.109, automobile registration fee (2026 Code, PDF)",
+            "url": "https://www.legis.iowa.gov/docs/code/321.109.pdf",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Forty cents for each hundred pounds or part of a hundred pounds of the vehicle's weight."
+      }
+    }
+  ],
+  "notes": [
+    "The value part of registration for a used vehicle is not included because it uses the DOT's value for the vehicle.",
+    "Lien notation and county treasurer fees are not included.",
+    "Any electric or hybrid vehicle registration fee is not included."
+  ],
+  "content": {
+    "intro": "{state} charges a fee for new registration instead of sales tax: ten dollars plus {stateRate} of the price less a trade-in. Yearly registration combines a share of the vehicle's value and a fee by weight.",
+    "howItWorks": [
+      {
+        "text": "The fee for new registration is ten dollars plus five percent of the purchase price. A trade-in comes off the price when the same person is on both titles.",
+        "sources": [
+          "https://www.legis.iowa.gov/docs/code/321.105A.pdf"
+        ]
+      },
+      {
+        "text": "Tax paid to another state is credited against the fee, and only the difference is collected.",
+        "sources": [
+          "https://www.legis.iowa.gov/docs/code/321.105A.pdf"
+        ]
+      },
+      {
+        "text": "Yearly registration is one percent of the value the DOT sets for the vehicle plus forty cents for each hundred pounds.",
+        "sources": [
+          "https://www.legis.iowa.gov/docs/code/321.109.pdf"
+        ]
+      },
+      {
+        "text": "The title fee is set in the Iowa Code and was last raised by a law that took effect at the start of the year after it passed.",
+        "sources": [
+          "https://www.legis.iowa.gov/docs/publications/iactc/90.2/CH1145.pdf",
+          "https://www.legis.iowa.gov/docs/code/321.20.pdf"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does {state} charge sales tax on a vehicle?",
+        "text": "No. It charges a fee for new registration instead, at the same five percent plus a fixed ten dollars.",
+        "sources": [
+          "https://www.legis.iowa.gov/docs/code/321.105A.pdf"
+        ]
+      },
+      {
+        "q": "Does a trade-in lower the fee for new registration?",
+        "text": "Yes, when the same person is listed on the titles of both vehicles. Some relatives and co-signers also qualify.",
+        "sources": [
+          "https://www.legis.iowa.gov/docs/code/321.105A.pdf"
+        ]
+      }
+    ]
+  }
+}
