@@ -43,6 +43,7 @@ The visual direction is "Statement": the result is an itemized receipt with dott
 - Footnote numbers come from `footnotes()` in `lib/sources.ts`: sources are numbered in the order the statement lines appear, lines that share a source share a number. The sources table is rendered by `Calculator` so the numbers follow the current county or city choice.
 - Status words (`Verified`, `Partly verified`, `In review`) come from `verificationStatus()`. Always show the word with the glyph. In-review states are not links on the index.
 - Ad slots take no space until `NEXT_PUBLIC_ADS_ENABLED=1` is set at build time. Set it when the first ad unit goes in, so the layout does not jump.
+- `NEXT_PUBLIC_ADSENSE_CLIENT=ca-pub-…` (Cloudflare build variable) adds the AdSense script and verification meta tag, fills `/ads.txt` and shows the "Privacy and cookie choices" footer link. Consent for EEA, UK and Switzerland comes from Google's own message (AdSense, Privacy & messaging); do not build a custom banner. Settings live in `lib/ads.ts`.
 
 ## Style
 Plain English, US spelling, no marketing claims. Pages must say what is estimated and what is left out. Keep copy honest: "estimate", not "exact".
