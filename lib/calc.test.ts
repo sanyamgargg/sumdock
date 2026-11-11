@@ -1218,3 +1218,29 @@ describe("Iowa", () => {
   });
   it("charges the $30 title fee", () => expect(line(calculate(ia, base), "title")).toBe(30));
 });
+
+describe("Minnesota", () => {
+  const mn = load("mn");
+  it("is publishable", () => expect(publishability(mn).publishable).toBe(true));
+  it("taxes the price less a trade-in at 6.875%", () => {
+    expect(line(calculate(mn, { ...base, price: 30000, tradeIn: 10000 }), "state-tax")).toBe(1375);
+  });
+  it("charges first-year registration tax of $10 plus 1.575% on a new vehicle", () => {
+    const r = calculate(mn, { ...base, price: 30000 });
+    expect(line(r, "registration")).toBe(10);
+    expect(line(r, "registration-value")).toBe(472.5);
+  });
+  it("adds the title, filing, technology, transfer and plate fees", () => {
+    const r = calculate(mn, { ...base, noPlateToTransfer: true });
+    expect([line(r, "title"), line(r, "title-filing"), line(r, "title-technology"), line(r, "transfer-tax"), line(r, "plates")]).toEqual([8.25, 12, 2.25, 10, 15.5]);
+  });
+  it("charges the EV surcharge as the greater of $150 or 0.5%", () => {
+    expect(line(calculate(mn, { ...base, fuel: "ev", price: 45000 }), "ev-surcharge")).toBe(225);
+    expect(line(calculate(mn, { ...base, fuel: "ev", price: 45000 }), "ev-surcharge-min")).toBeUndefined();
+    expect(line(calculate(mn, { ...base, fuel: "ev", price: 25000 }), "ev-surcharge-min")).toBe(150);
+    expect(line(calculate(mn, { ...base, fuel: "ev", price: 25000 }), "ev-surcharge")).toBeUndefined();
+  });
+  it("matches priceBelow strictly below the amount", () => {
+    expect(line(calculate(mn, { ...base, fuel: "ev", price: 30000 }), "ev-surcharge-min")).toBeUndefined();
+  });
+});

@@ -3,6 +3,12 @@
   "entries": [
     {
       "date": "2026-11-11",
+      "state": "MN",
+      "stateName": "Minnesota",
+      "summary": "Added Minnesota: the 6.875% motor vehicle sales tax after trade-in from the Department of Revenue, the out-of-state credit and registration tax from state law, and title, filing, technology, transfer and plate fees from Driver and Vehicle Services. First-year registration tax and the EV surcharge use your price in place of the sticker price and are marked check source; later-year registration tax is not included."
+    },
+    {
+      "date": "2026-11-11",
       "state": "IA",
       "stateName": "Iowa",
       "summary": "Added Iowa from the 2026 Iowa Code: the fee for new registration ($10 plus 5% of the price less a trade-in, with credit for tax paid to another state), the $30 title fee, and registration at 1% of value plus 40 cents per 100 pounds. The value part for a new vehicle uses your price in place of the DOT's value and is marked check source; for a used vehicle it is not included."

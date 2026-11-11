@@ -33,6 +33,8 @@ export interface FeeWhen {
   vehicleAge?: VehicleAge | VehicleAge[];
   /** Matches when the vehicle price is at least this much (before any trade-in). */
   priceAtLeast?: number;
+  /** Matches when the vehicle price is below this amount (before any trade-in). */
+  priceBelow?: number;
   /** Vehicle age in years (current year minus model year). Matches when the age is at least this. Needs the vehicle age input. */
   ageYearsMin?: number;
   /** Matches when the age in years is at most this. */

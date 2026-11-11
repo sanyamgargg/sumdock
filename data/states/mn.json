@@ -1,0 +1,351 @@
+{
+  "code": "MN",
+  "name": "Minnesota",
+  "slug": "minnesota",
+  "lastReviewed": "2026-11-11",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 6.875,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Minnesota Department of Revenue - Motor vehicle sales",
+          "url": "https://www.revenue.state.mn.us/guide/motor-vehicle-sales",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Motor vehicle sales tax of 6.875% of the taxable sales price since July 1, 2023."
+    },
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Minnesota Department of Revenue - Motor vehicle sales",
+          "url": "https://www.revenue.state.mn.us/guide/motor-vehicle-sales",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "A motor vehicle traded in on a motor vehicle purchase reduces the taxable price. An off-road vehicle traded in does not."
+    },
+    "local": {
+      "value": {
+        "mode": "none",
+        "capBase": null,
+        "rangeNote": null
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Minnesota Department of Revenue - Motor vehicle sales",
+          "url": "https://www.revenue.state.mn.us/guide/motor-vehicle-sales",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "There is no percentage local tax on the vehicle in the Department's guide. Some counties and cities charge a twenty-dollar vehicle excise tax, which is not included."
+    },
+    "outOfStateCredit": {
+      "value": true,
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Minnesota Statutes chapter 297B, sales tax on motor vehicles (PDF)",
+          "url": "https://www.revisor.mn.gov/statutes/cite/297B/pdf",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Minnesota charges only the difference in rates when tax was paid to a state that gives a similar credit. The calculator credits the dollars paid, which can differ slightly."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Title fee",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 8.25,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Minnesota Driver and Vehicle Services - Vehicle fees",
+            "url": "https://dps.mn.gov/divisions/dvs/vehicle/vehicle-fees",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "title-filing",
+      "label": "Filing fee (title)",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 12,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Minnesota Driver and Vehicle Services - Vehicle fees",
+            "url": "https://dps.mn.gov/divisions/dvs/vehicle/vehicle-fees",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "title-technology",
+      "label": "Technology surcharge (title)",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 2.25,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Minnesota Driver and Vehicle Services - Vehicle fees",
+            "url": "https://dps.mn.gov/divisions/dvs/vehicle/vehicle-fees",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "transfer-tax",
+      "label": "Transfer tax",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 10,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Minnesota Driver and Vehicle Services - Vehicle fees",
+            "url": "https://dps.mn.gov/divisions/dvs/vehicle/vehicle-fees",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "plates",
+      "label": "License plates (pair)",
+      "kind": "flat",
+      "frequency": "once",
+      "when": {
+        "noPlateToTransfer": true
+      },
+      "amount": {
+        "value": 15.5,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Minnesota Driver and Vehicle Services - Vehicle fees",
+            "url": "https://dps.mn.gov/divisions/dvs/vehicle/vehicle-fees",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "registration",
+      "label": "Registration tax (fixed part)",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 10,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Minnesota Statutes 168.013, vehicle registration tax",
+            "url": "https://www.revisor.mn.gov/statutes/cite/168.013",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Every registration tax starts at ten dollars."
+      }
+    },
+    {
+      "id": "registration-value",
+      "label": "Registration tax (value part, first year)",
+      "kind": "percentOfValue",
+      "frequency": "annual",
+      "when": {
+        "ageYearsMax": 0,
+        "vehicleAge": "new"
+      },
+      "amount": {
+        "value": 1.575,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Minnesota Statutes 168.013, vehicle registration tax",
+            "url": "https://www.revisor.mn.gov/statutes/cite/168.013",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "1.575% of the base value in the first year of vehicle life for a vehicle first registered after November 15, 2020. The law uses the manufacturer's suggested retail price. The calculator uses the price you enter in its place, so the amount can differ."
+      }
+    },
+    {
+      "id": "registration-value-used",
+      "label": "Registration tax (value part)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "anyOf": [
+          {
+            "ageYearsMin": 1
+          },
+          {
+            "vehicleAge": [
+              "recent",
+              "older"
+            ]
+          }
+        ]
+      },
+      "excludedReason": "Charged on the original sticker price, which the calculator does not ask for.",
+      "amount": {
+        "value": null,
+        "status": "unverified",
+        "sources": [
+          {
+            "title": "Minnesota Statutes 168.013, vehicle registration tax",
+            "url": "https://www.revisor.mn.gov/statutes/cite/168.013",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "From the second year it is a falling share of the original sticker price."
+      }
+    },
+    {
+      "id": "ev-surcharge",
+      "label": "Electric vehicle surcharge",
+      "kind": "percentOfValue",
+      "frequency": "annual",
+      "when": {
+        "fuel": "ev",
+        "priceAtLeast": 30000,
+        "ageYearsMax": 0
+      },
+      "amount": {
+        "value": 0.5,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Minnesota Statutes 168.013, vehicle registration tax",
+            "url": "https://www.revisor.mn.gov/statutes/cite/168.013",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Minnesota Driver and Vehicle Services - Vehicle fees",
+            "url": "https://dps.mn.gov/divisions/dvs/vehicle/vehicle-fees",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The greater of $150 or 0.5% of the base value for registrations through June 30, 2027. The law uses the manufacturer's suggested retail price. The calculator uses the price you enter in its place, so the amount can differ."
+      }
+    },
+    {
+      "id": "ev-surcharge-min",
+      "label": "Electric vehicle surcharge (minimum)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "ev",
+        "anyOf": [
+          {
+            "priceBelow": 30000
+          },
+          {
+            "ageYearsMin": 1
+          }
+        ]
+      },
+      "amount": {
+        "value": 150,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Minnesota Statutes 168.013, vehicle registration tax",
+            "url": "https://www.revisor.mn.gov/statutes/cite/168.013",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Minnesota Driver and Vehicle Services - Vehicle fees",
+            "url": "https://dps.mn.gov/divisions/dvs/vehicle/vehicle-fees",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The minimum surcharge for registrations through June 30, 2027. For an older EV with a high original sticker price, the surcharge can be higher."
+      }
+    }
+  ],
+  "notes": [
+    "The value part of the registration tax for a used vehicle is not included because it uses the original sticker price.",
+    "Some counties and cities charge a twenty-dollar vehicle excise tax and a county wheelage tax; neither is included.",
+    "The one-dollar deputy registrar office surcharge and the late transfer penalty are not included."
+  ],
+  "content": {
+    "intro": "{state} charges {stateRate} motor vehicle sales tax on the price less a trade-in. Yearly registration tax is a share of the vehicle's original sticker price that falls as it ages.",
+    "howItWorks": [
+      {
+        "text": "The sales tax is a percentage of the taxable sales price. A motor vehicle traded in comes off the price first.",
+        "sources": [
+          "https://www.revenue.state.mn.us/guide/motor-vehicle-sales"
+        ]
+      },
+      {
+        "text": "If you paid tax to a state that gives a similar credit, {state} charges only the difference in rates.",
+        "sources": [
+          "https://www.revisor.mn.gov/statutes/cite/297B/pdf"
+        ]
+      },
+      {
+        "text": "Registration tax is ten dollars plus a share of the sticker price. The share is highest in the first year and drops each year until it reaches a flat amount.",
+        "sources": [
+          "https://www.revisor.mn.gov/statutes/cite/168.013"
+        ]
+      },
+      {
+        "text": "Title, filing, technology and transfer fees are charged on each title transaction.",
+        "sources": [
+          "https://dps.mn.gov/divisions/dvs/vehicle/vehicle-fees"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Why is {state} registration higher for a new vehicle?",
+        "text": "The registration tax is a share of the original sticker price, and the share is largest in the first year of the vehicle's life.",
+        "sources": [
+          "https://www.revisor.mn.gov/statutes/cite/168.013"
+        ]
+      },
+      {
+        "q": "Is there local tax on a vehicle in {state}?",
+        "text": "Some counties and cities charge a flat twenty-dollar vehicle excise tax. There is no percentage local sales tax on the vehicle in the Department's guide.",
+        "sources": [
+          "https://www.revenue.state.mn.us/guide/motor-vehicle-sales"
+        ]
+      }
+    ]
+  }
+}
