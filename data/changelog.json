@@ -3,6 +3,12 @@
   "entries": [
     {
       "date": "2026-11-11",
+      "state": "CO",
+      "stateName": "Colorado",
+      "summary": "Added Colorado: the 2.9% state sales tax, trade-in rule, local tax by residence and out-of-state credit from the Department of Revenue, and from the DMV the title fee, first-year specific ownership tax (check source: it uses your price in place of the sticker price), road and bridge safety surcharges by weight, age of vehicle fee, fixed registration fees and electric vehicle fees. The registration base fee and later-year ownership tax are not included."
+    },
+    {
+      "date": "2026-11-11",
       "state": "KY",
       "stateName": "Kentucky",
       "summary": "Added Kentucky: the 6% motor vehicle usage tax after trade-in and the out-of-state credit from the Department of Revenue, and the $9 title fee from state law. The $21 registration fee comes from a county clerk page and is marked check source."

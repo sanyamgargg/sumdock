@@ -1,0 +1,534 @@
+{
+  "code": "CO",
+  "name": "Colorado",
+  "slug": "colorado",
+  "lastReviewed": "2026-11-11",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 2.9,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Colorado Department of Revenue - DR 0098 instructions (09/18/25, PDF)",
+          "url": "https://tax.colorado.gov/sites/tax/files/documents/DR0098_2026.pdf",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The Department of Revenue states the state sales tax rate as 2.9%."
+    },
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Colorado Department of Revenue - Sales and use tax topics: motor vehicles (Nov 2021, PDF)",
+          "url": "https://tax.colorado.gov/sites/default/files/documents/SUTT_Motor_Vehicles_November_2021.pdf",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The fair market value of a trade-in is left out of the taxable price when the traded vehicle is itself subject to licensing, registration or certification."
+    },
+    "local": {
+      "value": {
+        "mode": "user-entered",
+        "capBase": null,
+        "rangeNote": "City, county and special district taxes depend on where you live and register the vehicle, not where you buy it. Enter the combined local rate for your address."
+      },
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Colorado Department of Revenue - Sales and use tax topics: motor vehicles (Nov 2021, PDF)",
+          "url": "https://tax.colorado.gov/sites/default/files/documents/SUTT_Motor_Vehicles_November_2021.pdf",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "A dealer collects a local tax only when the buyer lives in that jurisdiction; otherwise local use tax is paid where the vehicle is registered."
+    },
+    "outOfStateCredit": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Colorado Department of Revenue - Sales and use tax topics: motor vehicles (Nov 2021, PDF)",
+          "url": "https://tax.colorado.gov/sites/default/files/documents/SUTT_Motor_Vehicles_November_2021.pdf",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "A buyer who paid sales tax to another state gets a credit against the Colorado use tax due."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Title (transfer of ownership)",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 7.2,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Colorado Division of Motor Vehicles - Vehicle taxes and fees",
+            "url": "https://dmv.colorado.gov/taxes-and-fees",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ownership-tax-first-year",
+      "label": "Specific ownership tax (first year)",
+      "kind": "percentOfValue",
+      "frequency": "once",
+      "when": {
+        "ageYearsMax": 0,
+        "vehicleAge": "new"
+      },
+      "amount": {
+        "value": 1.785,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Colorado Division of Motor Vehicles - Vehicle taxes and fees",
+            "url": "https://dmv.colorado.gov/taxes-and-fees",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "First-year rate of 2.1% of the taxable value, which is 85% of the original sticker price. The calculator uses the price you enter in place of the sticker price, so the amount can differ."
+      }
+    },
+    {
+      "id": "ownership-tax-later",
+      "label": "Specific ownership tax",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "anyOf": [
+          {
+            "ageYearsMin": 1
+          },
+          {
+            "vehicleAge": [
+              "recent",
+              "older"
+            ]
+          }
+        ]
+      },
+      "excludedReason": "Charged on the original sticker price, which the calculator does not ask for.",
+      "amount": {
+        "value": null,
+        "status": "unverified",
+        "sources": [
+          {
+            "title": "Colorado Division of Motor Vehicles - Vehicle taxes and fees",
+            "url": "https://dmv.colorado.gov/taxes-and-fees",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "From the second year the rate falls each year, always on 85% of the original sticker price."
+      }
+    },
+    {
+      "id": "registration-base",
+      "label": "Registration base fee (by weight)",
+      "kind": "flat",
+      "frequency": "annual",
+      "excludedReason": "The DMV page does not print the base fee amounts.",
+      "amount": {
+        "value": null,
+        "status": "unverified",
+        "sources": [
+          {
+            "title": "Colorado Division of Motor Vehicles - Vehicle taxes and fees",
+            "url": "https://dmv.colorado.gov/taxes-and-fees",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Set in state law by weight. The DMV page names the law but does not print the amounts."
+      }
+    },
+    {
+      "id": "registration-road-safety",
+      "label": "Road safety surcharge (by weight)",
+      "kind": "weightTable",
+      "frequency": "annual",
+      "weightTable": [
+        {
+          "upTo": 2000,
+          "fee": 12.3
+        },
+        {
+          "upTo": 5000,
+          "fee": 19.3
+        },
+        {
+          "upTo": 10000,
+          "fee": 24.3
+        }
+      ],
+      "amount": {
+        "value": 1,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Colorado Division of Motor Vehicles - Vehicle taxes and fees",
+            "url": "https://dmv.colorado.gov/taxes-and-fees",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Amounts until August 31, 2027. They rise from September 1, 2027."
+      }
+    },
+    {
+      "id": "registration-bridge-safety",
+      "label": "Bridge safety surcharge (by weight)",
+      "kind": "weightTable",
+      "frequency": "annual",
+      "weightTable": [
+        {
+          "upTo": 2000,
+          "fee": 13
+        },
+        {
+          "upTo": 5000,
+          "fee": 18
+        },
+        {
+          "upTo": 10000,
+          "fee": 23
+        }
+      ],
+      "amount": {
+        "value": 1,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Colorado Division of Motor Vehicles - Vehicle taxes and fees",
+            "url": "https://dmv.colorado.gov/taxes-and-fees",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "registration-age-0-6",
+      "label": "Age of vehicle fee (under seven years)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "ageYearsMax": 6
+      },
+      "amount": {
+        "value": 12,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Colorado Division of Motor Vehicles - Vehicle taxes and fees",
+            "url": "https://dmv.colorado.gov/taxes-and-fees",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Age-of-vehicle fee effective July 1, 2026."
+      }
+    },
+    {
+      "id": "registration-age-7-9",
+      "label": "Age of vehicle fee (seven to nine years)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "ageYearsMin": 7,
+        "ageYearsMax": 9
+      },
+      "amount": {
+        "value": 10,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Colorado Division of Motor Vehicles - Vehicle taxes and fees",
+            "url": "https://dmv.colorado.gov/taxes-and-fees",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Age-of-vehicle fee effective July 1, 2026."
+      }
+    },
+    {
+      "id": "registration-age-10-plus",
+      "label": "Age of vehicle fee (ten years or older)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "ageYearsMin": 10
+      },
+      "amount": {
+        "value": 7,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Colorado Division of Motor Vehicles - Vehicle taxes and fees",
+            "url": "https://dmv.colorado.gov/taxes-and-fees",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Age-of-vehicle fee effective July 1, 2026."
+      }
+    },
+    {
+      "id": "clerk-hire",
+      "label": "Clerk hire fee",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 4,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Colorado Division of Motor Vehicles - Vehicle taxes and fees",
+            "url": "https://dmv.colorado.gov/taxes-and-fees",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ems-fee",
+      "label": "Emergency medical services fee",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 2,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Colorado Division of Motor Vehicles - Vehicle taxes and fees",
+            "url": "https://dmv.colorado.gov/taxes-and-fees",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "post-fee",
+      "label": "Peace officer training fee",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 1,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Colorado Division of Motor Vehicles - Vehicle taxes and fees",
+            "url": "https://dmv.colorado.gov/taxes-and-fees",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "emissions-county",
+      "label": "Emissions program county fee",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 0.7,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Colorado Division of Motor Vehicles - Vehicle taxes and fees",
+            "url": "https://dmv.colorado.gov/taxes-and-fees",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "emissions-statewide",
+      "label": "Statewide air account fee",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 0.5,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Colorado Division of Motor Vehicles - Vehicle taxes and fees",
+            "url": "https://dmv.colorado.gov/taxes-and-fees",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "miidb",
+      "label": "Motorist insurance database fee",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 0.1,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Colorado Division of Motor Vehicles - Vehicle taxes and fees",
+            "url": "https://dmv.colorado.gov/taxes-and-fees",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "year-tab",
+      "label": "Year tab",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 0.59,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Colorado Division of Motor Vehicles - Vehicle taxes and fees",
+            "url": "https://dmv.colorado.gov/taxes-and-fees",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "plates",
+      "label": "License plates (embossed set)",
+      "kind": "flat",
+      "frequency": "once",
+      "when": {
+        "noPlateToTransfer": true
+      },
+      "amount": {
+        "value": 7.38,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Colorado Division of Motor Vehicles - Vehicle taxes and fees",
+            "url": "https://dmv.colorado.gov/taxes-and-fees",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Charged when plates are issued."
+      }
+    },
+    {
+      "id": "ev-fee",
+      "label": "Plug-in electric vehicle fee",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "ev"
+      },
+      "amount": {
+        "value": 63.05,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Colorado Division of Motor Vehicles - Vehicle taxes and fees",
+            "url": "https://dmv.colorado.gov/taxes-and-fees",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ev-road-usage",
+      "label": "Electric vehicle road usage fee",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "ev"
+      },
+      "amount": {
+        "value": 26,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Colorado Division of Motor Vehicles - Vehicle taxes and fees",
+            "url": "https://dmv.colorado.gov/taxes-and-fees",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "For July 1, 2026 to June 30, 2027. It rises each July under the schedule in state law."
+      }
+    }
+  ],
+  "notes": [
+    "Specific ownership tax after the first year is not included because it is charged on the original sticker price.",
+    "The registration base fee by weight is not included because the DMV page does not print it.",
+    "The emissions area fee in the emissions program area, county road and bridge fees, and emissions testing are not included."
+  ],
+  "content": {
+    "intro": "{state} charges {stateRate} state sales tax plus city, county and district tax where you live. Registration adds a specific ownership tax and a stack of smaller fees.",
+    "howItWorks": [
+      {
+        "text": "Sales tax is figured on the purchase price less a trade-in, when the trade-in is itself a registered vehicle.",
+        "sources": [
+          "https://tax.colorado.gov/sites/default/files/documents/SUTT_Motor_Vehicles_November_2021.pdf"
+        ]
+      },
+      {
+        "text": "Local taxes follow where you live and register the vehicle. A dealer collects a local tax only if you live in that place; otherwise you pay local use tax when you register.",
+        "sources": [
+          "https://tax.colorado.gov/sites/default/files/documents/SUTT_Motor_Vehicles_November_2021.pdf"
+        ]
+      },
+      {
+        "text": "Specific ownership tax replaces property tax. It is a share of eighty-five percent of the original sticker price, and the share falls as the vehicle ages.",
+        "sources": [
+          "https://dmv.colorado.gov/taxes-and-fees"
+        ]
+      },
+      {
+        "text": "Road and bridge safety surcharges depend on weight. An age-of-vehicle fee and several small fixed fees are added to every registration.",
+        "sources": [
+          "https://dmv.colorado.gov/taxes-and-fees"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Why does {state} registration cost so much in the first year?",
+        "text": "Most of it is specific ownership tax, charged on the original sticker price at its highest rate in the first year. It drops each year after that.",
+        "sources": [
+          "https://dmv.colorado.gov/taxes-and-fees"
+        ]
+      },
+      {
+        "q": "Which local sales tax do I pay on a vehicle in {state}?",
+        "text": "The tax for where you live and register the vehicle. A dealer in another town collects that town's tax only if you live there.",
+        "sources": [
+          "https://tax.colorado.gov/sites/default/files/documents/SUTT_Motor_Vehicles_November_2021.pdf"
+        ]
+      }
+    ]
+  }
+}

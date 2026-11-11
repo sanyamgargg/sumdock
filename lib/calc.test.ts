@@ -1138,3 +1138,39 @@ describe("Kentucky", () => {
     expect(line(r, "registration")).toBe(21);
   });
 });
+
+describe("Colorado", () => {
+  const co = load("co");
+  it("is publishable", () => expect(publishability(co).publishable).toBe(true));
+  it("taxes the price less a trade-in at 2.9% plus the entered local rate", () => {
+    const r = calculate(co, { ...base, price: 30000, tradeIn: 10000, localRatePct: 5 });
+    expect(line(r, "state-tax")).toBe(580);
+    expect(line(r, "local-tax")).toBe(1000);
+  });
+  it("charges first-year ownership tax on a new vehicle only", () => {
+    expect(line(calculate(co, { ...base, price: 30000 }), "ownership-tax-first-year")).toBe(535.5);
+    const used = calculate(co, { ...base, price: 30000, vehicleAge: "older", ageYears: 5 });
+    expect(line(used, "ownership-tax-first-year")).toBeUndefined();
+    expect(used.excluded.map((e) => e.label)).toContain("Specific ownership tax");
+  });
+  it("prices the road and bridge safety surcharges by weight", () => {
+    const r = calculate(co, { ...base, weightLbs: 3500 });
+    expect(line(r, "registration-road-safety")).toBe(19.3);
+    expect(line(r, "registration-bridge-safety")).toBe(18);
+    expect(line(calculate(co, { ...base, weightLbs: 1800 }), "registration-road-safety")).toBe(12.3);
+  });
+  it("picks the age of vehicle fee", () => {
+    expect(line(calculate(co, { ...base, ageYears: 6 }), "registration-age-0-6")).toBe(12);
+    expect(line(calculate(co, { ...base, ageYears: 7 }), "registration-age-7-9")).toBe(10);
+    expect(line(calculate(co, { ...base, ageYears: 10 }), "registration-age-10-plus")).toBe(7);
+  });
+  it("adds both electric vehicle fees for an EV", () => {
+    const r = calculate(co, { ...base, fuel: "ev" });
+    expect(line(r, "ev-fee")).toBe(63.05);
+    expect(line(r, "ev-road-usage")).toBe(26);
+    expect(line(calculate(co, base), "ev-fee")).toBeUndefined();
+  });
+  it("lists the base registration fee as not included", () => {
+    expect(calculate(co, base).excluded.map((e) => e.label)).toContain("Registration base fee (by weight)");
+  });
+});
