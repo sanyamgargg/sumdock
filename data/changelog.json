@@ -3,6 +3,12 @@
   "entries": [
     {
       "date": "2026-11-11",
+      "state": "KY",
+      "stateName": "Kentucky",
+      "summary": "Added Kentucky: the 6% motor vehicle usage tax after trade-in and the out-of-state credit from the Department of Revenue, and the $9 title fee from state law. The $21 registration fee comes from a county clerk page and is marked check source."
+    },
+    {
+      "date": "2026-11-11",
       "state": "UT",
       "stateName": "Utah",
       "summary": "Added Utah: the 4.85% state rate from the Tax Commission's October 2026 rate list, the trade-in rule and out-of-state credit from Publication 5, the $6 title fee, the 2026 uniform age-based fee, and the driver education and uninsured motorist fees from the DMV. The $44 registration fee is from Utah Code and marked check source because it is adjusted for inflation each year. The electric vehicle fee is not included."

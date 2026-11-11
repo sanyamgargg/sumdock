@@ -1120,3 +1120,21 @@ describe("Utah", () => {
     expect(r.excluded.map((e) => e.label)).toContain("Electric vehicle fee");
   });
 });
+
+describe("Kentucky", () => {
+  const ky = load("ky");
+  it("is publishable", () => expect(publishability(ky).publishable).toBe(true));
+  it("charges 6% usage tax on the price less a trade-in", () => {
+    const r = calculate(ky, { ...base, price: 30000, tradeIn: 10000 });
+    expect(line(r, "state-tax")).toBe(1200);
+  });
+  it("credits tax paid to another state up to the tax owed", () => {
+    const r = calculate(ky, { ...base, price: 30000, outOfStateTaxPaid: 500 });
+    expect(line(r, "oos-credit")).toBe(-500);
+  });
+  it("adds the title and registration fees", () => {
+    const r = calculate(ky, base);
+    expect(line(r, "title")).toBe(9);
+    expect(line(r, "registration")).toBe(21);
+  });
+});

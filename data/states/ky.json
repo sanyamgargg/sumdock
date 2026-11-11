@@ -1,0 +1,165 @@
+{
+  "code": "KY",
+  "name": "Kentucky",
+  "slug": "kentucky",
+  "lastReviewed": "2026-11-11",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 6,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Kentucky Department of Revenue - Motor vehicle usage tax",
+          "url": "https://revenue.ky.gov/Property/Motor-Vehicles/Pages/Motor-Vehicle-Usage-Tax.aspx",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Kentucky charges a six percent motor vehicle usage tax instead of sales tax, collected by the county clerk at registration."
+    },
+    "taxName": "usage tax",
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Kentucky Department of Revenue - Motor vehicle usage tax",
+          "url": "https://revenue.ky.gov/Property/Motor-Vehicles/Pages/Motor-Vehicle-Usage-Tax.aspx",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The Department of Revenue says a trade-in allowance has been granted on new vehicles since July 1, 2014, and the used vehicle rules also allow for a trade-in."
+    },
+    "local": {
+      "value": {
+        "mode": "none",
+        "capBase": null,
+        "rangeNote": null
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Kentucky Department of Revenue - Motor vehicle usage tax",
+          "url": "https://revenue.ky.gov/Property/Motor-Vehicles/Pages/Motor-Vehicle-Usage-Tax.aspx",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The Department describes one six percent usage tax collected by the county clerk and no local tax on top. It does not say outright that none applies."
+    },
+    "outOfStateCredit": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Kentucky Department of Revenue - Motor vehicle usage tax",
+          "url": "https://revenue.ky.gov/Property/Motor-Vehicles/Pages/Motor-Vehicle-Usage-Tax.aspx",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Kentucky Department of Revenue - Motor vehicle usage tax FAQ (May 1, 2014, PDF)",
+          "url": "https://revenue.ky.gov/Property/Motor-Vehicles/PublishingImages/Pages/Motor-Vehicle-Usage-Tax/Frequently%20Asked%20Questions.pdf",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Credit equals the tax paid to the other state when that state gives a similar credit. The clerk allows credit for state tax only, not local tax, and up to six percent."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Title fee",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 9,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Kentucky Revised Statutes 186A.130, fee for title application",
+            "url": "https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=57802",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Logan County Clerk (Kentucky) - Taxes and fees",
+            "url": "https://logancountyclerk.ky.gov/motor/taxes-fees/",
+            "accessed": "2026-11-11",
+            "publisherType": "county-agency"
+          }
+        ],
+        "note": "Set in state law. The current text is in effect until January 1, 2027."
+      }
+    },
+    {
+      "id": "registration",
+      "label": "Registration fee",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 21,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Logan County Clerk (Kentucky) - Taxes and fees",
+            "url": "https://logancountyclerk.ky.gov/motor/taxes-fees/",
+            "accessed": "2026-11-11",
+            "publisherType": "county-agency"
+          }
+        ],
+        "note": "The yearly registration fee a county clerk lists. No state agency page with the total was found, so it is marked check source."
+      }
+    }
+  ],
+  "notes": [
+    "Taxable value is the selling price on the notarized affidavit. Without it, the clerk uses ninety percent of the sticker price for a new vehicle or a used vehicle guide value, which can change the tax.",
+    "A lien statement recording fee applies only when the vehicle is financed and is not included.",
+    "Counties and cities charge a yearly property tax on the vehicle, which is not included.",
+    "Any electric vehicle registration fee is not included."
+  ],
+  "content": {
+    "intro": "{state} charges a {stateRate} motor vehicle usage tax instead of sales tax, collected by the county clerk when you register.",
+    "howItWorks": [
+      {
+        "text": "The usage tax is charged on the selling price stated on a notarized affidavit. A trade-in allowance comes off the price for new and used vehicles.",
+        "sources": [
+          "https://revenue.ky.gov/Property/Motor-Vehicles/Pages/Motor-Vehicle-Usage-Tax.aspx"
+        ]
+      },
+      {
+        "text": "If you paid tax to another state that gives the same credit, the clerk credits that tax against the usage tax.",
+        "sources": [
+          "https://revenue.ky.gov/Property/Motor-Vehicles/Pages/Motor-Vehicle-Usage-Tax.aspx",
+          "https://revenue.ky.gov/Property/Motor-Vehicles/PublishingImages/Pages/Motor-Vehicle-Usage-Tax/Frequently%20Asked%20Questions.pdf"
+        ]
+      },
+      {
+        "text": "The title fee is set in state law. The county clerk collects it with the registration fee.",
+        "sources": [
+          "https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=57802",
+          "https://logancountyclerk.ky.gov/motor/taxes-fees/"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does a trade-in lower the usage tax in {state}?",
+        "text": "Yes. The Department of Revenue says new vehicles get a trade-in allowance, and the used vehicle rules allow for one too.",
+        "sources": [
+          "https://revenue.ky.gov/Property/Motor-Vehicles/Pages/Motor-Vehicle-Usage-Tax.aspx"
+        ]
+      },
+      {
+        "q": "What value is the usage tax charged on?",
+        "text": "The selling price on the notarized affidavit. Without an affidavit, the clerk uses a share of the sticker price for a new vehicle or a used vehicle guide value.",
+        "sources": [
+          "https://revenue.ky.gov/Property/Motor-Vehicles/Pages/Motor-Vehicle-Usage-Tax.aspx"
+        ]
+      }
+    ]
+  }
+}
