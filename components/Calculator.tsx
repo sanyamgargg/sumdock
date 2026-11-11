@@ -140,6 +140,7 @@ export default function Calculator({ state, children }: { state: StateData; chil
   const usesAge = state.fees.some((f) => whenUsesAge(f.when));
   const whenUsesYears = (w?: FeeWhen): boolean => !!w && (w.ageYearsMin !== undefined || w.ageYearsMax !== undefined || (w.anyOf ?? []).some(whenUsesYears));
   const usesYears = state.fees.some((f) => whenUsesYears(f.when));
+  const usesHp = state.fees.some((f) => f.when && (f.when.hpMin !== undefined || f.when.hpMax !== undefined));
   const hasPlate = state.fees.some((f) => f.when?.noPlateToTransfer !== undefined);
   const showLocalRate = !!local && local.mode === "user-entered";
   const hasLocation = !!rateTable || counties.length > 0 || showLocalRate;
@@ -283,6 +284,17 @@ export default function Calculator({ state, children }: { state: StateData; chil
                   value={i.ageYears ?? 0}
                   onValue={(n) => set("ageYears", Math.max(0, Math.min(60, Math.round(n))))}
                   hint="This year minus the model year. Use 0 for the current model year."
+                />
+              )}
+              {usesHp && i.fuel !== "ev" && (
+                <NumberField
+                  label="Taxable horsepower"
+                  suffix="HP"
+                  decimals={1}
+                  value={i.taxableHp ?? 0}
+                  onValue={(n) => set("taxableHp", Math.max(0, Math.min(200, n)))}
+                  hint="Shown on your title or title application. It is not the engine's rated horsepower. Leave at 0 if you do not know it."
+                  warn={!((i.taxableHp ?? 0) > 0)}
                 />
               )}
               {hasPlate && (

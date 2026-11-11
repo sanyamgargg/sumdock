@@ -1,0 +1,365 @@
+{
+  "code": "MO",
+  "name": "Missouri",
+  "slug": "missouri",
+  "lastReviewed": "2026-11-11",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 4.225,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Missouri Department of Revenue - Buying a Vehicle, Form 5687 (Rev. 04-2026, PDF)",
+          "url": "https://dor.mo.gov/forms/5687.pdf",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "State sales tax of 4.225 percent on the purchase price less any trade-in, plus local sales tax."
+    },
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Missouri Department of Revenue - Buying a Vehicle, Form 5687 (Rev. 04-2026, PDF)",
+          "url": "https://dor.mo.gov/forms/5687.pdf",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ]
+    },
+    "local": {
+      "value": {
+        "mode": "user-entered",
+        "capBase": null,
+        "rangeNote": "Cities, counties and districts add their own sales tax. The Department of Revenue publishes a motor vehicle local rate chart; enter the combined local rate for where you live."
+      },
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Missouri Department of Revenue - Buying a Vehicle, Form 5687 (Rev. 04-2026, PDF)",
+          "url": "https://dor.mo.gov/forms/5687.pdf",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Missouri Department of Revenue - Motor vehicle local sales tax rate chart (PDF)",
+          "url": "https://dor.mo.gov/forms/MV%20-%20Local%20Sales%20Tax.pdf",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The buyer pays local sales tax on the purchase price less any trade-in."
+    },
+    "outOfStateCredit": {
+      "value": null,
+      "status": "unverified",
+      "sources": [
+        {
+          "title": "Missouri Department of Revenue - Buying a Vehicle, Form 5687 (Rev. 04-2026, PDF)",
+          "url": "https://dor.mo.gov/forms/5687.pdf",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The buying guide does not cover credit for tax paid to another state, so no credit is applied."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Title fee",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 8.5,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Missouri Department of Revenue - Buying a Vehicle, Form 5687 (Rev. 04-2026, PDF)",
+            "url": "https://dor.mo.gov/forms/5687.pdf",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "title-processing",
+      "label": "Title processing fee",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 9,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Missouri Department of Revenue - Buying a Vehicle, Form 5687 (Rev. 04-2026, PDF)",
+            "url": "https://dor.mo.gov/forms/5687.pdf",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "registration-hp-under-12",
+      "label": "Registration (under 12 taxable HP)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "gas",
+        "hpMax": 11.999
+      },
+      "amount": {
+        "value": 18.25,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Missouri Department of Revenue - Motor vehicle fees",
+            "url": "https://dor.mo.gov/motor-vehicle/titling-registration/fees.html",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "One-year registration from the Department's fee table, chosen by the taxable horsepower on your title. A two-year registration costs twice as much."
+      }
+    },
+    {
+      "id": "registration-hp-12-23",
+      "label": "Registration (12 to 23 taxable HP)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "gas",
+        "hpMin": 12,
+        "hpMax": 23.999
+      },
+      "amount": {
+        "value": 21.25,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Missouri Department of Revenue - Motor vehicle fees",
+            "url": "https://dor.mo.gov/motor-vehicle/titling-registration/fees.html",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "One-year registration from the Department's fee table, chosen by the taxable horsepower on your title. A two-year registration costs twice as much."
+      }
+    },
+    {
+      "id": "registration-hp-24-35",
+      "label": "Registration (24 to 35 taxable HP)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "gas",
+        "hpMin": 24,
+        "hpMax": 35.999
+      },
+      "amount": {
+        "value": 24.25,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Missouri Department of Revenue - Motor vehicle fees",
+            "url": "https://dor.mo.gov/motor-vehicle/titling-registration/fees.html",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "One-year registration from the Department's fee table, chosen by the taxable horsepower on your title. A two-year registration costs twice as much."
+      }
+    },
+    {
+      "id": "registration-hp-36-47",
+      "label": "Registration (36 to 47 taxable HP)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "gas",
+        "hpMin": 36,
+        "hpMax": 47.999
+      },
+      "amount": {
+        "value": 33.25,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Missouri Department of Revenue - Motor vehicle fees",
+            "url": "https://dor.mo.gov/motor-vehicle/titling-registration/fees.html",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "One-year registration from the Department's fee table, chosen by the taxable horsepower on your title. A two-year registration costs twice as much."
+      }
+    },
+    {
+      "id": "registration-hp-48-59",
+      "label": "Registration (48 to 59 taxable HP)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "gas",
+        "hpMin": 48,
+        "hpMax": 59.999
+      },
+      "amount": {
+        "value": 39.25,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Missouri Department of Revenue - Motor vehicle fees",
+            "url": "https://dor.mo.gov/motor-vehicle/titling-registration/fees.html",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "One-year registration from the Department's fee table, chosen by the taxable horsepower on your title. A two-year registration costs twice as much."
+      }
+    },
+    {
+      "id": "registration-hp-60-71",
+      "label": "Registration (60 to 71 taxable HP)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "gas",
+        "hpMin": 60,
+        "hpMax": 71.999
+      },
+      "amount": {
+        "value": 45.25,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Missouri Department of Revenue - Motor vehicle fees",
+            "url": "https://dor.mo.gov/motor-vehicle/titling-registration/fees.html",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "One-year registration from the Department's fee table, chosen by the taxable horsepower on your title. A two-year registration costs twice as much."
+      }
+    },
+    {
+      "id": "registration-hp-72-plus",
+      "label": "Registration (72 taxable HP and up)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "gas",
+        "hpMin": 72
+      },
+      "amount": {
+        "value": 51.25,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Missouri Department of Revenue - Motor vehicle fees",
+            "url": "https://dor.mo.gov/motor-vehicle/titling-registration/fees.html",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "One-year registration from the Department's fee table, chosen by the taxable horsepower on your title. A two-year registration costs twice as much."
+      }
+    },
+    {
+      "id": "registration-ev",
+      "label": "Registration (electric vehicle)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "fuel": "ev"
+      },
+      "amount": {
+        "value": 18.25,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Missouri Department of Revenue - Motor vehicle fees",
+            "url": "https://dor.mo.gov/motor-vehicle/titling-registration/fees.html",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The Department lists electric vehicles in the lowest registration bracket."
+      }
+    },
+    {
+      "id": "registration-processing",
+      "label": "Registration processing fee",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 9,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Missouri Department of Revenue - Buying a Vehicle, Form 5687 (Rev. 04-2026, PDF)",
+            "url": "https://dor.mo.gov/forms/5687.pdf",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Missouri Department of Revenue - Motor vehicle fees",
+            "url": "https://dor.mo.gov/motor-vehicle/titling-registration/fees.html",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "For a one-year registration. A two-year registration has an $18 processing fee."
+      }
+    }
+  ],
+  "notes": [
+    "Counties charge a yearly personal property tax on the vehicle, which is not included.",
+    "Any separate electric or hybrid vehicle fee is not listed on the Department's fee page and is not included.",
+    "Safety inspection and emissions testing fees, lien recording and license office fees are not included."
+  ],
+  "content": {
+    "intro": "{state} charges {stateRate} state sales tax plus local tax on the price less any trade-in. The yearly registration fee depends on the taxable horsepower on your title.",
+    "howItWorks": [
+      {
+        "text": "The state rate and the local rate are both charged on the purchase price less any trade-in allowance.",
+        "sources": [
+          "https://dor.mo.gov/forms/5687.pdf"
+        ]
+      },
+      {
+        "text": "Local rates depend on where you live. The Department of Revenue publishes a chart of motor vehicle local rates.",
+        "sources": [
+          "https://dor.mo.gov/forms/MV%20-%20Local%20Sales%20Tax.pdf"
+        ]
+      },
+      {
+        "text": "Registration is priced by taxable horsepower, which is printed on your title. Electric vehicles are in the lowest bracket. A processing fee is added to each registration.",
+        "sources": [
+          "https://dor.mo.gov/motor-vehicle/titling-registration/fees.html"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Where do I find my vehicle's taxable horsepower?",
+        "text": "It is recorded on your title or on your application for a {state} title and registration. It is not the engine's rated horsepower.",
+        "sources": [
+          "https://dor.mo.gov/motor-vehicle/titling-registration/fees.html"
+        ]
+      },
+      {
+        "q": "Does a trade-in lower the tax in {state}?",
+        "text": "Yes. Both the state and local sales tax are charged on the price less the trade-in allowance.",
+        "sources": [
+          "https://dor.mo.gov/forms/5687.pdf"
+        ]
+      }
+    ]
+  }
+}

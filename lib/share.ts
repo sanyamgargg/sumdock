@@ -47,6 +47,7 @@ export function encodeInputs(i: Inputs, ctx: ShareContext): string {
   if (i.county !== d.county) q.set("county", i.county);
   if (i.vehicleAge !== d.vehicleAge) q.set("age", i.vehicleAge);
   if ((i.ageYears ?? 0) !== 0) q.set("years", String(i.ageYears));
+  if ((i.taxableHp ?? 0) > 0) q.set("hp", String(i.taxableHp));
   if (i.noPlateToTransfer !== d.noPlateToTransfer) q.set("plate", i.noPlateToTransfer ? "1" : "0");
   if (i.outOfStateNewDealer !== d.outOfStateNewDealer) q.set("oosdealer", i.outOfStateNewDealer ? "1" : "0");
   if (ctx.rateCounty) q.set("rc", ctx.rateCounty);
@@ -74,6 +75,8 @@ export function decodeInputs(search: string, state: StateData): Decoded {
   if (age) inputs.vehicleAge = age;
   const years = num(q.get("years"), 0, 60);
   if (years !== undefined) inputs.ageYears = Math.round(years);
+  const hp = num(q.get("hp"), 0, 200);
+  if (hp !== undefined) inputs.taxableHp = hp;
   const plate = q.get("plate");
   if (plate === "0" || plate === "1") inputs.noPlateToTransfer = plate === "1";
   const dealer = q.get("oosdealer");

@@ -37,6 +37,12 @@ export interface FeeWhen {
   ageYearsMin?: number;
   /** Matches when the age in years is at most this. */
   ageYearsMax?: number;
+  /**
+   * Taxable horsepower band (Missouri). Matches when the horsepower entered is within the band. A fee with a
+   * horsepower band never matches when no horsepower is entered; calculate() then lists the fee as not included.
+   */
+  hpMin?: number;
+  hpMax?: number;
   /** Matches when at least one of these conditions matches, in addition to the conditions above. */
   anyOf?: FeeWhen[];
 }
@@ -161,6 +167,8 @@ export interface Inputs {
   vehicleAge: VehicleAge;
   /** Vehicle age in years (current year minus model year). Used by states whose fees change with each year of age. Missing means 0. */
   ageYears?: number;
+  /** Taxable horsepower from the title (Missouri). Missing or 0 means not entered. */
+  taxableHp?: number;
   outOfStateNewDealer: boolean;
 }
 

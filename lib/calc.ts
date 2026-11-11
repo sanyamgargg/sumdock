@@ -18,6 +18,12 @@ function matches(when: FeeWhen | undefined, i: Inputs): boolean {
   const years = i.ageYears ?? 0;
   if (when.ageYearsMin !== undefined && years < when.ageYearsMin) return false;
   if (when.ageYearsMax !== undefined && years > when.ageYearsMax) return false;
+  if (when.hpMin !== undefined || when.hpMax !== undefined) {
+    const hp = i.taxableHp ?? 0;
+    if (hp <= 0) return false;
+    if (when.hpMin !== undefined && hp < when.hpMin) return false;
+    if (when.hpMax !== undefined && hp > when.hpMax) return false;
+  }
   if (when.anyOf !== undefined && !when.anyOf.some((w) => matches(w, i))) return false;
   return true;
 }
@@ -109,6 +115,12 @@ export function calculate(state: StateData, i: Inputs): Result {
   }
 
   // --- Fees --------------------------------------------------------------
+  // Fees chosen by horsepower need the horsepower; without it they are listed as not included rather than dropped.
+  const hpFees = state.fees.filter((f) => f.when && (f.when.hpMin !== undefined || f.when.hpMax !== undefined));
+  const hpWouldApply = hpFees.some((f) => matches(f.when, { ...i, taxableHp: Math.max(f.when!.hpMin ?? 0, 1) }));
+  if (hpWouldApply && !((i.taxableHp ?? 0) > 0)) {
+    excluded.push({ label: "Registration (by taxable horsepower)", reason: "Enter the taxable horsepower shown on your title to include this fee." });
+  }
   for (const fee of state.fees as Fee[]) {
     if (!matches(fee.when, i)) continue;
     const a = fee.amount;

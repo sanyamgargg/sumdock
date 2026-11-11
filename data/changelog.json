@@ -3,6 +3,12 @@
   "entries": [
     {
       "date": "2026-11-11",
+      "state": "MO",
+      "stateName": "Missouri",
+      "summary": "Added Missouri: the 4.225% state sales tax after trade-in plus an entered local rate, the $8.50 title and $9 processing fees, and registration by taxable horsepower from the Department of Revenue. A new taxable horsepower field picks the registration fee. Credit for tax paid to another state is not applied until it is confirmed."
+    },
+    {
+      "date": "2026-11-11",
       "state": "LA",
       "stateName": "Louisiana",
       "summary": "Added Louisiana: the 5% state sales tax rate, the trade-in rule, the $68.50 title fee, the $8 handling fee and the two-year license plate fee by value from the Department of Revenue and the Office of Motor Vehicles. Parish and city tax is entered by hand."

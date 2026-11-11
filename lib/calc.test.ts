@@ -1054,3 +1054,41 @@ describe("Louisiana", () => {
     expect(line(r, "handling")).toBe(8);
   });
 });
+
+describe("Missouri", () => {
+  const mo = load("mo");
+  it("is publishable", () => expect(publishability(mo).publishable).toBe(true));
+  it("taxes the price less a trade-in at 4.225% plus the entered local rate", () => {
+    const r = calculate(mo, { ...base, price: 30000, tradeIn: 10000, localRatePct: 4 });
+    expect(line(r, "state-tax")).toBe(845);
+    expect(line(r, "local-tax")).toBe(800);
+  });
+  it("picks one registration band by taxable horsepower", () => {
+    const reg = (taxableHp: number) =>
+      calculate(mo, { ...base, taxableHp }).lines.filter((l) => l.id.startsWith("registration-hp")).map((l) => l.amount);
+    expect(reg(11.5)).toEqual([18.25]);
+    expect(reg(12)).toEqual([21.25]);
+    expect(reg(23.9)).toEqual([21.25]);
+    expect(reg(24)).toEqual([24.25]);
+    expect(reg(40)).toEqual([33.25]);
+    expect(reg(50)).toEqual([39.25]);
+    expect(reg(65)).toEqual([45.25]);
+    expect(reg(80)).toEqual([51.25]);
+  });
+  it("lists registration as not included until horsepower is entered", () => {
+    const r = calculate(mo, base);
+    expect(r.lines.some((l) => l.id.startsWith("registration-hp"))).toBe(false);
+    expect(r.excluded.map((e) => e.label)).toContain("Registration (by taxable horsepower)");
+    expect(line(r, "registration-processing")).toBe(9);
+  });
+  it("uses the lowest bracket for an electric vehicle without asking for horsepower", () => {
+    const r = calculate(mo, { ...base, fuel: "ev" });
+    expect(line(r, "registration-ev")).toBe(18.25);
+    expect(r.excluded.map((e) => e.label)).not.toContain("Registration (by taxable horsepower)");
+  });
+  it("adds the title and title processing fees", () => {
+    const r = calculate(mo, base);
+    expect(line(r, "title")).toBe(8.5);
+    expect(line(r, "title-processing")).toBe(9);
+  });
+});

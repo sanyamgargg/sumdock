@@ -64,3 +64,13 @@ describe("share links", () => {
     expect(encodeInputs(DEFAULT_INPUTS, { rateCounty: "", ratePlace: "", rateEdited: false })).not.toContain("years");
   });
 });
+
+describe("taxable horsepower in links", () => {
+  const mo = load("mo");
+  it("round-trips the taxable horsepower and drops bad values", () => {
+    const q = encodeInputs({ ...DEFAULT_INPUTS, taxableHp: 26.5 }, { rateCounty: "", ratePlace: "", rateEdited: false });
+    expect(q).toContain("hp=26.5");
+    expect(decodeInputs(q, mo).inputs.taxableHp).toBe(26.5);
+    expect(decodeInputs("hp=-4", mo).inputs.taxableHp).toBeUndefined();
+  });
+});
