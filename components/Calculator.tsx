@@ -4,7 +4,7 @@ import { useEffect, useId, useMemo, useState, type ReactNode } from "react";
 import AdSlot from "@/components/AdSlot";
 import SourcesTable from "@/components/SourcesTable";
 import Statement from "@/components/Statement";
-import { calculate } from "@/lib/calc";
+import { calculate, localRateInputs } from "@/lib/calc";
 import { DEFAULT_INPUTS } from "@/lib/content";
 import { formatDate, groupNumber, parseNumber, usd, usdShort } from "@/lib/format";
 import { decodeInputs, encodeInputs } from "@/lib/share";
@@ -93,22 +93,17 @@ export default function Calculator({ state, children }: { state: StateData; chil
   const [ratePlace, setRatePlace] = useState("");
   // True once the person types their own local rate, so the hint can say the value is no longer auto-filled.
   const [rateEdited, setRateEdited] = useState(false);
-  const stateRate = state.salesTax.stateRatePct.value ?? 0;
   const applyRate = (county: string, place: string) => {
     setRateCounty(county);
     setRatePlace(place);
     setRateEdited(false);
     // When one picker drives both the tax rate and a county fee table (New York), keep them in step.
     if (state.counties) set("county", county);
-    const entry = rateTable?.[county];
-    if (!entry) return;
-    const offset0 = state.localRates?.mode === "localOnly" ? 0 : stateRate;
-    const tier = place ? entry.tiers?.[place] : undefined;
-    set("localOverAmount", tier ? tier.over : 0);
-    set("localOverRatePct", tier ? Math.max(0, Math.round((tier.rate - offset0) * 1000) / 1000) : 0);
-    const combined = place && entry.places[place] !== undefined ? entry.places[place] : entry.county;
-    const offset = state.localRates?.mode === "localOnly" ? 0 : stateRate;
-    set("localRatePct", Math.max(0, Math.round((combined - offset) * 1000) / 1000));
+    const r = localRateInputs(state, county, place);
+    if (!r) return;
+    set("localOverAmount", r.localOverAmount ?? 0);
+    set("localOverRatePct", r.localOverRatePct ?? 0);
+    set("localRatePct", r.localRatePct);
   };
   // Shareable link: read the inputs from the address once after load, then keep the address in step with them.
   const [shareReady, setShareReady] = useState(false);

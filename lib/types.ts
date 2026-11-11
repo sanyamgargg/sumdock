@@ -170,6 +170,8 @@ export interface Line {
   amount: number;
   status: Status;
   note?: string;
+  /** For tax lines: the amount taxed and the rate used, so the worked example can show the multiplication. */
+  basis?: { base: number; ratePct: number; capped: boolean };
 }
 
 export interface Result {

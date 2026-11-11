@@ -50,7 +50,11 @@ export function calculate(state: StateData, i: Inputs): Result {
     const stateTax = st.maxTax != null ? Math.min(rawTax, st.maxTax) : rawTax;
     if (rateNow > 0) {
       const capText = st.maxTax != null ? `, up to $${st.maxTax.toLocaleString("en-US")}` : "";
-      lines.push({ id: "state-tax", label: `${state.name} ${st.taxName ?? "sales tax"} (${rateNow}%${capText})`, amount: stateTax, status: useHigher ? hr!.status : rate.status, note: useHigher ? hr!.note : rate.note });
+      lines.push({
+        id: "state-tax", label: `${state.name} ${st.taxName ?? "sales tax"} (${rateNow}%${capText})`, amount: stateTax,
+        status: useHigher ? hr!.status : rate.status, note: useHigher ? hr!.note : rate.note,
+        basis: { base, ratePct: rateNow, capped: stateTax < rawTax },
+      });
     }
 
     const local = st.local;
@@ -70,7 +74,7 @@ export function calculate(state: StateData, i: Inputs): Result {
         const what = tiered
           ? `${i.localRatePct}% on the first ${usdN(over)}, ${i.localOverRatePct}% above`
           : `${i.localRatePct}%${local.value.capBase !== null ? ` on first ${usdN(local.value.capBase)}` : ""}`;
-        lines.push({ id: "local-tax", label: `Local tax (${what})`, amount: localTax, status: local.status });
+        lines.push({ id: "local-tax", label: `Local tax (${what})`, amount: localTax, status: local.status, basis: tiered ? undefined : { base: localBase, ratePct: i.localRatePct, capped: localBase < base } });
       }
     } else if (!local.value || !isUsable(local.status)) {
       excluded.push({ label: "Local tax", reason: "Local tax rule not yet verified." });
@@ -149,6 +153,20 @@ export function calculate(state: StateData, i: Inputs): Result {
 
   const total = round2(lines.reduce((s, l) => s + l.amount, 0));
   return { lines, total, excluded };
+}
+
+/**
+ * The local-rate inputs for a county (and optionally a city or area) from the state's localRates table, the same way
+ * the calculator's county picker fills them. Returns null when the state has no table or the county is not in it.
+ */
+export function localRateInputs(state: StateData, county: string, place = ""): Pick<Inputs, "localRatePct" | "localOverAmount" | "localOverRatePct"> | null {
+  const entry = state.localRates?.rates.value?.[county];
+  if (!entry) return null;
+  const offset = state.localRates?.mode === "localOnly" ? 0 : state.salesTax.stateRatePct.value ?? 0;
+  const local = (combined: number) => Math.max(0, Math.round((combined - offset) * 1000) / 1000);
+  const tier = place ? entry.tiers?.[place] : undefined;
+  const combined = place && entry.places[place] !== undefined ? entry.places[place] : entry.county;
+  return { localRatePct: local(combined), localOverAmount: tier ? tier.over : 0, localOverRatePct: tier ? local(tier.rate) : 0 };
 }
 
 /** A state page may be indexed only when its core numbers are usable. */

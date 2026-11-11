@@ -1,5 +1,6 @@
 import Link from "next/link";
 import AdSlot from "@/components/AdSlot";
+import WorkedExample from "@/components/WorkedExample";
 import {
   exampleScenarios, expandTokens, figures, generatedFaq, generatedSummary, scenarioTitle, sourcesByUrl, statusLabel,
 } from "@/lib/content";
@@ -84,13 +85,20 @@ export default function StateContent({ state }: { state: StateData }) {
 
       <section aria-labelledby="examples" className="examples-section">
         <div className="section-head"><h2 id="examples">Worked examples</h2></div>
+        <WorkedExample state={state} />
+        <h3 className="walk__title">More examples</h3>
         <div className="examples">
           {scenarios.map((x, n) => (
             <article key={`${x.caption}-${n}`} className="example">
               <p className="example__caption">{x.caption}</p>
               <h3 className="example__title">{scenarioTitle(x)}</h3>
               <p className="example__total">{usd(x.result.total)}</p>
-              <p className="example__desc">{x.description}</p>
+              <ul className="example__lines">
+                {x.result.lines.map((l) => (
+                  <li key={l.id}><span>{l.label}</span><b>{usd(l.amount)}</b></li>
+                ))}
+              </ul>
+              {x.inputs.tradeIn > 0 && <p className="example__desc">{x.description}</p>}
               {x.result.excluded.length > 0 && (
                 <p className="example__excl">Not included yet: {x.result.excluded.map((e) => e.label).join("; ")}.</p>
               )}
@@ -98,8 +106,8 @@ export default function StateContent({ state }: { state: StateData }) {
           ))}
         </div>
         <p className="muted">
-          Each example runs the same calculation as the calculator above. Local tax and county fees are left out unless the
-          example says otherwise, because they depend on where you live. Estimates only.
+          Each example runs the same calculation as the calculator above. In the smaller examples, local tax and county fees
+          are left out because they depend on where you live. Estimates only.
         </p>
       </section>
 
