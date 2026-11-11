@@ -997,3 +997,60 @@ describe("Rhode Island", () => {
     expect(line(calculate(ri, { ...base, fuel: "ev" }), "ev-fee")).toBe(400);
   });
 });
+
+describe("Oklahoma", () => {
+  const ok = load("ok");
+  it("is publishable", () => expect(publishability(ok).publishable).toBe(true));
+  it("charges 3.25% excise and 1.25% sales tax on the full price, ignoring a trade-in", () => {
+    const r = calculate(ok, { ...base, price: 30000, tradeIn: 10000 });
+    expect(line(r, "state-tax")).toBe(975);
+    expect(line(r, "vehicle-sales-tax")).toBe(375);
+  });
+  it("adds the title, transfer, insurance and HB 1357 fees", () => {
+    const r = calculate(ok, base);
+    expect([line(r, "title"), line(r, "title-transfer"), line(r, "insurance-fee"), line(r, "hb1357")]).toEqual([11, 17, 1.5, 3]);
+  });
+  it("steps registration down every four years", () => {
+    const reg = (ageYears: number) => calculate(ok, { ...base, ageYears }).lines.filter((l) => l.id.startsWith("registration")).map((l) => l.amount);
+    expect(reg(0)).toEqual([96]);
+    expect(reg(3)).toEqual([96]);
+    expect(reg(4)).toEqual([86]);
+    expect(reg(8)).toEqual([66]);
+    expect(reg(12)).toEqual([46]);
+    expect(reg(16)).toEqual([26]);
+    expect(reg(30)).toEqual([26]);
+  });
+  it("applies no out-of-state credit until it is confirmed", () => {
+    const r = calculate(ok, { ...base, outOfStateTaxPaid: 500 });
+    expect(line(r, "oos-credit")).toBeUndefined();
+  });
+});
+
+describe("Louisiana", () => {
+  const la = load("la");
+  it("is publishable", () => expect(publishability(la).publishable).toBe(true));
+  it("taxes the price less a trade-in at 5% plus the entered local rate", () => {
+    const r = calculate(la, { ...base, price: 30000, tradeIn: 10000, localRatePct: 4.45 });
+    expect(line(r, "state-tax")).toBe(1000);
+    expect(line(r, "local-tax")).toBe(890);
+  });
+  it("matches the OMV plate table rows", () => {
+    const plate = (price: number) => line(calculate(la, { ...base, price }), "registration-plate");
+    expect(plate(8000)).toBe(20);
+    expect(plate(10499)).toBe(20);
+    expect(plate(10500)).toBe(22);
+    expect(plate(30000)).toBe(60);
+    expect(plate(40500)).toBe(82);
+    expect(plate(41499)).toBe(82);
+  });
+  it("leaves out the plate fee above the rows it carries", () => {
+    const r = calculate(la, { ...base, price: 250000 });
+    expect(line(r, "registration-plate")).toBeUndefined();
+    expect(r.excluded.map((e) => e.label)).toContain("License plate (two years, by value)");
+  });
+  it("adds the title and handling fees", () => {
+    const r = calculate(la, base);
+    expect(line(r, "title")).toBe(68.5);
+    expect(line(r, "handling")).toBe(8);
+  });
+});

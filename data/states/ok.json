@@ -1,0 +1,378 @@
+{
+  "code": "OK",
+  "name": "Oklahoma",
+  "slug": "oklahoma",
+  "lastReviewed": "2026-11-11",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 3.25,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Service Oklahoma - Title Transfers procedure G.02 (Mar 18, 2025, PDF)",
+          "url": "https://oklahoma.gov/content/dam/service-oklahoma/intranet/job-resources/sops/g--motor-vehicles/G.02%20-%20Title%20Transfers.pdf",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Excise tax of 3.25% of the purchase price or taxable value, from Service Oklahoma's title transfer procedure. The Tax Commission may use a taxable value instead when the price is far from the vehicle's average retail value."
+    },
+    "taxName": "excise tax",
+    "tradeInReducesBase": {
+      "value": false,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Service Oklahoma - Title Transfers procedure G.02 (Mar 18, 2025, PDF)",
+          "url": "https://oklahoma.gov/content/dam/service-oklahoma/intranet/job-resources/sops/g--motor-vehicles/G.02%20-%20Title%20Transfers.pdf",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Oklahoma Tax Commission - OAC 710:60, Motor Vehicles rules (PDF)",
+          "url": "https://oklahoma.gov/content/dam/ok/en/tax/documents/resources/rules-and-policies/motor-vehicle-policy/Chapter60-MotorVehicles.pdf",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Service Oklahoma tells clerks not to subtract a trade-in from the purchase price, and Tax Commission rules 710:60-6-1 and 710:60-7-1 say the same for the sales tax and the excise tax."
+    },
+    "local": {
+      "value": {
+        "mode": "none",
+        "capBase": null,
+        "rangeNote": null
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Service Oklahoma - Title Transfers procedure G.02 (Mar 18, 2025, PDF)",
+          "url": "https://oklahoma.gov/content/dam/service-oklahoma/intranet/job-resources/sops/g--motor-vehicles/G.02%20-%20Title%20Transfers.pdf",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Service Oklahoma's procedure lists the 3.25% excise tax and the 1.25% sales tax on a vehicle purchase and no city or county tax. It does not say outright that none applies."
+    },
+    "outOfStateCredit": {
+      "value": null,
+      "status": "unverified",
+      "sources": [
+        {
+          "title": "Service Oklahoma - Title Transfers procedure G.02 (Mar 18, 2025, PDF)",
+          "url": "https://oklahoma.gov/content/dam/service-oklahoma/intranet/job-resources/sops/g--motor-vehicles/G.02%20-%20Title%20Transfers.pdf",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The title transfer procedure does not cover credit for tax paid to another state, so no credit is applied."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "vehicle-sales-tax",
+      "label": "Vehicle sales tax (1.25%)",
+      "kind": "percentOfValue",
+      "frequency": "once",
+      "amount": {
+        "value": 1.25,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Service Oklahoma - Title Transfers procedure G.02 (Mar 18, 2025, PDF)",
+            "url": "https://oklahoma.gov/content/dam/service-oklahoma/intranet/job-resources/sops/g--motor-vehicles/G.02%20-%20Title%20Transfers.pdf",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Oklahoma Tax Commission - OAC 710:60, Motor Vehicles rules (PDF)",
+            "url": "https://oklahoma.gov/content/dam/ok/en/tax/documents/resources/rules-and-policies/motor-vehicle-policy/Chapter60-MotorVehicles.pdf",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "1.25% of the actual purchase price, with no reduction for a trade-in."
+      }
+    },
+    {
+      "id": "title",
+      "label": "Title fee",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 11,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Service Oklahoma - Title Transfers procedure G.02 (Mar 18, 2025, PDF)",
+            "url": "https://oklahoma.gov/content/dam/service-oklahoma/intranet/job-resources/sops/g--motor-vehicles/G.02%20-%20Title%20Transfers.pdf",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Service Oklahoma - Vehicle fees",
+            "url": "https://oklahoma.gov/service/all-services/auto-vehicle/fees.html",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "title-transfer",
+      "label": "Transfer fee",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 17,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Service Oklahoma - Title Transfers procedure G.02 (Mar 18, 2025, PDF)",
+            "url": "https://oklahoma.gov/content/dam/service-oklahoma/intranet/job-resources/sops/g--motor-vehicles/G.02%20-%20Title%20Transfers.pdf",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Service Oklahoma - Vehicle fees",
+            "url": "https://oklahoma.gov/service/all-services/auto-vehicle/fees.html",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "insurance-fee",
+      "label": "Insurance fee",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 1.5,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Service Oklahoma - Title Transfers procedure G.02 (Mar 18, 2025, PDF)",
+            "url": "https://oklahoma.gov/content/dam/service-oklahoma/intranet/job-resources/sops/g--motor-vehicles/G.02%20-%20Title%20Transfers.pdf",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Service Oklahoma - Vehicle fees",
+            "url": "https://oklahoma.gov/service/all-services/auto-vehicle/fees.html",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "hb1357",
+      "label": "HB 1357 fee",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 3,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Service Oklahoma - Title Transfers procedure G.02 (Mar 18, 2025, PDF)",
+            "url": "https://oklahoma.gov/content/dam/service-oklahoma/intranet/job-resources/sops/g--motor-vehicles/G.02%20-%20Title%20Transfers.pdf",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Listed in Service Oklahoma's title transfer procedure."
+      }
+    },
+    {
+      "id": "registration-1-4",
+      "label": "Registration (years one to four)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "ageYearsMax": 3
+      },
+      "amount": {
+        "value": 96,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Service Oklahoma - Vehicle fees",
+            "url": "https://oklahoma.gov/service/all-services/auto-vehicle/fees.html",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Service Oklahoma - Title Transfers procedure G.02 (Mar 18, 2025, PDF)",
+            "url": "https://oklahoma.gov/content/dam/service-oklahoma/intranet/job-resources/sops/g--motor-vehicles/G.02%20-%20Title%20Transfers.pdf",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Service Oklahoma sets the fee by the vehicle's year of registration. We count a vehicle's first year of registration as age zero, so the first four years are ages zero to three. Check the year on your title if it is near a band edge."
+      }
+    },
+    {
+      "id": "registration-5-8",
+      "label": "Registration (years five to eight)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "ageYearsMin": 4,
+        "ageYearsMax": 7
+      },
+      "amount": {
+        "value": 86,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Service Oklahoma - Vehicle fees",
+            "url": "https://oklahoma.gov/service/all-services/auto-vehicle/fees.html",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Service Oklahoma - Title Transfers procedure G.02 (Mar 18, 2025, PDF)",
+            "url": "https://oklahoma.gov/content/dam/service-oklahoma/intranet/job-resources/sops/g--motor-vehicles/G.02%20-%20Title%20Transfers.pdf",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Service Oklahoma sets the fee by the vehicle's year of registration. We count a vehicle's first year of registration as age zero, so the first four years are ages zero to three. Check the year on your title if it is near a band edge."
+      }
+    },
+    {
+      "id": "registration-9-12",
+      "label": "Registration (years nine to twelve)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "ageYearsMin": 8,
+        "ageYearsMax": 11
+      },
+      "amount": {
+        "value": 66,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Service Oklahoma - Vehicle fees",
+            "url": "https://oklahoma.gov/service/all-services/auto-vehicle/fees.html",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Service Oklahoma - Title Transfers procedure G.02 (Mar 18, 2025, PDF)",
+            "url": "https://oklahoma.gov/content/dam/service-oklahoma/intranet/job-resources/sops/g--motor-vehicles/G.02%20-%20Title%20Transfers.pdf",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Service Oklahoma sets the fee by the vehicle's year of registration. We count a vehicle's first year of registration as age zero, so the first four years are ages zero to three. Check the year on your title if it is near a band edge."
+      }
+    },
+    {
+      "id": "registration-13-16",
+      "label": "Registration (years thirteen to sixteen)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "ageYearsMin": 12,
+        "ageYearsMax": 15
+      },
+      "amount": {
+        "value": 46,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Service Oklahoma - Vehicle fees",
+            "url": "https://oklahoma.gov/service/all-services/auto-vehicle/fees.html",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Service Oklahoma - Title Transfers procedure G.02 (Mar 18, 2025, PDF)",
+            "url": "https://oklahoma.gov/content/dam/service-oklahoma/intranet/job-resources/sops/g--motor-vehicles/G.02%20-%20Title%20Transfers.pdf",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Service Oklahoma sets the fee by the vehicle's year of registration. We count a vehicle's first year of registration as age zero, so the first four years are ages zero to three. Check the year on your title if it is near a band edge."
+      }
+    },
+    {
+      "id": "registration-17-plus",
+      "label": "Registration (year seventeen on)",
+      "kind": "flat",
+      "frequency": "annual",
+      "when": {
+        "ageYearsMin": 16
+      },
+      "amount": {
+        "value": 26,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Service Oklahoma - Vehicle fees",
+            "url": "https://oklahoma.gov/service/all-services/auto-vehicle/fees.html",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Service Oklahoma - Title Transfers procedure G.02 (Mar 18, 2025, PDF)",
+            "url": "https://oklahoma.gov/content/dam/service-oklahoma/intranet/job-resources/sops/g--motor-vehicles/G.02%20-%20Title%20Transfers.pdf",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Service Oklahoma sets the fee by the vehicle's year of registration. We count a vehicle's first year of registration as age zero, so the first four years are ages zero to three. Check the year on your title if it is near a band edge."
+      }
+    }
+  ],
+  "notes": [
+    "A lien filing fee applies only when the vehicle is financed and is not included.",
+    "VIN inspection for an out-of-state vehicle, tire tax and mailing fees are not included.",
+    "Tag agents may charge their own service fees, which are not included."
+  ],
+  "content": {
+    "intro": "{state} charges a {stateRate} excise tax and a separate vehicle sales tax when ownership changes, then a yearly registration fee that falls as the vehicle gets older.",
+    "howItWorks": [
+      {
+        "text": "The excise tax is figured on the purchase price. The state vehicle sales tax is figured on the same price.",
+        "sources": [
+          "https://oklahoma.gov/content/dam/service-oklahoma/intranet/job-resources/sops/g--motor-vehicles/G.02%20-%20Title%20Transfers.pdf"
+        ]
+      },
+      {
+        "text": "A trade-in does not lower the price either tax is figured on.",
+        "sources": [
+          "https://oklahoma.gov/content/dam/service-oklahoma/intranet/job-resources/sops/g--motor-vehicles/G.02%20-%20Title%20Transfers.pdf",
+          "https://oklahoma.gov/content/dam/ok/en/tax/documents/resources/rules-and-policies/motor-vehicle-policy/Chapter60-MotorVehicles.pdf"
+        ]
+      },
+      {
+        "text": "Registration is paid every year. The fee depends on how many years the vehicle has been registered, and drops in steps of four years.",
+        "sources": [
+          "https://oklahoma.gov/service/all-services/auto-vehicle/fees.html"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does a trade-in lower the tax in {state}?",
+        "text": "No. Service Oklahoma tells clerks not to subtract the trade-in from the purchase price, so both the excise tax and the vehicle sales tax are charged on the full price.",
+        "sources": [
+          "https://oklahoma.gov/content/dam/service-oklahoma/intranet/job-resources/sops/g--motor-vehicles/G.02%20-%20Title%20Transfers.pdf"
+        ]
+      },
+      {
+        "q": "Is there local sales tax on a vehicle in {state}?",
+        "text": "Service Oklahoma's procedure lists only the state excise tax and the state vehicle sales tax on a purchase.",
+        "sources": [
+          "https://oklahoma.gov/content/dam/service-oklahoma/intranet/job-resources/sops/g--motor-vehicles/G.02%20-%20Title%20Transfers.pdf"
+        ]
+      }
+    ]
+  }
+}

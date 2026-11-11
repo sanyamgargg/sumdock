@@ -2,6 +2,18 @@
   "note": "Newest first. One entry per change to a state's numbers or rules. Do not edit past entries.",
   "entries": [
     {
+      "date": "2026-11-11",
+      "state": "LA",
+      "stateName": "Louisiana",
+      "summary": "Added Louisiana: the 5% state sales tax rate, the trade-in rule, the $68.50 title fee, the $8 handling fee and the two-year license plate fee by value from the Department of Revenue and the Office of Motor Vehicles. Parish and city tax is entered by hand."
+    },
+    {
+      "date": "2026-11-11",
+      "state": "OK",
+      "stateName": "Oklahoma",
+      "summary": "Added Oklahoma: the 3.25% excise tax and 1.25% vehicle sales tax (a trade-in lowers neither), the title, transfer, insurance and HB 1357 fees, and registration by year from Service Oklahoma. Credit for tax paid to another state is not applied until it is confirmed."
+    },
+    {
       "date": "2026-11-10",
       "tool": "llc",
       "state": "GA",

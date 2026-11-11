@@ -1,0 +1,930 @@
+{
+  "code": "LA",
+  "name": "Louisiana",
+  "slug": "louisiana",
+  "lastReviewed": "2026-11-11",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 5,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Louisiana Department of Revenue - What is the state sales tax rate?",
+          "url": "https://revenue.louisiana.gov/tax-education-and-faqs/faqs/sales-tax-reform/what-is-the-state-sales-tax-rate/",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The Department of Revenue lists a 5% state rate from January 1, 2025 through December 31, 2029. Its older vehicle publication still shows the previous 4.45% rate."
+    },
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Louisiana Department of Revenue - LAC 61:I.4301, sales tax definitions (PDF)",
+          "url": "https://dam.ldr.la.gov/lawspolicies/LAC%2061%20I%204301%204404%20and%204408%20(Current%20Regulation).pdf",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "LAC 61:I.4301 leaves the value of a separately stated trade-in out of the sales price when the trade-in is similar to the item bought, is a kind the dealer normally accepts, and changes hands at the same time."
+    },
+    "local": {
+      "value": {
+        "mode": "user-entered",
+        "capBase": null,
+        "rangeNote": "Parishes and many cities add their own sales tax. The rate depends on where the buyer lives, not where the dealer is. Enter your combined parish and city rate."
+      },
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Louisiana Department of Revenue - Motor Vehicle Sales Tax, R-20164 (6/20, PDF)",
+          "url": "https://dam.ldr.la.gov/publications/20164-6-20.pdf",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The Department says the tax rate is based on the buyer's home, not the seller's location."
+    },
+    "outOfStateCredit": {
+      "value": true,
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Louisiana Department of Revenue - Revenue Information Bulletin 25-011 (Feb 13, 2025, PDF)",
+          "url": "https://dam.ldr.la.gov/lawspolicies/RIB-011%20on%20Calculation%20of%20Use%20Tax%20on%20Vehicles%20Registered%20by%20New%20Residents.pdf",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Louisiana Department of Revenue - Motor Vehicle Sales Tax, R-20164 (6/20, PDF)",
+          "url": "https://dam.ldr.la.gov/publications/20164-6-20.pdf",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Louisiana gives credit for tax paid to a state that gives the same credit. The credit is worked out rate against rate, not dollar for dollar, so the calculator's credit may differ slightly."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Title fee",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 68.5,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Louisiana Office of Motor Vehicles - Vehicle registration, title and plate fees",
+            "url": "https://expresslane.la.gov/omv/vehicles/vehicle-registration-title-plate-fees/",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "handling",
+      "label": "Handling fee",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 8,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Louisiana Office of Motor Vehicles - Vehicle registration, title and plate fees",
+            "url": "https://expresslane.la.gov/omv/vehicles/vehicle-registration-title-plate-fees/",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "registration-plate",
+      "label": "License plate (two years, by value)",
+      "kind": "valueTable",
+      "frequency": "biennial",
+      "weightTable": [
+        {
+          "upTo": 10499,
+          "fee": 20
+        },
+        {
+          "upTo": 11499,
+          "fee": 22
+        },
+        {
+          "upTo": 12499,
+          "fee": 24
+        },
+        {
+          "upTo": 13499,
+          "fee": 26
+        },
+        {
+          "upTo": 14499,
+          "fee": 28
+        },
+        {
+          "upTo": 15499,
+          "fee": 30
+        },
+        {
+          "upTo": 16499,
+          "fee": 32
+        },
+        {
+          "upTo": 17499,
+          "fee": 34
+        },
+        {
+          "upTo": 18499,
+          "fee": 36
+        },
+        {
+          "upTo": 19499,
+          "fee": 38
+        },
+        {
+          "upTo": 20499,
+          "fee": 40
+        },
+        {
+          "upTo": 21499,
+          "fee": 42
+        },
+        {
+          "upTo": 22499,
+          "fee": 44
+        },
+        {
+          "upTo": 23499,
+          "fee": 46
+        },
+        {
+          "upTo": 24499,
+          "fee": 48
+        },
+        {
+          "upTo": 25499,
+          "fee": 50
+        },
+        {
+          "upTo": 26499,
+          "fee": 52
+        },
+        {
+          "upTo": 27499,
+          "fee": 54
+        },
+        {
+          "upTo": 28499,
+          "fee": 56
+        },
+        {
+          "upTo": 29499,
+          "fee": 58
+        },
+        {
+          "upTo": 30499,
+          "fee": 60
+        },
+        {
+          "upTo": 31499,
+          "fee": 62
+        },
+        {
+          "upTo": 32499,
+          "fee": 64
+        },
+        {
+          "upTo": 33499,
+          "fee": 66
+        },
+        {
+          "upTo": 34499,
+          "fee": 68
+        },
+        {
+          "upTo": 35499,
+          "fee": 70
+        },
+        {
+          "upTo": 36499,
+          "fee": 72
+        },
+        {
+          "upTo": 37499,
+          "fee": 74
+        },
+        {
+          "upTo": 38499,
+          "fee": 76
+        },
+        {
+          "upTo": 39499,
+          "fee": 78
+        },
+        {
+          "upTo": 40499,
+          "fee": 80
+        },
+        {
+          "upTo": 41499,
+          "fee": 82
+        },
+        {
+          "upTo": 42499,
+          "fee": 84
+        },
+        {
+          "upTo": 43499,
+          "fee": 86
+        },
+        {
+          "upTo": 44499,
+          "fee": 88
+        },
+        {
+          "upTo": 45499,
+          "fee": 90
+        },
+        {
+          "upTo": 46499,
+          "fee": 92
+        },
+        {
+          "upTo": 47499,
+          "fee": 94
+        },
+        {
+          "upTo": 48499,
+          "fee": 96
+        },
+        {
+          "upTo": 49499,
+          "fee": 98
+        },
+        {
+          "upTo": 50499,
+          "fee": 100
+        },
+        {
+          "upTo": 51499,
+          "fee": 102
+        },
+        {
+          "upTo": 52499,
+          "fee": 104
+        },
+        {
+          "upTo": 53499,
+          "fee": 106
+        },
+        {
+          "upTo": 54499,
+          "fee": 108
+        },
+        {
+          "upTo": 55499,
+          "fee": 110
+        },
+        {
+          "upTo": 56499,
+          "fee": 112
+        },
+        {
+          "upTo": 57499,
+          "fee": 114
+        },
+        {
+          "upTo": 58499,
+          "fee": 116
+        },
+        {
+          "upTo": 59499,
+          "fee": 118
+        },
+        {
+          "upTo": 60499,
+          "fee": 120
+        },
+        {
+          "upTo": 61499,
+          "fee": 122
+        },
+        {
+          "upTo": 62499,
+          "fee": 124
+        },
+        {
+          "upTo": 63499,
+          "fee": 126
+        },
+        {
+          "upTo": 64499,
+          "fee": 128
+        },
+        {
+          "upTo": 65499,
+          "fee": 130
+        },
+        {
+          "upTo": 66499,
+          "fee": 132
+        },
+        {
+          "upTo": 67499,
+          "fee": 134
+        },
+        {
+          "upTo": 68499,
+          "fee": 136
+        },
+        {
+          "upTo": 69499,
+          "fee": 138
+        },
+        {
+          "upTo": 70499,
+          "fee": 140
+        },
+        {
+          "upTo": 71499,
+          "fee": 142
+        },
+        {
+          "upTo": 72499,
+          "fee": 144
+        },
+        {
+          "upTo": 73499,
+          "fee": 146
+        },
+        {
+          "upTo": 74499,
+          "fee": 148
+        },
+        {
+          "upTo": 75499,
+          "fee": 150
+        },
+        {
+          "upTo": 76499,
+          "fee": 152
+        },
+        {
+          "upTo": 77499,
+          "fee": 154
+        },
+        {
+          "upTo": 78499,
+          "fee": 156
+        },
+        {
+          "upTo": 79499,
+          "fee": 158
+        },
+        {
+          "upTo": 80499,
+          "fee": 160
+        },
+        {
+          "upTo": 81499,
+          "fee": 162
+        },
+        {
+          "upTo": 82499,
+          "fee": 164
+        },
+        {
+          "upTo": 83499,
+          "fee": 166
+        },
+        {
+          "upTo": 84499,
+          "fee": 168
+        },
+        {
+          "upTo": 85499,
+          "fee": 170
+        },
+        {
+          "upTo": 86499,
+          "fee": 172
+        },
+        {
+          "upTo": 87499,
+          "fee": 174
+        },
+        {
+          "upTo": 88499,
+          "fee": 176
+        },
+        {
+          "upTo": 89499,
+          "fee": 178
+        },
+        {
+          "upTo": 90499,
+          "fee": 180
+        },
+        {
+          "upTo": 91499,
+          "fee": 182
+        },
+        {
+          "upTo": 92499,
+          "fee": 184
+        },
+        {
+          "upTo": 93499,
+          "fee": 186
+        },
+        {
+          "upTo": 94499,
+          "fee": 188
+        },
+        {
+          "upTo": 95499,
+          "fee": 190
+        },
+        {
+          "upTo": 96499,
+          "fee": 192
+        },
+        {
+          "upTo": 97499,
+          "fee": 194
+        },
+        {
+          "upTo": 98499,
+          "fee": 196
+        },
+        {
+          "upTo": 99499,
+          "fee": 198
+        },
+        {
+          "upTo": 100499,
+          "fee": 200
+        },
+        {
+          "upTo": 101499,
+          "fee": 202
+        },
+        {
+          "upTo": 102499,
+          "fee": 204
+        },
+        {
+          "upTo": 103499,
+          "fee": 206
+        },
+        {
+          "upTo": 104499,
+          "fee": 208
+        },
+        {
+          "upTo": 105499,
+          "fee": 210
+        },
+        {
+          "upTo": 106499,
+          "fee": 212
+        },
+        {
+          "upTo": 107499,
+          "fee": 214
+        },
+        {
+          "upTo": 108499,
+          "fee": 216
+        },
+        {
+          "upTo": 109499,
+          "fee": 218
+        },
+        {
+          "upTo": 110499,
+          "fee": 220
+        },
+        {
+          "upTo": 111499,
+          "fee": 222
+        },
+        {
+          "upTo": 112499,
+          "fee": 224
+        },
+        {
+          "upTo": 113499,
+          "fee": 226
+        },
+        {
+          "upTo": 114499,
+          "fee": 228
+        },
+        {
+          "upTo": 115499,
+          "fee": 230
+        },
+        {
+          "upTo": 116499,
+          "fee": 232
+        },
+        {
+          "upTo": 117499,
+          "fee": 234
+        },
+        {
+          "upTo": 118499,
+          "fee": 236
+        },
+        {
+          "upTo": 119499,
+          "fee": 238
+        },
+        {
+          "upTo": 120499,
+          "fee": 240
+        },
+        {
+          "upTo": 121499,
+          "fee": 242
+        },
+        {
+          "upTo": 122499,
+          "fee": 244
+        },
+        {
+          "upTo": 123499,
+          "fee": 246
+        },
+        {
+          "upTo": 124499,
+          "fee": 248
+        },
+        {
+          "upTo": 125499,
+          "fee": 250
+        },
+        {
+          "upTo": 126499,
+          "fee": 252
+        },
+        {
+          "upTo": 127499,
+          "fee": 254
+        },
+        {
+          "upTo": 128499,
+          "fee": 256
+        },
+        {
+          "upTo": 129499,
+          "fee": 258
+        },
+        {
+          "upTo": 130499,
+          "fee": 260
+        },
+        {
+          "upTo": 131499,
+          "fee": 262
+        },
+        {
+          "upTo": 132499,
+          "fee": 264
+        },
+        {
+          "upTo": 133499,
+          "fee": 266
+        },
+        {
+          "upTo": 134499,
+          "fee": 268
+        },
+        {
+          "upTo": 135499,
+          "fee": 270
+        },
+        {
+          "upTo": 136499,
+          "fee": 272
+        },
+        {
+          "upTo": 137499,
+          "fee": 274
+        },
+        {
+          "upTo": 138499,
+          "fee": 276
+        },
+        {
+          "upTo": 139499,
+          "fee": 278
+        },
+        {
+          "upTo": 140499,
+          "fee": 280
+        },
+        {
+          "upTo": 141499,
+          "fee": 282
+        },
+        {
+          "upTo": 142499,
+          "fee": 284
+        },
+        {
+          "upTo": 143499,
+          "fee": 286
+        },
+        {
+          "upTo": 144499,
+          "fee": 288
+        },
+        {
+          "upTo": 145499,
+          "fee": 290
+        },
+        {
+          "upTo": 146499,
+          "fee": 292
+        },
+        {
+          "upTo": 147499,
+          "fee": 294
+        },
+        {
+          "upTo": 148499,
+          "fee": 296
+        },
+        {
+          "upTo": 149499,
+          "fee": 298
+        },
+        {
+          "upTo": 150499,
+          "fee": 300
+        },
+        {
+          "upTo": 151499,
+          "fee": 302
+        },
+        {
+          "upTo": 152499,
+          "fee": 304
+        },
+        {
+          "upTo": 153499,
+          "fee": 306
+        },
+        {
+          "upTo": 154499,
+          "fee": 308
+        },
+        {
+          "upTo": 155499,
+          "fee": 310
+        },
+        {
+          "upTo": 156499,
+          "fee": 312
+        },
+        {
+          "upTo": 157499,
+          "fee": 314
+        },
+        {
+          "upTo": 158499,
+          "fee": 316
+        },
+        {
+          "upTo": 159499,
+          "fee": 318
+        },
+        {
+          "upTo": 160499,
+          "fee": 320
+        },
+        {
+          "upTo": 161499,
+          "fee": 322
+        },
+        {
+          "upTo": 162499,
+          "fee": 324
+        },
+        {
+          "upTo": 163499,
+          "fee": 326
+        },
+        {
+          "upTo": 164499,
+          "fee": 328
+        },
+        {
+          "upTo": 165499,
+          "fee": 330
+        },
+        {
+          "upTo": 166499,
+          "fee": 332
+        },
+        {
+          "upTo": 167499,
+          "fee": 334
+        },
+        {
+          "upTo": 168499,
+          "fee": 336
+        },
+        {
+          "upTo": 169499,
+          "fee": 338
+        },
+        {
+          "upTo": 170499,
+          "fee": 340
+        },
+        {
+          "upTo": 171499,
+          "fee": 342
+        },
+        {
+          "upTo": 172499,
+          "fee": 344
+        },
+        {
+          "upTo": 173499,
+          "fee": 346
+        },
+        {
+          "upTo": 174499,
+          "fee": 348
+        },
+        {
+          "upTo": 175499,
+          "fee": 350
+        },
+        {
+          "upTo": 176499,
+          "fee": 352
+        },
+        {
+          "upTo": 177499,
+          "fee": 354
+        },
+        {
+          "upTo": 178499,
+          "fee": 356
+        },
+        {
+          "upTo": 179499,
+          "fee": 358
+        },
+        {
+          "upTo": 180499,
+          "fee": 360
+        },
+        {
+          "upTo": 181499,
+          "fee": 362
+        },
+        {
+          "upTo": 182499,
+          "fee": 364
+        },
+        {
+          "upTo": 183499,
+          "fee": 366
+        },
+        {
+          "upTo": 184499,
+          "fee": 368
+        },
+        {
+          "upTo": 185499,
+          "fee": 370
+        },
+        {
+          "upTo": 186499,
+          "fee": 372
+        },
+        {
+          "upTo": 187499,
+          "fee": 374
+        },
+        {
+          "upTo": 188499,
+          "fee": 376
+        },
+        {
+          "upTo": 189499,
+          "fee": 378
+        },
+        {
+          "upTo": 190499,
+          "fee": 380
+        },
+        {
+          "upTo": 191499,
+          "fee": 382
+        },
+        {
+          "upTo": 192499,
+          "fee": 384
+        },
+        {
+          "upTo": 193499,
+          "fee": 386
+        },
+        {
+          "upTo": 194499,
+          "fee": 388
+        },
+        {
+          "upTo": 195499,
+          "fee": 390
+        },
+        {
+          "upTo": 196499,
+          "fee": 392
+        },
+        {
+          "upTo": 197499,
+          "fee": 394
+        },
+        {
+          "upTo": 198499,
+          "fee": 396
+        },
+        {
+          "upTo": 199499,
+          "fee": 398
+        }
+      ],
+      "excludedReason": "Vehicles valued above the rows the calculator carries are left out; check the OMV for the plate fee.",
+      "amount": {
+        "value": 1,
+        "status": "partial",
+        "sources": [
+          {
+            "title": "Louisiana Office of Motor Vehicles - Vehicle registration, title and plate fees",
+            "url": "https://expresslane.la.gov/omv/vehicles/vehicle-registration-title-plate-fees/",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "The OMV charges 0.1% of the vehicle's value a year, sold two years at a time, with a minimum value of $10,000. Rows up to $41,499 are copied from the OMV table. Above that, the calculator applies the same stated rate and rounding up to $199,499; the OMV table does not print those rows."
+      }
+    }
+  ],
+  "notes": [
+    "Public tag agents may charge a convenience fee on top of state fees, which is not included.",
+    "Mortgage or lien recording fees apply only when the vehicle is financed and are not included.",
+    "Parish and city sales tax must be entered by hand; the calculator has no parish rate list yet."
+  ],
+  "content": {
+    "intro": "{state} charges {stateRate} state sales tax on a vehicle, plus parish and city tax based on where the buyer lives. The license plate fee depends on the vehicle's value and is paid two years at a time.",
+    "howItWorks": [
+      {
+        "text": "The state rate is set by the Department of Revenue. Local sales tax is based on the buyer's home, not where the dealer is.",
+        "sources": [
+          "https://revenue.louisiana.gov/tax-education-and-faqs/faqs/sales-tax-reform/what-is-the-state-sales-tax-rate/",
+          "https://dam.ldr.la.gov/publications/20164-6-20.pdf"
+        ]
+      },
+      {
+        "text": "A trade-in that is separately stated and similar to the vehicle bought comes off the sales price before tax.",
+        "sources": [
+          "https://dam.ldr.la.gov/lawspolicies/LAC%2061%20I%204301%204404%20and%204408%20(Current%20Regulation).pdf"
+        ]
+      },
+      {
+        "text": "The Office of Motor Vehicles charges a set percentage of the vehicle's value for the plate, with a minimum value, and sells plates two years at a time.",
+        "sources": [
+          "https://expresslane.la.gov/omv/vehicles/vehicle-registration-title-plate-fees/"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does {state} give credit for tax paid in another state?",
+        "text": "Yes, when that state gives the same credit for {state} tax. The credit compares tax rates rather than dollar amounts, so the calculator's credit is an estimate.",
+        "sources": [
+          "https://dam.ldr.la.gov/lawspolicies/RIB-011%20on%20Calculation%20of%20Use%20Tax%20on%20Vehicles%20Registered%20by%20New%20Residents.pdf",
+          "https://dam.ldr.la.gov/publications/20164-6-20.pdf"
+        ]
+      }
+    ]
+  }
+}
