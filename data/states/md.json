@@ -1,0 +1,208 @@
+{
+  "code": "MD",
+  "name": "Maryland",
+  "slug": "maryland",
+  "lastReviewed": "2026-11-11",
+  "salesTax": {
+    "stateRatePct": {
+      "value": 6.5,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Maryland Code, Transportation 13-809, excise tax on issuing a title (PDF)",
+          "url": "https://mgaleg.maryland.gov/2026RS/Statute_Web/gtr/13-809.pdf",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Maryland MVA - Interactive title and registration manual (PDF)",
+          "url": "https://mva.maryland.gov/media/216",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "A 6.5% excise tax on the title, charged on the price certified by the dealer less any trade-in. The statute sets a $100 minimum, which the calculator does not apply."
+    },
+    "taxName": "excise tax",
+    "tradeInReducesBase": {
+      "value": true,
+      "status": "verified",
+      "sources": [
+        {
+          "title": "Maryland Code, Transportation 13-809, excise tax on issuing a title (PDF)",
+          "url": "https://mgaleg.maryland.gov/2026RS/Statute_Web/gtr/13-809.pdf",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Maryland MVA - Interactive title and registration manual (PDF)",
+          "url": "https://mva.maryland.gov/media/216",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "Total purchase price is the agreed price less an allowance for trade-in. Only one trade-in can be used, and its owner must be an owner of the vehicle bought or a listed relative."
+    },
+    "local": {
+      "value": {
+        "mode": "none",
+        "capBase": null,
+        "rangeNote": null
+      },
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Maryland Code, Transportation 13-809, excise tax on issuing a title (PDF)",
+          "url": "https://mgaleg.maryland.gov/2026RS/Statute_Web/gtr/13-809.pdf",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        },
+        {
+          "title": "Maryland MVA - Interactive title and registration manual (PDF)",
+          "url": "https://mva.maryland.gov/media/216",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The title excise tax is a state tax and the MVA manual lists no county or city vehicle tax. Neither says outright that none applies."
+    },
+    "outOfStateCredit": {
+      "value": false,
+      "status": "partial",
+      "sources": [
+        {
+          "title": "Maryland MVA - Interactive title and registration manual (PDF)",
+          "url": "https://mva.maryland.gov/media/216",
+          "accessed": "2026-11-11",
+          "publisherType": "state-agency"
+        }
+      ],
+      "note": "The MVA applies a credit for another state's sales or excise tax only for an applicant who has been a Maryland resident for sixty days or less. The calculator assumes an existing resident, so no credit is applied."
+    },
+    "useTax": null
+  },
+  "fees": [
+    {
+      "id": "title",
+      "label": "Title fee",
+      "kind": "flat",
+      "frequency": "once",
+      "amount": {
+        "value": 200,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Maryland MVA - Interactive title and registration manual (PDF)",
+            "url": "https://mva.maryland.gov/media/216",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ]
+      }
+    },
+    {
+      "id": "registration",
+      "label": "Registration (by shipping weight)",
+      "kind": "weightTable",
+      "frequency": "annual",
+      "weightTable": [
+        {
+          "upTo": 3500,
+          "fee": 80.5
+        },
+        {
+          "upTo": 3700,
+          "fee": 85.5
+        },
+        {
+          "upTo": null,
+          "fee": 151.5
+        }
+      ],
+      "amount": {
+        "value": 1,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Maryland Code, Transportation 13-912, passenger car registration fees (PDF)",
+            "url": "https://mgaleg.maryland.gov/2026RS/Statute_Web/gtr/13-912.pdf",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Yearly amounts from July 1, 2025. The law uses the manufacturer's shipping weight; the calculator uses the weight you enter. Maryland registers for two years at a time, so you pay two years of this fee when you register."
+      }
+    },
+    {
+      "id": "registration-surcharge",
+      "label": "Registration surcharge",
+      "kind": "flat",
+      "frequency": "annual",
+      "amount": {
+        "value": 40,
+        "status": "verified",
+        "sources": [
+          {
+            "title": "Maryland Code, Transportation 13-954, registration surcharge (PDF)",
+            "url": "https://mgaleg.maryland.gov/2026RS/Statute_Web/gtr/13-954.pdf",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          },
+          {
+            "title": "Maryland MVA - Interactive title and registration manual (PDF)",
+            "url": "https://mva.maryland.gov/media/216",
+            "accessed": "2026-11-11",
+            "publisherType": "state-agency"
+          }
+        ],
+        "note": "Charged per registration year, so two years are paid with a two-year registration."
+      }
+    }
+  ],
+  "notes": [
+    "Maryland registers vehicles for two years at a time; the yearly fee and surcharge are shown here.",
+    "The $100 minimum excise tax and the private sale rules for older vehicles are not applied.",
+    "Any electric vehicle surcharge, lien recording fees and dealer processing charges are not included."
+  ],
+  "content": {
+    "intro": "{state} charges a {stateRate} excise tax when the title is issued, on the price less any trade-in. Registration is priced by weight and paid two years at a time.",
+    "howItWorks": [
+      {
+        "text": "The excise tax is charged on the total purchase price, which is the agreed price less an allowance for a trade-in.",
+        "sources": [
+          "https://mgaleg.maryland.gov/2026RS/Statute_Web/gtr/13-809.pdf"
+        ]
+      },
+      {
+        "text": "Only one trade-in can be used, and when the trade-in allowance is as large as the price, no excise tax is due.",
+        "sources": [
+          "https://mva.maryland.gov/media/216"
+        ]
+      },
+      {
+        "text": "The yearly registration fee depends on the manufacturer's shipping weight. A surcharge is added for each year.",
+        "sources": [
+          "https://mgaleg.maryland.gov/2026RS/Statute_Web/gtr/13-912.pdf",
+          "https://mgaleg.maryland.gov/2026RS/Statute_Web/gtr/13-954.pdf"
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does {state} credit tax I paid in another state?",
+        "text": "Only if you have been a {state} resident for sixty days or less, and only for state sales or excise tax, not local tax.",
+        "sources": [
+          "https://mva.maryland.gov/media/216"
+        ]
+      },
+      {
+        "q": "Does a trade-in lower the excise tax in {state}?",
+        "text": "Yes. The tax is charged on the price less the trade-in allowance, and only one trade-in can be used per purchase.",
+        "sources": [
+          "https://mgaleg.maryland.gov/2026RS/Statute_Web/gtr/13-809.pdf",
+          "https://mva.maryland.gov/media/216"
+        ]
+      }
+    ]
+  }
+}

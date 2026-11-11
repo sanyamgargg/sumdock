@@ -3,6 +3,12 @@
   "entries": [
     {
       "date": "2026-11-11",
+      "state": "MD",
+      "stateName": "Maryland",
+      "summary": "Added Maryland: the 6.5% title excise tax after trade-in, registration by weight from July 2025 and the $40 yearly surcharge from the Maryland Code, and the $200 title fee and out-of-state credit rule from the MVA title and registration manual."
+    },
+    {
+      "date": "2026-11-11",
       "state": "CO",
       "stateName": "Colorado",
       "summary": "Added Colorado: the 2.9% state sales tax, trade-in rule, local tax by residence and out-of-state credit from the Department of Revenue, and from the DMV the title fee, first-year specific ownership tax (check source: it uses your price in place of the sticker price), road and bridge safety surcharges by weight, age of vehicle fee, fixed registration fees and electric vehicle fees. The registration base fee and later-year ownership tax are not included."

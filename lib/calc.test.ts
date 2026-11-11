@@ -1174,3 +1174,22 @@ describe("Colorado", () => {
     expect(calculate(co, base).excluded.map((e) => e.label)).toContain("Registration base fee (by weight)");
   });
 });
+
+describe("Maryland", () => {
+  const md = load("md");
+  it("is publishable", () => expect(publishability(md).publishable).toBe(true));
+  it("charges 6.5% excise on the price less a trade-in", () => {
+    expect(line(calculate(md, { ...base, price: 30000, tradeIn: 10000 }), "state-tax")).toBe(1300);
+  });
+  it("prices registration by weight from July 2025", () => {
+    expect(line(calculate(md, { ...base, weightLbs: 3200 }), "registration")).toBe(80.5);
+    expect(line(calculate(md, { ...base, weightLbs: 3600 }), "registration")).toBe(85.5);
+    expect(line(calculate(md, { ...base, weightLbs: 4200 }), "registration")).toBe(151.5);
+  });
+  it("adds the $200 title fee and $40 surcharge, with no out-of-state credit", () => {
+    const r = calculate(md, { ...base, outOfStateTaxPaid: 300 });
+    expect(line(r, "title")).toBe(200);
+    expect(line(r, "registration-surcharge")).toBe(40);
+    expect(line(r, "oos-credit")).toBeUndefined();
+  });
+});
