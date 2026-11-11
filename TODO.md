@@ -13,19 +13,32 @@ Added in that run: Arkansas, Nevada, Mississippi, Delaware, Alaska, Maine, Monta
 
 | State | What is missing | Who |
 |---|---|---|
-| Utah | Official sources for the 4.85% state rate, trade-in rule, title and base registration fee were not reachable. Found: the DMV age-based fee for 2026 (age 0-2: $150, 3-5: $110, 6-8: $80, 9-11: $50, 12+: $10) at https://dmv.utah.gov/?p=3346, plus fees by county (corridor $10, air pollution $2-3, driver education $2.50, uninsured motorist $1). Local rates come from a separate table | Sanyam: save the Utah DMV "Uniform Fees" page and tax.utah.gov Sales Tax Rates page as PDFs in tmp/ |
-| Iowa | The DOT memo (Dec 2024, effective Jan 1 2025) gives title $35 and the new registration fee of 5% of the price plus $10. Trade-in rule and the registration fee (it depends on weight, list price and age) were not found. iowadot.gov fee page refused fetching | Sanyam: save the Iowa DOT registration fee page (and the new-registration 5% fee page) as PDFs |
 | New Mexico | Registration is $27 to $62 for 1 year by weight and model year (mvd.newmexico.gov, no table). Need the table, the title fee and the 4% excise tax pages with trade-in rule | Sanyam: find the MVD fee table or the Vehicle Procedures Manual |
-| Oklahoma | Only third-party pages and a 1999 Senate brief (3.25% excise tax, 1.25% registration fee schedule) turned up. Need current Oklahoma Tax Commission or Service Oklahoma pages | Sanyam: save the OTC motor vehicle excise tax page and the Service Oklahoma fees page |
-| Louisiana | No current LDR or OMV page reachable (LDR Pub R-20164 from 2020 only; 4.45% state tax plus local) | Sanyam: save the LDR motor vehicle sales tax page and OMV fee page |
 | Wyoming | The 4% state tax and county rates, trade-in rule and the $30 state fee need official pages; the county registration fee needs list price and age | Sanyam: save the Wyoming DOR vehicle tax page and WYDOT fee page |
 | Hawaii | GET is 4% plus the 0.5% county surcharge (tax.hawaii.gov county surcharge page), but no page on vehicle sales or trade-ins. Honolulu fees (csd page): state $46, county $20, beautification $10, emblem $0.50, state and county weight taxes by pound (rates not printed) | Sanyam: find the DOTAX page on motor vehicle sales and the weight tax per pound |
 | New Hampshire | No sales tax. The state fee changed on Jan 1 2026 (HB 2) and the municipal permit fee uses list price, so only third-party and town pages were found | Sanyam: save the NH DMV fee page and the 2026 fee update |
 | Delaware | Added from the Delaware Code and the Sept 2025 fee announcement; dmv.de.gov blocks automated reading, so the DMV fee page was not used. Check the registration $40 and EV fee on the DMV site | Sanyam: spot-check dmv.de.gov fees |
-| Kentucky | New vehicles get no trade-in allowance but used vehicles do (OSBD tax analysis, undated, and the Letcher County clerk page); the calculator has no per-condition trade-in rule yet. KRS 186.050 prints $11.50 registration while county clerks say $21 | Claude: add a "trade-in only for used" rule once the title and registration fee are confirmed from a state page |
-| Missouri | The local rate chart is readable (updated 8/25/2026, valid Oct to Dec 2026) but too long to read through the tool; dor.mo.gov fee page refused fetching | Sanyam: as before, save the chart and fees page as PDFs |
-| Maryland, Colorado, Minnesota, Illinois | Same blockers as before (sites refuse automated reading or need list price) | Sanyam: save pages as PDFs as listed below |
 | Michigan | In review: registration depends on list price and age | Claude: use the new age input once list price handling is decided |
+
+## Vehicle states, Nov 11 2026
+Added: Oklahoma, Louisiana, Missouri (new taxable horsepower input), Utah, Kentucky, Colorado, Maryland, Iowa, Minnesota (new "price below" fee condition). The old "on hold" notes below for Maryland, Missouri, Colorado and Kentucky are done.
+
+Still missing, and what would unblock each:
+| State | Blocker | Who |
+|---|---|---|
+| Illinois | ilsos.gov blocks visitors from India (Access Denied) and ilga.gov's statute text shows an old $95 title fee. Rate, trade-in and local rules are confirmed from IDOR (ST-556, ST-9) | Sanyam: from a US connection or VPN, save ilsos.gov/departments/vehicles/basicfees.html as a PDF |
+| Wyoming | County registration fee is a share of the factory list price by age; rate charts are Google Drive files | Sanyam: save the WYDOT registration fee page and the latest master rate chart as PDFs; Claude: decide how to handle list price |
+| Hawaii | No DOTAX page on vehicle sales or trade-ins; weight tax rates per pound not printed | Sanyam: find the Honolulu weight tax rates and the DOTAX general excise page on vehicle sales |
+| New Hampshire | No sales tax; state and town fees depend on list price and changed Jan 1 2026 | Sanyam: save the NH DMV fee page |
+| New Mexico | Registration table by weight and model year not published as text | Sanyam: find the MVD fee table |
+| Michigan | Registration depends on list price and age | Claude: decide list price handling (same question as Wyoming and New Hampshire) |
+
+Known approximations in the new states (all marked check source on the page):
+- Colorado first-year ownership tax, Iowa registration value part, Minnesota first-year registration tax and EV surcharge use the price entered in place of the sticker price or DOT value.
+- Utah $44 registration is the Code amount; it is adjusted for inflation each year.
+- Oklahoma registration by year of registration is mapped to vehicle age.
+- Kentucky $21 registration is from a county clerk page.
+- Louisiana plate rows above $41,499 follow the stated rate; the OMV table stops there.
 
 ## Washington (added)
 | Sanyam | Claude |
